@@ -125,14 +125,6 @@ categories:<br>
     
     </summary>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
-    
-      <category term="org-mode" scheme="http://yuchen-lea.gitcafe.io/tags/org-mode/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
-    
-      <category term="org-mode" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/org-mode/"/>
-    
   </entry>
   
   <entry>
@@ -587,12 +579,6 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
     
     </summary>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
-    
-      <category term="七牛" scheme="http://yuchen-lea.gitcafe.io/tags/%E4%B8%83%E7%89%9B/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
-    
   </entry>
   
   <entry>
@@ -728,8 +714,6 @@ rss: /atom.xml<br>
       <category term="hexo插件" scheme="http://yuchen-lea.gitcafe.io/tags/hexo%E6%8F%92%E4%BB%B6/"/>
     
       <category term="hexo设置" scheme="http://yuchen-lea.gitcafe.io/tags/hexo%E8%AE%BE%E7%BD%AE/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
     
   </entry>
   
@@ -1151,8 +1135,6 @@ css<br>
     </summary>
     
       <category term="hexo知识" scheme="http://yuchen-lea.gitcafe.io/tags/hexo%E7%9F%A5%E8%AF%86/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
     
   </entry>
   
@@ -2425,16 +2407,6 @@ css<br>
     
     </summary>
     
-      <category term="!学习笔记" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="发音" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%8F%91%E9%9F%B3/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="日语口语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
-    
   </entry>
   
   <entry>
@@ -2740,14 +2712,6 @@ Hexo&#x4E3B;&#x9898;&#x5927;&#x591A;&#x6258;&#x7BA1;&#x5728;Github&#x4E0A;&#xFF0
 </div>]]>
     
     </summary>
-    
-      <category term="!教程" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
-    
-      <category term="hexo设置" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E8%AE%BE%E7%BD%AE/"/>
     
   </entry>
   
