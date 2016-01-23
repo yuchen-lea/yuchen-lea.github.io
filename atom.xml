@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不积小流，无以成江海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yuchen-lea.gitcafe.io/"/>
-  <updated>2016-01-22T04:20:11.783Z</updated>
+  <updated>2016-01-23T09:24:30.383Z</updated>
   <id>http://yuchen-lea.gitcafe.io/</id>
   
   <author>
@@ -13,6 +13,115 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[多级类别的层级显示]]></title>
+    <link href="http://yuchen-lea.gitcafe.io/2016/01/23/2016-01-23-%E5%A4%9A%E7%BA%A7%E7%B1%BB%E5%88%AB%E7%9A%84%E5%B1%82%E7%BA%A7%E6%98%BE%E7%A4%BA/"/>
+    <id>http://yuchen-lea.gitcafe.io/2016/01/23/2016-01-23-多级类别的层级显示/</id>
+    <published>2016-01-22T16:00:00.000Z</published>
+    <updated>2016-01-23T09:24:30.383Z</updated>
+    <content type="html"><![CDATA[
+
+<p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x8BA9;&#x591A;&#x7EA7;&#x7C7B;&#x522B;&#x4EE5;&#x5C42;&#x7EA7;&#x7684;&#x5F62;&#x5F0F;&#x5728;&#x7F51;&#x9875;&#x6B63;&#x786E;&#x5448;&#x73B0;&#x3002;</div>
+</p>
+
+<p>
+&#x524D;&#x6587;&#x4ECB;&#x7ECD;&#x4E86;&#x5982;&#x4F55;&#x4E3A;&#x6587;&#x7AE0;&#x8BBE;&#x7F6E;&#x591A;&#x7EA7;&#x7C7B;&#x522B;&#x3002;&#x8BBE;&#x7F6E;&#x5B8C;&#x6210;&#x540E;&#xFF0C;<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">Next</a> &#x4E3B;&#x9898;&#x4F1A;&#x5728;&#x6BCF;&#x4E2A;&#x6587;&#x7AE0;&#x6807;&#x9898;&#x7684;&#x4E0B;&#x65B9;&#x663E;&#x793A;&#x5176;&#x6240;&#x5C5E;&#x7C7B;&#x522B;&#xFF0C;&#x5982;&#x679C;&#x7C7B;&#x522B;&#x4E3A;&#x591A;&#x7EA7;&#x5219;&#x663E;&#x793A;&#x5982;&#x4E0B;&#xFF1A;
+</p>
+
+<p>
+<img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/hierarchical_category_01.png">
+</p>
+
+
+<p>
+&#x7136;&#x800C;&#xFF0C;&#x5176;&#x7C7B;&#x522B;&#x9875;&#x9762;&#x7684;&#x663E;&#x793A;&#x5E76;&#x4E0D;&#x6B63;&#x786E;&#x3002;
+</p>
+
+<p>
+<img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/hierarchical_category_02.png.png">
+</p>
+
+<p>
+&#x201C;Hexo&#x201D;&#x3001;&#x201C;&#x652F;&#x6559;&#x201D;&#x3001;&#x201C;&#x65E5;&#x8BED;&#x201D;&#x4E09;&#x4E2A;&#x7C7B;&#x522B;&#x5E94;&#x662F;&#x540C;&#x7EA7;&#xFF0C;&#x201C;org-mode&#x201D;&#x4E3A;&#x201C;hexo&#x201C;&#x7684;&#x5B50;&#x7C7B;&#x522B;&#x3002;&#x663E;&#x7136;&#x4E0A;&#x56FE;&#x7684;&#x663E;&#x793A;&#x6709;&#x95EE;&#x9898;&#x3002;
+</p>
+
+<p>
+&#x67E5;&#x770B;&#x7C7B;&#x522B;&#x90E8;&#x5206;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#xFF1A;
+</p>
+
+<a id="more"></a>
+
+<div class="org-src-container">
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">&quot;category-all&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">&quot;category-list&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">&quot;category-list-item&quot;</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">&quot;category-list-link&quot;</span> <span class="attribute">href</span>=<span class="value">&quot;/categories/hexo/&quot;</span>&gt;</span>hexo<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">&quot;category-list-count&quot;</span>&gt;</span>6<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">&quot;category-list-child&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">&quot;category-list-item&quot;</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">&quot;category-list-link&quot;</span> <span class="attribute">href</span>=<span class="value">&quot;/categories/hexo/org-mode/&quot;</span>&gt;</span>org-mode<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">&quot;category-list-count&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">&quot;category-list-item&quot;</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">&quot;category-list-link&quot;</span> <span class="attribute">href</span>=<span class="value">&quot;/categories/&#x652F;&#x6559;/&quot;</span>&gt;</span>&#x652F;&#x6559;<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">&quot;category-list-count&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">&quot;category-list-item&quot;</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">&quot;category-list-link&quot;</span> <span class="attribute">href</span>=<span class="value">&quot;/categories/&#x65E5;&#x8BED;/&quot;</span>&gt;</span>&#x65E5;&#x8BED;<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">&quot;category-list-count&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</div>
+
+<p>
+&#x4ECE;HTML&#x7ED3;&#x6784;&#x6765;&#x8BF4;&#xFF0C;&#x662F;&#x975E;&#x5E38;&#x6807;&#x51C6;&#x7684;&#x5217;&#x8868;&#x6837;&#x5F0F;&#xFF0C;&#x800C;&#x4E14;&#x5D4C;&#x5957;&#x683C;&#x5F0F;&#x4E5F;&#x6B63;&#x786E;&#x3002;&#x90A3;&#x4E48;&#x6700;&#x7EC8;&#x663E;&#x793A;&#x4E0D;&#x6B63;&#x786E;&#xFF0C;&#x5C31;&#x5F88;&#x53EF;&#x80FD;&#x662F;CSS&#x8BBE;&#x7F6E;&#x7684;&#x95EE;&#x9898;&#x4E86;&#x3002;&#x660E;&#x786E;&#x76EE;&#x6807;&#x4E4B;&#x540E;&#xFF0C;&#x5F88;&#x8F7B;&#x677E;&#x5C31;&#x627E;&#x51FA; Next &#x9ED8;&#x8BA4;&#x5C06;&#x7C7B;&#x522B;&#x7684;&#x5217;&#x8868;&#x9879;&#x8BBE;&#x7F6E;&#x4E3A;&#xFF1A;
+</p>
+<div class="org-src-container">
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">display</span>: <span class="tag">inline-block</span>;</span><br></pre></td></tr></table></figure>
+</div>
+
+<p>
+&#x53EA;&#x8981;&#x5C06;&#x5176;&#x6539;&#x4E3A;&#x4E0B;&#x9762;&#x4EE3;&#x7801;&#x5373;&#x53EF;&#x3002;
+</p>
+<div class="org-src-container">
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">display</span>: <span class="tag">list-item</span>;</span><br></pre></td></tr></table></figure>
+</div>
+
+<p>
+<img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/hierarchical_category_03.png.png">
+</p>
+
+<p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">[2016-01-23 &#x5468;&#x516D;]</span></span></p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x8BA9;&#x591A;&#x7EA7;&#x7C7B;&#x522B;&#x4EE5;&#x5C42;&#x7EA7;&#x7684;&#x5F62;&#x5F0F;&#x5728;&#x7F51;&#x9875;&#x6B63;&#x786E;&#x5448;&#x73B0;&#x3002;</div>
+</p>
+
+<p>
+&#x524D;&#x6587;&#x4ECB;&#x7ECD;&#x4E86;&#x5982;&#x4F55;&#x4E3A;&#x6587;&#x7AE0;&#x8BBE;&#x7F6E;&#x591A;&#x7EA7;&#x7C7B;&#x522B;&#x3002;&#x8BBE;&#x7F6E;&#x5B8C;&#x6210;&#x540E;&#xFF0C;<a href="https://github.com/iissnan/hexo-theme-next">Next</a> &#x4E3B;&#x9898;&#x4F1A;&#x5728;&#x6BCF;&#x4E2A;&#x6587;&#x7AE0;&#x6807;&#x9898;&#x7684;&#x4E0B;&#x65B9;&#x663E;&#x793A;&#x5176;&#x6240;&#x5C5E;&#x7C7B;&#x522B;&#xFF0C;&#x5982;&#x679C;&#x7C7B;&#x522B;&#x4E3A;&#x591A;&#x7EA7;&#x5219;&#x663E;&#x793A;&#x5982;&#x4E0B;&#xFF1A;
+</p>
+
+<p>
+<img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/hierarchical_category_01.png">
+</p>
+
+
+<p>
+&#x7136;&#x800C;&#xFF0C;&#x5176;&#x7C7B;&#x522B;&#x9875;&#x9762;&#x7684;&#x663E;&#x793A;&#x5E76;&#x4E0D;&#x6B63;&#x786E;&#x3002;
+</p>
+
+<p>
+<img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/hierarchical_category_02.png.png">
+</p>
+
+<p>
+&#x201C;Hexo&#x201D;&#x3001;&#x201C;&#x652F;&#x6559;&#x201D;&#x3001;&#x201C;&#x65E5;&#x8BED;&#x201D;&#x4E09;&#x4E2A;&#x7C7B;&#x522B;&#x5E94;&#x662F;&#x540C;&#x7EA7;&#xFF0C;&#x201C;org-mode&#x201D;&#x4E3A;&#x201C;hexo&#x201C;&#x7684;&#x5B50;&#x7C7B;&#x522B;&#x3002;&#x663E;&#x7136;&#x4E0A;&#x56FE;&#x7684;&#x663E;&#x793A;&#x6709;&#x95EE;&#x9898;&#x3002;
+</p>
+
+<p>
+&#x67E5;&#x770B;&#x7C7B;&#x522B;&#x90E8;&#x5206;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#xFF1A;
+</p>]]>
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://yuchen-lea.gitcafe.io/tags/CSS/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+    
+      <category term="多级类别" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%A4%9A%E7%BA%A7%E7%B1%BB%E5%88%AB/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[org-mode下设置多级类别]]></title>
@@ -124,6 +233,14 @@ categories:<br>
 </p>]]>
     
     </summary>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+    
+      <category term="org-mode" scheme="http://yuchen-lea.gitcafe.io/tags/org-mode/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+    
+      <category term="org-mode" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/org-mode/"/>
     
   </entry>
   
@@ -579,6 +696,12 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
     
     </summary>
     
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+    
+      <category term="七牛" scheme="http://yuchen-lea.gitcafe.io/tags/%E4%B8%83%E7%89%9B/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+    
   </entry>
   
   <entry>
@@ -714,6 +837,8 @@ rss: /atom.xml<br>
       <category term="hexo插件" scheme="http://yuchen-lea.gitcafe.io/tags/hexo%E6%8F%92%E4%BB%B6/"/>
     
       <category term="hexo设置" scheme="http://yuchen-lea.gitcafe.io/tags/hexo%E8%AE%BE%E7%BD%AE/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
     
   </entry>
   
@@ -1135,6 +1260,8 @@ css<br>
     </summary>
     
       <category term="hexo知识" scheme="http://yuchen-lea.gitcafe.io/tags/hexo%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
     
   </entry>
   
@@ -2407,6 +2534,16 @@ css<br>
     
     </summary>
     
+      <category term="!学习笔记" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="发音" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%8F%91%E9%9F%B3/"/>
+    
+      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="日语口语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
+    
   </entry>
   
   <entry>
@@ -2712,6 +2849,14 @@ Hexo&#x4E3B;&#x9898;&#x5927;&#x591A;&#x6258;&#x7BA1;&#x5728;Github&#x4E0A;&#xFF0
 </div>]]>
     
     </summary>
+    
+      <category term="!教程" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+    
+      <category term="hexo设置" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E8%AE%BE%E7%BD%AE/"/>
     
   </entry>
   
