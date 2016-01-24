@@ -68,12 +68,15 @@
 <script type="text/javascript" id="hexo.configuration">
   var CONFIG = {
     scheme: '',
-    sidebar: 'hide',
+    sidebar: 'always',
     motion: true
   };
 </script>
 
   <title> 跬步 </title>
+  <script type="text/javascript" src="/js/test/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/test/jquery-2.0.3.min.js"></script>
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -151,7 +154,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-bars fa-fw"></i> <br />
             
             分类
           </a>
@@ -164,6 +167,16 @@
               <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-map">
+          <a href="/map" rel="section">
+            
+              <i class="menu-item-icon fa fa-map-signs fa-fw"></i> <br />
+            
+            索引
           </a>
         </li>
       
@@ -189,15 +202,6 @@
 
     
     
-      
-      
-        
-        
-        
-      
-
-      
-    
 
     
       
@@ -221,8 +225,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016-01-23-多级类别的层级显示/" itemprop="url">
-                  多级类别的层级显示
+                <a class="post-title-link" href="/2016-01-23-display-hexo-category-in-hierarchy/" itemprop="url">
+                  Hexo多级类别的层级显示
                 </a>
               
             
@@ -238,32 +242,17 @@
           </span>
 
           <span class="post-count">
-		书写 1,177 字
+		书写 1,558 字
 	  </span> 
           
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016-01-23-多级类别的层级显示/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-23-多级类别的层级显示/" itemprop="commentsCount"></span>
+                <a href="/2016-01-23-display-hexo-category-in-hierarchy/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-23-display-hexo-category-in-hierarchy/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -295,7 +284,9 @@
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/hierarchical_category_01.png">
 </p>
 
-
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> &#x95EE;&#x9898;&#x63CF;&#x8FF0;</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 &#x7136;&#x800C;&#xFF0C;&#x5176;&#x7C7B;&#x522B;&#x9875;&#x9762;&#x7684;&#x663E;&#x793A;&#x5E76;&#x4E0D;&#x6B63;&#x786E;&#x3002;
 </p>
@@ -307,12 +298,17 @@
 <p>
 &#x201C;Hexo&#x201D;&#x3001;&#x201C;&#x652F;&#x6559;&#x201D;&#x3001;&#x201C;&#x65E5;&#x8BED;&#x201D;&#x4E09;&#x4E2A;&#x7C7B;&#x522B;&#x5E94;&#x662F;&#x540C;&#x7EA7;&#xFF0C;&#x201C;org-mode&#x201D;&#x4E3A;&#x201C;hexo&#x201C;&#x7684;&#x5B50;&#x7C7B;&#x522B;&#x3002;&#x663E;&#x7136;&#x4E0A;&#x56FE;&#x7684;&#x663E;&#x793A;&#x6709;&#x95EE;&#x9898;&#x3002;
 </p>
+</div>
+</div>
 
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> &#x95EE;&#x9898;&#x89E3;&#x51B3;</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 &#x67E5;&#x770B;&#x7C7B;&#x522B;&#x90E8;&#x5206;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#xFF1A;
 </p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016-01-23-多级类别的层级显示/#more" rel="contents">
+            <a class="btn" href="/2016-01-23-display-hexo-category-in-hierarchy/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -355,7 +351,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016-01-22-org-mode下设置多级类别/" itemprop="url">
+                <a class="post-title-link" href="/2016-01-22-multi-level-category-for-hexo-in-org/" itemprop="url">
                   org-mode下设置多级类别
                 </a>
               
@@ -376,40 +372,13 @@
 	  </span> 
           
           
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-                  > 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/org-mode/" itemprop="url" rel="index">
-                    <span itemprop="name">org-mode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016-01-22-org-mode下设置多级类别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-22-org-mode下设置多级类别/" itemprop="commentsCount"></span>
+                <a href="/2016-01-22-multi-level-category-for-hexo-in-org/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-22-multi-level-category-for-hexo-in-org/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -461,7 +430,7 @@ categories:<br>
 &#x4E00;&#x5F00;&#x59CB;&#x6211;&#x5E76;&#x4E0D;&#x786E;&#x5B9A;org-mode&#x662F;&#x5426;&#x652F;&#x6301;&#x591A;&#x7EA7;&#x7C7B;&#x522B;&#xFF0C;&#x6309;&#x7167;markdown&#x7684;&#x65B9;&#x5F0F;&#x5199;&#x6210;&#x591A;&#x884C;&#x3001;&#x7528; <code>/</code> &#x5206;&#x5272;&#x90FD;&#x4E0D;&#x751F;&#x6548;&#x3002;&#x4E8E;&#x662F;&#x53BB;&#x67E5;&#x770B; <code>hexo-renderer-org</code> &#x63D2;&#x4EF6;&#x7684;&#x8BBE;&#x7F6E; <code>index.js</code> &#xFF0C;&#x53C8;&#x4ECE;&#x4E2D;&#x627E;&#x5230; <code>lib/read-info.js</code> &#xFF0C;&#x5176;&#x4E2D;&#x5173;&#x4E8E;&#x7C7B;&#x522B;&#x7684;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x4E3A;&#xFF1A;
 </p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016-01-22-org-mode下设置多级类别/#more" rel="contents">
+            <a class="btn" href="/2016-01-22-multi-level-category-for-hexo-in-org/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -504,7 +473,7 @@ categories:<br>
             
               
                 
-                <a class="post-title-link" href="/2016-01-21-使用七牛为Hexo存储图片等资源/" itemprop="url">
+                <a class="post-title-link" href="/2016-01-21-use-qiniu-store-file-for-hexo/" itemprop="url">
                   使用七牛为Hexo存储图片等资源
                 </a>
               
@@ -525,28 +494,13 @@ categories:<br>
 	  </span> 
           
           
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016-01-21-使用七牛为Hexo存储图片等资源/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-21-使用七牛为Hexo存储图片等资源/" itemprop="commentsCount"></span>
+                <a href="/2016-01-21-use-qiniu-store-file-for-hexo/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-21-use-qiniu-store-file-for-hexo/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -629,7 +583,7 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
 &#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E0B;&#x600E;&#x4E48;&#x7528;&#x4E03;&#x725B;&#x4E3A;Hexo&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x5427;~
 </p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016-01-21-使用七牛为Hexo存储图片等资源/#more" rel="contents">
+            <a class="btn" href="/2016-01-21-use-qiniu-store-file-for-hexo/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -672,7 +626,112 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
             
               
                 
-                <a class="post-title-link" href="/2016-01-18-给hexo添加RSS/" itemprop="url">
+                <a class="post-title-link" href="/2016-01-18-hexo-dir-struct/" itemprop="url">
+                  hexo目录结构小探
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-01-18T00:00:00+08:00" content="2016-01-18">
+              2016-01-18
+            </time>
+          </span>
+
+          <span class="post-count">
+		书写 2,700 字
+	  </span> 
+          
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016-01-18-hexo-dir-struct/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-18-hexo-dir-struct/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x4ECB;&#x7ECD;hexo&#x7684;&#x6587;&#x4EF6;&#x3001;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x53CA;&#x5176;&#x529F;&#x80FD;&#x3002;</div>
+</p>
+
+<p>
+&#x5982;&#x679C;&#x4F60;&#x60F3;&#x4FEE;&#x6539;Hexo&#x7684;&#x5E03;&#x5C40;&#x3001;&#x663E;&#x793A;&#x6837;&#x5F0F;&#xFF0C;&#x6216;&#x662F;&#x4E3A;&#x5176;&#x589E;&#x6DFB;RSS&#x3001;&#x8BC4;&#x8BBA;&#x7B49;&#x65B0;&#x6A21;&#x5757;&#x5374;&#x65E0;&#x4ECE;&#x4E0B;&#x624B;&#xFF0C;&#x90A3;&#x5C31;&#x5148;&#x6765;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;Hexo&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5427;&#x3002;&#x77E5;&#x9053;&#x5404;&#x4E2A;&#x6587;&#x4EF6;&#x3001;&#x76EE;&#x5F55;&#x7684;&#x4F5C;&#x7528;&#x4E4B;&#x540E;&#xFF0C;&#x81F3;&#x5C11;&#x5728;&#x770B;&#x5230;&#x522B;&#x4EBA;&#x5199;&#x5728;XX&#x4E2D;&#x589E;&#x52A0;&#x4EE3;&#x7801;&#x65F6;&#xFF0C;&#x77E5;&#x9053;XX&#x662F;&#x4E2A;&#x4EC0;&#x4E48;&#x4E1C;&#x897F;&#x3002;
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Hexo&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+&#x6211;&#x7684;Hexo&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#xFF1A;
+</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016-01-18-hexo-dir-struct/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016-01-18-add-rss-to-hexo/" itemprop="url">
                   给hexo添加RSS
                 </a>
               
@@ -693,28 +752,13 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
 	  </span> 
           
           
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016-01-18-给hexo添加RSS/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-18-给hexo添加RSS/" itemprop="commentsCount"></span>
+                <a href="/2016-01-18-add-rss-to-hexo/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-18-add-rss-to-hexo/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -742,7 +786,7 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
 </div>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016-01-18-给hexo添加RSS/#more" rel="contents">
+            <a class="btn" href="/2016-01-18-add-rss-to-hexo/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -785,123 +829,7 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
             
               
                 
-                <a class="post-title-link" href="/2016-01-18-hexo目录结构小探/" itemprop="url">
-                  hexo目录结构小探
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2016-01-18T00:00:00+08:00" content="2016-01-18">
-              2016-01-18
-            </time>
-          </span>
-
-          <span class="post-count">
-		书写 2,666 字
-	  </span> 
-          
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016-01-18-hexo目录结构小探/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-18-hexo目录结构小探/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>
-&#x5982;&#x679C;&#x4F60;&#x60F3;&#x4FEE;&#x6539;Hexo&#x7684;&#x5E03;&#x5C40;&#x3001;&#x663E;&#x793A;&#x6837;&#x5F0F;&#xFF0C;&#x6216;&#x662F;&#x4E3A;&#x5176;&#x589E;&#x6DFB;RSS&#x3001;&#x8BC4;&#x8BBA;&#x7B49;&#x65B0;&#x6A21;&#x5757;&#x5374;&#x65E0;&#x4ECE;&#x4E0B;&#x624B;&#xFF0C;&#x90A3;&#x5C31;&#x5148;&#x6765;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;Hexo&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5427;&#x3002;&#x77E5;&#x9053;&#x5404;&#x4E2A;&#x6587;&#x4EF6;&#x3001;&#x76EE;&#x5F55;&#x7684;&#x4F5C;&#x7528;&#x4E4B;&#x540E;&#xFF0C;&#x81F3;&#x5C11;&#x5728;&#x770B;&#x5230;&#x522B;&#x4EBA;&#x5199;&#x5728;XX&#x4E2D;&#x589E;&#x52A0;&#x4EE3;&#x7801;&#x65F6;&#xFF0C;&#x77E5;&#x9053;XX&#x662F;&#x4E2A;&#x4EC0;&#x4E48;&#x4E1C;&#x897F;&#x3002;
-</p>
-
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Hexo&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-&#x6211;&#x7684;Hexo&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#xFF1A;
-</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016-01-18-hexo目录结构小探/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016-01-17-五十音图学习小结/" itemprop="url">
+                <a class="post-title-link" href="/2016-01-17-sum-of-gojuon/" itemprop="url">
                   五十音图学习小结
                 </a>
               
@@ -933,6 +861,18 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
 
                 
                 
+                  > 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/日语/日语口语/" itemprop="url" rel="index">
+                    <span itemprop="name">日语口语</span>
+                  </a>
+                </span>
+
+                
+                
 
               
             </span>
@@ -942,8 +882,8 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016-01-17-五十音图学习小结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-17-五十音图学习小结/" itemprop="commentsCount"></span>
+                <a href="/2016-01-17-sum-of-gojuon/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-17-sum-of-gojuon/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -982,7 +922,7 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
 <embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/a_hang.mp3&amp;bg=0xE0E6ED&amp;leftbg=0x7B90A4&amp;lefticon=0xF2F2F2&amp;rightbg=0xAAB1B8&amp;rightbghover=0x357DCE&amp;righticon=0xF2F2F2&amp;righticonhover=0xFFFFFF&amp;text=0x357DCE&amp;slider=0x357DCE&amp;track=0xF5F5F5&amp;border=0xF5F5F5&amp;loader=0x94ACC2&amp;autostart=no&amp;loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
 </object>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016-01-17-五十音图学习小结/#more" rel="contents">
+            <a class="btn" href="/2016-01-17-sum-of-gojuon/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1025,7 +965,7 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
             
               
                 
-                <a class="post-title-link" href="/2016-01-15-日语的声调/" itemprop="url">
+                <a class="post-title-link" href="/2016-01-15-japanese-accent/" itemprop="url">
                   日语的声调
                 </a>
               
@@ -1042,44 +982,17 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
           </span>
 
           <span class="post-count">
-		书写 1,956 字
+		书写 2,188 字
 	  </span> 
           
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/日语/" itemprop="url" rel="index">
-                    <span itemprop="name">日语</span>
-                  </a>
-                </span>
-
-                
-                
-                  > 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/日语/日语口语/" itemprop="url" rel="index">
-                    <span itemprop="name">日语口语</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016-01-15-日语的声调/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-15-日语的声调/" itemprop="commentsCount"></span>
+                <a href="/2016-01-15-japanese-accent/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-15-japanese-accent/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1100,6 +1013,14 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
       
         
           <p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x4ECB;&#x7ECD;&#x65E5;&#x8BED;&#x7684;&#x58F0;&#x8C03;&#x8868;&#x793A;&#x65B9;&#x6CD5;&#x3001;&#x7C7B;&#x578B;&#x4E0E;&#x53D1;&#x97F3;&#x89C4;&#x5F8B;&#xFF0C;&#x5E76;&#x9644;&#x6709;&#x76F8;&#x5173;&#x97F3;&#x9891;&#x4EE5;&#x4F9B;&#x53C2;&#x8003;&#x3002;</div>
+</p>
+
+<p>
+<div class="alert alert-danger"><i class="fa fa-bug"></i>  &#x672C;&#x6587;&#x542B;&#x6709;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#xFF0C;&#x76EE;&#x524D;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x663E;&#x793A;&#xFF0C;&#x6B63;&#x5728;&#x52AA;&#x529B;&#x89E3;&#x51B3;&#x4E2D;~</div>
+</p>
+
+<p>
 &#x65E5;&#x8BED;&#x53E3;&#x8BED;&#x8981;&#x60F3;&#x53D1;&#x97F3;&#x6B63;&#x786E;&#xFF0C;&#x638C;&#x63E1;&#x65E5;&#x8BED;&#x7684;&#x58F0;&#x8C03;&#x5341;&#x5206;&#x91CD;&#x8981;&#x3002;
 </p>
 
@@ -1127,7 +1048,7 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
 </li>
 </ul>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016-01-15-日语的声调/#more" rel="contents">
+            <a class="btn" href="/2016-01-15-japanese-accent/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1322,33 +1243,6 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
 		书写 1,144 字
 	  </span> 
           
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-                  > 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/hexo美化/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo美化</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
@@ -1620,7 +1514,7 @@ Hexo&#x4E3B;&#x9898;&#x5927;&#x591A;&#x6258;&#x7BA1;&#x5728;Github&#x4E0A;&#xFF0
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
@@ -1648,6 +1542,12 @@ Hexo&#x4E3B;&#x9898;&#x5927;&#x591A;&#x6258;&#x7BA1;&#x5728;Github&#x4E0A;&#xFF0
         </div>
 
         
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
@@ -1738,6 +1638,7 @@ Hexo&#x4E3B;&#x9898;&#x5927;&#x591A;&#x6258;&#x7BA1;&#x5728;Github&#x4E0A;&#xFF0
 
 <script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
 
+  
 
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
   <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>

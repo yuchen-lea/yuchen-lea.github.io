@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不积小流，无以成江海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yuchen-lea.gitcafe.io/"/>
-  <updated>2016-01-23T09:43:20.590Z</updated>
+  <updated>2016-01-24T12:43:29.356Z</updated>
   <id>http://yuchen-lea.gitcafe.io/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[多级类别的层级显示]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-23-%E5%A4%9A%E7%BA%A7%E7%B1%BB%E5%88%AB%E7%9A%84%E5%B1%82%E7%BA%A7%E6%98%BE%E7%A4%BA/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-23-多级类别的层级显示/</id>
+    <title><![CDATA[Hexo多级类别的层级显示]]></title>
+    <link href="http://yuchen-lea.gitcafe.io/2016-01-23-display-hexo-category-in-hierarchy/"/>
+    <id>http://yuchen-lea.gitcafe.io/2016-01-23-display-hexo-category-in-hierarchy/</id>
     <published>2016-01-22T16:00:00.000Z</published>
-    <updated>2016-01-23T09:43:20.590Z</updated>
+    <updated>2016-01-24T12:43:29.356Z</updated>
     <content type="html"><![CDATA[
 
 <p>
@@ -34,7 +34,9 @@
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/hierarchical_category_01.png">
 </p>
 
-
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> &#x95EE;&#x9898;&#x63CF;&#x8FF0;</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 &#x7136;&#x800C;&#xFF0C;&#x5176;&#x7C7B;&#x522B;&#x9875;&#x9762;&#x7684;&#x663E;&#x793A;&#x5E76;&#x4E0D;&#x6B63;&#x786E;&#x3002;
 </p>
@@ -46,7 +48,12 @@
 <p>
 &#x201C;Hexo&#x201D;&#x3001;&#x201C;&#x652F;&#x6559;&#x201D;&#x3001;&#x201C;&#x65E5;&#x8BED;&#x201D;&#x4E09;&#x4E2A;&#x7C7B;&#x522B;&#x5E94;&#x662F;&#x540C;&#x7EA7;&#xFF0C;&#x201C;org-mode&#x201D;&#x4E3A;&#x201C;hexo&#x201C;&#x7684;&#x5B50;&#x7C7B;&#x522B;&#x3002;&#x663E;&#x7136;&#x4E0A;&#x56FE;&#x7684;&#x663E;&#x793A;&#x6709;&#x95EE;&#x9898;&#x3002;
 </p>
+</div>
+</div>
 
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> &#x95EE;&#x9898;&#x89E3;&#x51B3;</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 &#x67E5;&#x770B;&#x7C7B;&#x522B;&#x90E8;&#x5206;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#xFF1A;
 </p>
@@ -59,7 +66,7 @@
 </div>
 
 <p>
-&#x4ECE;HTML&#x7ED3;&#x6784;&#x6765;&#x8BF4;&#xFF0C;&#x662F;&#x975E;&#x5E38;&#x6807;&#x51C6;&#x7684;&#x5217;&#x8868;&#x6837;&#x5F0F;&#xFF0C;&#x800C;&#x4E14;&#x5D4C;&#x5957;&#x683C;&#x5F0F;&#x4E5F;&#x6B63;&#x786E;&#x3002;&#x90A3;&#x4E48;&#x6700;&#x7EC8;&#x663E;&#x793A;&#x4E0D;&#x6B63;&#x786E;&#xFF0C;&#x5C31;&#x5F88;&#x53EF;&#x80FD;&#x662F;CSS&#x8BBE;&#x7F6E;&#x7684;&#x95EE;&#x9898;&#x4E86;&#x3002;&#x660E;&#x786E;&#x76EE;&#x6807;&#x4E4B;&#x540E;&#xFF0C;&#x5F88;&#x8F7B;&#x677E;&#x5C31;&#x627E;&#x51FA; Next &#x9ED8;&#x8BA4;&#x5C06;&#x7C7B;&#x522B;&#x7684;&#x5217;&#x8868;&#x9879;&#x8BBE;&#x7F6E;&#x4E3A;&#xFF1A;
+&#x4ECE;HTML&#x7ED3;&#x6784;&#x6765;&#x8BF4;&#xFF0C;&#x662F;&#x975E;&#x5E38;&#x6807;&#x51C6;&#x7684;&#x5217;&#x8868;&#x6837;&#x5F0F;&#xFF0C;&#x800C;&#x4E14;&#x5D4C;&#x5957;&#x683C;&#x5F0F;&#x4E5F;&#x6B63;&#x786E;&#x3002;&#x90A3;&#x4E48;&#x6700;&#x7EC8;&#x663E;&#x793A;&#x4E0D;&#x6B63;&#x786E;&#xFF0C;&#x5C31;&#x5F88;&#x53EF;&#x80FD;&#x662F;CSS&#x8BBE;&#x7F6E;&#x7684;&#x95EE;&#x9898;&#x4E86;&#x3002;&#x660E;&#x786E;&#x76EE;&#x6807;&#x4E4B;&#x540E;&#xFF0C;&#x5F88;&#x8F7B;&#x677E;&#x5C31;&#x627E;&#x51FA; <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">Next</a> &#x9ED8;&#x8BA4;&#x5C06;&#x7C7B;&#x522B;&#x7684;&#x5217;&#x8868;&#x9879;&#x8BBE;&#x7F6E;&#x4E3A;&#xFF1A;
 </p>
 <div class="org-src-container">
 
@@ -77,17 +84,53 @@
 <p>
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/hierarchical_category_03.png">
 </p>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> &#x4F18;&#x5316;&#x663E;&#x793A;&#x6548;&#x679C;</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x8FDB;&#x4E00;&#x6B65;&#x4F18;&#x5316;&#x663E;&#x793A;&#x6548;&#x679C;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x5C06;&#x5217;&#x8868;&#x9879;&#x524D;&#x7684; &#x25A0; &#x66FF;&#x6362;&#x4E3A; &gt; <sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>&#xFF0C;&#x5219;&#x5728;&#x76F8;&#x5E94;&#x7684;&#x6837;&#x5F0F;&#x6587;&#x4EF6;&#xFF08; <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">Next</a> &#x4E3B;&#x9898;&#x4E0B;&#x4E3A; <code>source\css\_custom\custom.styl</code> &#xFF09;&#x4E2D;&#x6DFB;&#x52A0;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;
+</p>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> &#x66F4;&#x65B0;&#x5386;&#x53F2;</h2>
-<div class="outline-text-2" id="text-1">
+<div class="org-src-container">
+
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">.category-list ul</span><br><span class="line">    list-style none</span><br><span class="line">    li:before</span><br><span class="line">      content &apos;&gt; &apos;</span><br></pre></td></tr></table></figure>
+</div>
+
+<p>
+&#x663E;&#x793A;&#x6548;&#x679C;&#x5982;&#x4E0B;&#xFF1A;
+</p>
+
+<p>
+<img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/hierarchical_category_04.png">
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> &#x66F4;&#x65B0;&#x5386;&#x53F2;</h2>
+<div class="outline-text-2" id="text-4">
 <ul class="org-ul">
+<li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-24 &#x5468;&#x65E5;]</span></span> &#x589E;&#x52A0;&#x4F18;&#x5316;&#x663E;&#x793A;&#x6548;&#x679C;&#x90E8;&#x5206;
+</li>
 <li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-23 &#x5468;&#x516D;]</span></span> &#x62DF;&#x5B9A;&#x521D;&#x7A3F;
 </li>
 </ul>
 </div>
 </div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
 
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<a href="http://www.linux2me.com/2015/06/23/%E6%B7%BB%E5%8A%A0%E5%A4%9A%E7%BA%A7%E5%88%86%E7%B1%BB.html" target="_blank" rel="external">Hexo&#x4E3B;&#x9898;&#x4E2D;&#x5B9E;&#x73B0;&#x591A;&#x7EA7;&#x5206;&#x7C7B; | LP&apos;s Blog</a>
+</p></div>
+
+
+</div>
+</div>
 <p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">[2016-01-23 &#x5468;&#x516D;]</span></span></p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
 ]]></content>
@@ -104,7 +147,9 @@
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/hierarchical_category_01.png">
 </p>
 
-
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> &#x95EE;&#x9898;&#x63CF;&#x8FF0;</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 &#x7136;&#x800C;&#xFF0C;&#x5176;&#x7C7B;&#x522B;&#x9875;&#x9762;&#x7684;&#x663E;&#x793A;&#x5E76;&#x4E0D;&#x6B63;&#x786E;&#x3002;
 </p>
@@ -116,29 +161,26 @@
 <p>
 &#x201C;Hexo&#x201D;&#x3001;&#x201C;&#x652F;&#x6559;&#x201D;&#x3001;&#x201C;&#x65E5;&#x8BED;&#x201D;&#x4E09;&#x4E2A;&#x7C7B;&#x522B;&#x5E94;&#x662F;&#x540C;&#x7EA7;&#xFF0C;&#x201C;org-mode&#x201D;&#x4E3A;&#x201C;hexo&#x201C;&#x7684;&#x5B50;&#x7C7B;&#x522B;&#x3002;&#x663E;&#x7136;&#x4E0A;&#x56FE;&#x7684;&#x663E;&#x793A;&#x6709;&#x95EE;&#x9898;&#x3002;
 </p>
+</div>
+</div>
 
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> &#x95EE;&#x9898;&#x89E3;&#x51B3;</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 &#x67E5;&#x770B;&#x7C7B;&#x522B;&#x90E8;&#x5206;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#xFF1A;
 </p>]]>
     
     </summary>
     
-      <category term="CSS" scheme="http://yuchen-lea.gitcafe.io/tags/CSS/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
-    
-      <category term="多级类别" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%A4%9A%E7%BA%A7%E7%B1%BB%E5%88%AB/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
-    
   </entry>
   
   <entry>
     <title><![CDATA[org-mode下设置多级类别]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-22-org-mode%E4%B8%8B%E8%AE%BE%E7%BD%AE%E5%A4%9A%E7%BA%A7%E7%B1%BB%E5%88%AB/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-22-org-mode下设置多级类别/</id>
+    <link href="http://yuchen-lea.gitcafe.io/2016-01-22-multi-level-category-for-hexo-in-org/"/>
+    <id>http://yuchen-lea.gitcafe.io/2016-01-22-multi-level-category-for-hexo-in-org/</id>
     <published>2016-01-21T16:00:00.000Z</published>
-    <updated>2016-01-22T04:20:11.783Z</updated>
+    <updated>2016-01-24T12:37:02.632Z</updated>
     <content type="html"><![CDATA[
 
 <p>
@@ -244,22 +286,14 @@ categories:<br>
     
     </summary>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
-    
-      <category term="org-mode" scheme="http://yuchen-lea.gitcafe.io/tags/org-mode/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
-    
-      <category term="org-mode" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/org-mode/"/>
-    
   </entry>
   
   <entry>
     <title><![CDATA[使用七牛为Hexo存储图片等资源]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-21-%E4%BD%BF%E7%94%A8%E4%B8%83%E7%89%9B%E4%B8%BAHexo%E5%AD%98%E5%82%A8%E5%9B%BE%E7%89%87%E7%AD%89%E8%B5%84%E6%BA%90/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-21-使用七牛为Hexo存储图片等资源/</id>
+    <link href="http://yuchen-lea.gitcafe.io/2016-01-21-use-qiniu-store-file-for-hexo/"/>
+    <id>http://yuchen-lea.gitcafe.io/2016-01-21-use-qiniu-store-file-for-hexo/</id>
     <published>2016-01-20T16:00:00.000Z</published>
-    <updated>2016-01-21T13:25:51.096Z</updated>
+    <updated>2016-01-24T12:37:20.407Z</updated>
     <content type="html"><![CDATA[
 
 
@@ -706,159 +740,19 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
     
     </summary>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
-    
-      <category term="七牛" scheme="http://yuchen-lea.gitcafe.io/tags/%E4%B8%83%E7%89%9B/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[给hexo添加RSS]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-18-%E7%BB%99hexo%E6%B7%BB%E5%8A%A0RSS/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-18-给hexo添加RSS/</id>
-    <published>2016-01-17T16:00:00.000Z</published>
-    <updated>2016-01-22T00:25:41.634Z</updated>
-    <content type="html"><![CDATA[
-
-
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> &#x5B89;&#x88C5;RSS&#x63D2;&#x4EF6;&#x5230;&#x672C;&#x5730;</h2>
-<div class="outline-text-2" id="text-1">
-<div class="org-src-container">
-
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
-</div>
-
-<a id="more"></a>
-</div>
-</div>
-
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> &#x8BBE;&#x7F6E;&#x5168;&#x7AD9;&#x914D;&#x7F6E;&#x6587;&#x4EF6; <code>_config.yml</code></h2>
-<div class="outline-text-2" id="text-2">
-<ol class="org-ol">
-<li>&#x542F;&#x7528;&#x63D2;&#x4EF6;&#xFF1A;
-<p class="verse">
-plugins:<br>
-&#xA0;&#xA0;&#xA0;&#xA0;- hexo-generator-feed<br>
-</p>
-</li>
-<li>&#x8BBE;&#x7F6E;&#x63D2;&#x4EF6;&#xFF1A;
-<p class="verse">
-feed:<br>
-&#xA0;&#xA0;type: atom<br>
-&#xA0;&#xA0;path: atom.xml<br>
-&#xA0;&#xA0;limit: 0<br>
-&#xA0;&#xA0;hub:<br>
-</p>
-
-<p>
-&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;
-</p>
-<p class="verse">
-type - Feed type. (atom/rss2)<br>
-path - Feed path. (Default: atom.xml/rss2.xml)<br>
-limit - Maximum number of posts in the feed (Use <code>0</code> or <code>false</code> to show all posts)<br>
-hub - URL of the PubSubHubbub hubs (Leave it empty if you don&apos;t use it)<br>
-</p>
-</li>
-<li>&#x4FEE;&#x6539; <code>url:</code> &#x4E3A;&#x535A;&#x5BA2;&#x7AD9;&#x70B9;&#x5730;&#x5740;
-&#x9ED8;&#x8BA4;&#x4E3A; <code>http://yoursite.com/</code> &#xFF0C;&#x4F46;&#x662F;&#x4E3A;&#x4E86;RSS&#x5730;&#x5740;&#x7684;&#x6B63;&#x786E;&#x5F15;&#x7528;&#xFF0C;&#x5E94;&#x5C06;&#x5176;&#x6539;&#x4E3A;&#x81EA;&#x5DF1;&#x7684;&#x535A;&#x5BA2;&#x5730;&#x5740;&#xFF0C;&#x4F8B;&#x5982;&#x6211;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E3A;&#xFF1A;
-<p class="verse">
-url: <a href="http://yuchen-lea.gitcafe.io/">http://yuchen-lea.gitcafe.io/</a><br>
-</p>
-</li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> &#x8BBE;&#x7F6E;&#x4E3B;&#x9898;&#x914D;&#x7F6E;&#x6587;&#x4EF6; <code>_config.yml</code></h2>
-<div class="outline-text-2" id="text-3">
-<ol class="org-ol">
-<li>&#x5982;&#x679C;&#x4E3B;&#x9898;&#x8BBE;&#x7F6E;&#x4E2D;&#x5185;&#x7F6E;&#x6709;RSS&#xFF1A;
-&#x53EA;&#x8981;&#x8BBE;&#x7F6E;&#x5176;&#x5730;&#x5740;&#x4E0E;&#x5168;&#x7AD9;&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4E00;&#x81F4;&#x5373;&#x53EF;&#xFF1A;
-<p class="verse">
-rss: /atom.xml<br>
-</p>
-</li>
-
-<li>&#x5982;&#x679C;&#x4E3B;&#x9898;&#x8BBE;&#x7F6E;&#x4E2D;&#x6CA1;&#x6709;&#x5185;&#x7F6E;RSS&#xFF1A;
-&#x5728;&#x5B8C;&#x6210;&#x4E0A;&#x8FF0;&#x6B65;&#x9AA4;&#x540E;&#xFF0C;&#x8FD8;&#x9700;&#x81EA;&#x884C;&#x4E3A;&#x7AD9;&#x70B9;&#x6DFB;&#x52A0;RSS&#x94FE;&#x63A5;&#x3002;&#x66F4;&#x6539;&#x7AD9;&#x70B9;&#x7684;&#x5E03;&#x5C40;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x6A21;&#x7248;&#x6587;&#x4EF6;&#xFF0C;&#x4E00;&#x822C;&#x5728; <code>layout</code> &#x76EE;&#x5F55;&#x4E0B;&#x3002;&#x5982;&#x679C;&#x8981;&#x5728;header&#x52A0;&#x5165;RSS&#x94FE;&#x63A5;&#xFF0C;&#x627E;&#x5230; <code>header.ejs</code> &#x6587;&#x4EF6;&#xFF0C;&#x5728;&#x76F8;&#x5E94;&#x4F4D;&#x7F6E;&#x6DFB;&#x52A0;&#x4EE3;&#x7801;&#xFF1A;
-<div class="org-src-container">
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span> <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">&quot;/atom.xml&quot;</span>&gt;</span>RSS<span class="tag">&lt;/<span class="title">a</span>&gt;</span> <span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</div>
-</li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> &#x68C0;&#x67E5; RSS &#x6587;&#x4EF6;&#x7684;&#x6B63;&#x786E;&#x6027;</h2>
-<div class="outline-text-2" id="text-4">
-<ol class="org-ol">
-<li>&#x6267;&#x884C; <code>hexo g</code> &#xFF0C;&#x5728; <code>public</code> &#x76EE;&#x5F55;&#x5E94;&#x751F;&#x6210; <code>atom.xml</code>
-</li>
-<li>&#x6267;&#x884C; <code>hexo s</code> , &#x67E5;&#x770B;&#x9875;&#x9762;&#x7684;RSS&#x6536;&#x53D6;&#x70B9;&#x80FD;&#x5426;&#x6253;&#x5F00;&#xFF0C;&#x6587;&#x7AE0;&#x94FE;&#x63A5;&#x662F;&#x5426;&#x6B63;&#x786E;
-</li>
-</ol>
-</div>
-</div>
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> &#x66F4;&#x65B0;&#x5386;&#x53F2;</h2>
-<div class="outline-text-2" id="text-5">
-<ul class="org-ul">
-<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-22 &#x5468;&#x4E94;&gt;</span></span> &#x589E;&#x52A0; &#x68C0;&#x67E5; RSS &#x6587;&#x4EF6;&#x7684;&#x6B63;&#x786E;&#x6027; &#x90E8;&#x5206;
-</li>
-<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-18 &#x5468;&#x4E00;&gt;</span></span> &#x62DF;&#x5B9A;&#x521D;&#x7A3F;
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6"><span class="section-number-2">6</span> &#x53C2;&#x8003;</h2>
-<div class="outline-text-2" id="text-6">
-<ul class="org-ul">
-<li><a href="http://www.zipperary.com/2013/06/02/hexo-guide-5/" target="_blank" rel="external">hexo&#x7CFB;&#x5217;&#x6559;&#x7A0B;&#xFF1A;&#xFF08;&#x4E94;&#xFF09;hexo&#x535A;&#x5BA2;&#x7684;&#x4F18;&#x5316;&#x6280;&#x5DE7;&#x7EED; | Zippera&apos;s blog</a>
-</li>
-<li><a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="external">GitHub - hexojs/hexo-generator-feed: Feed generator for Hexo.</a>
-</li>
-</ul>
-</div>
-</div>
-
-<p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-18 &#x5468;&#x4E00;&gt;</span></span></p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> &#x5B89;&#x88C5;RSS&#x63D2;&#x4EF6;&#x5230;&#x672C;&#x5730;</h2>
-<div class="outline-text-2" id="text-1">
-<div class="org-src-container">
-
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
-</div>]]>
-    
-    </summary>
-    
-      <category term="hexo插件" scheme="http://yuchen-lea.gitcafe.io/tags/hexo%E6%8F%92%E4%BB%B6/"/>
-    
-      <category term="hexo设置" scheme="http://yuchen-lea.gitcafe.io/tags/hexo%E8%AE%BE%E7%BD%AE/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
-    
   </entry>
   
   <entry>
     <title><![CDATA[hexo目录结构小探]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-18-hexo%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%B0%8F%E6%8E%A2/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-18-hexo目录结构小探/</id>
+    <link href="http://yuchen-lea.gitcafe.io/2016-01-18-hexo-dir-struct/"/>
+    <id>http://yuchen-lea.gitcafe.io/2016-01-18-hexo-dir-struct/</id>
     <published>2016-01-17T16:00:00.000Z</published>
-    <updated>2016-01-22T02:06:56.783Z</updated>
+    <updated>2016-01-24T12:08:49.203Z</updated>
     <content type="html"><![CDATA[
+
+<p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x4ECB;&#x7ECD;hexo&#x7684;&#x6587;&#x4EF6;&#x3001;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x53CA;&#x5176;&#x529F;&#x80FD;&#x3002;</div>
+</p>
 
 <p>
 &#x5982;&#x679C;&#x4F60;&#x60F3;&#x4FEE;&#x6539;Hexo&#x7684;&#x5E03;&#x5C40;&#x3001;&#x663E;&#x793A;&#x6837;&#x5F0F;&#xFF0C;&#x6216;&#x662F;&#x4E3A;&#x5176;&#x589E;&#x6DFB;RSS&#x3001;&#x8BC4;&#x8BBA;&#x7B49;&#x65B0;&#x6A21;&#x5757;&#x5374;&#x65E0;&#x4ECE;&#x4E0B;&#x624B;&#xFF0C;&#x90A3;&#x5C31;&#x5148;&#x6765;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;Hexo&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5427;&#x3002;&#x77E5;&#x9053;&#x5404;&#x4E2A;&#x6587;&#x4EF6;&#x3001;&#x76EE;&#x5F55;&#x7684;&#x4F5C;&#x7528;&#x4E4B;&#x540E;&#xFF0C;&#x81F3;&#x5C11;&#x5728;&#x770B;&#x5230;&#x522B;&#x4EBA;&#x5199;&#x5728;XX&#x4E2D;&#x589E;&#x52A0;&#x4EE3;&#x7801;&#x65F6;&#xFF0C;&#x77E5;&#x9053;XX&#x662F;&#x4E2A;&#x4EC0;&#x4E48;&#x4E1C;&#x897F;&#x3002;
@@ -1257,6 +1151,10 @@ css<br>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x4ECB;&#x7ECD;hexo&#x7684;&#x6587;&#x4EF6;&#x3001;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x53CA;&#x5176;&#x529F;&#x80FD;&#x3002;</div>
+</p>
+
+<p>
 &#x5982;&#x679C;&#x4F60;&#x60F3;&#x4FEE;&#x6539;Hexo&#x7684;&#x5E03;&#x5C40;&#x3001;&#x663E;&#x793A;&#x6837;&#x5F0F;&#xFF0C;&#x6216;&#x662F;&#x4E3A;&#x5176;&#x589E;&#x6DFB;RSS&#x3001;&#x8BC4;&#x8BBA;&#x7B49;&#x65B0;&#x6A21;&#x5757;&#x5374;&#x65E0;&#x4ECE;&#x4E0B;&#x624B;&#xFF0C;&#x90A3;&#x5C31;&#x5148;&#x6765;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;Hexo&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5427;&#x3002;&#x77E5;&#x9053;&#x5404;&#x4E2A;&#x6587;&#x4EF6;&#x3001;&#x76EE;&#x5F55;&#x7684;&#x4F5C;&#x7528;&#x4E4B;&#x540E;&#xFF0C;&#x81F3;&#x5C11;&#x5728;&#x770B;&#x5230;&#x522B;&#x4EBA;&#x5199;&#x5728;XX&#x4E2D;&#x589E;&#x52A0;&#x4EE3;&#x7801;&#x65F6;&#xFF0C;&#x77E5;&#x9053;XX&#x662F;&#x4E2A;&#x4EC0;&#x4E48;&#x4E1C;&#x897F;&#x3002;
 </p>
 
@@ -1269,18 +1167,146 @@ css<br>
     
     </summary>
     
-      <category term="hexo知识" scheme="http://yuchen-lea.gitcafe.io/tags/hexo%E7%9F%A5%E8%AF%86/"/>
+  </entry>
+  
+  <entry>
+    <title><![CDATA[给hexo添加RSS]]></title>
+    <link href="http://yuchen-lea.gitcafe.io/2016-01-18-add-rss-to-hexo/"/>
+    <id>http://yuchen-lea.gitcafe.io/2016-01-18-add-rss-to-hexo/</id>
+    <published>2016-01-17T16:00:00.000Z</published>
+    <updated>2016-01-24T12:31:39.922Z</updated>
+    <content type="html"><![CDATA[
+
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> &#x5B89;&#x88C5;RSS&#x63D2;&#x4EF6;&#x5230;&#x672C;&#x5730;</h2>
+<div class="outline-text-2" id="text-1">
+<div class="org-src-container">
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
+</div>
+
+<a id="more"></a>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> &#x8BBE;&#x7F6E;&#x5168;&#x7AD9;&#x914D;&#x7F6E;&#x6587;&#x4EF6; <code>_config.yml</code></h2>
+<div class="outline-text-2" id="text-2">
+<ol class="org-ol">
+<li>&#x542F;&#x7528;&#x63D2;&#x4EF6;&#xFF1A;
+<p class="verse">
+plugins:<br>
+&#xA0;&#xA0;&#xA0;&#xA0;- hexo-generator-feed<br>
+</p>
+</li>
+<li>&#x8BBE;&#x7F6E;&#x63D2;&#x4EF6;&#xFF1A;
+<p class="verse">
+feed:<br>
+&#xA0;&#xA0;type: atom<br>
+&#xA0;&#xA0;path: atom.xml<br>
+&#xA0;&#xA0;limit: 0<br>
+&#xA0;&#xA0;hub:<br>
+</p>
+
+<p>
+&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;
+</p>
+<p class="verse">
+type - Feed type. (atom/rss2)<br>
+path - Feed path. (Default: atom.xml/rss2.xml)<br>
+limit - Maximum number of posts in the feed (Use <code>0</code> or <code>false</code> to show all posts)<br>
+hub - URL of the PubSubHubbub hubs (Leave it empty if you don&apos;t use it)<br>
+</p>
+</li>
+<li>&#x4FEE;&#x6539; <code>url:</code> &#x4E3A;&#x535A;&#x5BA2;&#x7AD9;&#x70B9;&#x5730;&#x5740;
+&#x9ED8;&#x8BA4;&#x4E3A; <code>http://yoursite.com/</code> &#xFF0C;&#x4F46;&#x662F;&#x4E3A;&#x4E86;RSS&#x5730;&#x5740;&#x7684;&#x6B63;&#x786E;&#x5F15;&#x7528;&#xFF0C;&#x5E94;&#x5C06;&#x5176;&#x6539;&#x4E3A;&#x81EA;&#x5DF1;&#x7684;&#x535A;&#x5BA2;&#x5730;&#x5740;&#xFF0C;&#x4F8B;&#x5982;&#x6211;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E3A;&#xFF1A;
+<p class="verse">
+url: <a href="http://yuchen-lea.gitcafe.io/">http://yuchen-lea.gitcafe.io/</a><br>
+</p>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> &#x8BBE;&#x7F6E;&#x4E3B;&#x9898;&#x914D;&#x7F6E;&#x6587;&#x4EF6; <code>_config.yml</code></h2>
+<div class="outline-text-2" id="text-3">
+<ol class="org-ol">
+<li>&#x5982;&#x679C;&#x4E3B;&#x9898;&#x8BBE;&#x7F6E;&#x4E2D;&#x5185;&#x7F6E;&#x6709;RSS&#xFF1A;
+&#x53EA;&#x8981;&#x8BBE;&#x7F6E;&#x5176;&#x5730;&#x5740;&#x4E0E;&#x5168;&#x7AD9;&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4E00;&#x81F4;&#x5373;&#x53EF;&#xFF1A;
+<p class="verse">
+rss: /atom.xml<br>
+</p>
+</li>
+
+<li>&#x5982;&#x679C;&#x4E3B;&#x9898;&#x8BBE;&#x7F6E;&#x4E2D;&#x6CA1;&#x6709;&#x5185;&#x7F6E;RSS&#xFF1A;
+&#x5728;&#x5B8C;&#x6210;&#x4E0A;&#x8FF0;&#x6B65;&#x9AA4;&#x540E;&#xFF0C;&#x8FD8;&#x9700;&#x81EA;&#x884C;&#x4E3A;&#x7AD9;&#x70B9;&#x6DFB;&#x52A0;RSS&#x94FE;&#x63A5;&#x3002;&#x66F4;&#x6539;&#x7AD9;&#x70B9;&#x7684;&#x5E03;&#x5C40;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x6A21;&#x7248;&#x6587;&#x4EF6;&#xFF0C;&#x4E00;&#x822C;&#x5728; <code>layout</code> &#x76EE;&#x5F55;&#x4E0B;&#x3002;&#x5982;&#x679C;&#x8981;&#x5728;header&#x52A0;&#x5165;RSS&#x94FE;&#x63A5;&#xFF0C;&#x627E;&#x5230; <code>header.ejs</code> &#x6587;&#x4EF6;&#xFF0C;&#x5728;&#x76F8;&#x5E94;&#x4F4D;&#x7F6E;&#x6DFB;&#x52A0;&#x4EE3;&#x7801;&#xFF1A;
+<div class="org-src-container">
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span> <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">&quot;/atom.xml&quot;</span>&gt;</span>RSS<span class="tag">&lt;/<span class="title">a</span>&gt;</span> <span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> &#x68C0;&#x67E5; RSS &#x6587;&#x4EF6;&#x7684;&#x6B63;&#x786E;&#x6027;</h2>
+<div class="outline-text-2" id="text-4">
+<ol class="org-ol">
+<li>&#x6267;&#x884C; <code>hexo g</code> &#xFF0C;&#x5728; <code>public</code> &#x76EE;&#x5F55;&#x5E94;&#x751F;&#x6210; <code>atom.xml</code>
+</li>
+<li>&#x6267;&#x884C; <code>hexo s</code> , &#x67E5;&#x770B;&#x9875;&#x9762;&#x7684;RSS&#x6536;&#x53D6;&#x70B9;&#x80FD;&#x5426;&#x6253;&#x5F00;&#xFF0C;&#x6587;&#x7AE0;&#x94FE;&#x63A5;&#x662F;&#x5426;&#x6B63;&#x786E;
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> &#x66F4;&#x65B0;&#x5386;&#x53F2;</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-22 &#x5468;&#x4E94;&gt;</span></span> &#x589E;&#x52A0; &#x68C0;&#x67E5; RSS &#x6587;&#x4EF6;&#x7684;&#x6B63;&#x786E;&#x6027; &#x90E8;&#x5206;
+</li>
+<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-18 &#x5468;&#x4E00;&gt;</span></span> &#x62DF;&#x5B9A;&#x521D;&#x7A3F;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> &#x53C2;&#x8003;</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li><a href="http://www.zipperary.com/2013/06/02/hexo-guide-5/" target="_blank" rel="external">hexo&#x7CFB;&#x5217;&#x6559;&#x7A0B;&#xFF1A;&#xFF08;&#x4E94;&#xFF09;hexo&#x535A;&#x5BA2;&#x7684;&#x4F18;&#x5316;&#x6280;&#x5DE7;&#x7EED; | Zippera&apos;s blog</a>
+</li>
+<li><a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="external">GitHub - hexojs/hexo-generator-feed: Feed generator for Hexo.</a>
+</li>
+</ul>
+</div>
+</div>
+
+<p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-18 &#x5468;&#x4E00;&gt;</span></span></p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> &#x5B89;&#x88C5;RSS&#x63D2;&#x4EF6;&#x5230;&#x672C;&#x5730;</h2>
+<div class="outline-text-2" id="text-1">
+<div class="org-src-container">
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
+</div>]]>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+    </summary>
     
   </entry>
   
   <entry>
     <title><![CDATA[五十音图学习小结]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-17-%E4%BA%94%E5%8D%81%E9%9F%B3%E5%9B%BE%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-17-五十音图学习小结/</id>
+    <link href="http://yuchen-lea.gitcafe.io/2016-01-17-sum-of-gojuon/"/>
+    <id>http://yuchen-lea.gitcafe.io/2016-01-17-sum-of-gojuon/</id>
     <published>2016-01-17T06:42:00.000Z</published>
-    <updated>2016-01-21T00:34:22.355Z</updated>
+    <updated>2016-01-24T01:50:03.613Z</updated>
     <content type="html"><![CDATA[
 
 <p>
@@ -2302,21 +2328,33 @@ css<br>
     
     </summary>
     
+      <category term="!学习笔记" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
       <category term="五十音" scheme="http://yuchen-lea.gitcafe.io/tags/%E4%BA%94%E5%8D%81%E9%9F%B3/"/>
     
       <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
     
       <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
     
+      <category term="日语口语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
+    
   </entry>
   
   <entry>
     <title><![CDATA[日语的声调]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-15-%E6%97%A5%E8%AF%AD%E7%9A%84%E5%A3%B0%E8%B0%83/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-15-日语的声调/</id>
+    <link href="http://yuchen-lea.gitcafe.io/2016-01-15-japanese-accent/"/>
+    <id>http://yuchen-lea.gitcafe.io/2016-01-15-japanese-accent/</id>
     <published>2016-01-15T06:16:00.000Z</published>
-    <updated>2016-01-22T23:16:18.842Z</updated>
+    <updated>2016-01-24T01:37:13.516Z</updated>
     <content type="html"><![CDATA[
+
+<p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x4ECB;&#x7ECD;&#x65E5;&#x8BED;&#x7684;&#x58F0;&#x8C03;&#x8868;&#x793A;&#x65B9;&#x6CD5;&#x3001;&#x7C7B;&#x578B;&#x4E0E;&#x53D1;&#x97F3;&#x89C4;&#x5F8B;&#xFF0C;&#x5E76;&#x9644;&#x6709;&#x76F8;&#x5173;&#x97F3;&#x9891;&#x4EE5;&#x4F9B;&#x53C2;&#x8003;&#x3002;</div>
+</p>
+
+<p>
+<div class="alert alert-danger"><i class="fa fa-bug"></i>  &#x672C;&#x6587;&#x542B;&#x6709;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#xFF0C;&#x76EE;&#x524D;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x663E;&#x793A;&#xFF0C;&#x6B63;&#x5728;&#x52AA;&#x529B;&#x89E3;&#x51B3;&#x4E2D;~</div>
+</p>
 
 <p>
 &#x65E5;&#x8BED;&#x53E3;&#x8BED;&#x8981;&#x60F3;&#x53D1;&#x97F3;&#x6B63;&#x786E;&#xFF0C;&#x638C;&#x63E1;&#x65E5;&#x8BED;&#x7684;&#x58F0;&#x8C03;&#x5341;&#x5206;&#x91CD;&#x8981;&#x3002;
@@ -2406,6 +2444,10 @@ css<br>
 <h2 id="sec-2"><span class="section-number-2">2</span> &#x58F0;&#x8C03;&#x793A;&#x4F8B;</h2>
 <div class="outline-text-2" id="text-2">
 <p>
+<div class="alert alert-warning"><i class="fa fa-bell"></i>  &#x4EE5;&#x4E0B;5&#x6BB5;&#x793A;&#x4F8B;&#x7686;&#x622A;&#x53D6;&#x81EA; <a href="http://www.wanmen.org/courses/YYRYYY/topics/YYRYYY02A" target="_blank" rel="external">&#x4E07;&#x95E8;&#x5927;&#x5B66;|&#x4E94;&#x5341;&#x97F3;&#x56FE;&#x7B2C;&#x4E00;&#x884C;</a> ,&#x4EC5;&#x4F9B;&#x5B66;&#x4E60;&#x53C2;&#x8003;&#x3002;&#x5728;&#x6B64;&#x611F;&#x8C22;&#x82CF;&#x66FC;&#x8001;&#x5E08;&#x6E05;&#x6670;&#x7684;&#x8BB2;&#x89E3;&#x3002;</div>
+</p>
+
+<p>
 &#x4EE5;&#x3042;&#x884C;&#x7684;5&#x4E2A;&#x5355;&#x5143;&#x97F3; &#x3042; &#x3044; &#x3046; &#x3048; &#x304A; &#x4E3A;&#x4F8B;&#xFF1A;
 </p>
 
@@ -2461,7 +2503,7 @@ css<br>
 </object>
 
 <p>
- &#x8C03;
+ 0&#x8C03;
 </p>
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
       <param name="movie">
@@ -2499,6 +2541,15 @@ css<br>
 </ul>
 </div>
 </div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> &#x53C2;&#x8003;</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li><a href="http://www.wanmen.org/courses/YYRYYY/topics/YYRYYY02A" target="_blank" rel="external">&#x4E07;&#x95E8;&#x5927;&#x5B66;|&#x65E5;&#x8BED;&#x4E94;&#x5341;&#x97F3;&#x56FE;&#x8BED;&#x97F3;&#x5165;&#x95E8;|&#x4E94;&#x5341;&#x97F3;&#x56FE;&#x7B2C;&#x4E00;&#x884C;</a>
+</li>
+</ul>
+</div>
+</div>
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
@@ -2515,6 +2566,14 @@ css<br>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x4ECB;&#x7ECD;&#x65E5;&#x8BED;&#x7684;&#x58F0;&#x8C03;&#x8868;&#x793A;&#x65B9;&#x6CD5;&#x3001;&#x7C7B;&#x578B;&#x4E0E;&#x53D1;&#x97F3;&#x89C4;&#x5F8B;&#xFF0C;&#x5E76;&#x9644;&#x6709;&#x76F8;&#x5173;&#x97F3;&#x9891;&#x4EE5;&#x4F9B;&#x53C2;&#x8003;&#x3002;</div>
+</p>
+
+<p>
+<div class="alert alert-danger"><i class="fa fa-bug"></i>  &#x672C;&#x6587;&#x542B;&#x6709;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#xFF0C;&#x76EE;&#x524D;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x663E;&#x793A;&#xFF0C;&#x6B63;&#x5728;&#x52AA;&#x529B;&#x89E3;&#x51B3;&#x4E2D;~</div>
+</p>
+
+<p>
 &#x65E5;&#x8BED;&#x53E3;&#x8BED;&#x8981;&#x60F3;&#x53D1;&#x97F3;&#x6B63;&#x786E;&#xFF0C;&#x638C;&#x63E1;&#x65E5;&#x8BED;&#x7684;&#x58F0;&#x8C03;&#x5341;&#x5206;&#x91CD;&#x8981;&#x3002;
 </p>
 
@@ -2543,16 +2602,6 @@ css<br>
 </ul>]]>
     
     </summary>
-    
-      <category term="!学习笔记" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="发音" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%8F%91%E9%9F%B3/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="日语口语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
     
   </entry>
   
@@ -2664,7 +2713,7 @@ css<br>
     <link href="http://yuchen-lea.gitcafe.io/2015-12-12-set-hexo-theme/"/>
     <id>http://yuchen-lea.gitcafe.io/2015-12-12-set-hexo-theme/</id>
     <published>2015-12-11T16:00:00.000Z</published>
-    <updated>2016-01-23T14:20:35.652Z</updated>
+    <updated>2016-01-24T00:08:36.310Z</updated>
     <content type="html"><![CDATA[
 
 <p>
@@ -2855,14 +2904,6 @@ Hexo&#x4E3B;&#x9898;&#x5927;&#x591A;&#x6258;&#x7BA1;&#x5728;Github&#x4E0A;&#xFF0
     
     </summary>
     
-      <category term="!教程" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
-    
-      <category term="hexo美化" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E7%BE%8E%E5%8C%96/"/>
-    
   </entry>
   
   <entry>
@@ -2870,7 +2911,7 @@ Hexo&#x4E3B;&#x9898;&#x5927;&#x591A;&#x6258;&#x7BA1;&#x5728;Github&#x4E0A;&#xFF0
     <link href="http://yuchen-lea.gitcafe.io/2015-12-09-build-hexo-blog/"/>
     <id>http://yuchen-lea.gitcafe.io/2015-12-09-build-hexo-blog/</id>
     <published>2015-12-09T13:07:00.000Z</published>
-    <updated>2016-01-23T13:48:24.269Z</updated>
+    <updated>2016-01-24T00:08:17.014Z</updated>
     <content type="html"><![CDATA[
 
 <p>
