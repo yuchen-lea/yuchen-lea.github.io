@@ -965,7 +965,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #501bff;
+  background: #b134ff;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -2056,6 +2056,12 @@ nav .menu-item-icon {
 }
 a.fancybox {
   border-bottom: none;
+}
+th {
+  background-color: rgba(97,121,142,0.4);
+}
+table {
+  margin: 20px auto;
 }
 .footpara {
   display: inline;
