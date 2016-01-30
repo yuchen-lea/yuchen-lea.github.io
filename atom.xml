@@ -150,6 +150,105 @@
   </entry>
   
   <entry>
+    <title><![CDATA[部署Hexo到GitCafe]]></title>
+    <link href="http://yuchen-lea.gitcafe.io/2016-01-30-deploy-hexo-on-gitcafe/"/>
+    <id>http://yuchen-lea.gitcafe.io/2016-01-30-deploy-hexo-on-gitcafe/</id>
+    <published>2016-01-29T16:00:00.000Z</published>
+    <updated>2016-01-30T16:21:07.212Z</updated>
+    <content type="html"><![CDATA[
+
+<p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5728;GitCafe&#x4E0A;&#x642D;&#x5EFA;Hexo&#x535A;&#x5BA2;</div>
+</p>
+
+<ol class="org-ol">
+<li>&#x521B;&#x5EFA;&#x65B0;&#x9879;&#x76EE;
+<ul class="org-ul">
+<li>&#x9879;&#x76EE;&#x540D;&#x548C;&#x62E5;&#x6709;&#x8005;&#x8981;&#x4E00;&#x81F4;&#x3002;
+
+<p>
+<img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/gitcafe_create_blog.png">
+</p>
+</li>
+<li>&#x521B;&#x5EFA;&#x300C;&#x516C;&#x5F00;&#x9879;&#x76EE;&#x300D;&#x800C;&#x4E0D;&#x662F;&#x300C;&#x79C1;&#x6709;&#x9879;&#x76EE;&#x300D;
+</li>
+</ul>
+</li>
+<li>&#x4E3A;GitCafe&#x8BBE;&#x7F6E; <b>SSH&#x516C;&#x94A5;</b> &#xFF0C;&#x53C2;&#x89C1; <a href="https://help.gitcafe.com/manuals/help/ssh-key" target="_blank" rel="external">&#x6DFB;&#x52A0; SSH &#x516C;&#x94A5; - GitCafe Help</a>
+</li>
+<li>&#x5728;&#x7AD9;&#x70B9;&#x914D;&#x7F6E;&#x6587;&#x4EF6; <code>_config.yml</code> &#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF08;&#x5C06; <code>yuchen-lea</code> &#x66FF;&#x6362;&#x4E3A;&#x81EA;&#x5DF1;&#x7684;&#x7528;&#x6237;&#x540D;&#x5373;&#x53EF;&#xFF09;&#xFF1A;
+
+<div class="org-src-container">
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: github</span><br><span class="line">  repository: repository: git@gitcafe.com:yuchen-lea/yuchen-lea.git</span><br><span class="line">  branch: gitcafe-pages</span><br></pre></td></tr></table></figure>
+</div>
+<p>
+&#x6CE8;&#x610F;&#xFF1A;
+</p>
+<ul class="org-ul">
+<li><code>;</code> &#x540E;&#x4E00;&#x5B9A;&#x8981;&#x6709;&#x7A7A;&#x683C;
+</li>
+<li>branch&#x7684;&#x503C;&#x4E00;&#x5B9A;&#x8981;&#x662F; <code>gitcafe-pages</code> &#xFF0C;&#x5426;&#x5219;&#x4E0A;&#x4F20;&#x5B8C;&#x6210;&#x540E;&#x7F51;&#x9875;&#x663E;&#x793A;&#x4E0D;&#x6210;&#x529F;<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</li>
+</ul>
+</li>
+<li><code>hexo d -g</code> &#x4E0A;&#x4F20;&#x5230; gitcafe &#x3002;&#x56E0;&#x4E3A;&#x662F;&#x7528;&#x7684;SSH&#x516C;&#x94A5;&#xFF0C;&#x90E8;&#x7F72;&#x65F6;&#x4E5F;&#x4E0D;&#x7528;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#x5566;~
+</li>
+<li>&#x4E0A;&#x4F20;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x8BBF;&#x95EE; <code>user_name.gitcafe.io</code> &#x770B;&#x770B;&#x7AD9;&#x70B9;&#x662F;&#x5426;&#x90E8;&#x7F72;&#x6210;&#x529F;&#x3002;
+</li>
+</ol>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> &#x66F4;&#x65B0;&#x5386;&#x53F2;</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-30 &#x5468;&#x516D;]</span></span> &#x62DF;&#x5B9A;&#x521D;&#x7A3F;
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> &#x53C2;&#x8003;</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li><a href="http://www.zipperary.com/2013/11/23/hexo-to-gitcafe/" target="_blank" rel="external">&#x6258;&#x7BA1;&#x535A;&#x5BA2;&#x5230;gitcafe | Zippera&apos;s blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<a href="https://help.gitcafe.com/manuals/help/pages-services" target="_blank" rel="external">Pages &#x670D;&#x52A1; - GitCafe Help</a>
+</p></div>
+
+
+</div>
+</div>
+<p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">[2016-01-30 &#x5468;&#x516D;]</span></span></p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[
+
+<p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5728;G]]>
+    </summary>
+    
+      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+    
+      <category term="gitcafe" scheme="http://yuchen-lea.gitcafe.io/tags/gitcafe/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+    
+      <category term="Hexo" scheme="http://yuchen-lea.gitcafe.io/categories/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[《关于锻炼的真相》笔记]]></title>
     <link href="http://yuchen-lea.gitcafe.io/2016-01-29-the-truth-about-exercise/"/>
     <id>http://yuchen-lea.gitcafe.io/2016-01-29-the-truth-about-exercise/</id>
