@@ -1,0 +1,1281 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="跬步" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x672C;&amp;#x6587;&amp;#x65E8;&amp;#x5728;&amp;#x4ECB;&amp;#x7ECD; HabitRPG &amp;#x7684;&amp;#x673A;&amp;#x5236;&amp;#xFF0C;&amp;#x63A2;&amp;#x7D22;&amp;#x5982;&amp;#x4F55;&amp;#x5145;&amp;#x5206;&amp;#x5229;&amp;#x7528;&amp;#x6B64;&amp;#x5DE5;&amp;#x5177;&amp;#x8BA9;&amp;#x751F;&amp;#x6D3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用HabitRPG游戏化你的生活！">
+<meta property="og:url" content="http://yuchen-lea.gitcafe.io/2016-01-27-RPG-your-life/index.html">
+<meta property="og:site_name" content="跬步">
+<meta property="og:description" content="&amp;#x672C;&amp;#x6587;&amp;#x65E8;&amp;#x5728;&amp;#x4ECB;&amp;#x7ECD; HabitRPG &amp;#x7684;&amp;#x673A;&amp;#x5236;&amp;#xFF0C;&amp;#x63A2;&amp;#x7D22;&amp;#x5982;&amp;#x4F55;&amp;#x5145;&amp;#x5206;&amp;#x5229;&amp;#x7528;&amp;#x6B64;&amp;#x5DE5;&amp;#x5177;&amp;#x8BA9;&amp;#x751F;&amp;#x6D3">
+<meta property="og:image" content="http://7xqb0u.com1.z0.glb.clouddn.com/images/habitica_task_color.jpg">
+<meta property="og:updated_time" content="2016-01-30T07:05:29.848Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用HabitRPG游戏化你的生活！">
+<meta name="twitter:description" content="&amp;#x672C;&amp;#x6587;&amp;#x65E8;&amp;#x5728;&amp;#x4ECB;&amp;#x7ECD; HabitRPG &amp;#x7684;&amp;#x673A;&amp;#x5236;&amp;#xFF0C;&amp;#x63A2;&amp;#x7D22;&amp;#x5982;&amp;#x4F55;&amp;#x5145;&amp;#x5206;&amp;#x5229;&amp;#x7528;&amp;#x6B64;&amp;#x5DE5;&amp;#x5177;&amp;#x8BA9;&amp;#x751F;&amp;#x6D3">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'always',
+    motion: true
+  };
+</script>
+
+  <title> 用HabitRPG游戏化你的生活！ | 跬步 </title>
+  <script type="text/javascript" src="/js/test/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/test/jquery-2.0.3.min.js"></script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?40f3214f31f9ba61983572f8267a5370";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">跬步</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">不积小流，无以成江海</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-bars fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-map">
+          <a href="/map" rel="section">
+            
+              <i class="menu-item-icon fa fa-map-signs fa-fw"></i> <br />
+            
+            索引
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                用HabitRPG游戏化你的生活！
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-01-27T00:00:00+08:00" content="2016-01-27">
+              2016-01-27
+            </time>
+          </span>
+
+          <span class="post-count">
+		书写 3,935 字
+	  </span> 
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
+
+                
+                
+                  > 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/生活/效率/" itemprop="url" rel="index">
+                    <span itemprop="name">效率</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+	<span id="busuanzi_container_page_pv">
+		&nbsp; | &nbsp; 访问 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次
+	</span> 
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016-01-27-RPG-your-life/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-27-RPG-your-life/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody">
+
+<p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x4ECB;&#x7ECD; <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> &#x7684;&#x673A;&#x5236;&#xFF0C;&#x63A2;&#x7D22;&#x5982;&#x4F55;&#x5145;&#x5206;&#x5229;&#x7528;&#x6B64;&#x5DE5;&#x5177;&#x8BA9;&#x751F;&#x6D3B;&#x66F4;&#x9AD8;&#x6548;&#x3001;&#x66F4;&#x6709;&#x8DA3;&#x3002;&#x6587;&#x4E2D;&#x5185;&#x5BB9;&#x4E0D;&#x6D89;&#x53CA;&#x6280;&#x80FD;&#x3001;&#x56E2;&#x961F;&#x3001;&#x88C5;&#x5907;&#x3001;&#x804C;&#x4E1A;&#x7B49;&#x6DF1;&#x5EA6;&#x73A9;&#x6CD5;&#x3002;</div>
+</p>
+
+<p>
+<div class="alert alert-warning"><i class="fa fa-bell"></i>  <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> &#x5728;&#x5927;&#x9646;&#x5730;&#x533A;&#x8BBF;&#x95EE;&#x53EF;&#x80FD;&#x4E0D;&#x7A33;&#x5B9A;&#xFF0C;&#x9700;&#x7FFB;&#x5899;&#x4F7F;&#x7528;&#x3002;</div>
+</p>
+
+<p>
+<div class="alert alert-success"><i class="fa fa-lightbulb-o"></i>  &#x4E2A;&#x4EBA;&#x559C;&#x6B22;&#x6E05;&#x695A;&#x673A;&#x7406;&#x4E4B;&#x540E;&#x518D;&#x91C7;&#x53D6;&#x884C;&#x52A8;&#xFF0C;&#x504F;&#x5411;&#x5B9E;&#x8DF5;&#x7684;&#x670B;&#x53CB;&#x53EF;&#x8DF3;&#x8FC7;</div>
+</p>
+
+<p>
+<div class="alert alert-warning"><i class="fa fa-bell"></i>  &#x5B8C;&#x5584;&#x4E2D;</div>
+</p>
+
+<p>
+<a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> = Habit + RPG&#xFF0C;&#x65E8;&#x5728;&#x4EE5;RPG&#x6E38;&#x620F;&#x5316;&#x673A;&#x5236;&#xFF0C;&#x6FC0;&#x52B1;&#x6211;&#x4EEC;&#x6709;&#x6548;&#x53C8;&#x4E0D;&#x4E4F;&#x4E50;&#x8DA3;&#x5730;&#x6539;&#x53D8;&#x574F;&#x4E60;&#x60EF;&#x3001;&#x517B;&#x6210;&#x65B0;&#x4E60;&#x60EF;&#xFF0C;&#x7BA1;&#x7406;&#x81EA;&#x5DF1;&#x7684;&#x751F;&#x6D3B;&#x3002;
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> &#x57FA;&#x672C;&#x672F;&#x8BED;</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+&#x9996;&#x5148;&#x719F;&#x6089;&#x4E00;&#x4E0B;  <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> &#x6D89;&#x53CA;&#x7684;&#x672F;&#x8BED;&#xFF0C;&#x5728;&#x4E0B;&#x6587;&#x4E2D;&#x518D;&#x6B21;&#x51FA;&#x73B0;&#x65F6;&#x4E0D;&#x4E88;&#x8D58;&#x8FF0;&#xFF08;&#x66F4;&#x591A;&#x53C2;&#x89C1; <a href="http://habitica.wikia.com/wiki/Glossary" target="_blank" rel="external">Glossary - Habitica Wiki - Wikia</a> &#xFF09;&#xFF1A;
+</p>
+
+<ul class="org-ul">
+<li>&#x5065;&#x5EB7; (HP) &#x53CD;&#x6620;&#x5B8C;&#x6210;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x548C;&#x6212;&#x9664;&#x574F;&#x4E60;&#x60EF;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x53EF;&#x4ECE;&#x7EA2;&#x8272;&#x8FDB;&#x5EA6;&#x6761;&#x67E5;&#x770B;&#xFF0C;&#x5DE6;&#x7AEF;&#x6807;&#x5FD7;&#x4E3A;&#x6807;&#x5FD7;  
+</li>
+<li>&#x7ECF;&#x9A8C;&#x503C; (XP) &#x53CD;&#x6620;&#x73A9;&#x5BB6;&#x8FDB;&#x5EA6;&#x3002;&#x53EF;&#x4ECE;&#x9EC4;&#x8272;&#x8FDB;&#x5EA6;&#x6761;&#x67E5;&#x770B;&#xFF0C;&#x5DE6;&#x7AEF;&#x6807;&#x5FD7;&#x4E3A; &#x2605;&#x3002;&#x968F;&#x7740;&#x7B49;&#x7EA7;&#x7684;&#x589E;&#x957F;&#xFF0C;&#x5347;&#x7EA7;&#x6240;&#x9700;&#x7684;&#x7ECF;&#x9A8C;&#x503C;&#x4E5F;&#x589E;&#x52A0;&#x3002;
+</li>
+<li>&#x7B49;&#x7EA7; Level &#x53CD;&#x6620;&#x73A9;&#x5BB6;&#x8FDB;&#x5EA6;&#x3002;&#x90E8;&#x5206;&#x529F;&#x80FD;&#x53EA;&#x6709;&#x5728;&#x8FBE;&#x5230;&#x7279;&#x5B9A;&#x7B49;&#x7EA7;&#x624D;&#x4F1A;&#x89E3;&#x9501;&#xFF08;&#x8BE6;&#x60C5;&#x53C2;&#x89C1;<a href="http://habitica.wikia.com/wiki/Level#Unlocks" target="_blank" rel="external">&#x8FD9;&#x91CC;</a>&#xFF09;&#x3002;
+</li>
+<li>&#x91D1;&#x5E01;&#xFF08;GP&#xFF09;&#x6E38;&#x620F;&#x5185;&#x7684;&#x901A;&#x884C;&#x8D27;&#x5E01;&#xFF0C;&#x53EF;&#x8D2D;&#x4E70;&#x5956;&#x52B1;&#x3001;&#x88C5;&#x5907;&#x7B49;&#x3002;100&#x94F6;=1&#x91D1;
+</li>
+<li>&#x8FDE;&#x51FB; Streaks &#x9700;&#x6309;&#x65F6;&#x5B8C;&#x6210;&#x7684;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x8FDE;&#x7EED;&#x5B8C;&#x6210;&#x7684;&#x6B21;&#x6570;&#x3002;
+</li>
+<li>&#x6389;&#x843D; Drops &#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x6389;&#x843D;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7269;&#x54C1;&#xFF0C;&#x5982;&#x5BA0;&#x7269;&#x86CB;&#x3001;&#x836F;&#x6C34;&#x7B49;&#x3002;&#x8BE5;&#x529F;&#x80FD;&#x5728;&#x8FBE;&#x5230;&#x7B49;&#x7EA7; 3 &#x540E;&#x89E3;&#x9501;&#x3002;
+</li>
+<li>&#x4EFB;&#x52A1;&#x5206;&#x503C; task value &#x53CD;&#x6620;&#x4E86;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x5B8C;&#x6210;&#x60C5;&#x51B5;&#x3002;&#x662F; <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> &#x6839;&#x636E;&#x7528;&#x6237;&#x7684;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x60C5;&#x51B5;&#x4E3A;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x81EA;&#x52A8;&#x8BA1;&#x7B97;&#x5F97;&#x51FA;&#x7684;&#x6570;&#x503C;&#x3002;
+</li>
+<li>&#x4EFB;&#x52A1;&#x989C;&#x8272; &#x4E0E;&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x76F8;&#x5173;&#xFF0C;&#x4ECE;&#x4F4E;&#x5230;&#x9AD8;&#x7684;&#x989C;&#x8272;&#x5206;&#x522B;&#x4E3A;&#xFF1A;&#x7EA2;&#x2192;&#x6A59;&#x2192;&#x9EC4;&#x2192;&#x7EFF;&#x2192;&#x84DD;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x5B8C;&#x6210;&#x7684;&#x4EFB;&#x52A1;&#x53D8;&#x4E3A;&#x7070;&#x8272;&#x3002;
+</li>
+<li>&#x4F11;&#x606F; Rest in the Inn<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup> &#x6709;&#x65F6;&#x5019;&#x9700;&#x8981;&#x6682;&#x505C;HabitRPG&#xFF0C;&#x4F8B;&#x5982;&#x51C6;&#x5907;&#x4EAB;&#x53D7;&#x5047;&#x671F;&#xFF0C;&#x90A3;&#x4E48;&#x5230;&#x5BA2;&#x6808;&#x4E2D;&#x4F11;&#x606F;&#x5C31;&#x4E0D;&#x4F1A;&#x56E0;&#x4E3A;&#x6CA1;&#x5B8C;&#x6210;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x800C;&#x635F;&#x5931;HP&#x548C;&#x8FDE;&#x51FB;&#x3002;
+</li>
+<li>&#x73A9;&#x5BB6;&#x5C5E;&#x6027;&#xFF1A;&#x6709;&#x529B;&#x91CF;&#x3001;&#x667A;&#x529B;&#x3001;&#x4F53;&#x8D28;&#x3001;&#x611F;&#x77E5;&#x56DB;&#x9879;&#x3002;&#x4E0E;&#x4E00;&#x4E9B;&#x6280;&#x80FD;&#x6709;&#x5173;&#xFF0C;&#x589E;&#x52A0;&#x53EF;&#x73A9;&#x6027;&#x3002;
+</li>
+</ul>
+
+<a id="more"></a>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> &#x6709;&#x5173;GTD&#x7684;&#x6E38;&#x620F;&#x673A;&#x5236;</h2>
+<div class="outline-text-2" id="text-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#xA0;</th>
+<th scope="col" class="left">&#x5065;&#x5EB7;</th>
+<th scope="col" class="left">&#x7ECF;&#x9A8C;&#x503C;</th>
+<th scope="col" class="left">&#x7B49;&#x7EA7;</th>
+<th scope="col" class="left">&#x91D1;&#x5E01;</th>
+<th scope="col" class="left">&#x8FDE;&#x51FB;</th>
+<th scope="col" class="left">&#x4EFB;&#x52A1;&#x5206;&#x503C;</th>
+<th scope="col" class="left">&#x4EFB;&#x52A1;&#x989C;&#x8272;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&#x6C89;&#x6EBA;&#x574F;&#x4E60;&#x60EF;&#xFF08;-&#xFF09;</td>
+<td class="left">-HP</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#x51CF;&#x5C11;</td>
+<td class="left">&#x53D8;&#x7EA2;</td>
+</tr>
+
+<tr>
+<td class="left">&#x6267;&#x884C;&#x597D;&#x4E60;&#x60EF;&#xFF08;+&#xFF09;</td>
+<td class="left">&#xA0;</td>
+<td class="left">+XP</td>
+<td class="left">&#xA0;</td>
+<td class="left">+GP</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#x589E;&#x52A0;</td>
+<td class="left">&#x53D8;&#x84DD;</td>
+</tr>
+
+<tr>
+<td class="left">&#x6CA1;&#x5B8C;&#x6210;&#x5355;&#x5411;&#x4E60;&#x60EF;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#x53D8;&#x4E3A;&#x4E00;&#x534A;</td>
+<td class="left">&#x53D8;&#x9EC4;</td>
+</tr>
+
+<tr>
+<td class="left">&#x5B8C;&#x6210;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;</td>
+<td class="left">&#xA0;</td>
+<td class="left">+XP</td>
+<td class="left">&#xA0;</td>
+<td class="left">+GP</td>
+<td class="left">+1</td>
+<td class="left">&#x589E;&#x52A0;</td>
+<td class="left">&#x53D8;&#x7070;</td>
+</tr>
+
+<tr>
+<td class="left">&#x6CA1;&#x5B8C;&#x6210;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;</td>
+<td class="left">-HP</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#x91CD;&#x7F6E;&#x4E3A;0</td>
+<td class="left">&#x51CF;&#x5C11;</td>
+<td class="left">&#x53D8;&#x7EA2;</td>
+</tr>
+
+<tr>
+<td class="left">&#x5B8C;&#x6210;&#x5F85;&#x529E;&#x4E8B;&#x9879;</td>
+<td class="left">&#xA0;</td>
+<td class="left">+XP</td>
+<td class="left">&#xA0;</td>
+<td class="left">+GP</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#x53D8;&#x7070;</td>
+</tr>
+
+<tr>
+<td class="left">&#x5EF6;&#x540E;&#x5F85;&#x529E;&#x4E8B;&#x9879;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#x51CF;&#x5C11;</td>
+<td class="left">&#x53D8;&#x7EA2;</td>
+</tr>
+
+<tr>
+<td class="left">&#x5347;&#x7EA7;</td>
+<td class="left">&#x6062;&#x590D;&#x6EE1;&#x503C;</td>
+<td class="left">XP&#x6EE1;&#x503C;&#x65F6;&#x53D1;&#x751F;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+</tr>
+
+<tr>
+<td class="left">&#x6B7B;&#x4EA1;</td>
+<td class="left">HP&#x51CF;&#x4E3A;0&#x65F6;&#x53D1;&#x751F;</td>
+<td class="left">&#xA0;</td>
+<td class="left">-1&#x7EA7;</td>
+<td class="left">&#x51CF;&#x4E3A;0</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+&#x7ECF;&#x9A8C;&#x3001;&#x91D1;&#x5E01;&#x7684;&#x5956;&#x52B1;&#x503C;&#x4EE5;&#x53CA;&#x5065;&#x5EB7;&#x7684;&#x635F;&#x5BB3;&#x503C;&#x7684;&#x591A;&#x5C11;&#x90FD;&#x4E0E;&#x4EFB;&#x52A1;&#x7684;&#x56F0;&#x96BE;&#x7A0B;&#x5EA6;&#x6709;&#x5173;&#x3002; <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> <b>&#x9F13;&#x52B1;&#x73A9;&#x5BB6;&#x53BB;&#x6311;&#x6218;&#x90A3;&#x4E9B;&#x56F0;&#x96BE;&#x7684;&#x4EFB;&#x52A1;</b> &#xFF0C;&#x56E0;&#x6B64;&#x4EFB;&#x52A1;&#x8D8A;&#x56F0;&#x96BE;&#xFF0C;&#x5B8C;&#x6210;&#x65F6;&#x7ED9;&#x4E88;&#x7684;&#x5956;&#x52B1;&#x8D8A;&#x591A;&#xFF0C;&#x5931;&#x8D25;&#x65F6;&#x65BD;&#x4EE5;&#x7684;&#x60E9;&#x7F5A;&#x8D8A;&#x5927;&#x3002;&#x800C;&#x4EFB;&#x52A1;&#x7684;&#x56F0;&#x96BE;&#x7A0B;&#x5EA6;&#x662F;&#x7531; <code>&#x4EFB;&#x52A1;&#x96BE;&#x5EA6;</code> &#x548C; <code>[[&#x4EFB;&#x52A1;&#x5206;&#x503C;]]</code> &#x6765;&#x5171;&#x540C;&#x8861;&#x91CF;&#x3002;&#x524D;&#x8005;&#x662F;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x540E;&#x8005;&#x4E3A; <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> &#x4E3A;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x81EA;&#x52A8;&#x8BA1;&#x7B97;&#x5F97;&#x51FA;&#x7684;&#x6570;&#x503C;&#x3002;&#x4E3A;&#x4E86;&#x589E;&#x52A0;&#x53EF;&#x73A9;&#x5EA6;&#xFF0C;&#x5728;&#x5956;&#x60E9;&#x529B;&#x5EA6;&#x7684;&#x8BBE;&#x8BA1;&#x673A;&#x5236;&#x4E2D;&#x8FD8;&#x5F15;&#x5165;&#x4E86;&#x73A9;&#x5BB6;&#x5C5E;&#x6027;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x8BE6;&#x89C1;&#x4E0B;&#x8868;&#xFF1A;
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#xA0;</th>
+<th scope="col" class="left">XP&#x7684;&#x5956;&#x52B1;</th>
+<th scope="col" class="left">GP&#x7684;&#x5956;&#x52B1;</th>
+<th scope="col" class="left">HP&#x7684;&#x635F;&#x5BB3;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&#x4EFB;&#x52A1;&#x96BE;&#x5EA6;</td>
+<td class="left">&#x8D8A;&#x5927;&#x8D8A;&#x591A;</td>
+<td class="left">&#x8D8A;&#x5927;&#x8D8A;&#x591A;</td>
+<td class="left">&#x8D8A;&#x5927;&#x8D8A;&#x591A;</td>
+</tr>
+
+<tr>
+<td class="left">&#x4EFB;&#x52A1;&#x5206;&#x503C;</td>
+<td class="left">&#x8D8A;&#x4F4E;&#x8D8A;&#x591A;</td>
+<td class="left">&#x8D8A;&#x4F4E;&#x8D8A;&#x591A;</td>
+<td class="left">&#x8D8A;&#x4F4E;&#x8D8A;&#x591A;</td>
+</tr>
+
+<tr>
+<td class="left">&#x73A9;&#x5BB6;&#x4F53;&#x8D28;</td>
+<td class="left">\</td>
+<td class="left">\</td>
+<td class="left">&#x8D8A;&#x9AD8;&#x8D8A;&#x5C11;</td>
+</tr>
+
+<tr>
+<td class="left">&#x73A9;&#x5BB6;&#x611F;&#x77E5;</td>
+<td class="left">\</td>
+<td class="left">&#x8D8A;&#x9AD8;&#x8D8A;&#x591A;</td>
+<td class="left">\</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> &#x90E8;&#x5206;&#x672F;&#x8BED;&#x8BE6;&#x89E3;</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-&#x4EFB;&#x52A1;&#x5206;&#x503C;" class="outline-3">
+<h3 id="&#x4EFB;&#x52A1;&#x5206;&#x503C;"><a id="sec-3-1" name="sec-3-1"></a><span class="section-number-3">3.1</span> &#x4EFB;&#x52A1;&#x5206;&#x503C;<sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup></h3>
+<div class="outline-text-3" id="text-&#x4EFB;&#x52A1;&#x5206;&#x503C;">
+
+<p>
+&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x53CD;&#x6620;&#x4E86;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x5B8C;&#x6210;&#x60C5;&#x51B5;&#xFF1A;&#x65B0;&#x4EFB;&#x52A1;&#x7684;&#x521D;&#x59CB;&#x503C;&#x4E3A;0&#xFF0C;&#x8D8A;&#x591A;&#x5730;&#x88AB;&#x6267;&#x884C;&#xFF0C;&#x5206;&#x503C;&#x8D8A;&#x9AD8;&#xFF0C;&#x53CD;&#x4E4B;&#x5206;&#x503C;&#x8D8A;&#x4F4E;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x5206;&#x503C;&#x7684;&#x7EDD;&#x5BF9;&#x503C;&#x8D8A;&#x5927;&#xFF0C;&#x5B83;&#x6539;&#x53D8;&#x7684;&#x901F;&#x5EA6;&#x4E5F;&#x8D8A;&#x6162;&#x3002;
+</p>
+
+<p>
+&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x7684;&#x9AD8;&#x4F4E;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x989C;&#x8272;&#x6765;&#x53CD;&#x6620;&#xFF0C;&#x56E0;&#x6B64;&#x901A;&#x8FC7;&#x989C;&#x8272;&#x5373;&#x53EF; <b>&#x7C97;&#x7565;&#x5224;&#x65AD;</b> &#x4EFB;&#x52A1;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x65B0;&#x4EFB;&#x52A1;&#x90FD;&#x662F;&#x9EC4;&#x8272;&#xFF08;&#x4E2D;&#x6027;&#xFF09;&#xFF0C;&#x8D8A;&#x591A;&#x5730;&#x88AB;&#x5B8C;&#x6210;&#xFF0C;&#x5206;&#x503C;&#x8D8A;&#x9AD8;&#xFF0C;&#x989C;&#x8272;&#x5148;&#x53D8;&#x7EFF;&#x518D;&#x53D8;&#x84DD;&#xFF08;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x8F83;&#x597D;&#xFF09;&#xFF1B;&#x53CD;&#x4E4B;&#x5206;&#x503C;&#x8D8A;&#x4F4E;&#xFF0C;&#x989C;&#x8272;&#x5148;&#x53D8;&#x6A59;&#x518D;&#x53D8;&#x7EA2;&#xFF08;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x8F83;&#x5DEE;&#xFF09;&#x3002;
+</p>
+
+<p>
+<img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/habitica_task_color.jpg">
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#x989C;&#x8272;</th>
+<th scope="col" class="left">&#x5206;&#x503C;</th>
+<th scope="col" class="left">&#x6539;&#x53D8;&#x989C;&#x8272;&#x7684;&#x70B9;&#x51FB;&#x6B21;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">Bright Blue</td>
+<td class="left">&gt;10</td>
+<td class="left">12 positive</td>
+</tr>
+
+<tr>
+<td class="left">Blue Grey</td>
+<td class="left">5~10</td>
+<td class="left">6 positive</td>
+</tr>
+
+<tr>
+<td class="left">Green</td>
+<td class="left">1~5</td>
+<td class="left">1 positive</td>
+</tr>
+
+<tr>
+<td class="left">Yellow</td>
+<td class="left">-1~1</td>
+<td class="left">0 clicks</td>
+</tr>
+
+<tr>
+<td class="left">Orange</td>
+<td class="left">-10~-1</td>
+<td class="left">1 negative</td>
+</tr>
+
+<tr>
+<td class="left">Red</td>
+<td class="left">-20~-10</td>
+<td class="left">9 negative</td>
+</tr>
+
+<tr>
+<td class="left">Dark Red</td>
+<td class="left">&lt;-20</td>
+<td class="left">16 negative</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+&#x8981;&#x67E5;&#x770B; <b>&#x5177;&#x4F53;&#x5206;&#x503C;</b> &#xFF0C;&#x70B9;&#x51FB; <code>&#x8FDB;&#x5EA6;</code> &#x56FE;&#x6807;&#x5C06;&#x5F39;&#x51FA;&#x8FD1;&#x671F;&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x7684;&#x66F2;&#x7EBF;&#x56FE;&#x3002;&#x5149;&#x6807;&#x6307;&#x5411;&#x5373;&#x53EF;&#x663E;&#x793A;&#x5BF9;&#x5E94;&#x65E5;&#x671F;&#x7684;&#x5206;&#x503C;&#x3002;
+</p>
+</div>
+
+<div id="outline-container-sec-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1"><span class="section-number-4">3.1.1</span> &#x4EFB;&#x52A1;&#x5206;&#x503C;&#x7684;&#x5F71;&#x54CD;</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<ul class="org-ul">
+<li>&#x8D8A;&#x5927;&#xFF08;&#x989C;&#x8272;&#x8D8A;&#x84DD;&#xFF0C;&#x8868;&#x793A;&#x662F;&#x7ECF;&#x5E38;&#x6027;&#x5B8C;&#x6210;&#x7684;&#x4EFB;&#x52A1;&#xFF09;&#xFF1A;
+<ul class="org-ul">
+<li>XP&#x3001;GP&#x5956;&#x52B1;&#x503C;&#x51CF;&#x5C11;
+</li>
+<li>HP&#x635F;&#x5931;&#x503C;&#x51CF;&#x5C11;
+</li>
+<li>&#x5B9D;&#x7269;&#x6389;&#x51FA;&#x7387;&#x964D;&#x4F4E;&#xFF0C;&#x7136;&#x800C;&#x5F53;&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x8D85;&#x8FC7;21.27&#x540E;&#xFF0C;&#x5B9D;&#x7269;&#x6389;&#x51FA;&#x7387;&#x53C8;&#x5F00;&#x59CB;&#x5347;&#x9AD8;
+</li>
+<li>&#x7279;&#x5B9A;&#x6280;&#x80FD;&#x7684;&#x4F7F;&#x7528;&#x6548;&#x7387;&#x66F4;&#x9AD8;
+</li>
+</ul>
+</li>
+<li>&#x8D8A;&#x5C0F;&#xFF08;&#x989C;&#x8272;&#x8D8A;&#x7EA2;&#xFF0C;&#x8868;&#x793A;&#x662F;&#x4E0D;&#x5BB9;&#x6613;&#x5B8C;&#x6210;&#x7684;&#x4EFB;&#x52A1;&#xFF09;&#xFF1A;
+<ul class="org-ul">
+<li>XP&#x3001;GP&#x5956;&#x52B1;&#x503C;&#x589E;&#x52A0;
+</li>
+<li>HP&#x635F;&#x5931;&#x503C;&#x589E;&#x52A0;
+</li>
+<li>&#x5B9D;&#x7269;&#x6389;&#x51FA;&#x7387;&#x589E;&#x52A0;
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x5E76;&#x65E0;&#x4E0A;&#x9650;&#x548C;&#x4E0B;&#x9650;&#xFF0C;&#x4F46;&#x662F; <b>&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x5BF9;&#x5956;&#x60E9;&#x529B;&#x5EA6;&#x7684;&#x52A0;&#x6210;&#x4F5C;&#x7528;&#x662F;&#x6709;&#x9650;&#x5EA6;&#x7684;</b> &#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x8D85;&#x8FC7;&#x7279;&#x5B9A;&#x8303;&#x56F4;&#x540E;&#xFF0C;&#x5956;&#x52B1;&#x4EE5;&#x53CA;&#x635F;&#x5BB3;&#x503C;&#x90FD;&#x4E0D;&#x4F1A;&#x518D;&#x589E;&#x52A0;&#x6216;&#x51CF;&#x5C11;&#x3002;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x662F; [-47.27, 21.27]&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x867D;&#x7136;&#x5206;&#x503C;&#x8D8A;&#x5927;&#xFF0C;&#x5956;&#x52B1;&#x503C;&#x8D8A;&#x5C0F;&#xFF0C;&#x4F46;&#x662F;&#x5206;&#x503C;30&#x548C;22&#x7684;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#x83B7;&#x5F97;&#x5956;&#x52B1;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF1B;&#x5206;&#x503C;&#x8D8A;&#x5C0F;&#xFF0C;&#x635F;&#x5931;&#x503C;&#x8D8A;&#x5927;&#xFF0C;&#x4F46;&#x662F;&#x5206;&#x503C;-48&#x548C;-60&#x7684;&#x4EFB;&#x52A1;&#x6CA1;&#x8FBE;&#x6210;&#x65F6;&#x6263;&#x9664;&#x7684;HP&#x4E5F;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> &#x8FDE;&#x51FB;&#x7EAA;&#x5F55;<sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup></h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+&#x8FDE;&#x51FB; Streaks&#xFF0C;&#x8BB0;&#x5F55;&#x9700;&#x6309;&#x65F6;&#x5B8C;&#x6210;&#x7684;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x8FDE;&#x7EED;&#x5B8C;&#x6210;&#x7684;&#x6B21;&#x6570;&#x3002;
+</p>
+
+<p>
+&#x8FDE;&#x51FB;&#x6B21;&#x6570;&#x6108;&#x9AD8;&#xFF0C;&#x80FD;&#x83B7;&#x5F97;&#x66F4;&#x591A;&#x7684;GP&#x548C;&#x66F4;&#x5927;&#x7684;&#x6389;&#x843D;&#x673A;&#x4F1A;&#x3002;&#x5982;&#x679C;&#x4F60;&#x5B9E;&#x73B0;21&#x5929;&#x8FDE;&#x51FB;&#xFF0C;&#x4F60;&#x5C06;&#x8D62;&#x5F97;&#x8FDE;&#x51FB;&#x6210;&#x5C31;&#x5FBD;&#x7AE0;&#x3002;&#x6B64;&#x9879;&#x6210;&#x5C31;&#x53EF;&#x79EF;&#x7D2F;&#xFF0C;&#x6362;&#x8A00;&#x4E4B;&#xFF0C;&#x5982;&#x679C;&#x53C8;&#x8FDE;&#x7EED;21&#x5929;&#x5B8C;&#x6210;&#x67D0;&#x4E9B;&#x4EFB;&#x52A1;&#xFF0C;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x53E6;&#x4E00;&#x679A;&#x8FDE;&#x51FB;&#x6210;&#x5C31;&#x5FBD;&#x7AE0;&#x3002;&#x6BCF;&#x4E2A;&#x5FBD;&#x7AE0;&#x90FD;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x6389;&#x843D;&#x7684;&#x673A;&#x4F1A;&#x3002;
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> RPG&#x6E38;&#x620F;&#x5316;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x751F;&#x6D3B;&#x5427;&#xFF01;</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> &#x4EFB;&#x52A1;&#x6E05;&#x5355;</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+&#x6709;&#x4E09;&#x7C7B;&#xFF1A;&#x4E60;&#x60EF;&#x3001;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x3001;&#x5F85;&#x529E;&#x4E8B;&#x9879;
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#xA0;</th>
+<th scope="col" class="left">&#x4E60;&#x60EF;</th>
+<th scope="col" class="left">&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;</th>
+<th scope="col" class="left">&#x5F85;&#x529E;&#x4E8B;&#x9879;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&#x9891;&#x7387;</td>
+<td class="left">&#x7ECF;&#x5E38;&#x6027;&#xFF1A;&#x53EF;&#x6BCF;&#x5929;&#x591A;&#x6B21;</td>
+<td class="left">&#x7ECF;&#x5E38;&#x6027;&#xFF1A;&#x4E00;&#x5929;&#x4E00;&#x6B21;&#x6216;&#x4E00;&#x5468;&#x51E0;&#x6B21;</td>
+<td class="left">&#x4E00;&#x6B21;&#x6027;&#x6216;&#x4E0D;&#x7ECF;&#x5E38;&#x53D1;&#x751F;</td>
+</tr>
+
+<tr>
+<td class="left">&#x8BA1;&#x5212;</td>
+<td class="left">/</td>
+<td class="left">&#x9700;&#x6309;&#x65F6;&#x5B8C;&#x6210;</td>
+<td class="left">/</td>
+</tr>
+
+<tr>
+<td class="left">&#x5956;&#x52B1;</td>
+<td class="left">&#x8FBE;&#x6210;&#x591A;&#x6B21;&#x597D;&#x4E60;&#x60EF;&#x6709;&#x591A;&#x6B21;&#x5956;&#x52B1;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+</tr>
+
+<tr>
+<td class="left">&#x60E9;&#x7F5A;</td>
+<td class="left">&#x6CA1;&#x5B8C;&#x6210;&#x65F6;&#x65E0;&#x60E9;&#x7F5A;&#xFF0C;&#x4F46;&#x88AB;&#x574F;&#x4E60;&#x60EF;&#x51FB;&#x5012;&#x6709;&#x60E9;&#x7F5A;</td>
+<td class="left">&#x4E00;&#x5929;&#x7ED3;&#x675F;&#x65F6;&#xFF0C;&#x5982;&#x6709;&#x672A;&#x5B8C;&#x6210;&#x7684;&#x4E8B;&#x9879;&#x6709;&#x60E9;&#x7F5A;</td>
+<td class="left">&#x6CA1;&#x5B8C;&#x6210;&#x65F6;&#x65E0;&#x60E9;&#x7F5A;</td>
+</tr>
+
+<tr>
+<td class="left">&#x60C5;&#x5883;</td>
+<td class="left">&#x517B;&#x6210;&#x6216;&#x6212;&#x6389;&#x4E60;&#x60EF;</td>
+<td class="left">&#x91CD;&#x590D;&#x6027;&#x7684;&#x5E38;&#x89C4;&#x6D41;&#x7A0B; routine&#xFF0C;&#x53D8;&#x6210;&#x4E60;&#x60EF;</td>
+<td class="left">&#x6BCF;&#x5929;3&#x5757;&#x5927;&#x77F3;&#x5934;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> &#x589E;&#x52A0;&#x53EF;&#x73A9;&#x6027;&#x7684;&#x6E38;&#x620F;&#x673A;&#x5236;</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+&#x4E2A;&#x4EBA;&#x5BF9;&#x6B64;&#x5174;&#x81F4;&#x7F3A;&#x7F3A;&#xFF0C;&#x5728;&#x6B64;&#x4EC5;&#x7B80;&#x5355;&#x5217;&#x4E3E;&#x51E0;&#x70B9;&#xFF0C;&#x6709;&#x5174;&#x8DA3;&#x7684;&#x670B;&#x53CB;&#x53EF;&#x81EA;&#x884C;&#x63A2;&#x7A76;&#xFF1A;
+</p>
+
+<ul class="org-ul">
+<li>&#x8BBE;&#x7F6E;&#x89D2;&#x8272;&#x5F62;&#x8C61;
+</li>
+<li>&#x8D2D;&#x4E70;&#x88C5;&#x5907;
+</li>
+<li>&#x5728;&#x5BA2;&#x6808;&#x4E2D;&#x53EF;&#x4EE5;&#x968F;&#x610F;&#x7684;&#x548C;&#x5176;&#x4ED6;&#x4EBA;&#x4E00;&#x8D77;&#x4EA4;&#x6D41;&#x5FC3;&#x5F97;&#xFF0C;&#x8BA8;&#x8BBA;&#x95EE;&#x9898;&#x3002;
+</li>
+<li>&#x8FBE;&#x5230;&#x7B49;&#x7EA7; 4 &#x540E;&#xFF0C;&#x5B8C;&#x6210;&#x67D0;&#x4E9B;&#x6311;&#x6218;&#x4F1A;&#x968F;&#x673A;&#x6389;&#x843D;&#x4E00;&#x4E9B;&#x5B9D;&#x7269;&#xFF0C;&#x50CF;&#x662F;&#x5BA0;&#x7269;&#x86CB;&#x3001;&#x5BA0;&#x7269;&#x836F;&#x6C34;&#x3001;&#x5BA0;&#x7269;&#x98DF;&#x7269;&#x3002;&#x628A;&#x836F;&#x6C34;&#x6DCB;&#x5230;&#x86CB;&#x4E0A;&#xFF0C;&#x4FBF;&#x80FD;&#x83B7;&#x5F97;&#x81EA;&#x5DF1;&#x7684;&#x5BA0;&#x7269;&#xFF0C;&#x800C;&#x5582;&#x5BA0;&#x7269;&#x5403;&#x98DF;&#x7269;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x8BA9;&#x5BA0;&#x7269;&#x957F;&#x5927;&#xFF0C;&#x6700;&#x540E;&#x53D8;&#x6210;&#x81EA;&#x5DF1;&#x7684;&#x5750;&#x9A91;&#x3002;
+</li>
+<li>&#x8FBE;&#x5230;&#x7B49;&#x7EA7; 10 &#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x89D2;&#x8272;&#x804C;&#x4E1A;&#xFF0C;&#x7EC4;&#x6210;&#x961F;&#x4F0D;&#x3001;&#x516C;&#x4F1A;&#xFF0C;&#x4E00;&#x8D77;&#x53BB;&#x6311;&#x6218;&#x66F4;&#x591A;&#x9B54;&#x738B;&#x4EFB;&#x52A1;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> &#x66F4;&#x65B0;&#x5386;&#x53F2;</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-29 &#x5468;&#x4E94;]</span></span>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> &#x53C2;&#x8003;</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li><a href="http://www.playpcesor.com/2015/01/habitrpg.html" target="_blank" rel="external">HabitRPG &#x6559;&#x5B66;&#xFF1A;&#x628A;&#x517B;&#x6210;&#x597D;&#x4E60;&#x60EF;&#x8BBE;&#x8BA1;&#x6210;&#x597D;&#x73A9;&#x7684;&#x751F;&#x6D3B;&#x6E38;&#x620F; - &#x7535;&#x8111;&#x73A9;&#x7269;</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Sample_Habits" target="_blank" rel="external">Sample Habits - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Sample_Dailies" target="_blank" rel="external">Sample Dailies - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Sample_To-Dos" target="_blank" rel="external">Sample To-Dos - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Naming_Your_Tasks" target="_blank" rel="external">Naming Your Tasks - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Task_Types:_Habits_versus_Dailies_versus_To-Dos" target="_blank" rel="external">Task Type Choice: Habit, Daily, or To-Do - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Health_Points" target="_blank" rel="external">Health Points - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Experience_Points" target="_blank" rel="external">Experience Points - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Gold" target="_blank" rel="external">Gold Points - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Difficulty" target="_blank" rel="external">Difficulty - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Dailies" target="_blank" rel="external">Dailies - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/To-Dos" target="_blank" rel="external">To-Dos - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Rewards" target="_blank" rel="external">Rewards - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Sample_Custom_Rewards" target="_blank" rel="external">Sample Custom Rewards - Habitica Wiki - Wikia</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<a href="http://habitica.wikia.com/wiki/Rest_in_the_Inn" target="_blank" rel="external">Rest in the Inn - Habitica Wiki - Wikia</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+<a href="http://habitica.wikia.com/wiki/Task_Value#Task_Colors" target="_blank" rel="external">Task Value - Habitica Wiki - Wikia</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+<a href="http://habitica.wikia.com/wiki/Streaks" target="_blank" rel="external">Streaks - Habitica Wiki - Wikia</a>
+</p></div>
+
+
+</div>
+</div>
+<p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">[2016-01-27 &#x5468;&#x4E09;]</span></span></p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
+</span>
+
+	<div class="cc-licens" style="border-radius: 10px; margin-top: 20px; padding: 20px 30px; background-color: rgb(233, 233, 233);" >
+			<p><strong><i class="fa fa-info"></i>  版权声明</strong></p>
+			<p>本文由<a href="http://yuchen-lea.gitcafe.io/about" mlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">宇晨</a>创作，采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p>
+			<p>首发于<a href="http://yuchen-lea.gitcafe.io/">跬步</a>，转载或引用请注明出处，本文永久链接：<a href="/2016-01-27-RPG-your-life/">用HabitRPG游戏化你的生活！</a></p>
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0; height: 46px;" src="/images/cc-by-nc-sa.png" /></a>
+	</div>
+
+      
+	
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016-01-25-onyomi-and-kunyomi/" rel="next" title="音读和训读">
+                <i class="fa fa-chevron-left"></i> 音读和训读
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016-01-27-japanese-voiced-sounds/" rel="prev" title="日语中的浊音与半浊音">
+                日语中的浊音与半浊音 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016-01-27-RPG-your-life/"
+           data-title="用HabitRPG游戏化你的生活！" data-url="http://yuchen-lea.gitcafe.io/2016-01-27-RPG-your-life/">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/avatar.jpg" alt="宇晨" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">
+	  宇晨  
+          <a href="/about" rel="section" style="border-bottom: none; font-size: 13px;">
+              <i class="menu-item-icon fa fa-user fa-fw"></i>
+          </a>
+          </p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-1"><span class="nav-text">1 基本术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-2"><span class="nav-text">2 有关GTD的游戏机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-3"><span class="nav-text">3 部分术语详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务分值"><span class="nav-text">3.1 任务分值2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sec-3-1-1"><span class="nav-text">3.1.1 任务分值的影响</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sec-3-2"><span class="nav-text">3.2 连击纪录3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-4"><span class="nav-text">4 RPG游戏化你自己的生活吧！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sec-4-1"><span class="nav-text">4.1 任务清单</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-5"><span class="nav-text">5 增加可玩性的游戏机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-6"><span class="nav-text">6 更新历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-7"><span class="nav-text">7 参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">Footnotes: </span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">宇晨</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题基于 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yuchenlea"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+  
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

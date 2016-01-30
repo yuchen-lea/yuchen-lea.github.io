@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不积小流，无以成江海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yuchen-lea.gitcafe.io/"/>
-  <updated>2016-01-27T10:14:27.282Z</updated>
+  <updated>2016-01-30T06:55:52.364Z</updated>
   <id>http://yuchen-lea.gitcafe.io/</id>
   
   <author>
@@ -15,11 +15,310 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[压缩PNG图片]]></title>
+    <link href="http://yuchen-lea.gitcafe.io/2016-01-30-minify-png/"/>
+    <id>http://yuchen-lea.gitcafe.io/2016-01-30-minify-png/</id>
+    <published>2016-01-29T16:00:00.000Z</published>
+    <updated>2016-01-30T06:55:52.364Z</updated>
+    <content type="html"><![CDATA[
+
+<p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x8BA8;&#x8BBA;Windows&#x5E73;&#x53F0;&#x4E0B;&#x538B;&#x7F29;PNG&#x7684;&#x8F6F;&#x4EF6;&#x3002;</div>
+</p>
+
+<ul class="org-ul">
+<li>&#x6D4B;&#x8BD5;&#x5E73;&#x53F0;&#xFF1A;win8.1
+</li>
+<li>&#x6D4B;&#x8BD5;&#x6587;&#x4EF6;&#xFF1A;45&#x4E2A;PNG&#x6587;&#x4EF6;&#xFF0C;&#x5171;&#x8BA1;811.2K&#x3002;
+</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#xA0;</th>
+<th scope="col" class="left">PNGGauntlet</th>
+<th scope="col" class="left">PngOptimizer</th>
+<th scope="col" class="left">PNGOUTWin</th>
+<th scope="col" class="left">MinifyPNG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&#x5F00;&#x53D1;&#x5546;</td>
+<td class="left"><a href="http://pnggauntlet.com/" target="_blank" rel="external">PNGGauntlet</a></td>
+<td class="left"><a href="http://psydk.org/pngoptimizer" target="_blank" rel="external">psydk</a></td>
+<td class="left"><a href="http://www.ardfry.com/pngoutwin/index.html" target="_blank" rel="external">ardfry</a></td>
+<td class="left"><a href="https://github.com/shuax/MinifyPNG" target="_blank" rel="external">shuax</a></td>
+</tr>
+
+<tr>
+<td class="left">&#x4F7F;&#x7528;</td>
+<td class="left">&#x514D;&#x8D39;</td>
+<td class="left">&#x514D;&#x8D39;</td>
+<td class="left">30&#x5929;&#x8BD5;&#x7528;</td>
+<td class="left">&#x514D;&#x8D39;</td>
+</tr>
+
+<tr>
+<td class="left">&#x7B97;&#x6CD5;</td>
+<td class="left">DeflOpt&#x3001;optipng&#x548C;pngout</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">zopfli</td>
+</tr>
+
+<tr>
+<td class="left">&#x5B89;&#x88C5;&#x540E;&#x7A0B;&#x5E8F;&#x4F53;&#x79EF;</td>
+<td class="left">1.3M</td>
+<td class="left">315.8K</td>
+<td class="left">719.9K</td>
+<td class="left">43.5K</td>
+</tr>
+
+<tr>
+<td class="left">&#x538B;&#x7F29;&#x540E;&#x56FE;&#x7247;&#x4F53;&#x79EF;</td>
+<td class="left">167.7K&#xFF08;&#x65E0;&#x635F;&#xFF09;</td>
+<td class="left">153.1K</td>
+<td class="left">167.9K</td>
+<td class="left">148.9K</td>
+</tr>
+
+<tr>
+<td class="left">&#x5176;&#x4ED6;&#x529F;&#x80FD;</td>
+<td class="left">JPG, GIF, TIFF, BMP&#x8F6C;&#x6362;&#x4E3A;PNG</td>
+<td class="left">BMP, GIF, TGA&#x8F6C;&#x6362;&#x4E3A;PNG&#xFF0C;&#x652F;&#x6301;APNG</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+</tr>
+
+<tr>
+<td class="left">&#x5907;&#x6CE8;</td>
+<td class="left">Requires .NET 4.0</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+</tr>
+</tbody>
+</table>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> &#x66F4;&#x65B0;&#x5386;&#x53F2;</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-30 &#x5468;&#x516D;]</span></span> &#x62DF;&#x5B9A;&#x521D;&#x7A3F;
+</li>
+</ul>
+</div>
+</div>
+
+<p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">[2016-01-30 &#x5468;&#x516D;]</span></span></p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[
+
+<p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x8BA8;&#x8BBA;Windows&#x5E73;&#x53F0;&#]]>
+    </summary>
+    
+      <category term="多媒体处理" scheme="http://yuchen-lea.gitcafe.io/categories/%E5%A4%9A%E5%AA%92%E4%BD%93%E5%A4%84%E7%90%86/"/>
+    
+      <category term="图像" scheme="http://yuchen-lea.gitcafe.io/categories/%E5%A4%9A%E5%AA%92%E4%BD%93%E5%A4%84%E7%90%86/%E5%9B%BE%E5%83%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[《关于锻炼的真相》笔记]]></title>
+    <link href="http://yuchen-lea.gitcafe.io/2016-01-29-the-truth-about-exercise/"/>
+    <id>http://yuchen-lea.gitcafe.io/2016-01-29-the-truth-about-exercise/</id>
+    <published>2016-01-28T16:00:00.000Z</published>
+    <updated>2016-01-30T06:58:58.924Z</updated>
+    <content type="html"><![CDATA[
+
+<p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x603B;&#x7ED3; <a href="http://movie.douban.com/subject/24844982/" target="_blank" rel="external">BBC&#x5730;&#x5E73;&#x7EBF;&#x7CFB;&#x5217;&#xFF1A;&#x5173;&#x4E8E;&#x953B;&#x70BC;&#x7684;&#x771F;&#x76F8;</a> &#x4E00;&#x7247;&#x7684;&#x8109;&#x7EDC;&#x6846;&#x67B6;&#x4E0E;&#x77E5;&#x8BC6;&#x70B9;&#x3002;</div>
+</p>
+
+<p>
+<img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/mindmap_the_truth_about_exercise.png">
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> &#x5173;&#x4E8E;&#x8DD1;&#x6B65;</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>&#x5982;&#x4F55;&#x8BA1;&#x7B97;&#x6D88;&#x8017;&#x7684;&#x5361;&#x8DEF;&#x91CC;&#xFF1A;&#x901A;&#x8FC7;&#x6D4B;&#x5B9A;&#x5438;&#x5165;&#x7684;&#x6C27;&#x6C14;&#x3001;&#x547C;&#x51FA;&#x4E8C;&#x6C27;&#x5316;&#x78B3;&#x7684;&#x91CF;
+</li>
+<li>&#x8DD1;&#x6B65;&#x6D88;&#x8017;&#x7684;&#x5361;&#x8DEF;&#x91CC;&#x5E76;&#x4E0D;&#x591A;&#xFF0C;&#x7EA6;&#x4E3A;&#x6BCF;&#x5206;&#x949F;16&#x5361;&#x8DEF;&#x91CC;
+</li>
+<li>&#x8981;&#x60F3;&#x901A;&#x8FC7;&#x8DD1;&#x6B65;&#x51CF;&#x80A5;&#xFF0C;&#x9700;&#x8981;&#x957F;&#x671F;&#x575A;&#x6301;&#x5E76;&#x63A7;&#x5236;&#x996E;&#x98DF;&#x7684;&#x5361;&#x8DEF;&#x91CC;&#x6444;&#x5165;&#x91CF;
+</li>
+</ul>
+
+<a id="more"></a>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> &#x6563;&#x6B65;&#x53EF;&#x4EE5;&#x964D;&#x4F4E;&#x8840;&#x6DB2;&#x4E2D;&#x7684;&#x8102;&#x80AA;&#x542B;&#x91CF;</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+&#x8102;&#x80AA;&#x5728;&#x4F53;&#x5185;&#x7684;&#x53BB;&#x5411;&#xFF1A;
+</p>
+<ol class="org-ol">
+<li>&#x9996;&#x5148;&#x8FDB;&#x5165;&#x8840;&#x6DB2;&#xFF0C;&#x8FD9;&#x4F1A;&#x589E;&#x52A0;&#x8840;&#x7BA1;&#x58C1;&#x8102;&#x80AA;&#x5806;&#x79EF;&#x7684;&#x98CE;&#x9669;
+</li>
+<li>&#x7136;&#x540E;&#x4F1A;&#x5728;&#x4F53;&#x5185;&#x5B58;&#x50A8;&#x3002;&#x4F53;&#x5185;&#x7684;&#x8102;&#x80AA;&#x6709;2&#x79CD;&#x7C7B;&#x578B;&#xFF1A;
+<ol class="org-ol">
+<li>&#x76AE;&#x4E0B;&#x8102;&#x80AA;&#xFF1A;&#x4F8B;&#x5982;&#x8170;&#x90E8;&#x8102;&#x80AA;&#xFF0C;&#x65E0;&#x5BB3;&#xFF0C;&#x751A;&#x81F3;&#x8FD8;&#x53EF;&#x8D77;&#x5230;&#x4FDD;&#x62A4;&#x4F5C;&#x7528;&#xFF08;&#x7F13;&#x51B2;&#xFF09;
+</li>
+<li>&#x5185;&#x810F;&#x8102;&#x80AA;&#xFF1A;&#x5371;&#x5BB3;&#x5927;&#xFF0C;&#x2161;&#x578B;&#x7CD6;&#x5C3F;&#x75C5;&#x4E0E;&#x5185;&#x810F;&#x8102;&#x80AA;&#x6709;&#x76F4;&#x63A5;&#x7684;&#x5173;&#x8054;
+</li>
+</ol>
+</li>
+</ol>
+
+<p>
+&#x957F;&#x65F6;&#x95F4;&#x6563;&#x6B65;&#x53EF;&#x4EE5;&#xFF1A;
+</p>
+<ol class="org-ol">
+<li>&#x4EA7;&#x751F;&#x8102;&#x86CB;&#x767D;&#x8102;&#x80AA;&#x9176;&#xFF0C;&#x6D88;&#x8017;&#x8840;&#x6DB2;&#x4E2D;&#x8102;&#x80AA;&#x7684;&#xFF0C;&#x4F7F;&#x5F97;&#x81F4;&#x8840;&#x7BA1;&#x58C1;&#x8102;&#x80AA;&#x5806;&#x79EF;&#x548C;&#x5185;&#x810F;&#x8102;&#x80AA;&#x5806;&#x79EF;&#x53EF;&#x80FD;&#x6027;&#x51CF;&#x5C11;
+</li>
+<li>&#x953B;&#x70BC;&#x808C;&#x8089;&#xFF08;&#x4E2A;&#x4EBA;&#x89C9;&#x5F97;&#x6B64;&#x9879;&#x4F5C;&#x7528;&#x53EF;&#x5FFD;&#x7565;&#xFF09;&#x3002;
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> HIIT</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+HIIT&#x5373;&#x77ED;&#x65F6;&#x9AD8;&#x5F3A;&#x5EA6;&#x8BAD;&#x7EC3;&#xFF0C;&#x76F8;&#x6BD4;&#x4F20;&#x7EDF;&#x7684;&#x8DD1;&#x6B65;&#x7B49;&#x953B;&#x70BC;&#x9879;&#x76EE;&#xFF0C;&#x6548;&#x7387;&#x66F4;&#x9AD8;&#xFF0C;&#x56E0;&#x5176;&#xFF1A;
+</p>
+
+<ol class="org-ol">
+<li>&#x5206;&#x89E3;&#x808C;&#x8089;&#x7684;&#x7CD6;&#x539F;&#x50A8;&#x5907;&#xFF08;&#x8840;&#x7CD6;&#x7684;&#x50A8;&#x5B58;&#x5F62;&#x5F0F;&#xFF09;
+</li>
+<li>&#x8C03;&#x52A8;&#x66F4;&#x591A;&#x7684;&#x808C;&#x8089;&#x7EC4;&#x7EC7;&#xFF08;HIIT&#x9A91;&#x8F66;&#x7EA6;70%&#xFF0C;&#x6563;&#x6B65;&#x3001;&#x6162;&#x8DD1;&#x7EA6;25%&#xFF09;&#x3002;
+</li>
+</ol>
+
+<p>
+&#x4E00;&#x822C;&#x7684;&#xFF0C;HIIT&#x53EF;&#x4EE5;&#x6539;&#x5584;&#xFF1A;
+</p>
+
+<ul class="org-ul">
+<li>&#x80F0;&#x5C9B;&#x7D20;&#x654F;&#x611F;&#x5EA6;&#xFF1A;&#x80F0;&#x5C9B;&#x7D20;&#x964D;&#x4F4E;&#x8840;&#x7CD6;&#x7684;&#x80FD;&#x529B;
+</li>
+<li>&#x6709;&#x6C27;&#x9002;&#x80FD;&#xFF08;&#x6700;&#x5927;&#x6444;&#x6C27;&#x91CF;&#xFF09;&#xFF1A;&#x5FC3;&#x80BA;&#x4F9B;&#x6C27;&#x7684;&#x80FD;&#x529B;&#x3002;&#x5965;&#x8FD0;&#x9009;&#x624B;&#x6700;&#x5927;&#x6444;&#x6C27;&#x91CF;&#x662F;75ml/kg&#xFF0C;&#x5F88;&#x591A;&#x4EBA;&#x53EA;&#x6709;20&#x591A;&#x3002;&#x4F46;&#x662F;&#x8BE5;&#x6C34;&#x5E73;&#x7684;&#x6539;&#x5584;&#x60C5;&#x51B5;&#x5F88;&#x5927;&#x7A0B;&#x5EA6;&#x53D6;&#x51B3;&#x4E8E;&#x57FA;&#x56E0;&#x3002;
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> NEAT</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+NEAT=&#x975E;&#x8FD0;&#x52A8;&#x751F;&#x70ED;&#x4F5C;&#x7528;=&#x65E5;&#x5E38;&#x751F;&#x6D3B;&#x6D88;&#x8017;&#x7684;&#x70ED;&#x91CF;
+</p>
+
+<p>
+&#x4E0D;&#x8981;&#x4E45;&#x5750;&#xFF1A;&#x4E45;&#x5750;&#x4E00;&#x5C0F;&#x65F6;&#xFF0C;&#x5BFC;&#x81F4;&#x9ECF;&#x6027;&#x7269;&#x8D28;&#x805A;&#x96C6;&#xFF0C;&#x8840;&#x7CD6;&#x3001;&#x8840;&#x8102;&#x5347;&#x9AD8;&#xFF0C;&#x53BB;&#x5065;&#x8EAB;&#x623F;&#x7684;&#x77ED;&#x65F6;&#x95F4;&#x953B;&#x70BC;&#x4E5F;&#x5F88;&#x96BE;&#x5F25;&#x8865;&#x8FD9;&#x79CD;&#x6076;&#x679C;&#x3002;
+</p>
+
+<p>
+&#x6D88;&#x8017;&#x5361;&#x8DEF;&#x91CC;&#x5E76;&#x4E0D;&#x610F;&#x5473;&#x8981;&#x5927;&#x91CF;&#x6D41;&#x6C57;&#x3002;
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> &#x953B;&#x70BC;&#x6548;&#x679C;&#x56E0;&#x4EBA;&#x800C;&#x5F02;</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+&#x6BCF;&#x4E2A;&#x4EBA;&#x5BF9;&#x76F8;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x8FD0;&#x52A8;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x53CD;&#x5E94;&#x60C5;&#x51B5;&#xFF0C;&#x5927;&#x7EA6;20%&#x7684;&#x4EBA;&#x662F;&#x6709;&#x6C27;&#x9002;&#x80FD;&#x96F6;&#x6536;&#x76CA;&#x8005;&#xFF0C;&#x5927;&#x7EA6;15%&#x80FD;&#x4ECE;&#x6709;&#x6C27;&#x8FD0;&#x52A8;&#x83B7;&#x5F97;&#x5F88;&#x5927;&#x76CA;&#x5904;&#x3002;
+</p>
+
+<p>
+&#x8FD9;&#x4E3B;&#x8981;&#x6E90;&#x4E8E;11&#x79CD;&#x57FA;&#x56E0;&#x7684;&#x4E0D;&#x540C;&#x3002;James Timmons&#x6559;&#x6388;&#x57FA;&#x4E8E;&#x5176;&#x7814;&#x7A76;&#x6210;&#x679C;&#x6210;&#x7ACB; <a href="http://www.xrgenomics.com/" target="_blank" rel="external">XRGenomics</a> &#x516C;&#x53F8;&#x63D0;&#x4F9B;&#x4E86;XRPredict+ DNA&#x68C0;&#x6D4B;&#x670D;&#x52A1;&#x3002;&#x68C0;&#x6D4B;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x4E86;&#x89E3;&#x81EA;&#x5DF1;&#x5BF9;&#x953B;&#x70BC;&#x7684;&#x53CD;&#x5E94;&#x60C5;&#x51B5;&#xFF0C;&#x4ECE;&#x800C;&#x9009;&#x62E9;&#x6700;&#x9002;&#x5408;&#x81EA;&#x5DF1;&#x7684;&#x953B;&#x70BC;&#x65B9;&#x5F0F;&#x3002;<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup> &#x7F51;&#x7AD9;&#x63D0;&#x4F9B;&#x4E86;DNA&#x68C0;&#x6D4B;&#x62A5;&#x544A;&#x6837;&#x4F8B;&#xFF0C;&#x8BE6;&#x89C1;<a href="http://www.xrgenomics.com/media/85712/XRPredictExampleReport.pdf" target="_blank" rel="external">&#x8FD9;&#x91CC;</a>&#x3002;
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> &#x66F4;&#x65B0;&#x5386;&#x53F2;</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-30 &#x5468;&#x516D;]</span></span> &#x8865;&#x5145;XRPredict+ DNA&#x68C0;&#x6D4B;&#x76F8;&#x5173;&#x5185;&#x5BB9;
+</li>
+<li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-29 &#x5468;&#x4E94;]</span></span> &#x62DF;&#x5B9A;&#x521D;&#x7A3F;
+</li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<a href="http://www.lboro.ac.uk/microsites/enterprise/enterprise-awards/2013/social/personalised-exercise.html" target="_blank" rel="external">Personalised Exercise | Social Impact | Enterprise Awards | Loughborough University</a>
+</p></div>
+
+
+</div>
+</div>
+<p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">[2016-01-29 &#x5468;&#x4E94;]</span></span></p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x603B;&#x7ED3; <a href="http://movie.douban.com/subject/24844982/">BBC&#x5730;&#x5E73;&#x7EBF;&#x7CFB;&#x5217;&#xFF1A;&#x5173;&#x4E8E;&#x953B;&#x70BC;&#x7684;&#x771F;&#x76F8;</a> &#x4E00;&#x7247;&#x7684;&#x8109;&#x7EDC;&#x6846;&#x67B6;&#x4E0E;&#x77E5;&#x8BC6;&#x70B9;&#x3002;</div>
+</p>
+
+<p>
+<img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/mindmap_the_truth_about_exercise.png">
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> &#x5173;&#x4E8E;&#x8DD1;&#x6B65;</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>&#x5982;&#x4F55;&#x8BA1;&#x7B97;&#x6D88;&#x8017;&#x7684;&#x5361;&#x8DEF;&#x91CC;&#xFF1A;&#x901A;&#x8FC7;&#x6D4B;&#x5B9A;&#x5438;&#x5165;&#x7684;&#x6C27;&#x6C14;&#x3001;&#x547C;&#x51FA;&#x4E8C;&#x6C27;&#x5316;&#x78B3;&#x7684;&#x91CF;
+</li>
+<li>&#x8DD1;&#x6B65;&#x6D88;&#x8017;&#x7684;&#x5361;&#x8DEF;&#x91CC;&#x5E76;&#x4E0D;&#x591A;&#xFF0C;&#x7EA6;&#x4E3A;&#x6BCF;&#x5206;&#x949F;16&#x5361;&#x8DEF;&#x91CC;
+</li>
+<li>&#x8981;&#x60F3;&#x901A;&#x8FC7;&#x8DD1;&#x6B65;&#x51CF;&#x80A5;&#xFF0C;&#x9700;&#x8981;&#x957F;&#x671F;&#x575A;&#x6301;&#x5E76;&#x63A7;&#x5236;&#x996E;&#x98DF;&#x7684;&#x5361;&#x8DEF;&#x91CC;&#x6444;&#x5165;&#x91CF;
+</li>
+</ul>]]>
+    
+    </summary>
+    
+      <category term="健康" scheme="http://yuchen-lea.gitcafe.io/categories/%E5%81%A5%E5%BA%B7/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[日语中的浊音与半浊音]]></title>
     <link href="http://yuchen-lea.gitcafe.io/2016-01-27-japanese-voiced-sounds/"/>
     <id>http://yuchen-lea.gitcafe.io/2016-01-27-japanese-voiced-sounds/</id>
     <published>2016-01-26T16:00:00.000Z</published>
-    <updated>2016-01-27T10:14:27.282Z</updated>
+    <updated>2016-01-28T02:03:18.787Z</updated>
     <content type="html"><![CDATA[
 
 
@@ -88,6 +387,8 @@
 <p>
 &#x4F4D;&#x4E8E;&#x8BCD;&#x4E2D;&#x548C;&#x8BCD;&#x5C3E;&#x53D1;&#x6210;&#x9F3B;&#x6D4A;&#x97F3;&#x662F;&#x6BD4;&#x8F83;&#x6B63;&#x7EDF;&#x3001;&#x8001;&#x6D3E;&#x7684;&#x53D1;&#x97F3;&#x65B9;&#x5F0F;&#xFF0C;&#x73B0;&#x5728;&#x5F88;&#x591A;&#x65E5;&#x672C;&#x5E74;&#x8F7B;&#x4EBA;&#x4E00;&#x5F8B;&#x5C06;&#x304C;&#x884C;&#x53D1;&#x6210; ga&#x3001;gi&#x3001;gu&#x3001;ge&#x3001;go&#xFF0C;&#x800C;&#x4E0D;&#x7BA1;&#x5047;&#x540D;&#x4F4D;&#x4E8E;&#x8BCD;&#x6C47;&#x7684;&#x4EC0;&#x4E48;&#x4F4D;&#x7F6E;&#x3002;
 </p>
+
+<a id="more"></a>
 </div>
 </div>
 
@@ -331,6 +632,8 @@
 <h2 id="sec-3"><span class="section-number-2">3</span> &#x53C2;&#x8003;</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
+<li><a href="http://www.wanmen.org/courses/YYRYYY/topics/YYRYYY12A" target="_blank" rel="external">&#x4E07;&#x95E8;&#x5927;&#x5B66;|&#x65E5;&#x8BED;&#x4E94;&#x5341;&#x97F3;&#x56FE;&#x8BED;&#x97F3;&#x5165;&#x95E8;|&#x6D4A;&#x97F3;&#x534A;&#x6D4A;&#x97F3;</a>
+</li>
 <li><a href="https://ja.wikipedia.org/wiki/%E5%8D%8A%E6%BF%81%E7%82%B9" target="_blank" rel="external">&#x534A;&#x6FC1;&#x70B9; - Wikipedia</a>
 </li>
 <li><a href="https://zh.wikipedia.org/wiki/%E6%B5%8A%E9%9F%B3%E7%AC%A6" target="_blank" rel="external">&#x6D4A;&#x97F3;&#x7B26; - &#x7EF4;&#x57FA;&#x767E;&#x79D1;&#xFF0C;&#x81EA;&#x7531;&#x7684;&#x767E;&#x79D1;&#x5168;&#x4E66;</a>
@@ -343,13 +646,70 @@
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[
+    <![CDATA[<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> &#x6D4A;&#x97F3;</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+&#x6D4A;&#x97F3;&#x4E00;&#x5171;&#x6709;&#x56DB;&#x884C;&#xFF0C;&#x5176;&#x53D1;&#x97F3;&#x548C;&#x5199;&#x6CD5;&#x90FD;&#x662F;&#x4ECE;&#x4E94;&#x5341;&#x97F3;&#x56FE;&#x4E2D;&#x7684;&#x56DB;&#x884C;&#x6D4A;&#x5316;&#x800C;&#x6765;&#xFF1A;
+</p>
 
+<ul class="org-ul">
+<li>k&#x2192;g&#xFF1A;&#x304B;&#x884C;&#x2192;&#x304C;&#x884C;
+</li>
+<li>s&#x2192;z&#xFF1A;&#x3055;&#x884C;&#x2192;&#x3056;&#x884C;
+</li>
+<li>t&#x2192;d&#xFF1A;&#x305F;&#x884C;&#x2192;&#x3060;&#x884C;
+</li>
+<li>h&#x2192;b&#xFF1A;&#x306F;&#x884C;&#x2192;&#x3070;&#x884C;
+</li>
+</ul>
 
+<p>
+&#x53D1;&#x97F3;&#x65F6;&#x58F0;&#x5E26;&#x632F;&#x52A8;&#xFF0C;&#x5199;&#x6CD5;&#x5728;&#x5BF9;&#x5E94;&#x7684;&#x6E05;&#x97F3;&#x5047;&#x540D;&#x53F3;&#x4E0A;&#x89D2;&#x52A0;&#x4E0A; <b>&#x6D4A;&#x70B9;&#x309B;</b> &#xFF08;&#x5F62;&#x72B6;&#x4E3A;&#x4E24;&#x70B9;&#xFF09; &#x5373;&#x53EF;&#x3002;
+</p>
+</div>
 
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> &#x304C;&#x884C;</h3>
+<div class="outline-text-3" id="text-1-1">
+<p class="verse">
+&#x304C;&#x304E;&#x3050;&#x3052;&#x3054;<br>
+&#x30AC;&#x30AE;&#x30B0;&#x30B2;&#x30B4;<br>
+</p>
+<p>
+&#x4ECE;&#x304B;&#x884C;&#x6D4A;&#x5316;&#x800C;&#x6765;&#xFF0C;&#x5148;&#x56DE;&#x987E;&#x4E00;&#x4E0B;&#x304B;&#x884C;&#x7684;&#x53D1;&#x97F3; ka&#x3001;ki&#x3001;ku&#x3001;ke&#x3001;ko&#xFF1A;
+</p>
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/ka_hang_songqiyin.mp3&amp;bg=0xE0E6ED&amp;leftbg=0x7B90A4&amp;lefticon=0xF2F2F2&amp;rightbg=0xAAB1B8&amp;rightbghover=0x357DCE&amp;righticon=0xF2F2F2&amp;righticonhover=0xFFFFFF&amp;text=0x357DCE&amp;slider=0x357DCE&amp;track=0xF5F5F5&amp;border=0xF5F5F5&amp;loader=0x94ACC2&amp;autostart=no&amp;loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> &#x6D4A;&#x97F3;</h2>]]>
+<p>
+&#x6D4A;&#x5316;&#x540E;&#x304C;&#x884C;&#x7684;&#x53D1;&#x97F3;&#x4E3A; ga&#x3001;gi&#x3001;gu&#x3001;ge&#x3001;go&#xFF1A;
+</p>
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/ga_hang.mp3&amp;bg=0xE0E6ED&amp;leftbg=0x7B90A4&amp;lefticon=0xF2F2F2&amp;rightbg=0xAAB1B8&amp;rightbghover=0x357DCE&amp;righticon=0xF2F2F2&amp;righticonhover=0xFFFFFF&amp;text=0x357DCE&amp;slider=0x357DCE&amp;track=0xF5F5F5&amp;border=0xF5F5F5&amp;loader=0x94ACC2&amp;autostart=no&amp;loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object>
+
+<p>
+&#x304C;&#x884C;&#x7684;&#x5047;&#x540D;&#x4F4D;&#x4E8E;&#x8BCD;&#x4E2D;&#x548C;&#x8BCD;&#x5C3E;&#x65F6;&#xFF0C;&#x53EF;&#x5728;&#x5F00;&#x59CB;&#x65F6;&#x52A0;&#x4E0A;&#x70B9;&#x9F3B;&#x97F3;n&#xFF0C;&#x53D1;&#x6210; <b>&#x9F3B;&#x6D4A;&#x97F3;</b> nga&#x3001;ngi&#x3001;ngu&#x3001;nge&#x3001;ngo&#xFF1A;
+</p>
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/ga_hang_bizhuoyin.mp3&amp;bg=0xE0E6ED&amp;leftbg=0x7B90A4&amp;lefticon=0xF2F2F2&amp;rightbg=0xAAB1B8&amp;rightbghover=0x357DCE&amp;righticon=0xF2F2F2&amp;righticonhover=0xFFFFFF&amp;text=0x357DCE&amp;slider=0x357DCE&amp;track=0xF5F5F5&amp;border=0xF5F5F5&amp;loader=0x94ACC2&amp;autostart=no&amp;loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object>
+
+<p>
+&#x4F4D;&#x4E8E;&#x8BCD;&#x4E2D;&#x548C;&#x8BCD;&#x5C3E;&#x53D1;&#x6210;&#x9F3B;&#x6D4A;&#x97F3;&#x662F;&#x6BD4;&#x8F83;&#x6B63;&#x7EDF;&#x3001;&#x8001;&#x6D3E;&#x7684;&#x53D1;&#x97F3;&#x65B9;&#x5F0F;&#xFF0C;&#x73B0;&#x5728;&#x5F88;&#x591A;&#x65E5;&#x672C;&#x5E74;&#x8F7B;&#x4EBA;&#x4E00;&#x5F8B;&#x5C06;&#x304C;&#x884C;&#x53D1;&#x6210; ga&#x3001;gi&#x3001;gu&#x3001;ge&#x3001;go&#xFF0C;&#x800C;&#x4E0D;&#x7BA1;&#x5047;&#x540D;&#x4F4D;&#x4E8E;&#x8BCD;&#x6C47;&#x7684;&#x4EC0;&#x4E48;&#x4F4D;&#x7F6E;&#x3002;
+</p>]]>
+    
     </summary>
     
       <category term="半浊音" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%8D%8A%E6%B5%8A%E9%9F%B3/"/>
@@ -362,84 +722,283 @@
     
       <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="日语发音" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%91%E9%9F%B3/"/>
+      <category term="日语口语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[日本文字的由来]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-25-japanese-origin/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-25-japanese-origin/</id>
-    <published>2016-01-24T16:00:00.000Z</published>
-    <updated>2016-01-25T16:34:51.801Z</updated>
+    <title><![CDATA[用HabitRPG游戏化你的生活！]]></title>
+    <link href="http://yuchen-lea.gitcafe.io/2016-01-27-RPG-your-life/"/>
+    <id>http://yuchen-lea.gitcafe.io/2016-01-27-RPG-your-life/</id>
+    <published>2016-01-26T16:00:00.000Z</published>
+    <updated>2016-01-30T07:05:29.848Z</updated>
     <content type="html"><![CDATA[
+
+<p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x4ECB;&#x7ECD; <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> &#x7684;&#x673A;&#x5236;&#xFF0C;&#x63A2;&#x7D22;&#x5982;&#x4F55;&#x5145;&#x5206;&#x5229;&#x7528;&#x6B64;&#x5DE5;&#x5177;&#x8BA9;&#x751F;&#x6D3B;&#x66F4;&#x9AD8;&#x6548;&#x3001;&#x66F4;&#x6709;&#x8DA3;&#x3002;&#x6587;&#x4E2D;&#x5185;&#x5BB9;&#x4E0D;&#x6D89;&#x53CA;&#x6280;&#x80FD;&#x3001;&#x56E2;&#x961F;&#x3001;&#x88C5;&#x5907;&#x3001;&#x804C;&#x4E1A;&#x7B49;&#x6DF1;&#x5EA6;&#x73A9;&#x6CD5;&#x3002;</div>
+</p>
+
+<p>
+<div class="alert alert-warning"><i class="fa fa-bell"></i>  <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> &#x5728;&#x5927;&#x9646;&#x5730;&#x533A;&#x8BBF;&#x95EE;&#x53EF;&#x80FD;&#x4E0D;&#x7A33;&#x5B9A;&#xFF0C;&#x9700;&#x7FFB;&#x5899;&#x4F7F;&#x7528;&#x3002;</div>
+</p>
+
+<p>
+<div class="alert alert-success"><i class="fa fa-lightbulb-o"></i>  &#x4E2A;&#x4EBA;&#x559C;&#x6B22;&#x6E05;&#x695A;&#x673A;&#x7406;&#x4E4B;&#x540E;&#x518D;&#x91C7;&#x53D6;&#x884C;&#x52A8;&#xFF0C;&#x504F;&#x5411;&#x5B9E;&#x8DF5;&#x7684;&#x670B;&#x53CB;&#x53EF;&#x8DF3;&#x8FC7;</div>
+</p>
 
 <p>
 <div class="alert alert-warning"><i class="fa fa-bell"></i>  &#x5B8C;&#x5584;&#x4E2D;</div>
 </p>
 
+<p>
+<a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> = Habit + RPG&#xFF0C;&#x65E8;&#x5728;&#x4EE5;RPG&#x6E38;&#x620F;&#x5316;&#x673A;&#x5236;&#xFF0C;&#x6FC0;&#x52B1;&#x6211;&#x4EEC;&#x6709;&#x6548;&#x53C8;&#x4E0D;&#x4E4F;&#x4E50;&#x8DA3;&#x5730;&#x6539;&#x53D8;&#x574F;&#x4E60;&#x60EF;&#x3001;&#x517B;&#x6210;&#x65B0;&#x4E60;&#x60EF;&#xFF0C;&#x7BA1;&#x7406;&#x81EA;&#x5DF1;&#x7684;&#x751F;&#x6D3B;&#x3002;
+</p>
+
 <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> &#x53EA;&#x6709;&#x53E3;&#x8BED;&#x7684;&#x65F6;&#x4EE3;</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> &#x57FA;&#x672C;&#x672F;&#x8BED;</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-&#x6240;&#x6709;&#x6587;&#x660E;&#x90FD;&#x4F1A;&#x7ECF;&#x5386;&#x7684;&#x9636;&#x6BB5;&#xFF0C;&#x53EA;&#x6709;&#x8BED;&#x8A00;&#xFF0C;&#x6CA1;&#x6709;&#x6587;&#x5B57;&#x3002;&#x90A3;&#x65F6;&#x7684;&#x65E5;&#x672C;&#x4EBA;&#x8BA4;&#x4E3A;&#x8BED;&#x8A00;&#x91CC;&#x6709;&#x4E0D;&#x53EF;&#x601D;&#x8BAE;&#x7684;&#x5A01;&#x529B;&#x5B58;&#x5728;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; <b>&#x8A00;&#x7075;&#x4FE1;&#x4EF0;</b> &#x3002;
+&#x9996;&#x5148;&#x719F;&#x6089;&#x4E00;&#x4E0B;  <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> &#x6D89;&#x53CA;&#x7684;&#x672F;&#x8BED;&#xFF0C;&#x5728;&#x4E0B;&#x6587;&#x4E2D;&#x518D;&#x6B21;&#x51FA;&#x73B0;&#x65F6;&#x4E0D;&#x4E88;&#x8D58;&#x8FF0;&#xFF08;&#x66F4;&#x591A;&#x53C2;&#x89C1; <a href="http://habitica.wikia.com/wiki/Glossary" target="_blank" rel="external">Glossary - Habitica Wiki - Wikia</a> &#xFF09;&#xFF1A;
 </p>
-</div>
-</div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> &#x6C49;&#x5B57;&#x4F20;&#x5165;</h2>
-<div class="outline-text-2" id="text-2">
 <ul class="org-ul">
-<li>3&#x4E16;&#x7EAA;&#x672B;&#xFF0C;&#x6C49;&#x5B57;&#x65E5;&#x672C;&#x5F15;&#x8FDB;&#x4E2D;&#x56FD;&#x7684;&#x6C49;&#x5B57;&#x3002;
+<li>&#x5065;&#x5EB7; (HP) &#x53CD;&#x6620;&#x5B8C;&#x6210;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x548C;&#x6212;&#x9664;&#x574F;&#x4E60;&#x60EF;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x53EF;&#x4ECE;&#x7EA2;&#x8272;&#x8FDB;&#x5EA6;&#x6761;&#x67E5;&#x770B;&#xFF0C;&#x5DE6;&#x7AEF;&#x6807;&#x5FD7;&#x4E3A;&#x6807;&#x5FD7;  
 </li>
-<li>4&#x4E16;&#x7EAA;&#x5DE6;&#x53F3;&#xFF0C;&#x65E5;&#x672C;&#x5438;&#x6536;&#x6C49;&#x5B57;&#x3002;<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>
+<li>&#x7ECF;&#x9A8C;&#x503C; (XP) &#x53CD;&#x6620;&#x73A9;&#x5BB6;&#x8FDB;&#x5EA6;&#x3002;&#x53EF;&#x4ECE;&#x9EC4;&#x8272;&#x8FDB;&#x5EA6;&#x6761;&#x67E5;&#x770B;&#xFF0C;&#x5DE6;&#x7AEF;&#x6807;&#x5FD7;&#x4E3A; &#x2605;&#x3002;&#x968F;&#x7740;&#x7B49;&#x7EA7;&#x7684;&#x589E;&#x957F;&#xFF0C;&#x5347;&#x7EA7;&#x6240;&#x9700;&#x7684;&#x7ECF;&#x9A8C;&#x503C;&#x4E5F;&#x589E;&#x52A0;&#x3002;
+</li>
+<li>&#x7B49;&#x7EA7; Level &#x53CD;&#x6620;&#x73A9;&#x5BB6;&#x8FDB;&#x5EA6;&#x3002;&#x90E8;&#x5206;&#x529F;&#x80FD;&#x53EA;&#x6709;&#x5728;&#x8FBE;&#x5230;&#x7279;&#x5B9A;&#x7B49;&#x7EA7;&#x624D;&#x4F1A;&#x89E3;&#x9501;&#xFF08;&#x8BE6;&#x60C5;&#x53C2;&#x89C1;<a href="http://habitica.wikia.com/wiki/Level#Unlocks" target="_blank" rel="external">&#x8FD9;&#x91CC;</a>&#xFF09;&#x3002;
+</li>
+<li>&#x91D1;&#x5E01;&#xFF08;GP&#xFF09;&#x6E38;&#x620F;&#x5185;&#x7684;&#x901A;&#x884C;&#x8D27;&#x5E01;&#xFF0C;&#x53EF;&#x8D2D;&#x4E70;&#x5956;&#x52B1;&#x3001;&#x88C5;&#x5907;&#x7B49;&#x3002;100&#x94F6;=1&#x91D1;
+</li>
+<li>&#x8FDE;&#x51FB; Streaks &#x9700;&#x6309;&#x65F6;&#x5B8C;&#x6210;&#x7684;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x8FDE;&#x7EED;&#x5B8C;&#x6210;&#x7684;&#x6B21;&#x6570;&#x3002;
+</li>
+<li>&#x6389;&#x843D; Drops &#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x6389;&#x843D;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7269;&#x54C1;&#xFF0C;&#x5982;&#x5BA0;&#x7269;&#x86CB;&#x3001;&#x836F;&#x6C34;&#x7B49;&#x3002;&#x8BE5;&#x529F;&#x80FD;&#x5728;&#x8FBE;&#x5230;&#x7B49;&#x7EA7; 3 &#x540E;&#x89E3;&#x9501;&#x3002;
+</li>
+<li>&#x4EFB;&#x52A1;&#x5206;&#x503C; task value &#x53CD;&#x6620;&#x4E86;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x5B8C;&#x6210;&#x60C5;&#x51B5;&#x3002;&#x662F; <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> &#x6839;&#x636E;&#x7528;&#x6237;&#x7684;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x60C5;&#x51B5;&#x4E3A;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x81EA;&#x52A8;&#x8BA1;&#x7B97;&#x5F97;&#x51FA;&#x7684;&#x6570;&#x503C;&#x3002;
+</li>
+<li>&#x4EFB;&#x52A1;&#x989C;&#x8272; &#x4E0E;&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x76F8;&#x5173;&#xFF0C;&#x4ECE;&#x4F4E;&#x5230;&#x9AD8;&#x7684;&#x989C;&#x8272;&#x5206;&#x522B;&#x4E3A;&#xFF1A;&#x7EA2;&#x2192;&#x6A59;&#x2192;&#x9EC4;&#x2192;&#x7EFF;&#x2192;&#x84DD;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x5B8C;&#x6210;&#x7684;&#x4EFB;&#x52A1;&#x53D8;&#x4E3A;&#x7070;&#x8272;&#x3002;
+</li>
+<li>&#x4F11;&#x606F; Rest in the Inn<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup> &#x6709;&#x65F6;&#x5019;&#x9700;&#x8981;&#x6682;&#x505C;HabitRPG&#xFF0C;&#x4F8B;&#x5982;&#x51C6;&#x5907;&#x4EAB;&#x53D7;&#x5047;&#x671F;&#xFF0C;&#x90A3;&#x4E48;&#x5230;&#x5BA2;&#x6808;&#x4E2D;&#x4F11;&#x606F;&#x5C31;&#x4E0D;&#x4F1A;&#x56E0;&#x4E3A;&#x6CA1;&#x5B8C;&#x6210;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x800C;&#x635F;&#x5931;HP&#x548C;&#x8FDE;&#x51FB;&#x3002;
+</li>
+<li>&#x73A9;&#x5BB6;&#x5C5E;&#x6027;&#xFF1A;&#x6709;&#x529B;&#x91CF;&#x3001;&#x667A;&#x529B;&#x3001;&#x4F53;&#x8D28;&#x3001;&#x611F;&#x77E5;&#x56DB;&#x9879;&#x3002;&#x4E0E;&#x4E00;&#x4E9B;&#x6280;&#x80FD;&#x6709;&#x5173;&#xFF0C;&#x589E;&#x52A0;&#x53EF;&#x73A9;&#x6027;&#x3002;
 </li>
 </ul>
-
-<p>
-&#x5F53;&#x65F6;&#x5B8C;&#x5168;&#x7528;&#x6C49;&#x5B57;&#xFF0C;&#x770B;&#x6C49;&#x5B57;&#x8BFB;&#x65E5;&#x8BED;&#x3002;
-</p>
-
-<p>
-&#x4EE3;&#x8868;&#xFF1A;&#x300A;&#x53E4;&#x4E8B;&#x8BB0;&#x300B; &#x65E5;&#x672C;&#x6700;&#x65E9;&#x7684;&#x53F2;&#x4E66;
-</p>
-
-<p>
-<div class="alert alert-warning"><i class="fa fa-bell"></i>  &#x4E0B;&#x4F8B;&#x5F15;&#x7528;&#x81EA;<a href="http://www.wanmen.org/courses/YYRYYY/topics/YYRYYY01A" target="_blank" rel="external">&#x4E07;&#x95E8;&#x5927;&#x5B66;|&#x65E5;&#x8BED;&#x4E94;&#x5341;&#x97F3;&#x56FE;&#x8BED;&#x97F3;&#x5165;&#x95E8;|&#x65E5;&#x672C;&#x6587;&#x5B57;&#x4ECB;&#x7ECD;</a> &#xFF0C;&#x51FA;&#x81EA; *&#x53E4;&#x4E8B;&#x8A18;*<sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup> &#x3002;&#x5728;&#x6B64;&#x611F;&#x8C22;&#x82CF;&#x66FC;&#x8001;&#x5E08;&#x6E05;&#x6670;&#x7684;&#x8BB2;&#x89E3;&#x3002;</div>
-</p>
-
-<blockquote>
-<p>
-&#x5929;&#x5730;&#x521D;&#x767C;&#x4E4B;&#x6642;&#x3002;&#x65BC;&#x9AD8;&#x5929;&#x539F;&#x6210;&#x795E;&#x540D;&#x3002;&#x5929;&#x4E4B;&#x5FA1;&#x4E2D;&#x4E3B;&#x795E;&#x3002;&#x3008;&#x8A13;&#x9AD8;&#x4E0B;&#x5929;&#x4E91;&#x963F;&#x9EBB;&#x3002;&#x4E0B;&#x6548;&#x6B64;&#x3002;&#x3009;&#x6B21;&#x9AD8;&#x5FA1;&#x7522;&#x5DE2;&#x65E5;&#x795E;&#x3002;&#x6B21;&#x795E;&#x7522;&#x5DE2;&#x65E5;&#x795E;&#x3002;&#x6B64;&#x4E09;&#x67F1;&#x795E;&#x8005;&#x3002;&#x4E26;&#x7368;&#x795E;&#x6210;&#x5750;&#x800C;&#x3002;&#x96B1;&#x8EAB;&#x4E5F;&#x3002;
-</p>
-
-<p>
-&#x6B21;&#x570B;&#x7A1A;&#x5982;&#x6D6E;&#x8102;&#x800C;&#x3002;&#x4E45;&#x7F85;&#x4E0B;&#x90A3;&#x5DDE;&#x591A;&#x9640;&#x7528;&#x5E63;&#x7409;&#x4E4B;&#x6642;&#x3002;&#x3008;&#x7409;&#x5B57;&#x4EE5;&#x4E0A;&#x5341;&#x5B57;&#x4EE5;&#x97F3;&#x3002;&#x3009;&#x5982;&#x8466;&#x7259;&#x56E0;&#x840C;&#x9A30;&#x4E4B;&#x7269;&#x800C;&#x3002;&#x2026;&#x2026;
-</p>
-</blockquote>
-
-<p>
-&#x6CA1;&#x5B66;&#x8FC7;&#x65E5;&#x8BED;&#x7684;&#x4E2D;&#x56FD;&#x4EBA;&#x4E5F;&#x53EF;&#x4EE5;&#x770B;&#x61C2;&#x4E0A;&#x6587;&#x7684;&#x610F;&#x601D;&#xFF0C;&#x4F46;&#x662F;&#x5FF5;&#x4E0D;&#x51FA;&#x6765;&#xFF0C;&#x56E0;&#x4E3A;&#x662F;&#x8BFB;&#x65E5;&#x8BED;&#x7684;&#x97F3;&#x3002;&#x53C8;&#x662F;&#x4F53;&#x73B0; <b>&#x8BED;&#x8A00;&#x548C;&#x6587;&#x5B57;&#x5E76;&#x4E0D;&#x7B49;&#x540C;</b> &#x7684;&#x4E00;&#x4E2A;&#x597D;&#x4F8B;&#x5B50;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#x51FA;&#x73B0;&#x4E86;&#x4E24;&#x79CD;&#x53D1;&#x97F3;&#x65B9;&#x5F0F;&#xFF1A; <b>&#x8BAD;&#x8BFB;</b> &#x548C; <b>&#x97F3;&#x8BFB;</b> &#x3002;&#x4E00;&#x4E2A;&#x6C49;&#x5B57;&#x5982;&#x679C;&#x662F;&#x4E0D;&#x540C;&#x65F6;&#x671F;&#x6216;&#x4E0D;&#x540C;&#x5730;&#x533A;&#x4F20;&#x5165;&#x65E5;&#x672C;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x4E00;&#x4E2A;&#x6C49;&#x5B57;&#x6709;&#x591A;&#x79CD;&#x97F3;&#x8BFB;&#xFF1B;&#x4E00;&#x4E2A;&#x6C49;&#x5B57;&#x5982;&#x679C;&#x5BF9;&#x5E94;&#x591A;&#x79CD;&#x610F;&#x601D;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x4E00;&#x4E2A;&#x6C49;&#x5B57;&#x6709;&#x591A;&#x79CD;&#x8BAD;&#x8BFB;&#x3002;&#x53C2;&#x89C1; <a href="\2016-01-25-onyomi-and-kunyomi">&#x97F3;&#x8BFB;&#x4E0E;&#x8BAD;&#x8BFB;</a>&#x3002;
-</p>
 
 <a id="more"></a>
 </div>
 </div>
 
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> &#x6709;&#x5173;GTD&#x7684;&#x6E38;&#x620F;&#x673A;&#x5236;</h2>
+<div class="outline-text-2" id="text-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#xA0;</th>
+<th scope="col" class="left">&#x5065;&#x5EB7;</th>
+<th scope="col" class="left">&#x7ECF;&#x9A8C;&#x503C;</th>
+<th scope="col" class="left">&#x7B49;&#x7EA7;</th>
+<th scope="col" class="left">&#x91D1;&#x5E01;</th>
+<th scope="col" class="left">&#x8FDE;&#x51FB;</th>
+<th scope="col" class="left">&#x4EFB;&#x52A1;&#x5206;&#x503C;</th>
+<th scope="col" class="left">&#x4EFB;&#x52A1;&#x989C;&#x8272;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&#x6C89;&#x6EBA;&#x574F;&#x4E60;&#x60EF;&#xFF08;-&#xFF09;</td>
+<td class="left">-HP</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#x51CF;&#x5C11;</td>
+<td class="left">&#x53D8;&#x7EA2;</td>
+</tr>
+
+<tr>
+<td class="left">&#x6267;&#x884C;&#x597D;&#x4E60;&#x60EF;&#xFF08;+&#xFF09;</td>
+<td class="left">&#xA0;</td>
+<td class="left">+XP</td>
+<td class="left">&#xA0;</td>
+<td class="left">+GP</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#x589E;&#x52A0;</td>
+<td class="left">&#x53D8;&#x84DD;</td>
+</tr>
+
+<tr>
+<td class="left">&#x6CA1;&#x5B8C;&#x6210;&#x5355;&#x5411;&#x4E60;&#x60EF;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#x53D8;&#x4E3A;&#x4E00;&#x534A;</td>
+<td class="left">&#x53D8;&#x9EC4;</td>
+</tr>
+
+<tr>
+<td class="left">&#x5B8C;&#x6210;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;</td>
+<td class="left">&#xA0;</td>
+<td class="left">+XP</td>
+<td class="left">&#xA0;</td>
+<td class="left">+GP</td>
+<td class="left">+1</td>
+<td class="left">&#x589E;&#x52A0;</td>
+<td class="left">&#x53D8;&#x7070;</td>
+</tr>
+
+<tr>
+<td class="left">&#x6CA1;&#x5B8C;&#x6210;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;</td>
+<td class="left">-HP</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#x91CD;&#x7F6E;&#x4E3A;0</td>
+<td class="left">&#x51CF;&#x5C11;</td>
+<td class="left">&#x53D8;&#x7EA2;</td>
+</tr>
+
+<tr>
+<td class="left">&#x5B8C;&#x6210;&#x5F85;&#x529E;&#x4E8B;&#x9879;</td>
+<td class="left">&#xA0;</td>
+<td class="left">+XP</td>
+<td class="left">&#xA0;</td>
+<td class="left">+GP</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#x53D8;&#x7070;</td>
+</tr>
+
+<tr>
+<td class="left">&#x5EF6;&#x540E;&#x5F85;&#x529E;&#x4E8B;&#x9879;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#x51CF;&#x5C11;</td>
+<td class="left">&#x53D8;&#x7EA2;</td>
+</tr>
+
+<tr>
+<td class="left">&#x5347;&#x7EA7;</td>
+<td class="left">&#x6062;&#x590D;&#x6EE1;&#x503C;</td>
+<td class="left">XP&#x6EE1;&#x503C;&#x65F6;&#x53D1;&#x751F;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+</tr>
+
+<tr>
+<td class="left">&#x6B7B;&#x4EA1;</td>
+<td class="left">HP&#x51CF;&#x4E3A;0&#x65F6;&#x53D1;&#x751F;</td>
+<td class="left">&#xA0;</td>
+<td class="left">-1&#x7EA7;</td>
+<td class="left">&#x51CF;&#x4E3A;0</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+&#x7ECF;&#x9A8C;&#x3001;&#x91D1;&#x5E01;&#x7684;&#x5956;&#x52B1;&#x503C;&#x4EE5;&#x53CA;&#x5065;&#x5EB7;&#x7684;&#x635F;&#x5BB3;&#x503C;&#x7684;&#x591A;&#x5C11;&#x90FD;&#x4E0E;&#x4EFB;&#x52A1;&#x7684;&#x56F0;&#x96BE;&#x7A0B;&#x5EA6;&#x6709;&#x5173;&#x3002; <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> <b>&#x9F13;&#x52B1;&#x73A9;&#x5BB6;&#x53BB;&#x6311;&#x6218;&#x90A3;&#x4E9B;&#x56F0;&#x96BE;&#x7684;&#x4EFB;&#x52A1;</b> &#xFF0C;&#x56E0;&#x6B64;&#x4EFB;&#x52A1;&#x8D8A;&#x56F0;&#x96BE;&#xFF0C;&#x5B8C;&#x6210;&#x65F6;&#x7ED9;&#x4E88;&#x7684;&#x5956;&#x52B1;&#x8D8A;&#x591A;&#xFF0C;&#x5931;&#x8D25;&#x65F6;&#x65BD;&#x4EE5;&#x7684;&#x60E9;&#x7F5A;&#x8D8A;&#x5927;&#x3002;&#x800C;&#x4EFB;&#x52A1;&#x7684;&#x56F0;&#x96BE;&#x7A0B;&#x5EA6;&#x662F;&#x7531; <code>&#x4EFB;&#x52A1;&#x96BE;&#x5EA6;</code> &#x548C; <code>[[&#x4EFB;&#x52A1;&#x5206;&#x503C;]]</code> &#x6765;&#x5171;&#x540C;&#x8861;&#x91CF;&#x3002;&#x524D;&#x8005;&#x662F;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x540E;&#x8005;&#x4E3A; <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> &#x4E3A;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x81EA;&#x52A8;&#x8BA1;&#x7B97;&#x5F97;&#x51FA;&#x7684;&#x6570;&#x503C;&#x3002;&#x4E3A;&#x4E86;&#x589E;&#x52A0;&#x53EF;&#x73A9;&#x5EA6;&#xFF0C;&#x5728;&#x5956;&#x60E9;&#x529B;&#x5EA6;&#x7684;&#x8BBE;&#x8BA1;&#x673A;&#x5236;&#x4E2D;&#x8FD8;&#x5F15;&#x5165;&#x4E86;&#x73A9;&#x5BB6;&#x5C5E;&#x6027;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x8BE6;&#x89C1;&#x4E0B;&#x8868;&#xFF1A;
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#xA0;</th>
+<th scope="col" class="left">XP&#x7684;&#x5956;&#x52B1;</th>
+<th scope="col" class="left">GP&#x7684;&#x5956;&#x52B1;</th>
+<th scope="col" class="left">HP&#x7684;&#x635F;&#x5BB3;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&#x4EFB;&#x52A1;&#x96BE;&#x5EA6;</td>
+<td class="left">&#x8D8A;&#x5927;&#x8D8A;&#x591A;</td>
+<td class="left">&#x8D8A;&#x5927;&#x8D8A;&#x591A;</td>
+<td class="left">&#x8D8A;&#x5927;&#x8D8A;&#x591A;</td>
+</tr>
+
+<tr>
+<td class="left">&#x4EFB;&#x52A1;&#x5206;&#x503C;</td>
+<td class="left">&#x8D8A;&#x4F4E;&#x8D8A;&#x591A;</td>
+<td class="left">&#x8D8A;&#x4F4E;&#x8D8A;&#x591A;</td>
+<td class="left">&#x8D8A;&#x4F4E;&#x8D8A;&#x591A;</td>
+</tr>
+
+<tr>
+<td class="left">&#x73A9;&#x5BB6;&#x4F53;&#x8D28;</td>
+<td class="left">\</td>
+<td class="left">\</td>
+<td class="left">&#x8D8A;&#x9AD8;&#x8D8A;&#x5C11;</td>
+</tr>
+
+<tr>
+<td class="left">&#x73A9;&#x5BB6;&#x611F;&#x77E5;</td>
+<td class="left">\</td>
+<td class="left">&#x8D8A;&#x9AD8;&#x8D8A;&#x591A;</td>
+<td class="left">\</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
 <div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> &#x5948;&#x826F;&#x65F6;&#x4EE3; 710-794</h2>
+<h2 id="sec-3"><span class="section-number-2">3</span> &#x90E8;&#x5206;&#x672F;&#x8BED;&#x8BE6;&#x89E3;</h2>
 <div class="outline-text-2" id="text-3">
+</div><div id="outline-container-&#x4EFB;&#x52A1;&#x5206;&#x503C;" class="outline-3">
+<h3 id="&#x4EFB;&#x52A1;&#x5206;&#x503C;"><a id="sec-3-1" name="sec-3-1"></a><span class="section-number-3">3.1</span> &#x4EFB;&#x52A1;&#x5206;&#x503C;<sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup></h3>
+<div class="outline-text-3" id="text-&#x4EFB;&#x52A1;&#x5206;&#x503C;">
+
 <p>
-&#x4E07;&#x53F6;&#x5047;&#x540D;&#x7684;&#x5F62;&#x6210;
+&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x53CD;&#x6620;&#x4E86;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x5B8C;&#x6210;&#x60C5;&#x51B5;&#xFF1A;&#x65B0;&#x4EFB;&#x52A1;&#x7684;&#x521D;&#x59CB;&#x503C;&#x4E3A;0&#xFF0C;&#x8D8A;&#x591A;&#x5730;&#x88AB;&#x6267;&#x884C;&#xFF0C;&#x5206;&#x503C;&#x8D8A;&#x9AD8;&#xFF0C;&#x53CD;&#x4E4B;&#x5206;&#x503C;&#x8D8A;&#x4F4E;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x5206;&#x503C;&#x7684;&#x7EDD;&#x5BF9;&#x503C;&#x8D8A;&#x5927;&#xFF0C;&#x5B83;&#x6539;&#x53D8;&#x7684;&#x901F;&#x5EA6;&#x4E5F;&#x8D8A;&#x6162;&#x3002;
 </p>
 
 <p>
-&#x5047;&#xFF0C;&#x5047;&#x501F;&#x4E4B;&#x4E49;&#xFF0C;&#x662F;&#x6307;&#x5047;&#x501F;&#x771F;&#x540D;&#x2014;&#x2014;&#x6C49;&#x5B57;&#xFF0C;&#x73B0;&#x5728;&#x65E5;&#x672C;&#x7684;&#x5E38;&#x7528;&#x6C49;&#x5B57;&#x6709;1000~2000&#x3002;
+&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x7684;&#x9AD8;&#x4F4E;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x989C;&#x8272;&#x6765;&#x53CD;&#x6620;&#xFF0C;&#x56E0;&#x6B64;&#x901A;&#x8FC7;&#x989C;&#x8272;&#x5373;&#x53EF; <b>&#x7C97;&#x7565;&#x5224;&#x65AD;</b> &#x4EFB;&#x52A1;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x65B0;&#x4EFB;&#x52A1;&#x90FD;&#x662F;&#x9EC4;&#x8272;&#xFF08;&#x4E2D;&#x6027;&#xFF09;&#xFF0C;&#x8D8A;&#x591A;&#x5730;&#x88AB;&#x5B8C;&#x6210;&#xFF0C;&#x5206;&#x503C;&#x8D8A;&#x9AD8;&#xFF0C;&#x989C;&#x8272;&#x5148;&#x53D8;&#x7EFF;&#x518D;&#x53D8;&#x84DD;&#xFF08;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x8F83;&#x597D;&#xFF09;&#xFF1B;&#x53CD;&#x4E4B;&#x5206;&#x503C;&#x8D8A;&#x4F4E;&#xFF0C;&#x989C;&#x8272;&#x5148;&#x53D8;&#x6A59;&#x518D;&#x53D8;&#x7EA2;&#xFF08;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x8F83;&#x5DEE;&#xFF09;&#x3002;
 </p>
 
 <p>
-&#x4E00;&#x4E2A;&#x6C49;&#x5B57;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x97F3;&#xFF0C;&#x4E0D;&#x8868;&#x610F;<sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup>&#xFF1B;&#x4E0D;&#x8FC7;&#x4E00;&#x4E2A;&#x97F3;&#x53EF;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;&#x6C49;&#x5B57;&#x3002;&#x4F8B;&#x5982;&#x5F53;&#x65F6;&#x7684;&#x963F;&#x3001;&#x5B89;&#x3001;&#x5A40;&#x3001;&#x9785;&#x3001;&#x82F1;&#x3001;&#x543E;&#x90FD;&#x5BF9;&#x5E94;&#x201C;a&#x201D;&#x3002;
+<img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/habitica_task_color.jpg">
 </p>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
@@ -454,105 +1013,243 @@
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="left">&#x4E07;&#x53F6;&#x5047;&#x540D;</th>
-<th scope="col" class="left">&#x7F57;&#x9A6C;&#x5B57;</th>
-<th scope="col" class="left">&#x91CA;&#x4E49;</th>
+<th scope="col" class="left">&#x989C;&#x8272;</th>
+<th scope="col" class="left">&#x5206;&#x503C;</th>
+<th scope="col" class="left">&#x6539;&#x53D8;&#x989C;&#x8272;&#x7684;&#x70B9;&#x51FB;&#x6B21;&#x6570;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="left">&#x591C;&#x9EBB;</td>
-<td class="left">yama</td>
-<td class="left">&#x5C71;</td>
+<td class="left">Bright Blue</td>
+<td class="left">&gt;10</td>
+<td class="left">12 positive</td>
 </tr>
 
 <tr>
-<td class="left">&#x53EF;&#x6CE2;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#x5DDD;</td>
+<td class="left">Blue Grey</td>
+<td class="left">5~10</td>
+<td class="left">6 positive</td>
 </tr>
 
 <tr>
-<td class="left">&#x7531;&#x5C90;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#x96EA;</td>
+<td class="left">Green</td>
+<td class="left">1~5</td>
+<td class="left">1 positive</td>
 </tr>
 
 <tr>
-<td class="left">&#x4F0A;&#x5415;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#x8272;</td>
+<td class="left">Yellow</td>
+<td class="left">-1~1</td>
+<td class="left">0 clicks</td>
 </tr>
 
 <tr>
-<td class="left">&#x6CE2;&#x5948;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#x82B1;</td>
+<td class="left">Orange</td>
+<td class="left">-10~-1</td>
+<td class="left">1 negative</td>
 </tr>
 
 <tr>
-<td class="left">&#x8A31;&#x5DF1;&#x5442;</td>
-<td class="left">kokoro</td>
-<td class="left">&#x5FC3;</td>
+<td class="left">Red</td>
+<td class="left">-20~-10</td>
+<td class="left">9 negative</td>
 </tr>
 
 <tr>
-<td class="left">&#x6563;&#x4E45;&#x826F;</td>
-<td class="left">sakura</td>
-<td class="left">&#x6A31;&#x82B1;</td>
+<td class="left">Dark Red</td>
+<td class="left">&lt;-20</td>
+<td class="left">16 negative</td>
 </tr>
 </tbody>
 </table>
 
 <p>
-&#x4EE3;&#x8868;&#xFF1A;&#x4E07;&#x53F6;&#x96C6;
+&#x8981;&#x67E5;&#x770B; <b>&#x5177;&#x4F53;&#x5206;&#x503C;</b> &#xFF0C;&#x70B9;&#x51FB; <code>&#x8FDB;&#x5EA6;</code> &#x56FE;&#x6807;&#x5C06;&#x5F39;&#x51FA;&#x8FD1;&#x671F;&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x7684;&#x66F2;&#x7EBF;&#x56FE;&#x3002;&#x5149;&#x6807;&#x6307;&#x5411;&#x5373;&#x53EF;&#x663E;&#x793A;&#x5BF9;&#x5E94;&#x65E5;&#x671F;&#x7684;&#x5206;&#x503C;&#x3002;
 </p>
+</div>
+
+<div id="outline-container-sec-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1"><span class="section-number-4">3.1.1</span> &#x4EFB;&#x52A1;&#x5206;&#x503C;&#x7684;&#x5F71;&#x54CD;</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<ul class="org-ul">
+<li>&#x8D8A;&#x5927;&#xFF08;&#x989C;&#x8272;&#x8D8A;&#x84DD;&#xFF0C;&#x8868;&#x793A;&#x662F;&#x7ECF;&#x5E38;&#x6027;&#x5B8C;&#x6210;&#x7684;&#x4EFB;&#x52A1;&#xFF09;&#xFF1A;
+<ul class="org-ul">
+<li>XP&#x3001;GP&#x5956;&#x52B1;&#x503C;&#x51CF;&#x5C11;
+</li>
+<li>HP&#x635F;&#x5931;&#x503C;&#x51CF;&#x5C11;
+</li>
+<li>&#x5B9D;&#x7269;&#x6389;&#x51FA;&#x7387;&#x964D;&#x4F4E;&#xFF0C;&#x7136;&#x800C;&#x5F53;&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x8D85;&#x8FC7;21.27&#x540E;&#xFF0C;&#x5B9D;&#x7269;&#x6389;&#x51FA;&#x7387;&#x53C8;&#x5F00;&#x59CB;&#x5347;&#x9AD8;
+</li>
+<li>&#x7279;&#x5B9A;&#x6280;&#x80FD;&#x7684;&#x4F7F;&#x7528;&#x6548;&#x7387;&#x66F4;&#x9AD8;
+</li>
+</ul>
+</li>
+<li>&#x8D8A;&#x5C0F;&#xFF08;&#x989C;&#x8272;&#x8D8A;&#x7EA2;&#xFF0C;&#x8868;&#x793A;&#x662F;&#x4E0D;&#x5BB9;&#x6613;&#x5B8C;&#x6210;&#x7684;&#x4EFB;&#x52A1;&#xFF09;&#xFF1A;
+<ul class="org-ul">
+<li>XP&#x3001;GP&#x5956;&#x52B1;&#x503C;&#x589E;&#x52A0;
+</li>
+<li>HP&#x635F;&#x5931;&#x503C;&#x589E;&#x52A0;
+</li>
+<li>&#x5B9D;&#x7269;&#x6389;&#x51FA;&#x7387;&#x589E;&#x52A0;
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x5E76;&#x65E0;&#x4E0A;&#x9650;&#x548C;&#x4E0B;&#x9650;&#xFF0C;&#x4F46;&#x662F; <b>&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x5BF9;&#x5956;&#x60E9;&#x529B;&#x5EA6;&#x7684;&#x52A0;&#x6210;&#x4F5C;&#x7528;&#x662F;&#x6709;&#x9650;&#x5EA6;&#x7684;</b> &#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x8D85;&#x8FC7;&#x7279;&#x5B9A;&#x8303;&#x56F4;&#x540E;&#xFF0C;&#x5956;&#x52B1;&#x4EE5;&#x53CA;&#x635F;&#x5BB3;&#x503C;&#x90FD;&#x4E0D;&#x4F1A;&#x518D;&#x589E;&#x52A0;&#x6216;&#x51CF;&#x5C11;&#x3002;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x662F; [-47.27, 21.27]&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x867D;&#x7136;&#x5206;&#x503C;&#x8D8A;&#x5927;&#xFF0C;&#x5956;&#x52B1;&#x503C;&#x8D8A;&#x5C0F;&#xFF0C;&#x4F46;&#x662F;&#x5206;&#x503C;30&#x548C;22&#x7684;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#x83B7;&#x5F97;&#x5956;&#x52B1;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF1B;&#x5206;&#x503C;&#x8D8A;&#x5C0F;&#xFF0C;&#x635F;&#x5931;&#x503C;&#x8D8A;&#x5927;&#xFF0C;&#x4F46;&#x662F;&#x5206;&#x503C;-48&#x548C;-60&#x7684;&#x4EFB;&#x52A1;&#x6CA1;&#x8FBE;&#x6210;&#x65F6;&#x6263;&#x9664;&#x7684;HP&#x4E5F;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> &#x8FDE;&#x51FB;&#x7EAA;&#x5F55;<sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup></h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+&#x8FDE;&#x51FB; Streaks&#xFF0C;&#x8BB0;&#x5F55;&#x9700;&#x6309;&#x65F6;&#x5B8C;&#x6210;&#x7684;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x8FDE;&#x7EED;&#x5B8C;&#x6210;&#x7684;&#x6B21;&#x6570;&#x3002;
+</p>
+
+<p>
+&#x8FDE;&#x51FB;&#x6B21;&#x6570;&#x6108;&#x9AD8;&#xFF0C;&#x80FD;&#x83B7;&#x5F97;&#x66F4;&#x591A;&#x7684;GP&#x548C;&#x66F4;&#x5927;&#x7684;&#x6389;&#x843D;&#x673A;&#x4F1A;&#x3002;&#x5982;&#x679C;&#x4F60;&#x5B9E;&#x73B0;21&#x5929;&#x8FDE;&#x51FB;&#xFF0C;&#x4F60;&#x5C06;&#x8D62;&#x5F97;&#x8FDE;&#x51FB;&#x6210;&#x5C31;&#x5FBD;&#x7AE0;&#x3002;&#x6B64;&#x9879;&#x6210;&#x5C31;&#x53EF;&#x79EF;&#x7D2F;&#xFF0C;&#x6362;&#x8A00;&#x4E4B;&#xFF0C;&#x5982;&#x679C;&#x53C8;&#x8FDE;&#x7EED;21&#x5929;&#x5B8C;&#x6210;&#x67D0;&#x4E9B;&#x4EFB;&#x52A1;&#xFF0C;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x53E6;&#x4E00;&#x679A;&#x8FDE;&#x51FB;&#x6210;&#x5C31;&#x5FBD;&#x7AE0;&#x3002;&#x6BCF;&#x4E2A;&#x5FBD;&#x7AE0;&#x90FD;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x6389;&#x843D;&#x7684;&#x673A;&#x4F1A;&#x3002;
+</p>
+</div>
 </div>
 </div>
 
 <div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> &#x5E73;&#x5B89;&#x65F6;&#x4EE3;</h2>
+<h2 id="sec-4"><span class="section-number-2">4</span> RPG&#x6E38;&#x620F;&#x5316;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x751F;&#x6D3B;&#x5427;&#xFF01;</h2>
 <div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> &#x4EFB;&#x52A1;&#x6E05;&#x5355;</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
-&#x6C49;&#x5F0F;&#x548C;&#x6587;<sup><a id="fnr.4" name="fnr.4" class="footref" href="#fn.4">4</a></sup>&#xFF1A;&#x7528;&#x6C49;&#x6587;&#x6837;&#x5F0F;&#x5199;&#x7684;&#x65E5;&#x8BED;&#x6587;&#x7AE0;&#xFF0C;&#x5927;&#x90FD;&#x5728;&#x5927;&#x5316;&#x6539;&#x65B0;&#xFF08;645&#x5E74;&#xFF09;&#x540E;&#xFF0C;&#x5E94;&#x7528;&#x4E8E;&#x671D;&#x5EF7;&#x8BB0;&#x5F55;&#x3001;&#x7537;&#x6027;&#x8D35;&#x65CF;&#x7684;&#x79C1;&#x4EBA;&#x94ED;&#x6587;&#x3001;&#x65E5;&#x8BB0;&#x7B49;<sup><a id="fnr.5" name="fnr.5" class="footref" href="#fn.5">5</a></sup>&#x3002;&#x7279;&#x70B9;&#x4E3A;&#xFF1A;
-</p>
-<ol class="org-ol">
-<li>&#x5927;&#x591A;&#x9075;&#x5FAA;&#x65E5;&#x8BED;&#x7684;&#x8BED;&#x5E8F;
-</li>
-<li>&#x542B;&#x6709;&#x656C;&#x8BED;&#x8868;&#x8FBE;
-</li>
-</ol>
-
-<p>
-&#x6C49;&#x6587;&#xFF0C;&#x53E4;&#x4EE3;&#x6C49;&#x8BED;&#x6587;&#x7AE0;&#xFF0C;&#x662F;&#x5F53;&#x65F6;&#x6700;&#x53D7;&#x5C0A;&#x5D07;&#x7684;&#x6587;&#x4F53;&#xFF0C;&#x4E2D;&#x56FD;&#x4EBA;&#x80FD;&#x8BFB;&#x61C2;<sup><a id="fnr.6" name="fnr.6" class="footref" href="#fn.6">6</a></sup>
+&#x6709;&#x4E09;&#x7C7B;&#xFF1A;&#x4E60;&#x60EF;&#x3001;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x3001;&#x5F85;&#x529E;&#x4E8B;&#x9879;
 </p>
 
-<p>
-&#x5E73;&#x5047;&#x540D;&#xFF1A;&#x6574;&#x4E2A;&#x6C49;&#x5B57;&#x7684;&#x8349;&#x4E66;&#xFF0C;&#x6700;&#x521D;&#x4E00;&#x4E2A;&#x97F3;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;&#x5B57;&#xFF0C;&#x5728;1900&#x5E74;&#x6700;&#x7EC8;&#x786E;&#x7ACB;&#x4E00;&#x97F3;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x7247;&#x5047;&#x540D;<sup><a id="fnr.7" name="fnr.7" class="footref" href="#fn.7">7</a></sup>&#x3002;&#x5E94;&#x7528;&#x4E8E;&#x5973;&#x6027;&#x4E66;&#x5199;&#xFF0C;&#x7537;&#x6027;&#x4F5C;&#x548C;&#x6B4C;&#x4EE5;&#x53CA;&#x4E0E;&#x5973;&#x6027;&#x901A;&#x4FE1;<sup><a id="fnr.8" name="fnr.8" class="footref" href="#fn.8">8</a></sup>&#x3002;&#x5E73;&#xFF0C;&#x5E73;&#x8BD1;&#x3001;&#x7B80;&#x5316;&#x3002;
-&#x4EE3;&#x8868;&#xFF1A;&#x300A;&#x6795;&#x8349;&#x5B50;&#x300B;&#x300A;&#x6E90;&#x6C0F;&#x7269;&#x8BED;&#x300B;&#xFF08;&#x90FD;&#x662F;&#x5973;&#x6027;&#x6587;&#x5B66;&#xFF09;
-</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
-<p>
-&#x7247;&#x5047;&#x540D;&#xFF1A;&#x6458;&#x53D6;&#x4E07;&#x53F6;&#x5047;&#x540D;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF08;&#x591A;&#x4E3A;&#x8D77;&#x7B14;&#x7B14;&#x753B;&#x548C;&#x6536;&#x7B14;&#x7B14;&#x753B;&#xFF09;&#xFF0C;&#x6E10;&#x6E10;&#x56FA;&#x5B9A;&#x4E3A;&#x4E00;&#x4E2A;&#x53D1;&#x97F3;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x7247;&#x5047;&#x540D;<sup><a id="fnr.9" name="fnr.9" class="footref" href="#fn.9">9</a></sup>&#x3002;&#x7247;&#xFF0C;&#x4E00;&#x90E8;&#x5206;&#x3002;&#x6C49;&#x5B57;&#x6977;&#x4F53;&#x504F;&#x65C1;
-</p>
+
+<colgroup>
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#xA0;</th>
+<th scope="col" class="left">&#x4E60;&#x60EF;</th>
+<th scope="col" class="left">&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;</th>
+<th scope="col" class="left">&#x5F85;&#x529E;&#x4E8B;&#x9879;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&#x9891;&#x7387;</td>
+<td class="left">&#x7ECF;&#x5E38;&#x6027;&#xFF1A;&#x53EF;&#x6BCF;&#x5929;&#x591A;&#x6B21;</td>
+<td class="left">&#x7ECF;&#x5E38;&#x6027;&#xFF1A;&#x4E00;&#x5929;&#x4E00;&#x6B21;&#x6216;&#x4E00;&#x5468;&#x51E0;&#x6B21;</td>
+<td class="left">&#x4E00;&#x6B21;&#x6027;&#x6216;&#x4E0D;&#x7ECF;&#x5E38;&#x53D1;&#x751F;</td>
+</tr>
+
+<tr>
+<td class="left">&#x8BA1;&#x5212;</td>
+<td class="left">/</td>
+<td class="left">&#x9700;&#x6309;&#x65F6;&#x5B8C;&#x6210;</td>
+<td class="left">/</td>
+</tr>
+
+<tr>
+<td class="left">&#x5956;&#x52B1;</td>
+<td class="left">&#x8FBE;&#x6210;&#x591A;&#x6B21;&#x597D;&#x4E60;&#x60EF;&#x6709;&#x591A;&#x6B21;&#x5956;&#x52B1;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#xA0;</td>
+</tr>
+
+<tr>
+<td class="left">&#x60E9;&#x7F5A;</td>
+<td class="left">&#x6CA1;&#x5B8C;&#x6210;&#x65F6;&#x65E0;&#x60E9;&#x7F5A;&#xFF0C;&#x4F46;&#x88AB;&#x574F;&#x4E60;&#x60EF;&#x51FB;&#x5012;&#x6709;&#x60E9;&#x7F5A;</td>
+<td class="left">&#x4E00;&#x5929;&#x7ED3;&#x675F;&#x65F6;&#xFF0C;&#x5982;&#x6709;&#x672A;&#x5B8C;&#x6210;&#x7684;&#x4E8B;&#x9879;&#x6709;&#x60E9;&#x7F5A;</td>
+<td class="left">&#x6CA1;&#x5B8C;&#x6210;&#x65F6;&#x65E0;&#x60E9;&#x7F5A;</td>
+</tr>
+
+<tr>
+<td class="left">&#x60C5;&#x5883;</td>
+<td class="left">&#x517B;&#x6210;&#x6216;&#x6212;&#x6389;&#x4E60;&#x60EF;</td>
+<td class="left">&#x91CD;&#x590D;&#x6027;&#x7684;&#x5E38;&#x89C4;&#x6D41;&#x7A0B; routine&#xFF0C;&#x53D8;&#x6210;&#x4E60;&#x60EF;</td>
+<td class="left">&#x6BCF;&#x5929;3&#x5757;&#x5927;&#x77F3;&#x5934;</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-
+</div>
 <div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> &#x6C5F;&#x6237;&#x65F6;&#x4EE3;</h2>
+<h2 id="sec-5"><span class="section-number-2">5</span> &#x589E;&#x52A0;&#x53EF;&#x73A9;&#x6027;&#x7684;&#x6E38;&#x620F;&#x673A;&#x5236;</h2>
 <div class="outline-text-2" id="text-5">
 <p>
-&#x8FD1;&#x4EE3;&#x65E5;&#x8BED;&#x7684;&#x5F62;&#x6210;<sup><a id="fnr.10" name="fnr.10" class="footref" href="#fn.10">10</a></sup>
+&#x4E2A;&#x4EBA;&#x5BF9;&#x6B64;&#x5174;&#x81F4;&#x7F3A;&#x7F3A;&#xFF0C;&#x5728;&#x6B64;&#x4EC5;&#x7B80;&#x5355;&#x5217;&#x4E3E;&#x51E0;&#x70B9;&#xFF0C;&#x6709;&#x5174;&#x8DA3;&#x7684;&#x670B;&#x53CB;&#x53EF;&#x81EA;&#x884C;&#x63A2;&#x7A76;&#xFF1A;
 </p>
+
+<ul class="org-ul">
+<li>&#x8BBE;&#x7F6E;&#x89D2;&#x8272;&#x5F62;&#x8C61;
+</li>
+<li>&#x8D2D;&#x4E70;&#x88C5;&#x5907;
+</li>
+<li>&#x5728;&#x5BA2;&#x6808;&#x4E2D;&#x53EF;&#x4EE5;&#x968F;&#x610F;&#x7684;&#x548C;&#x5176;&#x4ED6;&#x4EBA;&#x4E00;&#x8D77;&#x4EA4;&#x6D41;&#x5FC3;&#x5F97;&#xFF0C;&#x8BA8;&#x8BBA;&#x95EE;&#x9898;&#x3002;
+</li>
+<li>&#x8FBE;&#x5230;&#x7B49;&#x7EA7; 4 &#x540E;&#xFF0C;&#x5B8C;&#x6210;&#x67D0;&#x4E9B;&#x6311;&#x6218;&#x4F1A;&#x968F;&#x673A;&#x6389;&#x843D;&#x4E00;&#x4E9B;&#x5B9D;&#x7269;&#xFF0C;&#x50CF;&#x662F;&#x5BA0;&#x7269;&#x86CB;&#x3001;&#x5BA0;&#x7269;&#x836F;&#x6C34;&#x3001;&#x5BA0;&#x7269;&#x98DF;&#x7269;&#x3002;&#x628A;&#x836F;&#x6C34;&#x6DCB;&#x5230;&#x86CB;&#x4E0A;&#xFF0C;&#x4FBF;&#x80FD;&#x83B7;&#x5F97;&#x81EA;&#x5DF1;&#x7684;&#x5BA0;&#x7269;&#xFF0C;&#x800C;&#x5582;&#x5BA0;&#x7269;&#x5403;&#x98DF;&#x7269;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x8BA9;&#x5BA0;&#x7269;&#x957F;&#x5927;&#xFF0C;&#x6700;&#x540E;&#x53D8;&#x6210;&#x81EA;&#x5DF1;&#x7684;&#x5750;&#x9A91;&#x3002;
+</li>
+<li>&#x8FBE;&#x5230;&#x7B49;&#x7EA7; 10 &#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x89D2;&#x8272;&#x804C;&#x4E1A;&#xFF0C;&#x7EC4;&#x6210;&#x961F;&#x4F0D;&#x3001;&#x516C;&#x4F1A;&#xFF0C;&#x4E00;&#x8D77;&#x53BB;&#x6311;&#x6218;&#x66F4;&#x591A;&#x9B54;&#x738B;&#x4EFB;&#x52A1;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> &#x66F4;&#x65B0;&#x5386;&#x53F2;</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-29 &#x5468;&#x4E94;]</span></span>
+</li>
+</ul>
 </div>
 </div>
 
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6"><span class="section-number-2">6</span> &#x660E;&#x6CBB;&#x65F6;&#x4EE3;</h2>
-<div class="outline-text-2" id="text-6">
-<p>
-&#x8A00;&#x6587;&#x4E00;&#x81F4;&#xFF1A;&#x53E3;&#x8BED;&#x4E0E;&#x6587;&#x7AE0;&#x7528;&#x8BED;&#x7684;&#x7EDF;&#x4E00;&#xFF0C;&#x8FD1;&#x4EE3;&#x65E5;&#x8BED;&#x8D70;&#x5411;&#x6210;&#x719F;<sup><a id="fnr.11" name="fnr.11" class="footref" href="#fn.11">11</a></sup>
-</p>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> &#x53C2;&#x8003;</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li><a href="http://www.playpcesor.com/2015/01/habitrpg.html" target="_blank" rel="external">HabitRPG &#x6559;&#x5B66;&#xFF1A;&#x628A;&#x517B;&#x6210;&#x597D;&#x4E60;&#x60EF;&#x8BBE;&#x8BA1;&#x6210;&#x597D;&#x73A9;&#x7684;&#x751F;&#x6D3B;&#x6E38;&#x620F; - &#x7535;&#x8111;&#x73A9;&#x7269;</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Sample_Habits" target="_blank" rel="external">Sample Habits - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Sample_Dailies" target="_blank" rel="external">Sample Dailies - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Sample_To-Dos" target="_blank" rel="external">Sample To-Dos - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Naming_Your_Tasks" target="_blank" rel="external">Naming Your Tasks - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Task_Types:_Habits_versus_Dailies_versus_To-Dos" target="_blank" rel="external">Task Type Choice: Habit, Daily, or To-Do - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Health_Points" target="_blank" rel="external">Health Points - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Experience_Points" target="_blank" rel="external">Experience Points - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Gold" target="_blank" rel="external">Gold Points - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Difficulty" target="_blank" rel="external">Difficulty - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Dailies" target="_blank" rel="external">Dailies - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/To-Dos" target="_blank" rel="external">To-Dos - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Rewards" target="_blank" rel="external">Rewards - Habitica Wiki - Wikia</a>
+</li>
+<li><a href="http://habitica.wikia.com/wiki/Sample_Custom_Rewards" target="_blank" rel="external">Sample Custom Rewards - Habitica Wiki - Wikia</a>
+</li>
+</ul>
 </div>
 </div>
 <div id="footnotes">
@@ -560,112 +1257,79 @@
 <div id="text-footnotes">
 
 <div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
-&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P14
+<a href="http://habitica.wikia.com/wiki/Rest_in_the_Inn" target="_blank" rel="external">Rest in the Inn - Habitica Wiki - Wikia</a>
 </p></div>
 
 <div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
-<a href="https://zh.wikisource.org/wiki/%E5%8F%A4%E4%BA%8B%E8%A8%98/%E4%B8%8A%E5%8D%B7" target="_blank" rel="external">&#x53E4;&#x4E8B;&#x8A18;/&#x4E0A;&#x5377; - &#x7EF4;&#x57FA;&#x6587;&#x5E93;&#xFF0C;&#x81EA;&#x7531;&#x7684;&#x56FE;&#x4E66;&#x9986;</a>
+<a href="http://habitica.wikia.com/wiki/Task_Value#Task_Colors" target="_blank" rel="external">Task Value - Habitica Wiki - Wikia</a>
 </p></div>
 
 <div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
-&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P17
-</p></div>
-
-<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
-&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P37
-</p></div>
-
-<div class="footdef"><sup><a id="fn.5" name="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara">
-&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P39
-</p></div>
-
-<div class="footdef"><sup><a id="fn.6" name="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p class="footpara">
-&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P42
-</p></div>
-
-<div class="footdef"><sup><a id="fn.7" name="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p class="footpara">
-&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P56
-</p></div>
-
-<div class="footdef"><sup><a id="fn.8" name="fn.8" class="footnum" href="#fnr.8">8</a></sup> <p class="footpara">
-&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P59
-</p></div>
-
-<div class="footdef"><sup><a id="fn.9" name="fn.9" class="footnum" href="#fnr.9">9</a></sup> <p class="footpara">
-&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P47
-</p></div>
-
-<div class="footdef"><sup><a id="fn.10" name="fn.10" class="footnum" href="#fnr.10">10</a></sup> <p class="footpara">
-&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P102
-</p></div>
-
-<div class="footdef"><sup><a id="fn.11" name="fn.11" class="footnum" href="#fnr.11">11</a></sup> <p class="footpara">
-&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P134
+<a href="http://habitica.wikia.com/wiki/Streaks" target="_blank" rel="external">Streaks - Habitica Wiki - Wikia</a>
 </p></div>
 
 
 </div>
 </div>
-<p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">[2016-01-25 &#x5468;&#x4E00;]</span></span></p>
+<p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">[2016-01-27 &#x5468;&#x4E09;]</span></span></p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x4ECB;&#x7ECD; <a href="https://habitica.com">HabitRPG</a> &#x7684;&#x673A;&#x5236;&#xFF0C;&#x63A2;&#x7D22;&#x5982;&#x4F55;&#x5145;&#x5206;&#x5229;&#x7528;&#x6B64;&#x5DE5;&#x5177;&#x8BA9;&#x751F;&#x6D3B;&#x66F4;&#x9AD8;&#x6548;&#x3001;&#x66F4;&#x6709;&#x8DA3;&#x3002;&#x6587;&#x4E2D;&#x5185;&#x5BB9;&#x4E0D;&#x6D89;&#x53CA;&#x6280;&#x80FD;&#x3001;&#x56E2;&#x961F;&#x3001;&#x88C5;&#x5907;&#x3001;&#x804C;&#x4E1A;&#x7B49;&#x6DF1;&#x5EA6;&#x73A9;&#x6CD5;&#x3002;</div>
+</p>
+
+<p>
+<div class="alert alert-warning"><i class="fa fa-bell"></i>  <a href="https://habitica.com">HabitRPG</a> &#x5728;&#x5927;&#x9646;&#x5730;&#x533A;&#x8BBF;&#x95EE;&#x53EF;&#x80FD;&#x4E0D;&#x7A33;&#x5B9A;&#xFF0C;&#x9700;&#x7FFB;&#x5899;&#x4F7F;&#x7528;&#x3002;</div>
+</p>
+
+<p>
+<div class="alert alert-success"><i class="fa fa-lightbulb-o"></i>  &#x4E2A;&#x4EBA;&#x559C;&#x6B22;&#x6E05;&#x695A;&#x673A;&#x7406;&#x4E4B;&#x540E;&#x518D;&#x91C7;&#x53D6;&#x884C;&#x52A8;&#xFF0C;&#x504F;&#x5411;&#x5B9E;&#x8DF5;&#x7684;&#x670B;&#x53CB;&#x53EF;&#x8DF3;&#x8FC7;</div>
+</p>
+
+<p>
 <div class="alert alert-warning"><i class="fa fa-bell"></i>  &#x5B8C;&#x5584;&#x4E2D;</div>
 </p>
 
+<p>
+<a href="https://habitica.com">HabitRPG</a> = Habit + RPG&#xFF0C;&#x65E8;&#x5728;&#x4EE5;RPG&#x6E38;&#x620F;&#x5316;&#x673A;&#x5236;&#xFF0C;&#x6FC0;&#x52B1;&#x6211;&#x4EEC;&#x6709;&#x6548;&#x53C8;&#x4E0D;&#x4E4F;&#x4E50;&#x8DA3;&#x5730;&#x6539;&#x53D8;&#x574F;&#x4E60;&#x60EF;&#x3001;&#x517B;&#x6210;&#x65B0;&#x4E60;&#x60EF;&#xFF0C;&#x7BA1;&#x7406;&#x81EA;&#x5DF1;&#x7684;&#x751F;&#x6D3B;&#x3002;
+</p>
+
 <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> &#x53EA;&#x6709;&#x53E3;&#x8BED;&#x7684;&#x65F6;&#x4EE3;</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> &#x57FA;&#x672C;&#x672F;&#x8BED;</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-&#x6240;&#x6709;&#x6587;&#x660E;&#x90FD;&#x4F1A;&#x7ECF;&#x5386;&#x7684;&#x9636;&#x6BB5;&#xFF0C;&#x53EA;&#x6709;&#x8BED;&#x8A00;&#xFF0C;&#x6CA1;&#x6709;&#x6587;&#x5B57;&#x3002;&#x90A3;&#x65F6;&#x7684;&#x65E5;&#x672C;&#x4EBA;&#x8BA4;&#x4E3A;&#x8BED;&#x8A00;&#x91CC;&#x6709;&#x4E0D;&#x53EF;&#x601D;&#x8BAE;&#x7684;&#x5A01;&#x529B;&#x5B58;&#x5728;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; <b>&#x8A00;&#x7075;&#x4FE1;&#x4EF0;</b> &#x3002;
+&#x9996;&#x5148;&#x719F;&#x6089;&#x4E00;&#x4E0B;  <a href="https://habitica.com">HabitRPG</a> &#x6D89;&#x53CA;&#x7684;&#x672F;&#x8BED;&#xFF0C;&#x5728;&#x4E0B;&#x6587;&#x4E2D;&#x518D;&#x6B21;&#x51FA;&#x73B0;&#x65F6;&#x4E0D;&#x4E88;&#x8D58;&#x8FF0;&#xFF08;&#x66F4;&#x591A;&#x53C2;&#x89C1; <a href="http://habitica.wikia.com/wiki/Glossary">Glossary - Habitica Wiki - Wikia</a> &#xFF09;&#xFF1A;
 </p>
-</div>
-</div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> &#x6C49;&#x5B57;&#x4F20;&#x5165;</h2>
-<div class="outline-text-2" id="text-2">
 <ul class="org-ul">
-<li>3&#x4E16;&#x7EAA;&#x672B;&#xFF0C;&#x6C49;&#x5B57;&#x65E5;&#x672C;&#x5F15;&#x8FDB;&#x4E2D;&#x56FD;&#x7684;&#x6C49;&#x5B57;&#x3002;
+<li>&#x5065;&#x5EB7; (HP) &#x53CD;&#x6620;&#x5B8C;&#x6210;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x548C;&#x6212;&#x9664;&#x574F;&#x4E60;&#x60EF;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x53EF;&#x4ECE;&#x7EA2;&#x8272;&#x8FDB;&#x5EA6;&#x6761;&#x67E5;&#x770B;&#xFF0C;&#x5DE6;&#x7AEF;&#x6807;&#x5FD7;&#x4E3A;&#x6807;&#x5FD7;  
 </li>
-<li>4&#x4E16;&#x7EAA;&#x5DE6;&#x53F3;&#xFF0C;&#x65E5;&#x672C;&#x5438;&#x6536;&#x6C49;&#x5B57;&#x3002;<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>
+<li>&#x7ECF;&#x9A8C;&#x503C; (XP) &#x53CD;&#x6620;&#x73A9;&#x5BB6;&#x8FDB;&#x5EA6;&#x3002;&#x53EF;&#x4ECE;&#x9EC4;&#x8272;&#x8FDB;&#x5EA6;&#x6761;&#x67E5;&#x770B;&#xFF0C;&#x5DE6;&#x7AEF;&#x6807;&#x5FD7;&#x4E3A; &#x2605;&#x3002;&#x968F;&#x7740;&#x7B49;&#x7EA7;&#x7684;&#x589E;&#x957F;&#xFF0C;&#x5347;&#x7EA7;&#x6240;&#x9700;&#x7684;&#x7ECF;&#x9A8C;&#x503C;&#x4E5F;&#x589E;&#x52A0;&#x3002;
 </li>
-</ul>
-
-<p>
-&#x5F53;&#x65F6;&#x5B8C;&#x5168;&#x7528;&#x6C49;&#x5B57;&#xFF0C;&#x770B;&#x6C49;&#x5B57;&#x8BFB;&#x65E5;&#x8BED;&#x3002;
-</p>
-
-<p>
-&#x4EE3;&#x8868;&#xFF1A;&#x300A;&#x53E4;&#x4E8B;&#x8BB0;&#x300B; &#x65E5;&#x672C;&#x6700;&#x65E9;&#x7684;&#x53F2;&#x4E66;
-</p>
-
-<p>
-<div class="alert alert-warning"><i class="fa fa-bell"></i>  &#x4E0B;&#x4F8B;&#x5F15;&#x7528;&#x81EA;<a href="http://www.wanmen.org/courses/YYRYYY/topics/YYRYYY01A">&#x4E07;&#x95E8;&#x5927;&#x5B66;|&#x65E5;&#x8BED;&#x4E94;&#x5341;&#x97F3;&#x56FE;&#x8BED;&#x97F3;&#x5165;&#x95E8;|&#x65E5;&#x672C;&#x6587;&#x5B57;&#x4ECB;&#x7ECD;</a> &#xFF0C;&#x51FA;&#x81EA; *&#x53E4;&#x4E8B;&#x8A18;*<sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup> &#x3002;&#x5728;&#x6B64;&#x611F;&#x8C22;&#x82CF;&#x66FC;&#x8001;&#x5E08;&#x6E05;&#x6670;&#x7684;&#x8BB2;&#x89E3;&#x3002;</div>
-</p>
-
-<blockquote>
-<p>
-&#x5929;&#x5730;&#x521D;&#x767C;&#x4E4B;&#x6642;&#x3002;&#x65BC;&#x9AD8;&#x5929;&#x539F;&#x6210;&#x795E;&#x540D;&#x3002;&#x5929;&#x4E4B;&#x5FA1;&#x4E2D;&#x4E3B;&#x795E;&#x3002;&#x3008;&#x8A13;&#x9AD8;&#x4E0B;&#x5929;&#x4E91;&#x963F;&#x9EBB;&#x3002;&#x4E0B;&#x6548;&#x6B64;&#x3002;&#x3009;&#x6B21;&#x9AD8;&#x5FA1;&#x7522;&#x5DE2;&#x65E5;&#x795E;&#x3002;&#x6B21;&#x795E;&#x7522;&#x5DE2;&#x65E5;&#x795E;&#x3002;&#x6B64;&#x4E09;&#x67F1;&#x795E;&#x8005;&#x3002;&#x4E26;&#x7368;&#x795E;&#x6210;&#x5750;&#x800C;&#x3002;&#x96B1;&#x8EAB;&#x4E5F;&#x3002;
-</p>
-
-<p>
-&#x6B21;&#x570B;&#x7A1A;&#x5982;&#x6D6E;&#x8102;&#x800C;&#x3002;&#x4E45;&#x7F85;&#x4E0B;&#x90A3;&#x5DDE;&#x591A;&#x9640;&#x7528;&#x5E63;&#x7409;&#x4E4B;&#x6642;&#x3002;&#x3008;&#x7409;&#x5B57;&#x4EE5;&#x4E0A;&#x5341;&#x5B57;&#x4EE5;&#x97F3;&#x3002;&#x3009;&#x5982;&#x8466;&#x7259;&#x56E0;&#x840C;&#x9A30;&#x4E4B;&#x7269;&#x800C;&#x3002;&#x2026;&#x2026;
-</p>
-</blockquote>
-
-<p>
-&#x6CA1;&#x5B66;&#x8FC7;&#x65E5;&#x8BED;&#x7684;&#x4E2D;&#x56FD;&#x4EBA;&#x4E5F;&#x53EF;&#x4EE5;&#x770B;&#x61C2;&#x4E0A;&#x6587;&#x7684;&#x610F;&#x601D;&#xFF0C;&#x4F46;&#x662F;&#x5FF5;&#x4E0D;&#x51FA;&#x6765;&#xFF0C;&#x56E0;&#x4E3A;&#x662F;&#x8BFB;&#x65E5;&#x8BED;&#x7684;&#x97F3;&#x3002;&#x53C8;&#x662F;&#x4F53;&#x73B0; <b>&#x8BED;&#x8A00;&#x548C;&#x6587;&#x5B57;&#x5E76;&#x4E0D;&#x7B49;&#x540C;</b> &#x7684;&#x4E00;&#x4E2A;&#x597D;&#x4F8B;&#x5B50;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#x51FA;&#x73B0;&#x4E86;&#x4E24;&#x79CD;&#x53D1;&#x97F3;&#x65B9;&#x5F0F;&#xFF1A; <b>&#x8BAD;&#x8BFB;</b> &#x548C; <b>&#x97F3;&#x8BFB;</b> &#x3002;&#x4E00;&#x4E2A;&#x6C49;&#x5B57;&#x5982;&#x679C;&#x662F;&#x4E0D;&#x540C;&#x65F6;&#x671F;&#x6216;&#x4E0D;&#x540C;&#x5730;&#x533A;&#x4F20;&#x5165;&#x65E5;&#x672C;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x4E00;&#x4E2A;&#x6C49;&#x5B57;&#x6709;&#x591A;&#x79CD;&#x97F3;&#x8BFB;&#xFF1B;&#x4E00;&#x4E2A;&#x6C49;&#x5B57;&#x5982;&#x679C;&#x5BF9;&#x5E94;&#x591A;&#x79CD;&#x610F;&#x601D;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x4E00;&#x4E2A;&#x6C49;&#x5B57;&#x6709;&#x591A;&#x79CD;&#x8BAD;&#x8BFB;&#x3002;&#x53C2;&#x89C1; <a href="\2016-01-25-onyomi-and-kunyomi">&#x97F3;&#x8BFB;&#x4E0E;&#x8BAD;&#x8BFB;</a>&#x3002;
-</p>]]>
+<li>&#x7B49;&#x7EA7; Level &#x53CD;&#x6620;&#x73A9;&#x5BB6;&#x8FDB;&#x5EA6;&#x3002;&#x90E8;&#x5206;&#x529F;&#x80FD;&#x53EA;&#x6709;&#x5728;&#x8FBE;&#x5230;&#x7279;&#x5B9A;&#x7B49;&#x7EA7;&#x624D;&#x4F1A;&#x89E3;&#x9501;&#xFF08;&#x8BE6;&#x60C5;&#x53C2;&#x89C1;<a href="http://habitica.wikia.com/wiki/Level#Unlocks">&#x8FD9;&#x91CC;</a>&#xFF09;&#x3002;
+</li>
+<li>&#x91D1;&#x5E01;&#xFF08;GP&#xFF09;&#x6E38;&#x620F;&#x5185;&#x7684;&#x901A;&#x884C;&#x8D27;&#x5E01;&#xFF0C;&#x53EF;&#x8D2D;&#x4E70;&#x5956;&#x52B1;&#x3001;&#x88C5;&#x5907;&#x7B49;&#x3002;100&#x94F6;=1&#x91D1;
+</li>
+<li>&#x8FDE;&#x51FB; Streaks &#x9700;&#x6309;&#x65F6;&#x5B8C;&#x6210;&#x7684;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x8FDE;&#x7EED;&#x5B8C;&#x6210;&#x7684;&#x6B21;&#x6570;&#x3002;
+</li>
+<li>&#x6389;&#x843D; Drops &#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x6389;&#x843D;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7269;&#x54C1;&#xFF0C;&#x5982;&#x5BA0;&#x7269;&#x86CB;&#x3001;&#x836F;&#x6C34;&#x7B49;&#x3002;&#x8BE5;&#x529F;&#x80FD;&#x5728;&#x8FBE;&#x5230;&#x7B49;&#x7EA7; 3 &#x540E;&#x89E3;&#x9501;&#x3002;
+</li>
+<li>&#x4EFB;&#x52A1;&#x5206;&#x503C; task value &#x53CD;&#x6620;&#x4E86;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x5B8C;&#x6210;&#x60C5;&#x51B5;&#x3002;&#x662F; <a href="https://habitica.com">HabitRPG</a> &#x6839;&#x636E;&#x7528;&#x6237;&#x7684;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x60C5;&#x51B5;&#x4E3A;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x81EA;&#x52A8;&#x8BA1;&#x7B97;&#x5F97;&#x51FA;&#x7684;&#x6570;&#x503C;&#x3002;
+</li>
+<li>&#x4EFB;&#x52A1;&#x989C;&#x8272; &#x4E0E;&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x76F8;&#x5173;&#xFF0C;&#x4ECE;&#x4F4E;&#x5230;&#x9AD8;&#x7684;&#x989C;&#x8272;&#x5206;&#x522B;&#x4E3A;&#xFF1A;&#x7EA2;&#x2192;&#x6A59;&#x2192;&#x9EC4;&#x2192;&#x7EFF;&#x2192;&#x84DD;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x5B8C;&#x6210;&#x7684;&#x4EFB;&#x52A1;&#x53D8;&#x4E3A;&#x7070;&#x8272;&#x3002;
+</li>
+<li>&#x4F11;&#x606F; Rest in the Inn<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup> &#x6709;&#x65F6;&#x5019;&#x9700;&#x8981;&#x6682;&#x505C;HabitRPG&#xFF0C;&#x4F8B;&#x5982;&#x51C6;&#x5907;&#x4EAB;&#x53D7;&#x5047;&#x671F;&#xFF0C;&#x90A3;&#x4E48;&#x5230;&#x5BA2;&#x6808;&#x4E2D;&#x4F11;&#x606F;&#x5C31;&#x4E0D;&#x4F1A;&#x56E0;&#x4E3A;&#x6CA1;&#x5B8C;&#x6210;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x800C;&#x635F;&#x5931;HP&#x548C;&#x8FDE;&#x51FB;&#x3002;
+</li>
+<li>&#x73A9;&#x5BB6;&#x5C5E;&#x6027;&#xFF1A;&#x6709;&#x529B;&#x91CF;&#x3001;&#x667A;&#x529B;&#x3001;&#x4F53;&#x8D28;&#x3001;&#x611F;&#x77E5;&#x56DB;&#x9879;&#x3002;&#x4E0E;&#x4E00;&#x4E9B;&#x6280;&#x80FD;&#x6709;&#x5173;&#xFF0C;&#x589E;&#x52A0;&#x53EF;&#x73A9;&#x6027;&#x3002;
+</li>
+</ul>]]>
     
     </summary>
     
-      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
+      <category term="生活" scheme="http://yuchen-lea.gitcafe.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
-      <category term="文字" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%96%87%E5%AD%97/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
+      <category term="效率" scheme="http://yuchen-lea.gitcafe.io/categories/%E7%94%9F%E6%B4%BB/%E6%95%88%E7%8E%87/"/>
     
   </entry>
   
@@ -964,15 +1628,404 @@ Jared Diamond, &#x67AA;&#x70AE;&#x3001;&#x75C5;&#x83CC;&#x4E0E;&#x94A2;&#x94C1;[
     
     </summary>
     
-      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
+  </entry>
+  
+  <entry>
+    <title><![CDATA[日本文字的由来]]></title>
+    <link href="http://yuchen-lea.gitcafe.io/2016-01-25-japanese-origin/"/>
+    <id>http://yuchen-lea.gitcafe.io/2016-01-25-japanese-origin/</id>
+    <published>2016-01-24T16:00:00.000Z</published>
+    <updated>2016-01-25T16:34:51.801Z</updated>
+    <content type="html"><![CDATA[
+
+<p>
+<div class="alert alert-warning"><i class="fa fa-bell"></i>  &#x5B8C;&#x5584;&#x4E2D;</div>
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> &#x53EA;&#x6709;&#x53E3;&#x8BED;&#x7684;&#x65F6;&#x4EE3;</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+&#x6240;&#x6709;&#x6587;&#x660E;&#x90FD;&#x4F1A;&#x7ECF;&#x5386;&#x7684;&#x9636;&#x6BB5;&#xFF0C;&#x53EA;&#x6709;&#x8BED;&#x8A00;&#xFF0C;&#x6CA1;&#x6709;&#x6587;&#x5B57;&#x3002;&#x90A3;&#x65F6;&#x7684;&#x65E5;&#x672C;&#x4EBA;&#x8BA4;&#x4E3A;&#x8BED;&#x8A00;&#x91CC;&#x6709;&#x4E0D;&#x53EF;&#x601D;&#x8BAE;&#x7684;&#x5A01;&#x529B;&#x5B58;&#x5728;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; <b>&#x8A00;&#x7075;&#x4FE1;&#x4EF0;</b> &#x3002;
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> &#x6C49;&#x5B57;&#x4F20;&#x5165;</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>3&#x4E16;&#x7EAA;&#x672B;&#xFF0C;&#x6C49;&#x5B57;&#x65E5;&#x672C;&#x5F15;&#x8FDB;&#x4E2D;&#x56FD;&#x7684;&#x6C49;&#x5B57;&#x3002;
+</li>
+<li>4&#x4E16;&#x7EAA;&#x5DE6;&#x53F3;&#xFF0C;&#x65E5;&#x672C;&#x5438;&#x6536;&#x6C49;&#x5B57;&#x3002;<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</li>
+</ul>
+
+<p>
+&#x5F53;&#x65F6;&#x5B8C;&#x5168;&#x7528;&#x6C49;&#x5B57;&#xFF0C;&#x770B;&#x6C49;&#x5B57;&#x8BFB;&#x65E5;&#x8BED;&#x3002;
+</p>
+
+<p>
+&#x4EE3;&#x8868;&#xFF1A;&#x300A;&#x53E4;&#x4E8B;&#x8BB0;&#x300B; &#x65E5;&#x672C;&#x6700;&#x65E9;&#x7684;&#x53F2;&#x4E66;
+</p>
+
+<p>
+<div class="alert alert-warning"><i class="fa fa-bell"></i>  &#x4E0B;&#x4F8B;&#x5F15;&#x7528;&#x81EA;<a href="http://www.wanmen.org/courses/YYRYYY/topics/YYRYYY01A" target="_blank" rel="external">&#x4E07;&#x95E8;&#x5927;&#x5B66;|&#x65E5;&#x8BED;&#x4E94;&#x5341;&#x97F3;&#x56FE;&#x8BED;&#x97F3;&#x5165;&#x95E8;|&#x65E5;&#x672C;&#x6587;&#x5B57;&#x4ECB;&#x7ECD;</a> &#xFF0C;&#x51FA;&#x81EA; *&#x53E4;&#x4E8B;&#x8A18;*<sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup> &#x3002;&#x5728;&#x6B64;&#x611F;&#x8C22;&#x82CF;&#x66FC;&#x8001;&#x5E08;&#x6E05;&#x6670;&#x7684;&#x8BB2;&#x89E3;&#x3002;</div>
+</p>
+
+<blockquote>
+<p>
+&#x5929;&#x5730;&#x521D;&#x767C;&#x4E4B;&#x6642;&#x3002;&#x65BC;&#x9AD8;&#x5929;&#x539F;&#x6210;&#x795E;&#x540D;&#x3002;&#x5929;&#x4E4B;&#x5FA1;&#x4E2D;&#x4E3B;&#x795E;&#x3002;&#x3008;&#x8A13;&#x9AD8;&#x4E0B;&#x5929;&#x4E91;&#x963F;&#x9EBB;&#x3002;&#x4E0B;&#x6548;&#x6B64;&#x3002;&#x3009;&#x6B21;&#x9AD8;&#x5FA1;&#x7522;&#x5DE2;&#x65E5;&#x795E;&#x3002;&#x6B21;&#x795E;&#x7522;&#x5DE2;&#x65E5;&#x795E;&#x3002;&#x6B64;&#x4E09;&#x67F1;&#x795E;&#x8005;&#x3002;&#x4E26;&#x7368;&#x795E;&#x6210;&#x5750;&#x800C;&#x3002;&#x96B1;&#x8EAB;&#x4E5F;&#x3002;
+</p>
+
+<p>
+&#x6B21;&#x570B;&#x7A1A;&#x5982;&#x6D6E;&#x8102;&#x800C;&#x3002;&#x4E45;&#x7F85;&#x4E0B;&#x90A3;&#x5DDE;&#x591A;&#x9640;&#x7528;&#x5E63;&#x7409;&#x4E4B;&#x6642;&#x3002;&#x3008;&#x7409;&#x5B57;&#x4EE5;&#x4E0A;&#x5341;&#x5B57;&#x4EE5;&#x97F3;&#x3002;&#x3009;&#x5982;&#x8466;&#x7259;&#x56E0;&#x840C;&#x9A30;&#x4E4B;&#x7269;&#x800C;&#x3002;&#x2026;&#x2026;
+</p>
+</blockquote>
+
+<p>
+&#x6CA1;&#x5B66;&#x8FC7;&#x65E5;&#x8BED;&#x7684;&#x4E2D;&#x56FD;&#x4EBA;&#x4E5F;&#x53EF;&#x4EE5;&#x770B;&#x61C2;&#x4E0A;&#x6587;&#x7684;&#x610F;&#x601D;&#xFF0C;&#x4F46;&#x662F;&#x5FF5;&#x4E0D;&#x51FA;&#x6765;&#xFF0C;&#x56E0;&#x4E3A;&#x662F;&#x8BFB;&#x65E5;&#x8BED;&#x7684;&#x97F3;&#x3002;&#x53C8;&#x662F;&#x4F53;&#x73B0; <b>&#x8BED;&#x8A00;&#x548C;&#x6587;&#x5B57;&#x5E76;&#x4E0D;&#x7B49;&#x540C;</b> &#x7684;&#x4E00;&#x4E2A;&#x597D;&#x4F8B;&#x5B50;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#x51FA;&#x73B0;&#x4E86;&#x4E24;&#x79CD;&#x53D1;&#x97F3;&#x65B9;&#x5F0F;&#xFF1A; <b>&#x8BAD;&#x8BFB;</b> &#x548C; <b>&#x97F3;&#x8BFB;</b> &#x3002;&#x4E00;&#x4E2A;&#x6C49;&#x5B57;&#x5982;&#x679C;&#x662F;&#x4E0D;&#x540C;&#x65F6;&#x671F;&#x6216;&#x4E0D;&#x540C;&#x5730;&#x533A;&#x4F20;&#x5165;&#x65E5;&#x672C;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x4E00;&#x4E2A;&#x6C49;&#x5B57;&#x6709;&#x591A;&#x79CD;&#x97F3;&#x8BFB;&#xFF1B;&#x4E00;&#x4E2A;&#x6C49;&#x5B57;&#x5982;&#x679C;&#x5BF9;&#x5E94;&#x591A;&#x79CD;&#x610F;&#x601D;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x4E00;&#x4E2A;&#x6C49;&#x5B57;&#x6709;&#x591A;&#x79CD;&#x8BAD;&#x8BFB;&#x3002;&#x53C2;&#x89C1; <a href="\2016-01-25-onyomi-and-kunyomi">&#x97F3;&#x8BFB;&#x4E0E;&#x8BAD;&#x8BFB;</a>&#x3002;
+</p>
+
+<a id="more"></a>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> &#x5948;&#x826F;&#x65F6;&#x4EE3; 710-794</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+&#x4E07;&#x53F6;&#x5047;&#x540D;&#x7684;&#x5F62;&#x6210;
+</p>
+
+<p>
+&#x5047;&#xFF0C;&#x5047;&#x501F;&#x4E4B;&#x4E49;&#xFF0C;&#x662F;&#x6307;&#x5047;&#x501F;&#x771F;&#x540D;&#x2014;&#x2014;&#x6C49;&#x5B57;&#xFF0C;&#x73B0;&#x5728;&#x65E5;&#x672C;&#x7684;&#x5E38;&#x7528;&#x6C49;&#x5B57;&#x6709;1000~2000&#x3002;
+</p>
+
+<p>
+&#x4E00;&#x4E2A;&#x6C49;&#x5B57;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x97F3;&#xFF0C;&#x4E0D;&#x8868;&#x610F;<sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup>&#xFF1B;&#x4E0D;&#x8FC7;&#x4E00;&#x4E2A;&#x97F3;&#x53EF;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;&#x6C49;&#x5B57;&#x3002;&#x4F8B;&#x5982;&#x5F53;&#x65F6;&#x7684;&#x963F;&#x3001;&#x5B89;&#x3001;&#x5A40;&#x3001;&#x9785;&#x3001;&#x82F1;&#x3001;&#x543E;&#x90FD;&#x5BF9;&#x5E94;&#x201C;a&#x201D;&#x3002;
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#x4E07;&#x53F6;&#x5047;&#x540D;</th>
+<th scope="col" class="left">&#x7F57;&#x9A6C;&#x5B57;</th>
+<th scope="col" class="left">&#x91CA;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&#x591C;&#x9EBB;</td>
+<td class="left">yama</td>
+<td class="left">&#x5C71;</td>
+</tr>
+
+<tr>
+<td class="left">&#x53EF;&#x6CE2;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#x5DDD;</td>
+</tr>
+
+<tr>
+<td class="left">&#x7531;&#x5C90;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#x96EA;</td>
+</tr>
+
+<tr>
+<td class="left">&#x4F0A;&#x5415;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#x8272;</td>
+</tr>
+
+<tr>
+<td class="left">&#x6CE2;&#x5948;</td>
+<td class="left">&#xA0;</td>
+<td class="left">&#x82B1;</td>
+</tr>
+
+<tr>
+<td class="left">&#x8A31;&#x5DF1;&#x5442;</td>
+<td class="left">kokoro</td>
+<td class="left">&#x5FC3;</td>
+</tr>
+
+<tr>
+<td class="left">&#x6563;&#x4E45;&#x826F;</td>
+<td class="left">sakura</td>
+<td class="left">&#x6A31;&#x82B1;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+&#x4EE3;&#x8868;&#xFF1A;&#x4E07;&#x53F6;&#x96C6;
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> &#x5E73;&#x5B89;&#x65F6;&#x4EE3;</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+&#x6C49;&#x5F0F;&#x548C;&#x6587;<sup><a id="fnr.4" name="fnr.4" class="footref" href="#fn.4">4</a></sup>&#xFF1A;&#x7528;&#x6C49;&#x6587;&#x6837;&#x5F0F;&#x5199;&#x7684;&#x65E5;&#x8BED;&#x6587;&#x7AE0;&#xFF0C;&#x5927;&#x90FD;&#x5728;&#x5927;&#x5316;&#x6539;&#x65B0;&#xFF08;645&#x5E74;&#xFF09;&#x540E;&#xFF0C;&#x5E94;&#x7528;&#x4E8E;&#x671D;&#x5EF7;&#x8BB0;&#x5F55;&#x3001;&#x7537;&#x6027;&#x8D35;&#x65CF;&#x7684;&#x79C1;&#x4EBA;&#x94ED;&#x6587;&#x3001;&#x65E5;&#x8BB0;&#x7B49;<sup><a id="fnr.5" name="fnr.5" class="footref" href="#fn.5">5</a></sup>&#x3002;&#x7279;&#x70B9;&#x4E3A;&#xFF1A;
+</p>
+<ol class="org-ol">
+<li>&#x5927;&#x591A;&#x9075;&#x5FAA;&#x65E5;&#x8BED;&#x7684;&#x8BED;&#x5E8F;
+</li>
+<li>&#x542B;&#x6709;&#x656C;&#x8BED;&#x8868;&#x8FBE;
+</li>
+</ol>
+
+<p>
+&#x6C49;&#x6587;&#xFF0C;&#x53E4;&#x4EE3;&#x6C49;&#x8BED;&#x6587;&#x7AE0;&#xFF0C;&#x662F;&#x5F53;&#x65F6;&#x6700;&#x53D7;&#x5C0A;&#x5D07;&#x7684;&#x6587;&#x4F53;&#xFF0C;&#x4E2D;&#x56FD;&#x4EBA;&#x80FD;&#x8BFB;&#x61C2;<sup><a id="fnr.6" name="fnr.6" class="footref" href="#fn.6">6</a></sup>
+</p>
+
+<p>
+&#x5E73;&#x5047;&#x540D;&#xFF1A;&#x6574;&#x4E2A;&#x6C49;&#x5B57;&#x7684;&#x8349;&#x4E66;&#xFF0C;&#x6700;&#x521D;&#x4E00;&#x4E2A;&#x97F3;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;&#x5B57;&#xFF0C;&#x5728;1900&#x5E74;&#x6700;&#x7EC8;&#x786E;&#x7ACB;&#x4E00;&#x97F3;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x7247;&#x5047;&#x540D;<sup><a id="fnr.7" name="fnr.7" class="footref" href="#fn.7">7</a></sup>&#x3002;&#x5E94;&#x7528;&#x4E8E;&#x5973;&#x6027;&#x4E66;&#x5199;&#xFF0C;&#x7537;&#x6027;&#x4F5C;&#x548C;&#x6B4C;&#x4EE5;&#x53CA;&#x4E0E;&#x5973;&#x6027;&#x901A;&#x4FE1;<sup><a id="fnr.8" name="fnr.8" class="footref" href="#fn.8">8</a></sup>&#x3002;&#x5E73;&#xFF0C;&#x5E73;&#x8BD1;&#x3001;&#x7B80;&#x5316;&#x3002;
+&#x4EE3;&#x8868;&#xFF1A;&#x300A;&#x6795;&#x8349;&#x5B50;&#x300B;&#x300A;&#x6E90;&#x6C0F;&#x7269;&#x8BED;&#x300B;&#xFF08;&#x90FD;&#x662F;&#x5973;&#x6027;&#x6587;&#x5B66;&#xFF09;
+</p>
+
+<p>
+&#x7247;&#x5047;&#x540D;&#xFF1A;&#x6458;&#x53D6;&#x4E07;&#x53F6;&#x5047;&#x540D;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF08;&#x591A;&#x4E3A;&#x8D77;&#x7B14;&#x7B14;&#x753B;&#x548C;&#x6536;&#x7B14;&#x7B14;&#x753B;&#xFF09;&#xFF0C;&#x6E10;&#x6E10;&#x56FA;&#x5B9A;&#x4E3A;&#x4E00;&#x4E2A;&#x53D1;&#x97F3;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x7247;&#x5047;&#x540D;<sup><a id="fnr.9" name="fnr.9" class="footref" href="#fn.9">9</a></sup>&#x3002;&#x7247;&#xFF0C;&#x4E00;&#x90E8;&#x5206;&#x3002;&#x6C49;&#x5B57;&#x6977;&#x4F53;&#x504F;&#x65C1;
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> &#x6C5F;&#x6237;&#x65F6;&#x4EE3;</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+&#x8FD1;&#x4EE3;&#x65E5;&#x8BED;&#x7684;&#x5F62;&#x6210;<sup><a id="fnr.10" name="fnr.10" class="footref" href="#fn.10">10</a></sup>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> &#x660E;&#x6CBB;&#x65F6;&#x4EE3;</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+&#x8A00;&#x6587;&#x4E00;&#x81F4;&#xFF1A;&#x53E3;&#x8BED;&#x4E0E;&#x6587;&#x7AE0;&#x7528;&#x8BED;&#x7684;&#x7EDF;&#x4E00;&#xFF0C;&#x8FD1;&#x4EE3;&#x65E5;&#x8BED;&#x8D70;&#x5411;&#x6210;&#x719F;<sup><a id="fnr.11" name="fnr.11" class="footref" href="#fn.11">11</a></sup>
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P14
+</p></div>
+
+<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+<a href="https://zh.wikisource.org/wiki/%E5%8F%A4%E4%BA%8B%E8%A8%98/%E4%B8%8A%E5%8D%B7" target="_blank" rel="external">&#x53E4;&#x4E8B;&#x8A18;/&#x4E0A;&#x5377; - &#x7EF4;&#x57FA;&#x6587;&#x5E93;&#xFF0C;&#x81EA;&#x7531;&#x7684;&#x56FE;&#x4E66;&#x9986;</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P17
+</p></div>
+
+<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
+&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P37
+</p></div>
+
+<div class="footdef"><sup><a id="fn.5" name="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara">
+&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P39
+</p></div>
+
+<div class="footdef"><sup><a id="fn.6" name="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p class="footpara">
+&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P42
+</p></div>
+
+<div class="footdef"><sup><a id="fn.7" name="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p class="footpara">
+&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P56
+</p></div>
+
+<div class="footdef"><sup><a id="fn.8" name="fn.8" class="footnum" href="#fnr.8">8</a></sup> <p class="footpara">
+&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P59
+</p></div>
+
+<div class="footdef"><sup><a id="fn.9" name="fn.9" class="footnum" href="#fnr.9">9</a></sup> <p class="footpara">
+&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P47
+</p></div>
+
+<div class="footdef"><sup><a id="fn.10" name="fn.10" class="footnum" href="#fnr.10">10</a></sup> <p class="footpara">
+&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P102
+</p></div>
+
+<div class="footdef"><sup><a id="fn.11" name="fn.11" class="footnum" href="#fnr.11">11</a></sup> <p class="footpara">
+&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P134
+</p></div>
+
+
+</div>
+</div>
+<p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">[2016-01-25 &#x5468;&#x4E00;]</span></span></p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>
+<div class="alert alert-warning"><i class="fa fa-bell"></i>  &#x5B8C;&#x5584;&#x4E2D;</div>
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> &#x53EA;&#x6709;&#x53E3;&#x8BED;&#x7684;&#x65F6;&#x4EE3;</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+&#x6240;&#x6709;&#x6587;&#x660E;&#x90FD;&#x4F1A;&#x7ECF;&#x5386;&#x7684;&#x9636;&#x6BB5;&#xFF0C;&#x53EA;&#x6709;&#x8BED;&#x8A00;&#xFF0C;&#x6CA1;&#x6709;&#x6587;&#x5B57;&#x3002;&#x90A3;&#x65F6;&#x7684;&#x65E5;&#x672C;&#x4EBA;&#x8BA4;&#x4E3A;&#x8BED;&#x8A00;&#x91CC;&#x6709;&#x4E0D;&#x53EF;&#x601D;&#x8BAE;&#x7684;&#x5A01;&#x529B;&#x5B58;&#x5728;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; <b>&#x8A00;&#x7075;&#x4FE1;&#x4EF0;</b> &#x3002;
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> &#x6C49;&#x5B57;&#x4F20;&#x5165;</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>3&#x4E16;&#x7EAA;&#x672B;&#xFF0C;&#x6C49;&#x5B57;&#x65E5;&#x672C;&#x5F15;&#x8FDB;&#x4E2D;&#x56FD;&#x7684;&#x6C49;&#x5B57;&#x3002;
+</li>
+<li>4&#x4E16;&#x7EAA;&#x5DE6;&#x53F3;&#xFF0C;&#x65E5;&#x672C;&#x5438;&#x6536;&#x6C49;&#x5B57;&#x3002;<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</li>
+</ul>
+
+<p>
+&#x5F53;&#x65F6;&#x5B8C;&#x5168;&#x7528;&#x6C49;&#x5B57;&#xFF0C;&#x770B;&#x6C49;&#x5B57;&#x8BFB;&#x65E5;&#x8BED;&#x3002;
+</p>
+
+<p>
+&#x4EE3;&#x8868;&#xFF1A;&#x300A;&#x53E4;&#x4E8B;&#x8BB0;&#x300B; &#x65E5;&#x672C;&#x6700;&#x65E9;&#x7684;&#x53F2;&#x4E66;
+</p>
+
+<p>
+<div class="alert alert-warning"><i class="fa fa-bell"></i>  &#x4E0B;&#x4F8B;&#x5F15;&#x7528;&#x81EA;<a href="http://www.wanmen.org/courses/YYRYYY/topics/YYRYYY01A">&#x4E07;&#x95E8;&#x5927;&#x5B66;|&#x65E5;&#x8BED;&#x4E94;&#x5341;&#x97F3;&#x56FE;&#x8BED;&#x97F3;&#x5165;&#x95E8;|&#x65E5;&#x672C;&#x6587;&#x5B57;&#x4ECB;&#x7ECD;</a> &#xFF0C;&#x51FA;&#x81EA; *&#x53E4;&#x4E8B;&#x8A18;*<sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup> &#x3002;&#x5728;&#x6B64;&#x611F;&#x8C22;&#x82CF;&#x66FC;&#x8001;&#x5E08;&#x6E05;&#x6670;&#x7684;&#x8BB2;&#x89E3;&#x3002;</div>
+</p>
+
+<blockquote>
+<p>
+&#x5929;&#x5730;&#x521D;&#x767C;&#x4E4B;&#x6642;&#x3002;&#x65BC;&#x9AD8;&#x5929;&#x539F;&#x6210;&#x795E;&#x540D;&#x3002;&#x5929;&#x4E4B;&#x5FA1;&#x4E2D;&#x4E3B;&#x795E;&#x3002;&#x3008;&#x8A13;&#x9AD8;&#x4E0B;&#x5929;&#x4E91;&#x963F;&#x9EBB;&#x3002;&#x4E0B;&#x6548;&#x6B64;&#x3002;&#x3009;&#x6B21;&#x9AD8;&#x5FA1;&#x7522;&#x5DE2;&#x65E5;&#x795E;&#x3002;&#x6B21;&#x795E;&#x7522;&#x5DE2;&#x65E5;&#x795E;&#x3002;&#x6B64;&#x4E09;&#x67F1;&#x795E;&#x8005;&#x3002;&#x4E26;&#x7368;&#x795E;&#x6210;&#x5750;&#x800C;&#x3002;&#x96B1;&#x8EAB;&#x4E5F;&#x3002;
+</p>
+
+<p>
+&#x6B21;&#x570B;&#x7A1A;&#x5982;&#x6D6E;&#x8102;&#x800C;&#x3002;&#x4E45;&#x7F85;&#x4E0B;&#x90A3;&#x5DDE;&#x591A;&#x9640;&#x7528;&#x5E63;&#x7409;&#x4E4B;&#x6642;&#x3002;&#x3008;&#x7409;&#x5B57;&#x4EE5;&#x4E0A;&#x5341;&#x5B57;&#x4EE5;&#x97F3;&#x3002;&#x3009;&#x5982;&#x8466;&#x7259;&#x56E0;&#x840C;&#x9A30;&#x4E4B;&#x7269;&#x800C;&#x3002;&#x2026;&#x2026;
+</p>
+</blockquote>
+
+<p>
+&#x6CA1;&#x5B66;&#x8FC7;&#x65E5;&#x8BED;&#x7684;&#x4E2D;&#x56FD;&#x4EBA;&#x4E5F;&#x53EF;&#x4EE5;&#x770B;&#x61C2;&#x4E0A;&#x6587;&#x7684;&#x610F;&#x601D;&#xFF0C;&#x4F46;&#x662F;&#x5FF5;&#x4E0D;&#x51FA;&#x6765;&#xFF0C;&#x56E0;&#x4E3A;&#x662F;&#x8BFB;&#x65E5;&#x8BED;&#x7684;&#x97F3;&#x3002;&#x53C8;&#x662F;&#x4F53;&#x73B0; <b>&#x8BED;&#x8A00;&#x548C;&#x6587;&#x5B57;&#x5E76;&#x4E0D;&#x7B49;&#x540C;</b> &#x7684;&#x4E00;&#x4E2A;&#x597D;&#x4F8B;&#x5B50;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#x51FA;&#x73B0;&#x4E86;&#x4E24;&#x79CD;&#x53D1;&#x97F3;&#x65B9;&#x5F0F;&#xFF1A; <b>&#x8BAD;&#x8BFB;</b> &#x548C; <b>&#x97F3;&#x8BFB;</b> &#x3002;&#x4E00;&#x4E2A;&#x6C49;&#x5B57;&#x5982;&#x679C;&#x662F;&#x4E0D;&#x540C;&#x65F6;&#x671F;&#x6216;&#x4E0D;&#x540C;&#x5730;&#x533A;&#x4F20;&#x5165;&#x65E5;&#x672C;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x4E00;&#x4E2A;&#x6C49;&#x5B57;&#x6709;&#x591A;&#x79CD;&#x97F3;&#x8BFB;&#xFF1B;&#x4E00;&#x4E2A;&#x6C49;&#x5B57;&#x5982;&#x679C;&#x5BF9;&#x5E94;&#x591A;&#x79CD;&#x610F;&#x601D;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x4E00;&#x4E2A;&#x6C49;&#x5B57;&#x6709;&#x591A;&#x79CD;&#x8BAD;&#x8BFB;&#x3002;&#x53C2;&#x89C1; <a href="\2016-01-25-onyomi-and-kunyomi">&#x97F3;&#x8BFB;&#x4E0E;&#x8BAD;&#x8BFB;</a>&#x3002;
+</p>]]>
     
-      <category term="发音" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%8F%91%E9%9F%B3/"/>
+    </summary>
     
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
+  </entry>
+  
+  <entry>
+    <title><![CDATA[博文规范]]></title>
+    <link href="http://yuchen-lea.gitcafe.io/2016-01-24-standard-of-post/"/>
+    <id>http://yuchen-lea.gitcafe.io/2016-01-24-standard-of-post/</id>
+    <published>2016-01-23T16:00:00.000Z</published>
+    <updated>2016-01-28T04:01:33.184Z</updated>
+    <content type="html"><![CDATA[
+
+<p>
+<div class="alert alert-warning"><i class="fa fa-bell"></i>  &#x5B8C;&#x5584;&#x4E2D;</div>
+</p>
+
+<p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x603B;&#x7ED3;&#x6587;&#x7AE0;&#x5199;&#x4F5C;&#x65F6;&#x7684;&#x89C4;&#x8303;</div>
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> &#x535A;&#x6587;&#x7684;&#x57FA;&#x672C;&#x6A21;&#x7248;</h2>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> &#x6587;&#x7AE0;&#x5143;&#x4FE1;&#x606F;</h2>
+<div class="outline-text-2" id="text-2">
+<p class="verse">
+#+TITLE:<br>
+#+DATE:<br>
+#+AUTHOR: yuchen<br>
+#+EMAIL: yuchen.lea@gmail.com<br>
+#+TAGS: tags<br>
+#+LAYOUT: post<br>
+#+CATEGORIES:<br>
+#+DESCRIPTION:<br>
+#+KEYWORDS: tags<br>
+#+OPTIONS:<br>
+</p>
+</div>
+
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> &#x6807;&#x7B7E;</h3>
+<div class="outline-text-3" id="text-2-1">
+<ol class="org-ol">
+<li>&#x6807;&#x660E;&#x6587;&#x7AE0;&#x6240;&#x5C5E;&#x77E5;&#x8BC6;&#x7C7B;&#x578B;&#xFF1A;!what&#x3001;!how&#x3001;!why&#x3001;!who
+</li>
+<li>&#x6807;&#x660E;&#x6587;&#x7AE0;&#x6D89;&#x53CA;&#x7684;&#x5185;&#x5BB9;
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> &#x7C7B;&#x522B;</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x53EA;&#x80FD;&#x5F52;&#x5230;&#x4E00;&#x4E2A;&#x7C7B;&#x522B;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x5B50;&#x7C7B;&#x522B;&#x3002;
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> &#x53C2;&#x8003;&#x6587;&#x732E;&#x683C;&#x5F0F;</h2>
+<div class="outline-text-2" id="text-3">
+<ol class="org-ol">
+<li>&#x4E66;&#x7C4D;&#xFF08;&#x5B9E;&#x4F53;&#x4E66;&#xFF09;
+<ul class="org-ul">
+<li>&#x683C;&#x5F0F;&#xFF1A;&#x4F5C;&#x8005;, &#x4E66;&#x540D;[B], &#x51FA;&#x7248;&#x793E;, &#x51FA;&#x7248;&#x5E74;: &#x8D77;-&#x6B62;&#x9875;&#x7801;
+</li>
+<li>&#x5B9E;&#x4F8B;&#xFF1A;&#x5C71;&#x53E3;&#x4EF2;&#x7F8E;, &#x5199;&#x7ED9;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x53F2;[B]&#xFF0C;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;, 2012: P42
+</li>
+</ul>
+</li>
+<li>&#x4E66;&#x7C4D;&#xFF08;&#x7535;&#x5B50;&#x4E66;&#xFF09;
+<ul class="org-ul">
+<li>&#x683C;&#x5F0F;&#xFF1A;&#x4F5C;&#x8005;, &#x4E66;&#x540D;[B], &#x5F15;&#x7528;&#x6BB5;&#x843D;
+</li>
+<li>&#x5B9E;&#x4F8B;&#xFF1A;Jared Diamond, &#x67AA;&#x70AE;&#x3001;&#x75C5;&#x83CC;&#x4E0E;&#x94A2;&#x94C1;[B], Paragragh 55.11
+</li>
+</ul>
+</li>
+<li>&#x7F51;&#x9875;
+</li>
+</ol>
+</div>
+</div>
+
+<p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">[2016-01-24 &#x5468;&#x65E5;]</span></span></p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[
+
+<p>
+<div class="alert alert-warning"><i class="fa fa-bell"></i>  &#x5B8C;&#x5584;&#x4E2D;</div>
+</p>
+
+<p>
+<div class="alert alert-i]]>
+    </summary>
     
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="日语知识" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E7%9F%A5%E8%AF%86/"/>
+      <category term="!who" scheme="http://yuchen-lea.gitcafe.io/tags/who/"/>
     
   </entry>
   
@@ -1135,18 +2188,6 @@ Jared Diamond, &#x67AA;&#x70AE;&#x3001;&#x75C5;&#x83CC;&#x4E0E;&#x94A2;&#x94C1;[
     
     </summary>
     
-      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
-    
-      <category term="CSS" scheme="http://yuchen-lea.gitcafe.io/tags/CSS/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
-    
-      <category term="多级类别" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%A4%9A%E7%BA%A7%E7%B1%BB%E5%88%AB/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
-    
-      <category term="hexo美化" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E7%BE%8E%E5%8C%96/"/>
-    
   </entry>
   
   <entry>
@@ -1259,18 +2300,6 @@ categories:<br>
 </p>]]>
     
     </summary>
-    
-      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
-    
-      <category term="org-mode" scheme="http://yuchen-lea.gitcafe.io/tags/org-mode/"/>
-    
-      <category term="多级类别" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%A4%9A%E7%BA%A7%E7%B1%BB%E5%88%AB/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
-    
-      <category term="hexo写作" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E5%86%99%E4%BD%9C/"/>
     
   </entry>
   
@@ -1726,14 +2755,6 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
     
     </summary>
     
-      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
-    
-      <category term="七牛" scheme="http://yuchen-lea.gitcafe.io/tags/%E4%B8%83%E7%89%9B/"/>
-    
-      <category term="插件" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%8F%92%E4%BB%B6/"/>
-    
   </entry>
   
   <entry>
@@ -2161,14 +3182,6 @@ css<br>
     
     </summary>
     
-      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
-    
-      <category term="hexo知识" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E7%9F%A5%E8%AF%86/"/>
-    
   </entry>
   
   <entry>
@@ -2301,18 +3314,6 @@ rss: /atom.xml<br>
     
     </summary>
     
-      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
-    
-      <category term="RSS" scheme="http://yuchen-lea.gitcafe.io/tags/RSS/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
-    
-      <category term="插件" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
-    
-      <category term="hexo设置" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E8%AE%BE%E7%BD%AE/"/>
-    
   </entry>
   
   <entry>
@@ -2320,7 +3321,7 @@ rss: /atom.xml<br>
     <link href="http://yuchen-lea.gitcafe.io/2016-01-17-sum-of-gojuon/"/>
     <id>http://yuchen-lea.gitcafe.io/2016-01-17-sum-of-gojuon/</id>
     <published>2016-01-17T06:42:00.000Z</published>
-    <updated>2016-01-25T16:37:50.077Z</updated>
+    <updated>2016-01-28T01:53:00.925Z</updated>
     <content type="html"><![CDATA[
 
 <p>
@@ -2350,12 +3351,18 @@ rss: /atom.xml<br>
 <li>&#x5E73;&#x5047;&#x540D; &#x3042; &#x7247;&#x5047;&#x540D; &#x30A2;
 </li>
 <li>&#x7B14;&#x987A;
+
+<p>
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/gojuon/H_stroke_a.gif">
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/gojuon/K_stroke_a.gif">
+</p>
 </li>
 <li>&#x5B57;&#x6E90;
+
+<p>
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/gojuon/H_origin_a.png">
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/gojuon/K_origin_a.png">
+</p>
 </li>
 <li>&#x53D1;&#x97F3; 
 &#x5728;&#x3042;&#x3044;&#x3046;&#x3048;&#x304A;&#x8FD9;5&#x4E2A;&#x5355;&#x5143;&#x97F3;&#x4E2D;&#xFF0C;&#x5634;&#x578B;&#x662F;&#x5F20;&#x5F00;&#x6700;&#x5927;&#x7684;&#x3002;
@@ -2367,12 +3374,18 @@ rss: /atom.xml<br>
 <li>&#x5E73;&#x5047;&#x540D; &#x3044; &#x7247;&#x5047;&#x540D; &#x30A4;
 </li>
 <li>&#x7B14;&#x987A;
+
+<p>
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/gojuon/H_stroke_i.gif">
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/gojuon/K_stroke_i.gif">
+</p>
 </li>
 <li>&#x5B57;&#x6E90;
+
+<p>
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/gojuon/H_origin_i.png">
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/gojuon/K_origin_i.png">
+</p>
 </li>
 <li>&#x53D1;&#x97F3; 
 &#x4E0D;&#x54A7;&#x5634;&#xFF0C;&#x53E3;&#x578B;&#x975E;&#x5E38;&#x5C0F;&#x3002;
@@ -2384,12 +3397,18 @@ rss: /atom.xml<br>
 <li>&#x5E73;&#x5047;&#x540D; &#x3046; &#x7247;&#x5047;&#x540D; &#x30A6;
 </li>
 <li>&#x7B14;&#x987A;
+
+<p>
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/gojuon/H_stroke_u.gif">
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/gojuon/K_stroke_u.gif">
+</p>
 </li>
 <li>&#x5B57;&#x6E90;
+
+<p>
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/gojuon/H_origin_u.png">
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/gojuon/K_origin_u.png">
+</p>
 </li>
 <li>&#x53D1;&#x97F3; 
 &#x6C49;&#x8BED;&#x4E2D;&#x201C;&#x4E4C;&#x201D;&#x662F;&#x5706;&#x5507;&#x97F3;&#xFF0C;&#x4F46;&#x662F;&#x65E5;&#x8BED;&#x7684; u &#x4E0D;&#x662F;&#x5706;&#x5507;&#x97F3;&#x3002;&#x51E0;&#x4E4E;&#x4E0D;&#x5F20;&#x5634;&#xFF0C;&#x53E3;&#x578B;&#x975E;&#x5E38;&#x5C0F;&#xFF0C;&#x7259;&#x9F7F;&#x5634;&#x5507;&#x53EA;&#x662F;&#x5FAE;&#x5FAE;&#x5F20;&#x5F00;&#x4E00;&#x6761;&#x7F1D;&#x3002;
@@ -3353,16 +4372,6 @@ rss: /atom.xml<br>
     
     </summary>
     
-      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
-    
-      <category term="五十音" scheme="http://yuchen-lea.gitcafe.io/tags/%E4%BA%94%E5%8D%81%E9%9F%B3/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="日语口语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
-    
   </entry>
   
   <entry>
@@ -3370,7 +4379,7 @@ rss: /atom.xml<br>
     <link href="http://yuchen-lea.gitcafe.io/2016-01-15-japanese-accent/"/>
     <id>http://yuchen-lea.gitcafe.io/2016-01-15-japanese-accent/</id>
     <published>2016-01-15T06:16:00.000Z</published>
-    <updated>2016-01-25T16:37:41.322Z</updated>
+    <updated>2016-01-28T01:31:54.541Z</updated>
     <content type="html"><![CDATA[
 
 <p>
@@ -3389,7 +4398,7 @@ rss: /atom.xml<br>
 <h2 id="sec-1"><span class="section-number-2">1</span> &#x5173;&#x4E8E;&#x58F0;&#x8C03;&#x7684;&#x57FA;&#x672C;&#x5E38;&#x8BC6;<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
 <div class="outline-text-2" id="text-1">
 <p>
-&#x5728;&#x65E5;&#x8BED;&#x4E2D;&#x58F0;&#x8C03;&#x79F0;&#x4E3A; &#x30A2;&#x30AF;&#x30BB;&#x30F3;&#x30C8; &#xFF0C;&#x80CC;&#x8FC7;&#x4E94;&#x5341;&#x97F3;&#x56FE;&#x7684;&#x540C;&#x5B66;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x62FC;&#x8BFB;&#x8BD5;&#x8BD5;&#xFF0C;&#x5C31;&#x662F;&#x82F1;&#x8BED;&#x5355;&#x8BCD; accent &#x7684;&#x97F3;&#x8BD1;&#x3002;&#x4E0D;&#x8FC7;&#x65E5;&#x8BED;&#x7684;&#x58F0;&#x8C03;&#x5176;&#x5B9E;&#x66F4;&#x63A5;&#x8FD1;&#x6C49;&#x8BED;&#x7684;&#x58F0;&#x8C03;&#xFF0C;&#x800C;&#x975E;&#x82F1;&#x8BED;&#x7684;&#x58F0;&#x8C03;&#xFF08;&#x5F3A;&#x5F31;&#x91CD;&#x97F3;&#xFF09;&#x3002;&#x58F0;&#x8C03;&#x5E7F;&#x4E49;&#x5730;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;2&#x79CD;&#xFF1A;
+&#x5728;&#x65E5;&#x8BED;&#x4E2D;&#x58F0;&#x8C03;&#x79F0;&#x4E3A; &#x30A2;&#x30AF;&#x30BB;&#x30F3;&#x30C8; &#xFF0C;&#x80CC;&#x8FC7;&#x4E94;&#x5341;&#x97F3;&#x56FE;&#x7684;&#x540C;&#x5B66;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x62FC;&#x8BFB;&#x8BD5;&#x8BD5;&#xFF08;<a href="/2016-01-17-sum-of-gojuon">&#x70B9;&#x6B64;</a>&#x67E5;&#x770B;&#x4E94;&#x5341;&#x97F3;&#x56FE;&#x7684;&#x603B;&#x7ED3;&#xFF09;&#xFF0C;&#x5C31;&#x662F;&#x82F1;&#x8BED;&#x5355;&#x8BCD; accent &#x7684;&#x97F3;&#x8BD1;&#x3002;&#x4E0D;&#x8FC7;&#x65E5;&#x8BED;&#x7684;&#x58F0;&#x8C03;&#x5176;&#x5B9E;&#x66F4;&#x63A5;&#x8FD1;&#x6C49;&#x8BED;&#x7684;&#x58F0;&#x8C03;&#xFF0C;&#x800C;&#x975E;&#x82F1;&#x8BED;&#x7684;&#x58F0;&#x8C03;&#xFF08;&#x5F3A;&#x5F31;&#x91CD;&#x97F3;&#xFF09;&#x3002;&#x58F0;&#x8C03;&#x5E7F;&#x4E49;&#x5730;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;2&#x79CD;&#xFF1A;
 </p>
 
 <ul class="org-ul">
@@ -3450,10 +4459,11 @@ rss: /atom.xml<br>
 <li>&#x6807;&#x53F7;&#x6CD5;
 
 <p>
-&#x4E66;&#x5199;&#x65B9;&#x4FBF;&#xFF0C;&#x901A;&#x5E38;&#x8868;&#x793A;&#x4E3A; &#x3001;&#x2460;&#x3001;&#x2461;&#x3001;&#x2462;&#x3001;&#x2463;&#x3001;&#x2464;&#x2026;&#x2026;&#xFF0C;&#x5708;&#x5185;&#x7684;&#x6570;&#x5B57;&#x8868;&#x793A;&#xFF1A;1) &#x97F3;&#x8C03;&#x4ECE;&#x54EA;&#x4E2A;&#x97F3;&#x8282;&#x5F00;&#x59CB;&#x4E0B;&#x964D;,2) &#x6838;&#x6240;&#x5728;&#x7684;&#x97F3;&#x8282;&#x3002;&#x4E0E;&#x56FE;&#x793A;&#x6CD5;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#x89C1;&#x4E0B;&#x56FE;&#xFF1A;
+&#x4E66;&#x5199;&#x65B9;&#x4FBF;&#xFF0C;&#x901A;&#x5E38;&#x8868;&#x793A;&#x4E3A; &#x25CE;&#x3001;&#x2460;&#x3001;&#x2461;&#x3001;&#x2462;&#x3001;&#x2463;&#x3001;&#x2464;&#x2026;&#x2026;&#xFF0C;&#x5708;&#x5185;&#x7684;&#x6570;&#x5B57;&#x8868;&#x793A;&#xFF1A;1) &#x97F3;&#x8C03;&#x4ECE;&#x54EA;&#x4E2A;&#x97F3;&#x8282;&#x7531;&#x9AD8;&#x8F6C;&#x4F4E;&#xFF0C;2) &#x97F3;&#x8C03;&#x6838;&#x6240;&#x5728;&#x7684;&#x97F3;&#x8282;&#x3002;&#x4E0E;&#x56FE;&#x793A;&#x6CD5;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#x89C1;&#x4E0B;&#x56FE;&#xFF1A;
 </p>
 
 <p>
+<span id="1"></span>
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/jp_accent_ex_table.png">
 </p>
 </li>
@@ -3528,7 +4538,7 @@ rss: /atom.xml<br>
 </object>
 
 <p>
- 0&#x8C03;
+ &#x25CE;&#x8C03;
 </p>
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
       <param name="movie">
@@ -3538,7 +4548,7 @@ rss: /atom.xml<br>
 </object>
 
 <p>
-&#x4ECE;&#x5F55;&#x97F3;&#x542C;&#xFF0C;&#x6700;&#x540E;2&#x79CD; &#x2464;&#x8C03;&#x548C; &#x8C03; &#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x91CC;&#x53EA;&#x662F;&#x4EE5;&#x4E94;&#x4E2A;&#x97F3;&#x8282;&#x4E3A;&#x4F8B;&#xFF0C;&#x5982;&#x679C;&#x540E;&#x9762;&#x518D;&#x63A5;&#x52A9;&#x8BCD;&#xFF0C;&#x2464;&#x8C03;&#x7684;&#x52A9;&#x8BCD;&#x662F;&#x4F4E;&#x97F3;&#xFF0C;&#x800C; &#x8C03;&#x7684;&#x52A9;&#x8BCD;&#x662F;&#x9AD8;&#x97F3;&#x3002;&#x901A;&#x8FC7;&#x4E0A;&#x6587;&#x7684;<a href="#">&#x56FE;&#x7247;</a>&#x53EF;&#x4EE5;&#x66F4;&#x597D;&#x5730;&#x7406;&#x89E3;&#xFF1A;&#x53EA;&#x6709;&#x4E94;&#x4E2A;&#x97F3;&#x8282;&#x65F6;&#xFF0C;0&#x8C03;&#x548C;&#x2464;&#x8C03;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x591A;&#x4E8E;5&#x4E2A;&#x97F3;&#x8282;&#x65F6;&#x624D;&#x5B58;&#x5728;&#x5DEE;&#x5F02;&#x3002;
+&#x4ECE;&#x5F55;&#x97F3;&#x542C;&#xFF0C;&#x6700;&#x540E;2&#x79CD; &#x2464;&#x8C03;&#x548C; &#x25CE;&#x8C03; &#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x91CC;&#x53EA;&#x662F;&#x4EE5;&#x4E94;&#x4E2A;&#x97F3;&#x8282;&#x4E3A;&#x4F8B;&#xFF0C;&#x5982;&#x679C;&#x540E;&#x9762;&#x518D;&#x63A5;&#x52A9;&#x8BCD;&#xFF0C;&#x2464;&#x8C03;&#x7684;&#x52A9;&#x8BCD;&#x662F;&#x4F4E;&#x97F3;&#xFF0C;&#x800C; &#x25CE;&#x8C03;&#x7684;&#x52A9;&#x8BCD;&#x662F;&#x9AD8;&#x97F3;&#x3002;&#x901A;&#x8FC7;&#x4E0A;&#x6587;&#x7684;<a href="#1">&#x56FE;&#x793A;</a>&#x53EF;&#x4EE5;&#x66F4;&#x597D;&#x5730;&#x7406;&#x89E3;&#xFF1A;&#x53EA;&#x6709;&#x4E94;&#x4E2A;&#x97F3;&#x8282;&#x65F6;&#xFF0C;&#x25CE;&#x8C03;&#x548C;&#x2464;&#x8C03;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x591A;&#x4E8E;5&#x4E2A;&#x97F3;&#x8282;&#x65F6;&#x624D;&#x5B58;&#x5728;&#x5DEE;&#x5F02;&#x3002;
 </p>
 </div>
 </div>
@@ -3547,32 +4557,100 @@ rss: /atom.xml<br>
 <h2 id="sec-3"><span class="section-number-2">3</span> &#x89C4;&#x5F8B;</h2>
 <div class="outline-text-2" id="text-3">
 <ol class="org-ol">
-<li>&#x524D;2&#x62CD;&#x7684;&#x58F0;&#x8C03;&#x4E0D;&#x540C;
+<li>&#x524D;2&#x62CD;&#xFF08;&#x5373;&#x524D;2&#x4E2A;&#x5047;&#x540D;&#xFF09;&#x7684;&#x58F0;&#x8C03;&#x76F8;&#x53CD;
 </li>
-<li>1&#x4E2A;&#x5355;&#x8BCD;&#x4E2D;&#xFF0C;&#x6700;&#x591A;&#x4E0B;&#x964D;&#x4E00;&#x6B21;&#xFF0C;&#x800C;&#x4E14;&#x4E0B;&#x964D;&#x4E4B;&#x540E;&#x4E0D;&#x518D;&#x4E0A;&#x5347;
+<li>&#x5355;&#x5CF0;&#x578B;&#xFF0C;&#x6CA1;&#x6709;&#x591A;&#x6B21;&#x8D77;&#x4F0F;&#x3002;1&#x4E2A;&#x5355;&#x8BCD;&#x4E2D;&#xFF0C;&#x6700;&#x591A;&#x4E0B;&#x964D;&#x4E00;&#x6B21;&#xFF0C;&#x800C;&#x4E14;&#x4E0B;&#x964D;&#x4E4B;&#x540E;&#x4E0D;&#x518D;&#x4E0A;&#x5347;
 </li>
 <li>&#x6807;&#x53F7;&#x6CD5;&#x4E2D;&#x5708;&#x5185;&#x7684;&#x6570;&#x5B57;&#x4E3A;&#x51E0;&#xFF0C;&#x8868;&#x793A;&#x4ECE;&#x7B2C;&#x51E0;&#x4E2A;&#x97F3;&#x8282;&#x5F00;&#x59CB;&#x4E0B;&#x964D;
 </li>
 </ol>
+
+<p>
+&#x800C;&#x8981;&#x6B63;&#x786E;&#x53D1;&#x97F3;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x77E5;&#x9053;2&#x70B9;&#xFF1A;
+</p>
+
+<ol class="org-ol">
+<li>&#x8D77;&#x59CB;&#x5047;&#x540D;&#x662F;&#x4F4E;&#x97F3;&#x8FD8;&#x662F;&#x9AD8;&#x97F3;
+</li>
+<li>&#x4ECE;&#x7B2C;&#x51E0;&#x4E2A;&#x97F3;&#x8282;&#x5F00;&#x59CB;&#x5347;&#x964D;
+</li>
+</ol>
+
+<p>
+&#x8FD9;2&#x70B9;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x603B;&#x7ED3;&#x7684;3&#x6761;&#x89C4;&#x5F8B;&#x8F7B;&#x677E;&#x63A8;&#x5F97;&#xFF1A;
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#x7C7B;&#x578B;</th>
+<th scope="col" class="left">&#x8D77;&#x59CB;&#x97F3;&#x8282;</th>
+<th scope="col" class="left">&#x5347;&#x964D;&#x53D8;&#x5316;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&#x2460;&#x578B;</td>
+<td class="left">&#x9AD8;&#x97F3;</td>
+<td class="left">&#x4ECE;&#x7B2C;&#x4E8C;&#x62CD;&#x4E0B;&#x964D;&#xFF0C;&#x4E00;&#x76F4;&#x5230;&#x6700;&#x540E;&#x4E5F;&#x4E0D;&#x4E0A;&#x5347;</td>
+</tr>
+
+<tr>
+<td class="left">&#x5176;&#x4ED6;</td>
+<td class="left">&#x4F4E;&#x97F3;</td>
+<td class="left">&#x4ECE;&#x7B2C;&#x4E8C;&#x62CD;&#x5347;&#x9AD8;&#xFF0C;&#x4E00;&#x76F4;&#x4FDD;&#x6301;&#x5230;&#x97F3;&#x8C03;&#x6838;&#x6570;&#x5B57;&#x7684;&#x62CD;&#x8282;&#x540E;&#x4E0B;&#x964D;&#xFF0C;&#x7136;&#x540E;&#x5230;&#x6700;&#x540E;&#x4E5F;&#x4E0D;&#x4E0A;&#x5347;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+&#x6839;&#x636E;<a href="#1">&#x4E0A;&#x56FE;</a>&#x6765;&#x8BB0;&#x5FC6;&#x4F1A;&#x66F4;&#x6709;&#x6548;&#xFF01;
+</p>
 </div>
 </div>
 
 <div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> &#x66F4;&#x65B0;&#x5386;&#x53F2;</h2>
+<h2 id="sec-4"><span class="section-number-2">4</span> &#x5B9E;&#x9645;&#x5B66;&#x4E60;&#x4E2D;&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;</h2>
 <div class="outline-text-2" id="text-4">
-<ul class="org-ul">
-<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-17 &#x5468;&#x65E5;&gt;</span></span> &#x589E;&#x52A0;&#x58F0;&#x8C03;&#x8868;&#x793A;&#x65B9;&#x6CD5;&#x8BF4;&#x660E;
+<ol class="org-ol">
+<li>&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x6807;&#x660E;2&#x4E2A;&#x97F3;&#x8C03;&#x6838;&#xFF1A;&#x8BF4;&#x660E;&#x8BE5;&#x8BCD;&#x6709;2&#x79CD;&#x8BFB;&#x6CD5;&#xFF0C;&#x4E00;&#x822C;&#x8BFB;&#x524D;&#x9762;&#x6807;&#x8BB0;&#xFF0C;&#x4F46;&#x662F;&#x8BFB;&#x540E;&#x9762;&#x7684;&#x6807;&#x8BB0;&#x4EA6;&#x53EF;&#x3002;
 </li>
-<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-15 &#x5468;&#x4E94;&gt;</span></span> &#x62DF;&#x5B9A;&#x521D;&#x7A3F;
+<li>&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x6807;&#x660E;2&#x4E2A;&#x97F3;&#x8C03;&#x6838;&#xFF0C;&#x4E2D;&#x95F4;&#x6709;&#x201C;+&#x201D;&#x53F7;&#x8FDE;&#x63A5;&#xFF1A;&#x8BF4;&#x660E;&#x8BE5;&#x8BCD;&#x7531;2&#x4E2A;&#x5355;&#x8BCD;&#x590D;&#x5408;&#x800C;&#x6210;&#xFF0C;&#x8FD9;&#x65F6;&#x4F1A;&#x51FA;&#x73B0;&#x53CC;&#x5CF0;&#x578B;&#x3002;
+</li>
+<li>&#x8BF4;&#x8BDD;&#x65F6;&#x5E26;&#x6709;&#x5404;&#x79CD;&#x611F;&#x60C5;&#xFF0C;&#x58F0;&#x8C03;&#x4F1A;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x3002;&#x5728;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x80FD;&#x6B63;&#x5E38;&#x7684;&#x53D1;&#x51FA;&#x8BFB;&#x97F3;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> &#x66F4;&#x65B0;&#x5386;&#x53F2;</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-28 &#x5468;&#x56DB;]</span></span> &#x589E;&#x52A0;&#x5B9E;&#x9645;&#x5B66;&#x4E60;&#x4E2D;&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#x90E8;&#x5206;&#xFF0C;&#x5B8C;&#x5584;&#x89C4;&#x5F8B;&#x603B;&#x7ED3;
+</li>
+<li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-17 &#x5468;&#x65E5;]</span></span> &#x589E;&#x52A0;&#x58F0;&#x8C03;&#x8868;&#x793A;&#x65B9;&#x6CD5;&#x8BF4;&#x660E;
+</li>
+<li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-15 &#x5468;&#x4E94;]</span></span> &#x62DF;&#x5B9A;&#x521D;&#x7A3F;
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> &#x53C2;&#x8003;</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> &#x53C2;&#x8003;</h2>
+<div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li><a href="http://www.wanmen.org/courses/YYRYYY/topics/YYRYYY02A" target="_blank" rel="external">&#x4E07;&#x95E8;&#x5927;&#x5B66;|&#x65E5;&#x8BED;&#x4E94;&#x5341;&#x97F3;&#x56FE;&#x8BED;&#x97F3;&#x5165;&#x95E8;|&#x4E94;&#x5341;&#x97F3;&#x56FE;&#x7B2C;&#x4E00;&#x884C;</a>
+</li>
+<li><a href="http://book.douban.com/review/5011434/" target="_blank" rel="external">&#x65E5;&#x8BED;&#x7684;&#x58F0;&#x8C03; (&#x8BC4;&#x8BBA;: &#x65E5;&#x8BED;&#x8BCD;&#x6C47;&#x7684;&#x5965;&#x79D8;)</a>
 </li>
 </ul>
 </div>
@@ -3608,7 +4686,7 @@ rss: /atom.xml<br>
 <h2 id="sec-1"><span class="section-number-2">1</span> &#x5173;&#x4E8E;&#x58F0;&#x8C03;&#x7684;&#x57FA;&#x672C;&#x5E38;&#x8BC6;<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
 <div class="outline-text-2" id="text-1">
 <p>
-&#x5728;&#x65E5;&#x8BED;&#x4E2D;&#x58F0;&#x8C03;&#x79F0;&#x4E3A; &#x30A2;&#x30AF;&#x30BB;&#x30F3;&#x30C8; &#xFF0C;&#x80CC;&#x8FC7;&#x4E94;&#x5341;&#x97F3;&#x56FE;&#x7684;&#x540C;&#x5B66;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x62FC;&#x8BFB;&#x8BD5;&#x8BD5;&#xFF0C;&#x5C31;&#x662F;&#x82F1;&#x8BED;&#x5355;&#x8BCD; accent &#x7684;&#x97F3;&#x8BD1;&#x3002;&#x4E0D;&#x8FC7;&#x65E5;&#x8BED;&#x7684;&#x58F0;&#x8C03;&#x5176;&#x5B9E;&#x66F4;&#x63A5;&#x8FD1;&#x6C49;&#x8BED;&#x7684;&#x58F0;&#x8C03;&#xFF0C;&#x800C;&#x975E;&#x82F1;&#x8BED;&#x7684;&#x58F0;&#x8C03;&#xFF08;&#x5F3A;&#x5F31;&#x91CD;&#x97F3;&#xFF09;&#x3002;&#x58F0;&#x8C03;&#x5E7F;&#x4E49;&#x5730;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;2&#x79CD;&#xFF1A;
+&#x5728;&#x65E5;&#x8BED;&#x4E2D;&#x58F0;&#x8C03;&#x79F0;&#x4E3A; &#x30A2;&#x30AF;&#x30BB;&#x30F3;&#x30C8; &#xFF0C;&#x80CC;&#x8FC7;&#x4E94;&#x5341;&#x97F3;&#x56FE;&#x7684;&#x540C;&#x5B66;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x62FC;&#x8BFB;&#x8BD5;&#x8BD5;&#xFF08;<a href="/2016-01-17-sum-of-gojuon">&#x70B9;&#x6B64;</a>&#x67E5;&#x770B;&#x4E94;&#x5341;&#x97F3;&#x56FE;&#x7684;&#x603B;&#x7ED3;&#xFF09;&#xFF0C;&#x5C31;&#x662F;&#x82F1;&#x8BED;&#x5355;&#x8BCD; accent &#x7684;&#x97F3;&#x8BD1;&#x3002;&#x4E0D;&#x8FC7;&#x65E5;&#x8BED;&#x7684;&#x58F0;&#x8C03;&#x5176;&#x5B9E;&#x66F4;&#x63A5;&#x8FD1;&#x6C49;&#x8BED;&#x7684;&#x58F0;&#x8C03;&#xFF0C;&#x800C;&#x975E;&#x82F1;&#x8BED;&#x7684;&#x58F0;&#x8C03;&#xFF08;&#x5F3A;&#x5F31;&#x91CD;&#x97F3;&#xFF09;&#x3002;&#x58F0;&#x8C03;&#x5E7F;&#x4E49;&#x5730;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;2&#x79CD;&#xFF1A;
 </p>
 
 <ul class="org-ul">
@@ -3629,12 +4707,6 @@ rss: /atom.xml<br>
 </ul>]]>
     
     </summary>
-    
-      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
-    
-      <category term="发音" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%8F%91%E9%9F%B3/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
     
   </entry>
   
@@ -3732,12 +4804,6 @@ rss: /atom.xml<br>
 </ul>]]>
     
     </summary>
-    
-      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
-    
-      <category term="!who" scheme="http://yuchen-lea.gitcafe.io/tags/who/"/>
-    
-      <category term="教学" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%95%99%E5%AD%A6/"/>
     
       <category term="支教" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%94%AF%E6%95%99/"/>
     
@@ -3938,10 +5004,6 @@ Hexo&#x4E3B;&#x9898;&#x5927;&#x591A;&#x6258;&#x7BA1;&#x5728;Github&#x4E0A;&#xFF0
 </div>]]>
     
     </summary>
-    
-      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
     
   </entry>
   
