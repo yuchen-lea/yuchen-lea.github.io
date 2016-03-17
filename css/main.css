@@ -2683,3 +2683,11 @@ a.list-group-item.active>.badge,
 .collapse.in {
   height: auto;
 }
+
+span.tag span {
+    background: #555 none repeat scroll 0% 0%;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: 60%;
+}
