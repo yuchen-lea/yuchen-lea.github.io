@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不积小流，无以成江海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yuchen-lea.gitcafe.io/"/>
-  <updated>2016-03-18T04:43:00.066Z</updated>
+  <updated>2016-03-18T04:43:02.000Z</updated>
   <id>http://yuchen-lea.gitcafe.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yuchen-lea.gitcafe.io/2016-03-18-sokuon/"/>
     <id>http://yuchen-lea.gitcafe.io/2016-03-18-sokuon/</id>
     <published>2016-03-17T16:00:00.000Z</published>
-    <updated>2016-03-18T04:43:00.066Z</updated>
+    <updated>2016-03-18T04:43:02.000Z</updated>
     <content type="html"><![CDATA[
 
 <p>
@@ -176,7 +176,7 @@
     <link href="http://yuchen-lea.gitcafe.io/2016-03-17-writing-paper-template-in-excel-with-re/"/>
     <id>http://yuchen-lea.gitcafe.io/2016-03-17-writing-paper-template-in-excel-with-re/</id>
     <published>2016-03-16T16:00:00.000Z</published>
-    <updated>2016-03-17T12:31:10.002Z</updated>
+    <updated>2016-03-17T12:31:12.000Z</updated>
     <content type="html"><![CDATA[
 
 <p>
@@ -349,20 +349,27 @@
     <link href="http://yuchen-lea.gitcafe.io/2016-03-12-grammar-note-of-minna-no-nihongo/"/>
     <id>http://yuchen-lea.gitcafe.io/2016-03-12-grammar-note-of-minna-no-nihongo/</id>
     <published>2016-03-11T16:00:00.000Z</published>
-    <updated>2016-03-18T04:43:44.970Z</updated>
+    <updated>2016-03-24T05:21:38.000Z</updated>
     <content type="html"><![CDATA[
 
 <p>
 <div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x603B;&#x7ED3;&#x300A;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x300B;&#x4E2D;&#x7684;&#x8BED;&#x6CD5;&#x77E5;&#x8BC6;&#x3002;&#x4E3B;&#x8981;&#x53C2;&#x8003;&#x300A;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x300B;&#x8BFE;&#x672C;&#x53CA;&#x5B66;&#x4E60;&#x8F85;&#x5BFC;&#x4E66;&#x3002;</div>
 </p>
 
+<p>
+<div class="alert alert-success"><i class="fa fa-lightbulb-o"></i>  &#x5DF2;&#x66F4;&#x65B0;&#x5230;&#x7B2C;4&#x8BFE;</div>
+</p>
 
 <div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1"><span class="section-number-2">1</span> &#x53E5;&#x578B;</h2>
 <div class="outline-text-2" id="text-1">
 </div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> <b>&#x540D;&#x8BCD;1+&#x306F;+&#x540D;&#x8BCD;2+&#x3067;&#x3059;</b>&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L01">L01</span>&#xA0;<span class="L03">L03</span></span></h3>
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> &#x9648;&#x8FF0;&#x53E5;</h3>
 <div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-sec-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> &#x666E;&#x901A;&#x9648;&#x8FF0;&#x53E5;</h4>
+<div class="outline-text-4" id="text-1-1-1">
+</div><ol class="org-ol"><li><a id="sec-1-1-1-1" name="sec-1-1-1-1"></a>&#x80AF;&#x5B9A;&#x5F62;&#x5F0F;&#xFF1A; <b>&#x540D;&#x8BCD;1+&#x306F;+&#x540D;&#x8BCD;2+&#x3067;&#x3059;</b>&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L01">L01</span>&#xA0;<span class="L03">L03</span></span><br><div class="outline-text-5" id="text-1-1-1-1">
 <p class="verse">
 &#x308F;&#x305F;&#x3057;&#x306F; &#x30DE;&#x30A4;&#x304F;&#xB7;&#x30DF;&#x30E9;&#x4E00;&#x3067;&#x3059;&#x3002;(&#x6211;&#x662F;&#x8FC8;&#x514B;&#xB7;&#x7C73;&#x52D2;&#x3002;)<br>
 &#x5C71;&#x7530;&#x3055;&#x3093;&#x306F; &#x4E8B;&#x52D9;&#x6240;&#x3067;&#x3059;&#x3002;(&#x5C71;&#x7530;&#x5728;&#x4E8B;&#x52A1;&#x6240;&#x3002;)<br>
@@ -402,24 +409,27 @@
 </ul>
 
 <a id="more"></a>
+</div>
 
+<ol class="org-ol"><li><a id="sec-1-1-1-1-1" name="sec-1-1-1-1-1"></a><b>&#x540D;&#x8BCD;+&#x3067;&#x3059;</b><br><div class="outline-text-6" id="text-1-1-1-1-1">
 <p>
 &#x5728;&#x53E5;&#x5B50;&#x4E3B;&#x8BED;&#x5F88;&#x660E;&#x663E;&#x65F6;&#xFF0C;&#x53EF;&#x7701;&#x7565;&#x300C;&#x540D;&#x8BCD;1+&#x306F;&#x300D;&#xFF1A;
 </p>
 <p class="verse">
 Q:&#x3042;&#x308C;&#x306F; &#x3060;&#x308C;&#x306E; &#x304B;&#x3070;&#x3093;&#x3067;&#x3059;&#x304B;&#x3002;(&#x90A3;&#x662F;&#x8C01;&#x7684;&#x5305;&#xFF1F;)<br>
 A:&#x4F50;&#x85E4;&#x3055;&#x3093;&#x306E; &#x3067;&#x3059;&#x3002;(&#x662F;&#x4F50;&#x85E4;&#x7684;&#x3002;)<br>
+<br>
+&#x4ECA; &#x4F55;&#x6642;&#x3067;&#x3059;&#x304B;&#x3002;(&#x73B0;&#x5728;&#x51E0;&#x70B9;&#xFF1F;)<br>
 </p>
 
 <p>
 &#x6B64;&#x5916;&#xFF0C;&#x300C;&#x305D;&#x3046;&#x3067;&#x3059;&#x300D;&#x53EF;&#x7528;&#x4F5C;&#x4E00;&#x822C;&#x7591;&#x95EE;&#x53E5;&#x7684;&#x80AF;&#x5B9A;&#x56DE;&#x7B54;&#x3002;
 </p>
 </div>
-</div>
+</li></ol>
+</li>
 
-<div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> <b>&#x540D;&#x8BCD;1+&#x306F;+&#x540D;&#x8BCD;2+&#x3058;&#x3083; &#x3042;&#x308A;&#x307E;&#x305B;&#x3093;</b> &#xFF08;&#x65E5;&#x5E38;&#x8BED;&#xFF09; &#x6216; <b>&#x540D;&#x8BCD;1+&#x306F;+&#x540D;&#x8BCD;2+&#x3067;&#x306F; &#x3042;&#x308A;&#x307E;&#x305B;&#x3093;</b> &#xFF08;&#x6B63;&#x5F0F;&#x8BED;&#xFF09;&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L01">L01</span></span></h3>
-<div class="outline-text-3" id="text-1-2">
+<li><a id="sec-1-1-1-2" name="sec-1-1-1-2"></a>&#x5426;&#x5B9A;&#x5F62;&#x5F0F;&#xFF1A; <b>&#x540D;&#x8BCD;1+&#x306F;+&#x540D;&#x8BCD;2+&#x3058;&#x3083; &#x3042;&#x308A;&#x307E;&#x305B;&#x3093;</b> &#xFF08;&#x65E5;&#x5E38;&#x8BED;&#xFF09; &#x6216; <b>&#x540D;&#x8BCD;1+&#x306F;+&#x540D;&#x8BCD;2+&#x3067;&#x306F; &#x3042;&#x308A;&#x307E;&#x305B;&#x3093;</b> &#xFF08;&#x6B63;&#x5F0F;&#x8BED;&#xFF09;&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L01">L01</span></span><br><div class="outline-text-5" id="text-1-1-1-2">
 <p>
 &#x300C;&#x3058;&#x3083; &#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x300D;&#xFF08;&#x65E5;&#x5E38;&#x8BED;&#xFF09;&#x548C;&#x300C;&#x3067;&#x306F; &#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x300D;&#xFF08;&#x6B63;&#x5F0F;&#x8BED;&#xFF09;&#x662F;&#x300C;&#x3067;&#x3059;&#x300D;&#x7684;&#x5426;&#x5B9A;&#x5F62;&#x3002;&#x300C;&#x3067;&#x306F;&#x300D;&#x7684;&#x300C;&#x306F;&#x300D;&#x4E5F;&#x8BFB;&#x4F5C;&#x300C;&#x308F;&#x300D;&#x3002;
 </p>
@@ -442,46 +452,84 @@ A:&#x3044;&#x3044;&#x3048;&#x3001;&#x308F;&#x305F;&#x3057;&#x306E;&#x3058;&#x308
 &#x6B64;&#x5916;&#xFF0C;&#x300C;&#x305D;&#x3046;&#x3058;&#x3083; &#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x300D;&#x53EF;&#x7528;&#x4F5C;&#x4E00;&#x822C;&#x7591;&#x95EE;&#x53E5;&#x7684;&#x5426;&#x5B9A;&#x56DE;&#x7B54;&#x3002;
 </p>
 </div>
+</li></ol>
 </div>
-<div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> <b>&#x53E5;&#x5B50;+&#x304B;</b>&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L01">L01</span>&#xA0;<span class="L02">L02</span></span></h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-sec-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> &#x4E0E;&#x524D;&#x6587;&#x9648;&#x8FF0;&#x76F8;&#x540C;&#xFF1A; <b>&#x540D;&#x8BCD;1+&#x3082;</b>&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L01">L01</span></span></h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+&#x8868;&#x793A;&#x2026;&#x2026;&#x4E5F;&#x600E;&#x6837;&#x7684;&#x65F6;&#x5019;,&#x7528;&#x300C;&#x3082;&#x300D;&#x4EE3;&#x66FF;&#x300C;&#x306F;&#x300D;&#x3002;
+</p>
+
+<p class="verse">
+&#x30DF;&#x30E9;&#x30FC;&#x3055;&#x3093;&#x306F; &#x4F1A;&#x793E;&#x54E1;&#x3067;&#x3059;&#x3002;&#x30B0;&#x30D7;&#x30BF;&#x3055;&#x3093;&#x3082; &#x4F1A;&#x793E;&#x54E1;&#x3067;&#x3059;&#x3002;<br>
+&#x7C73;&#x52D2;&#x662F;&#x516C;&#x53F8;&#x804C;&#x5458;&#x3002;&#x53E4;&#x666E;&#x4E5F;&#x662F;&#x516C;&#x53F8;&#x804C;&#x5458;&#x3002;<br>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> &#x7591;&#x95EE;&#x53E5;&#xFF1A; <b>&#x53E5;&#x5B50;+&#x304B;</b>&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L01">L01</span>&#xA0;<span class="L02">L02</span></span></h3>
+<div class="outline-text-3" id="text-1-2">
 <p>
 &#x52A9;&#x8BCD;&#x300C;&#x304B;&#x300D;&#x8868;&#x793A;&#x8BF4;&#x8BDD;&#x4EBA;&#x4E0D;&#x786E;&#x5207;&#x7684;&#x53E3;&#x6C14;&#x6216;&#x5E26;&#x6709;&#x7591;&#x95EE;&#x7684;&#x53E3;&#x6C14;&#x3002;&#x300C;&#x304B;&#x300D;&#x5728;&#x53E5;&#x672B;&#x6784;&#x6210;&#x7591;&#x95EE;&#x53E5;&#xFF0C;&#x53E5;&#x672B;&#x4E00;&#x822C;&#x7528;&#x5347;&#x8C03;&#x3002;
 </p>
 </div>
 
-<div id="outline-container-sec-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> &#x4E00;&#x822C;&#x7591;&#x95EE;&#x53E5;&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L01">L01</span>&#xA0;<span class="L02">L02</span></span></h4>
-<div class="outline-text-4" id="text-1-3-1">
+<div id="outline-container-sec-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> &#x4E00;&#x822C;&#x7591;&#x95EE;&#x53E5;&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L01">L01</span>&#xA0;<span class="L02">L02</span></span></h4>
+<div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
-<li>&#x7ED3;&#x6784;&#xFF1A;&#x5728;&#x9648;&#x8FF0;&#x53E5;&#x53E5;&#x672B;&#x52A0;&#x4E0A;&#x52A9;&#x8BCD;&#x300C;&#x304B;&#x300D;&#x6784;&#x6210;&#x3002;&#x53E5;&#x5B50;&#x7684;&#x8BED;&#x5E8F;&#x4E0D;&#x53D8;&#x3002;&#x8FD9;&#x79CD;&#x7591;&#x95EE;&#x53E5;&#x662F;&#x8BE2;&#x95EE;&#x9648;&#x8FF0;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x5426;&#x6B63;&#x786E;&#x3002;
+<li>&#x7ED3;&#x6784;&#xFF1A;&#x9648;&#x8FF0;&#x53E5;&#x53E5;&#x672B;&#x52A0;&#x4E0A;&#x52A9;&#x8BCD;&#x300C;&#x304B;&#x300D;&#x3002;&#x53E5;&#x5B50;&#x7684;&#x8BED;&#x5E8F;&#x4E0D;&#x53D8;&#x3002;
 </li>
-<li>&#x56DE;&#x7B54;&#xFF1A;&#x9648;&#x8FF0;&#x7684;&#x5185;&#x5BB9;&#x6B63;&#x786E;&#x65F6;&#x7B54;&#x300C;&#x306F;&#x3044;&#x300D;,&#x9519;&#x8BEF;&#x65F6;&#x7B54;&#x300C;&#x3044;&#x3044;&#x3048;&#x300D;&#x3002;
+<li>&#x7528;&#x9014;&#xFF1A;&#x8BE2;&#x95EE;&#x9648;&#x8FF0;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x5426;&#x6B63;&#x786E;&#x3002;
+</li>
+<li>&#x56DE;&#x7B54;&#xFF1A;
+<ul class="org-ul">
+<li>&#x9648;&#x8FF0;&#x7684;&#x5185;&#x5BB9;&#x6B63;&#x786E;&#x65F6;&#xFF1A;
+<ul class="org-ul">
+<li>&#x300C;&#x306F;&#x3044;&#x300D;
 <p class="verse">
 Q: &#x30DF;&#x30E9;&#x4E00;&#x3055;&#x3093;&#x306F; &#x30A2;&#x30E1;&#x30EA;&#x30AB;&#x4EBA;&#x3067;&#x3059;&#x304B;&#x3002;(&#x7C73;&#x52D2;&#x662F;&#x7F8E;&#x56FD;&#x4EBA;&#x5417;&#xFF1F;)<br>
 A: &#x2026;&#x306F;&#x3044;&#x3001;&#x30A2;&#x30E1;&#x30EA;&#x30AB;&#x4EBA;&#x3067;&#x3059;&#x3002;(&#x2026;&#x662F;&#x7684;,&#x7F8E;&#x56FD;&#x4EBA;&#x3002;)<br>
-Q: &#x30DF;&#x30E9;&#x4E00;&#x3055;&#x3093;&#x306F; &#x5148;&#x751F;&#x3067;&#x3059;&#x304B;&#x3002;(&#x7C73;&#x52D2;&#x662F;&#x8001;&#x5E08;&#x5417;&#xFF1F;)<br>
-A:  &#x2026;&#x3044;&#x3044;&#x3048;&#x3001;&#x5148;&#x751F;&#x3058;&#x3083; &#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;(&#x2026;&#x4E0D;,&#x4E0D;&#x662F;&#x8001;&#x5E08;&#x3002;)<br>
 </p>
-<p>
-&#x5982;&#x679C;&#x8BE2;&#x95EE;&#x5185;&#x5BB9;&#x4E3A;&#x7269;&#x54C1;&#xFF0C;&#x5E38;&#x5E38;&#x7528;&#x300C;&#x305D;&#x3046;&#x300D;&#x6765;&#x56DE;&#x7B54;&#x8BE2;&#x95EE;&#x662F;&#x5426;&#x7684;&#x7591;&#x95EE;&#x53E5;&#x3002;&#x80AF;&#x5B9A;&#x56DE;&#x7B54;&#x7528;&#x300C;&#x306F;&#x3044;&#x3001;&#x305D;&#x3046;&#x3067;&#x3059;&#x300D;,&#x5426;&#x5B9A;&#x56DE;&#x7B54;&#x7528;&#x300C;&#x3044;&#x3044;&#x3048;&#x3001;&#x305D;&#x3046;&#x3058;&#x3083;  &#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x300D;&#x6216;&#x300C;&#x3044;&#x3044;&#x3048;&#x3001;&#x3061;&#x304C;&#x3044;&#x307E;&#x3059;&#x300D;&#x3002;
-</p>
+</li>
+<li>&#x5982;&#x679C;&#x8BE2;&#x95EE;&#x5185;&#x5BB9;&#x4E3A;&#x7269;&#x54C1;&#xFF0C;&#x5E38;&#x5E38;&#x7528;&#x300C;&#x306F;&#x3044;&#x3001;&#x305D;&#x3046;&#x3067;&#x3059;&#x300D;
 <p class="verse">
 Q: &#x305D;&#x308C;&#x306F; &#x30C6;&#x30EC;&#x30DB;&#x30F3;&#x30AB;&#x30FC;&#x30C9;&#x3067;&#x3059;&#x304B;&#x3002;(&#x90A3;&#x662F;&#x7535;&#x8BDD;&#x5361;&#x5417;&#xFF1F;)<br>
 A1:&#x306F;&#x3044;&#x3001;&#x305D;&#x3046;&#x3067;&#x3059;&#x3002;(&#x2026;&#x662F;&#x7684;&#x3002;[&#x5BF9;,&#x5B83;&#x662F;&#x3002;])<br>
+</p>
+</li>
+</ul>
+</li>
+<li>&#x9648;&#x8FF0;&#x7684;&#x5185;&#x5BB9;&#x9519;&#x8BEF;&#x65F6;&#xFF1A;
+<ul class="org-ul">
+<li>&#x300C;&#x3044;&#x3044;&#x3048;&#x300D;
+<p class="verse">
+Q: &#x30DF;&#x30E9;&#x4E00;&#x3055;&#x3093;&#x306F; &#x5148;&#x751F;&#x3067;&#x3059;&#x304B;&#x3002;(&#x7C73;&#x52D2;&#x662F;&#x8001;&#x5E08;&#x5417;&#xFF1F;)<br>
+A:  &#x2026;&#x3044;&#x3044;&#x3048;&#x3001;&#x5148;&#x751F;&#x3058;&#x3083; &#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;(&#x2026;&#x4E0D;,&#x4E0D;&#x662F;&#x8001;&#x5E08;&#x3002;)<br>
+</p>
+</li>
+<li>&#x5982;&#x679C;&#x8BE2;&#x95EE;&#x5185;&#x5BB9;&#x4E3A;&#x7269;&#x54C1;&#xFF0C;&#x5E38;&#x5E38;&#x7528;&#x300C;&#x3044;&#x3044;&#x3048;&#x3001;&#x305D;&#x3046;&#x3058;&#x3083;  &#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x300D;&#x6216;&#x300C;&#x3044;&#x3044;&#x3048;&#x3001;&#x3061;&#x304C;&#x3044;&#x307E;&#x3059;&#x300D;&#x3002;
+<p class="verse">
 A2:&#x3044;&#x3044;&#x3048;&#x3001;&#x305D;&#x3046;&#x3058;&#x3083; &#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;(&#x2026;&#x4E0D;&#x662F;&#x3002;[&#x4E0D;,&#x5B83;&#x4E0D;&#x662F;&#x3002;])<br>
 A3:&#x3044;&#x3044;&#x3048;&#x3001;&#x9055;&#x3044;&#x307E;&#x3059;&#x3002;(&#x2026;&#x4E0D;&#x662F;&#x3002;)<br>
 </p>
 </li>
 </ul>
+</li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
-<div id="outline-container-sec-1-3-2" class="outline-4">
-<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> &#x9009;&#x62E9;&#x7591;&#x95EE;&#x53E5;&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L02">L02</span></span></h4>
-<div class="outline-text-4" id="text-1-3-2">
+<div id="outline-container-sec-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> &#x9009;&#x62E9;&#x7591;&#x95EE;&#x53E5;&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L02">L02</span></span></h4>
+<div class="outline-text-4" id="text-1-2-2">
 <ul class="org-ul">
-<li>&#x7ED3;&#x6784;&#xFF1A; <b>&#x53E5;&#x5B50;1&#x304B;&#x3001;&#x53E5;&#x5B50;2&#x304B;</b> &#xFF0C;&#x8FD9;&#x662F;&#x4E24;&#x4E2A;(&#x4EE5;&#x4E0A;)&#x7591;&#x95EE;&#x53E5;&#x5E76;&#x5217;&#x5728;&#x4E00;&#x5757;&#x9009;&#x62E9;&#x54EA;&#x4E2A;&#x6B63;&#x786E;&#x7684;&#x9009;&#x62E9;&#x7591;&#x95EE;&#x53E5;
+<li>&#x7ED3;&#x6784;&#xFF1A; <b>&#x53E5;&#x5B50;1&#x304B;&#x3001;&#x53E5;&#x5B50;2&#x304B;</b>
+</li>
+<li>&#x7528;&#x9014;&#xFF1A;&#x4E24;&#x4E2A;(&#x4EE5;&#x4E0A;)&#x7591;&#x95EE;&#x53E5;&#x5E76;&#x5217;&#x5728;&#x4E00;&#x5757;&#xFF0C;&#x9009;&#x62E9;&#x54EA;&#x4E2A;&#x6B63;&#x786E;
 </li>
 <li>&#x56DE;&#x7B54;&#xFF1A;&#x76F4;&#x63A5;&#x91CD;&#x590D;&#x6B63;&#x786E;&#x7684;&#x4E00;&#x4E2A;&#x3002;
 </li>
@@ -493,20 +541,20 @@ A:&#x300C;9&#x300D;&#x3067;&#x3059;&#x3002;(&#x2026;&#x662F;&#x201C;9&#x201D;&#x
 </div>
 </div>
 
-<div id="outline-container-sec-1-3-3" class="outline-4">
-<h4 id="sec-1-3-3"><span class="section-number-4">1.3.3</span> &#x7279;&#x6B8A;&#x7591;&#x95EE;&#x53E5;&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L01">L01</span></span></h4>
-<div class="outline-text-4" id="text-1-3-3">
+<div id="outline-container-sec-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> &#x7279;&#x6B8A;&#x7591;&#x95EE;&#x53E5;&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L01">L01</span></span></h4>
+<div class="outline-text-4" id="text-1-2-3">
 <ul class="org-ul">
 <li>&#x7ED3;&#x6784;&#xFF1A;&#x7528;&#x7591;&#x95EE;&#x8BCD;&#x66FF;&#x4EE3;&#x60F3;&#x8981;&#x8BE2;&#x95EE;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x53E5;&#x5B50;&#x7684;&#x8BED;&#x5E8F;&#x4E0D;&#x53D8;&#x3002;&#x53E5;&#x672B;&#x52A0;&#x300C;&#x304B;&#x300D;&#x3002;
-<p class="verse">
-A: &#x3042;&#x306E; &#x65B9;&#x306F; &#x3069;&#x306A;&#x305F;&#x3067;&#x3059;&#x304B;&#x3002;(&#x90A3;&#x4F4D;&#x662F;&#x8C01;&#xFF1F;)<br>
-B: &#x2026;&#x300C;&#x3042;&#x306E; &#x65B9;&#x306F;&#x300D;&#x30DF;&#x30E9;&#x4E00;&#x3055;&#x3093;&#x3067;&#x3059;&#x3002;([&#x90A3;&#x4F4D;&#x662F;]&#x7C73;&#x52D2;&#x5148;&#x751F;&#x3002;)<br>
-</p>
-<p>
-&#x5E38;&#x7528;&#x7591;&#x95EE;&#x8BCD;&#xFF1A;
-</p>
+</li>
+
+<li>&#x5E38;&#x7528;&#x7591;&#x95EE;&#x8BCD;&#xFF1A;
 <ul class="org-ul">
 <li>&#x8C01;&#xFF1A;&#x3069;&#x306A;&#x305F;&#x3001;&#x3060;&#x308C;
+<p class="verse">
+Q: &#x3042;&#x306E; &#x65B9;&#x306F; &#x3069;&#x306A;&#x305F;&#x3067;&#x3059;&#x304B;&#x3002;(&#x90A3;&#x4F4D;&#x662F;&#x8C01;&#xFF1F;)<br>
+A: &#x2026;&#x300C;&#x3042;&#x306E; &#x65B9;&#x306F;&#x300D;&#x30DF;&#x30E9;&#x4E00;&#x3055;&#x3093;&#x3067;&#x3059;&#x3002;([&#x90A3;&#x4F4D;&#x662F;]&#x7C73;&#x52D2;&#x5148;&#x751F;&#x3002;)<br>
+</p>
 </li>
 <li>&#x51E0;&#x5C81;&#xFF1A;&#x306A;&#x3093;&#x3055;&#x3044;&#x3001;&#x304A;&#x3044;&#x304F;&#x3064;
 </li>
@@ -514,24 +562,18 @@ B: &#x2026;&#x300C;&#x3042;&#x306E; &#x65B9;&#x306F;&#x300D;&#x30DF;&#x30E9;&#x4
 </li>
 <li>&#x54EA;&#x91CC;&#xFF1A;&#x3069;&#x3053;&#x3001;&#x3069;&#x3061;&#x3089;
 </li>
+<li>&#x8BE2;&#x95EE;&#x5E26;&#x91CF;&#x8BCD;&#x7684;&#x6570;&#x5B57;&#xFF1A;&#x300C;&#x306A;&#x3093;&#x300D;+&#x91CF;&#x8BCD;
+</li>
+<li>&#x8BE2;&#x95EE;&#x65F6;&#x95F4;&#xFF1A;&#x300C;&#x306A;&#x3093;&#x3058;&#x300D;&#x548C;&#x300C;&#x306A;&#x3093;&#x3077;&#x3093;&#x300D;
+<p class="verse">
+Q: &#x30CB;&#x30E5;&#x30FC;&#x30E8;&#x30FC;&#x30AF;&#x306F; &#x4ECA; &#x4F55;&#x6642;&#x3067;&#x3059;&#x304B;&#x3002;(&#x7EBD;&#x7EA6;&#x73B0;&#x5728;&#x51E0;&#x70B9;&#xFF1F;)<br>
+A: &#x5348;&#x524D;4&#x6642;&#x3067;&#x3059;&#x3002;(&#x2026;&#x51CC;&#x6668;4&#x70B9;&#x3002;)<br>
+</p>
+</li>
 </ul>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div id="outline-container-sec-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> <b>&#x540D;&#x8BCD;1+&#x3082;</b>&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L01">L01</span></span></h3>
-<div class="outline-text-3" id="text-1-4">
-<p>
-&#x8868;&#x793A;&#x2026;&#x2026;&#x4E5F;&#x600E;&#x6837;&#x7684;&#x65F6;&#x5019;,&#x7528;&#x300C;&#x3082;&#x300D;&#x4EE3;&#x66FF;&#x300C;&#x306F;&#x300D;&#x3002;
-</p>
-
-<p class="verse">
-&#x30DF;&#x30E9;&#x30FC;&#x3055;&#x3093;&#x306F; &#x4F1A;&#x793E;&#x54E1;&#x3067;&#x3059;&#x3002;&#x30B0;&#x30D7;&#x30BF;&#x3055;&#x3093;&#x3082; &#x4F1A;&#x793E;&#x54E1;&#x3067;&#x3059;&#x3002;<br>
-<br>
-&#x7C73;&#x52D2;&#x662F;&#x516C;&#x53F8;&#x804C;&#x5458;&#x3002;&#x53E4;&#x666E;&#x4E5F;&#x662F;&#x516C;&#x53F8;&#x804C;&#x5458;&#x3002;<br>
-</p>
 </div>
 </div>
 </div>
@@ -590,7 +632,7 @@ A2: IMC &#x306E; &#x30B3;&#x30F3;&#x30D4;&#x30E5;&#x30FC;&#x30BF;&#x30FC;&#x3067
 </div>
 
 <div id="outline-container-sec-2-2" class="outline-3">
-<h3 id="sec-2-2"><span class="section-number-3">2.2</span> <b>&#xFF5E;&#x3055;&#x3093;</b>&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L01">L01</span></span></h3>
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> <b>&#x59D3;&#x540D;+&#x3055;&#x3093;</b>&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L01">L01</span></span></h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 &#x7528;&#x4E8E;&#x4ED6;&#x4EBA;&#x7684;&#x59D3;&#x540D;&#x4E4B;&#x540E;&#x4EE5;&#x8868;&#x8FBE;&#x656C;&#x610F;&#xFF0C;&#x4E0D;&#x80FD;&#x52A0;&#x5728;&#x8BF4;&#x8BDD;&#x8005;&#x81EA;&#x5DF1;&#x7684;&#x59D3;&#x540D;&#x540E;&#x3002;&#x5982;&#x679C;&#x77E5;&#x9053;&#x5BF9;&#x65B9;&#x59D3;&#x540D;,&#x63D0;&#x5230;&#x4ED6;&#x65F6;&#x4E00;&#x822C;&#x4E0D;&#x8BF4;&#x300C;&#x3042;&#x306A;&#x305F;&#x300D;,&#x800C;&#x662F;&#x5728;&#x59D3;&#x6C0F;&#x540E;&#x52A0;&#x4E0A;&#x300C;&#x3055;&#x3093;&#x300D;
@@ -718,14 +760,110 @@ A2: IMC &#x306E; &#x30B3;&#x30F3;&#x30D4;&#x30E5;&#x30FC;&#x30BF;&#x30FC;&#x3067
 </p>
 </div>
 </div>
+
+<div id="outline-container-sec-2-5" class="outline-3">
+<h3 id="sec-2-5"><span class="section-number-3">2.5</span> &#x6570;&#x5B57; + &#x6642; + &#x6570;&#x5B57; + &#x5206;&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L04">L04</span></span></h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+&#x6570;&#x5B57;&#x540E;&#x9762;&#x52A0;&#x4E0A;&#x91CF;&#x8BCD;&#x300C;&#x6642;&#x300D;&#x300C;&#x5206;&#x300D;&#x8868;&#x793A;&#x65F6;&#x523B;&#x3002;
+</p>
+
+<p>
+&#x65F6;&#x523B;&#x7684;&#x8BFB;&#x6CD5;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF1A;
+</p>
+<ul class="org-ul">
+<li>2&#x3001;5&#x3001;7&#x3001;9 + &#x300C;&#x5206;&#x300D;&#xFF1A;&#x300C;&#x5206;&#x300D;&#x8BFB;&#x300C;&#x3075;&#x3093;&#x300D;
+</li>
+<li>1&#x3001;3&#x3001;4&#x3001;6&#x3001;8&#x3001;10 + &#x300C;&#x5206;&#x300D;&#xFF1A;&#x300C;&#x5206;&#x300D;&#x8BFB;&#x300C;&#x3077;&#x3093;&#x300D;
+<ul class="org-ul">
+<li>1&#x5206;&#xFF1A;&#x300C;&#x3044;&#x3063;&#x3077;&#x3093;&#x300D;
+</li>
+<li>6&#x5206;&#xFF1A;&#x300C;&#x308D;&#x3063;&#x3077;&#x3093;&#x300D;
+</li>
+<li>8&#x5206;&#xFF1A;&#x300C;&#x306F;&#x3063;&#x3077;&#x3093;&#x300D;
+</li>
+<li>10&#x5206;&#xFF1A;&#x300C;&#x3058;&#x3085;&#x3063;&#x3077;&#x3093;&#x300D;&#x6216;&#x300C;&#x3058;&#x3063;&#x3077;&#x3093;&#x300D;
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+&#x8BE2;&#x95EE;&#x65F6;&#x95F4;&#x65F6;&#x7528;&#x7591;&#x95EE;&#x8BCD;&#x300C;&#x306A;&#x3093;&#x3058;&#x300D;&#x548C;&#x300C;&#x306A;&#x3093;&#x3077;&#x3093;&#x300D;&#x3002;
+</p>
+
+<p class="verse">
+Q: &#x4ECA; &#x4F55;&#x6642;&#x3067;&#x3059;&#x304B;&#x3002;(&#x73B0;&#x5728;&#x51E0;&#x70B9;&#xFF1F;)<br>
+A: 7&#x6642;10&#x5206;&#x3067;&#x3059;&#x3002;(&#x2026;7&#x70B9;10&#x5206;&#x3002;)<br>
+<br>
+Q: &#x30CB;&#x30E5;&#x30FC;&#x30E8;&#x30FC;&#x30AF;&#x306F; &#x4ECA; &#x4F55;&#x6642;&#x3067;&#x3059;&#x304B;&#x3002;(&#x7EBD;&#x7EA6;&#x73B0;&#x5728;&#x51E0;&#x70B9;&#xFF1F;)<br>
+A: &#x5348;&#x524D;4&#x6642;&#x3067;&#x3059;&#x3002;(&#x2026;&#x51CC;&#x6668;4&#x70B9;&#x3002;)<br>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-6" class="outline-3">
+<h3 id="sec-2-6"><span class="section-number-3">2.6</span> &#x52A8;&#x8BCD; + &#x307E;&#x3059;&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L04">L04</span></span></h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+1)&#x8D77;&#x52A8;&#x8BCD;&#x8C13;&#x8BED;&#x7684;&#x4F5C;&#x7528;&#x3002;
+2)&#x307E;&#x3059;&#x8868;&#x793A;&#x5BF9;&#x542C;&#x8BDD;&#x4EBA;&#x793C;&#x8C8C;&#x7684;&#x6001;&#x5EA6;&#x3002;
+</p>
+</div>
+
+<div id="outline-container-sec-2-6-1" class="outline-4">
+<h4 id="sec-2-6-1"><span class="section-number-4">2.6.1</span> &#x307E;&#x3059;&#x7684;&#x5F62;&#x6001;&#x53D8;&#x5316;</h4>
+<div class="outline-text-4" id="text-2-6-1">
+<p>
+&#x300C;&#x307E;&#x3059;&#x300D;&#x7528;&#x4E8E;&#x53D9;&#x8FF0;&#x73B0;&#x5728;&#x7684;&#x4E60;&#x60EF;&#x6027;&#x7684;&#x4E8B;&#x60C5;&#x548C;&#x771F;&#x7406;,&#x6216;&#x672A;&#x6765;&#x5C06;&#x8981;&#x53D1;&#x751F;&#x7684;&#x4E8B;&#x60C5;&#x3002;&#x5426;&#x5B9A;&#x5F62;&#x548C;&#x8FC7;&#x53BB;&#x65F6;&#x53D8;&#x5316;&#x5982;&#x4E0B;&#x3002;
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="left">
+
+<col class="left">
+
+<col class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">X</th>
+<th scope="col" class="left">&#x73B0;&#x5728;&#x3001;&#x672A;&#x6765;</th>
+<th scope="col" class="left">&#x8FC7;&#x53BB;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&#x80AF;&#x5B9A;</td>
+<td class="left">(&#x304A;&#x304D;)&#x307E;&#x3059;</td>
+<td class="left">(&#x304A;&#x304D;)&#x307E;&#x3057;&#x305F;</td>
+</tr>
+
+<tr>
+<td class="left">&#x5426;&#x5B9A;</td>
+<td class="left">(&#x304A;&#x304D;)&#x307E;&#x305B;&#x3093;</td>
+<td class="left">(&#x304A;&#x304D;)&#x307E;&#x305B;&#x3093;&#x3067;&#x3057;&#x305F;&lt;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 </div>
 
 <div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3"><span class="section-number-2">3</span> &#x5E38;&#x7528;&#x8BED;</h2>
 <div class="outline-text-2" id="text-3">
 </div><div id="outline-container-sec-3-1" class="outline-3">
-<h3 id="sec-3-1"><span class="section-number-3">3.1</span> &#x305D;&#x3046;&#x3067;&#x3059;&#x304B;&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L02">L02</span></span></h3>
-<div class="outline-text-3" id="text-3-1">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> &#x6253;&#x62DB;&#x547C;</h3>
+</div>
+
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> &#x305D;&#x3046;&#x3067;&#x3059;&#x304B;&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L02">L02</span></span></h3>
+<div class="outline-text-3" id="text-3-2">
 <p>
 &#x5728;&#x542C;&#x5230;&#x65B0;&#x7684;&#x4FE1;&#x606F;&#x65F6;,&#x7528;&#x8FD9;&#x53E5;&#x8BDD;&#x8868;&#x793A;&#x77E5;&#x9053;&#x4E86;&#x3002;
 </p>
@@ -760,13 +898,20 @@ A:&#x305D;&#x3046;&#x3067;&#x3059;&#x304B;&#x3002;(&#x54E6;,&#x662F;&#x5417;&#x3
 <div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x603B;&#x7ED3;&#x300A;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x300B;&#x4E2D;&#x7684;&#x8BED;&#x6CD5;&#x77E5;&#x8BC6;&#x3002;&#x4E3B;&#x8981;&#x53C2;&#x8003;&#x300A;&#x5927;&#x5BB6;&#x7684;&#x65E5;&#x8BED;&#x300B;&#x8BFE;&#x672C;&#x53CA;&#x5B66;&#x4E60;&#x8F85;&#x5BFC;&#x4E66;&#x3002;</div>
 </p>
 
+<p>
+<div class="alert alert-success"><i class="fa fa-lightbulb-o"></i>  &#x5DF2;&#x66F4;&#x65B0;&#x5230;&#x7B2C;4&#x8BFE;</div>
+</p>
 
 <div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1"><span class="section-number-2">1</span> &#x53E5;&#x578B;</h2>
 <div class="outline-text-2" id="text-1">
 </div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> <b>&#x540D;&#x8BCD;1+&#x306F;+&#x540D;&#x8BCD;2+&#x3067;&#x3059;</b>&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L01">L01</span>&#xA0;<span class="L03">L03</span></span></h3>
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> &#x9648;&#x8FF0;&#x53E5;</h3>
 <div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-sec-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> &#x666E;&#x901A;&#x9648;&#x8FF0;&#x53E5;</h4>
+<div class="outline-text-4" id="text-1-1-1">
+</div><ol class="org-ol"><li><a id="sec-1-1-1-1" name="sec-1-1-1-1"></a>&#x80AF;&#x5B9A;&#x5F62;&#x5F0F;&#xFF1A; <b>&#x540D;&#x8BCD;1+&#x306F;+&#x540D;&#x8BCD;2+&#x3067;&#x3059;</b>&#xA0;&#xA0;&#xA0;<span class="tag"><span class="L01">L01</span>&#xA0;<span class="L03">L03</span></span><br><div class="outline-text-5" id="text-1-1-1-1">
 <p class="verse">
 &#x308F;&#x305F;&#x3057;&#x306F; &#x30DE;&#x30A4;&#x304F;&#xB7;&#x30DF;&#x30E9;&#x4E00;&#x3067;&#x3059;&#x3002;(&#x6211;&#x662F;&#x8FC8;&#x514B;&#xB7;&#x7C73;&#x52D2;&#x3002;)<br>
 &#x5C71;&#x7530;&#x3055;&#x3093;&#x306F; &#x4E8B;&#x52D9;&#x6240;&#x3067;&#x3059;&#x3002;(&#x5C71;&#x7530;&#x5728;&#x4E8B;&#x52A1;&#x6240;&#x3002;)<br>
@@ -807,6 +952,12 @@ A:&#x305D;&#x3046;&#x3067;&#x3059;&#x304B;&#x3002;(&#x54E6;,&#x662F;&#x5417;&#x3
     
     </summary>
     
+      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="语法" scheme="http://yuchen-lea.gitcafe.io/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
+    
   </entry>
   
   <entry>
@@ -814,7 +965,7 @@ A:&#x305D;&#x3046;&#x3067;&#x3059;&#x304B;&#x3002;(&#x54E6;,&#x662F;&#x5417;&#x3
     <link href="http://yuchen-lea.gitcafe.io/2016-02-05-Choonpu/"/>
     <id>http://yuchen-lea.gitcafe.io/2016-02-05-Choonpu/</id>
     <published>2016-02-04T16:00:00.000Z</published>
-    <updated>2016-03-18T04:45:13.811Z</updated>
+    <updated>2016-03-18T04:45:14.000Z</updated>
     <content type="html"><![CDATA[
 
 <p>
@@ -1034,6 +1185,16 @@ A:&#x305D;&#x3046;&#x3067;&#x3059;&#x304B;&#x3002;(&#x54E6;,&#x662F;&#x5417;&#x3
     
     </summary>
     
+      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
+    
+      <category term="发音" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%8F%91%E9%9F%B3/"/>
+    
+      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="日语口语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
+    
   </entry>
   
   <entry>
@@ -1157,6 +1318,14 @@ A:&#x305D;&#x3046;&#x3067;&#x3059;&#x304B;&#x3002;(&#x54E6;,&#x662F;&#x5417;&#x3
 <div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x8BA8;&#x8BBA;Windows&#x5E73;&#x53F0;&#]]>
     </summary>
     
+      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+    
+      <category term="PNG" scheme="http://yuchen-lea.gitcafe.io/tags/PNG/"/>
+    
+      <category term="压缩" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%8E%8B%E7%BC%A9/"/>
+    
+      <category term="软件" scheme="http://yuchen-lea.gitcafe.io/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
       <category term="多媒体处理" scheme="http://yuchen-lea.gitcafe.io/categories/%E5%A4%9A%E5%AA%92%E4%BD%93%E5%A4%84%E7%90%86/"/>
     
       <category term="图像" scheme="http://yuchen-lea.gitcafe.io/categories/%E5%A4%9A%E5%AA%92%E4%BD%93%E5%A4%84%E7%90%86/%E5%9B%BE%E5%83%8F/"/>
@@ -1251,6 +1420,14 @@ A:&#x305D;&#x3046;&#x3067;&#x3059;&#x304B;&#x3002;(&#x54E6;,&#x662F;&#x5417;&#x3
 <p>
 <div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5728;G]]>
     </summary>
+    
+      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+    
+      <category term="gitcafe" scheme="http://yuchen-lea.gitcafe.io/tags/gitcafe/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
     
   </entry>
   
@@ -1422,6 +1599,14 @@ NEAT=&#x975E;&#x8FD0;&#x52A8;&#x751F;&#x70ED;&#x4F5C;&#x7528;=&#x65E5;&#x5E38;&#
     
     </summary>
     
+      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+    
+      <category term="!why" scheme="http://yuchen-lea.gitcafe.io/tags/why/"/>
+    
+      <category term="BBC" scheme="http://yuchen-lea.gitcafe.io/tags/BBC/"/>
+    
+      <category term="锻炼" scheme="http://yuchen-lea.gitcafe.io/tags/%E9%94%BB%E7%82%BC/"/>
+    
       <category term="健康" scheme="http://yuchen-lea.gitcafe.io/categories/%E5%81%A5%E5%BA%B7/"/>
     
   </entry>
@@ -1431,7 +1616,7 @@ NEAT=&#x975E;&#x8FD0;&#x52A8;&#x751F;&#x70ED;&#x4F5C;&#x7528;=&#x65E5;&#x5E38;&#
     <link href="http://yuchen-lea.gitcafe.io/2016-01-27-japanese-voiced-sounds/"/>
     <id>http://yuchen-lea.gitcafe.io/2016-01-27-japanese-voiced-sounds/</id>
     <published>2016-01-26T16:00:00.000Z</published>
-    <updated>2016-03-18T04:36:27.250Z</updated>
+    <updated>2016-03-18T04:36:28.000Z</updated>
     <content type="html"><![CDATA[
 
 
@@ -1815,6 +2000,18 @@ NEAT=&#x975E;&#x8FD0;&#x52A8;&#x751F;&#x70ED;&#x4F5C;&#x7528;=&#x65E5;&#x5E38;&#
 </p>]]>
     
     </summary>
+    
+      <category term="半浊音" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%8D%8A%E6%B5%8A%E9%9F%B3/"/>
+    
+      <category term="发音" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%8F%91%E9%9F%B3/"/>
+    
+      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="浊音" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%B5%8A%E9%9F%B3/"/>
+    
+      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="日语口语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
     
   </entry>
   
@@ -2505,6 +2702,14 @@ NEAT=&#x975E;&#x8FD0;&#x52A8;&#x751F;&#x70ED;&#x4F5C;&#x7528;=&#x65E5;&#x5E38;&#
     
     </summary>
     
+      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+    
+      <category term="GTD" scheme="http://yuchen-lea.gitcafe.io/tags/GTD/"/>
+    
+      <category term="习惯" scheme="http://yuchen-lea.gitcafe.io/tags/%E4%B9%A0%E6%83%AF/"/>
+    
+      <category term="应用" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%BA%94%E7%94%A8/"/>
+    
       <category term="生活" scheme="http://yuchen-lea.gitcafe.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
       <category term="效率" scheme="http://yuchen-lea.gitcafe.io/categories/%E7%94%9F%E6%B4%BB/%E6%95%88%E7%8E%87/"/>
@@ -2516,7 +2721,7 @@ NEAT=&#x975E;&#x8FD0;&#x52A8;&#x751F;&#x70ED;&#x4F5C;&#x7528;=&#x65E5;&#x5E38;&#
     <link href="http://yuchen-lea.gitcafe.io/2016-01-25-onyomi-and-kunyomi/"/>
     <id>http://yuchen-lea.gitcafe.io/2016-01-25-onyomi-and-kunyomi/</id>
     <published>2016-01-24T16:00:00.000Z</published>
-    <updated>2016-01-25T16:35:22.492Z</updated>
+    <updated>2016-01-25T16:35:24.000Z</updated>
     <content type="html"><![CDATA[
 
 <p>
@@ -2805,6 +3010,16 @@ Jared Diamond, &#x67AA;&#x70AE;&#x3001;&#x75C5;&#x83CC;&#x4E0E;&#x94A2;&#x94C1;[
 </ul>]]>
     
     </summary>
+    
+      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
+    
+      <category term="发音" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%8F%91%E9%9F%B3/"/>
+    
+      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="日语知识" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E7%9F%A5%E8%AF%86/"/>
     
   </entry>
   
@@ -3103,6 +3318,16 @@ Jared Diamond, &#x67AA;&#x70AE;&#x3001;&#x75C5;&#x83CC;&#x4E0E;&#x94A2;&#x94C1;[
     
     </summary>
     
+      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
+    
+      <category term="文字" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%96%87%E5%AD%97/"/>
+    
+      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="日语知识" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E7%9F%A5%E8%AF%86/"/>
+    
   </entry>
   
   <entry>
@@ -3366,6 +3591,18 @@ Jared Diamond, &#x67AA;&#x70AE;&#x3001;&#x75C5;&#x83CC;&#x4E0E;&#x94A2;&#x94C1;[
     
     </summary>
     
+      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+    
+      <category term="CSS" scheme="http://yuchen-lea.gitcafe.io/tags/CSS/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+    
+      <category term="多级类别" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%A4%9A%E7%BA%A7%E7%B1%BB%E5%88%AB/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+    
+      <category term="hexo美化" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E7%BE%8E%E5%8C%96/"/>
+    
   </entry>
   
   <entry>
@@ -3478,6 +3715,18 @@ categories:<br>
 </p>]]>
     
     </summary>
+    
+      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+    
+      <category term="org-mode" scheme="http://yuchen-lea.gitcafe.io/tags/org-mode/"/>
+    
+      <category term="多级类别" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%A4%9A%E7%BA%A7%E7%B1%BB%E5%88%AB/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+    
+      <category term="hexo写作" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E5%86%99%E4%BD%9C/"/>
     
   </entry>
   
@@ -3933,6 +4182,18 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
     
     </summary>
     
+      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+    
+      <category term="七牛" scheme="http://yuchen-lea.gitcafe.io/tags/%E4%B8%83%E7%89%9B/"/>
+    
+      <category term="插件" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+    
+      <category term="hexo写作" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E5%86%99%E4%BD%9C/"/>
+    
   </entry>
   
   <entry>
@@ -4360,6 +4621,14 @@ css<br>
     
     </summary>
     
+      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+    
+      <category term="hexo知识" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E7%9F%A5%E8%AF%86/"/>
+    
   </entry>
   
   <entry>
@@ -4492,6 +4761,18 @@ rss: /atom.xml<br>
     
     </summary>
     
+      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+    
+      <category term="RSS" scheme="http://yuchen-lea.gitcafe.io/tags/RSS/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+    
+      <category term="插件" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+    
+      <category term="hexo设置" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E8%AE%BE%E7%BD%AE/"/>
+    
   </entry>
   
   <entry>
@@ -4499,7 +4780,7 @@ rss: /atom.xml<br>
     <link href="http://yuchen-lea.gitcafe.io/2016-01-17-sum-of-gojuon/"/>
     <id>http://yuchen-lea.gitcafe.io/2016-01-17-sum-of-gojuon/</id>
     <published>2016-01-17T06:42:00.000Z</published>
-    <updated>2016-03-18T04:37:51.200Z</updated>
+    <updated>2016-03-18T04:37:52.000Z</updated>
     <content type="html"><![CDATA[
 
 <p>
@@ -5597,6 +5878,16 @@ rss: /atom.xml<br>
     
     </summary>
     
+      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
+    
+      <category term="五十音" scheme="http://yuchen-lea.gitcafe.io/tags/%E4%BA%94%E5%8D%81%E9%9F%B3/"/>
+    
+      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="日语口语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
+    
   </entry>
   
   <entry>
@@ -5604,7 +5895,7 @@ rss: /atom.xml<br>
     <link href="http://yuchen-lea.gitcafe.io/2016-01-15-japanese-accent/"/>
     <id>http://yuchen-lea.gitcafe.io/2016-01-15-japanese-accent/</id>
     <published>2016-01-15T06:16:00.000Z</published>
-    <updated>2016-01-31T09:56:35.255Z</updated>
+    <updated>2016-01-31T09:56:36.000Z</updated>
     <content type="html"><![CDATA[
 
 <p>
@@ -5917,6 +6208,16 @@ rss: /atom.xml<br>
     
     </summary>
     
+      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
+    
+      <category term="发音" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%8F%91%E9%9F%B3/"/>
+    
+      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="日语口语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
+    
   </entry>
   
   <entry>
@@ -6013,6 +6314,12 @@ rss: /atom.xml<br>
 </ul>]]>
     
     </summary>
+    
+      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
+    
+      <category term="!who" scheme="http://yuchen-lea.gitcafe.io/tags/who/"/>
+    
+      <category term="教学" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%95%99%E5%AD%A6/"/>
     
       <category term="支教" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%94%AF%E6%95%99/"/>
     
@@ -6213,6 +6520,14 @@ Hexo&#x4E3B;&#x9898;&#x5927;&#x591A;&#x6258;&#x7BA1;&#x5728;Github&#x4E0A;&#xFF0
 </div>]]>
     
     </summary>
+    
+      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+    
+      <category term="hexo美化" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E7%BE%8E%E5%8C%96/"/>
     
   </entry>
   
