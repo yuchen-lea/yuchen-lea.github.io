@@ -3,9 +3,9 @@
   <title><![CDATA[跬步]]></title>
   <subtitle><![CDATA[不积小流，无以成江海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://yuchen-lea.gitcafe.io/"/>
+  <link href="http://yuchen-lea.github.io/"/>
   <updated>2016-03-18T04:43:02.000Z</updated>
-  <id>http://yuchen-lea.gitcafe.io/</id>
+  <id>http://yuchen-lea.github.io/</id>
   
   <author>
     <name><![CDATA[宇晨]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[日语的促音]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-03-18-sokuon/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-03-18-sokuon/</id>
+    <link href="http://yuchen-lea.github.io/2016-03-18-sokuon/"/>
+    <id>http://yuchen-lea.github.io/2016-03-18-sokuon/</id>
     <published>2016-03-17T16:00:00.000Z</published>
     <updated>2016-03-18T04:43:02.000Z</updated>
     <content type="html"><![CDATA[
@@ -163,18 +163,18 @@
     
     </summary>
     
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://yuchen-lea.github.io/tags/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="日语口语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
+      <category term="日语口语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[在Excel稿纸模版中快速录入作文]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-03-17-writing-paper-template-in-excel-with-re/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-03-17-writing-paper-template-in-excel-with-re/</id>
+    <link href="http://yuchen-lea.github.io/2016-03-17-writing-paper-template-in-excel-with-re/"/>
+    <id>http://yuchen-lea.github.io/2016-03-17-writing-paper-template-in-excel-with-re/</id>
     <published>2016-03-16T16:00:00.000Z</published>
     <updated>2016-03-17T12:31:12.000Z</updated>
     <content type="html"><![CDATA[
@@ -338,16 +338,16 @@
     
     </summary>
     
-      <category term="excel" scheme="http://yuchen-lea.gitcafe.io/tags/excel/"/>
+      <category term="excel" scheme="http://yuchen-lea.github.io/tags/excel/"/>
     
-      <category term="正则表达式" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+      <category term="正则表达式" scheme="http://yuchen-lea.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[《大家的日语》语法点总结]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-03-12-grammar-note-of-minna-no-nihongo/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-03-12-grammar-note-of-minna-no-nihongo/</id>
+    <link href="http://yuchen-lea.github.io/2016-03-12-grammar-note-of-minna-no-nihongo/"/>
+    <id>http://yuchen-lea.github.io/2016-03-12-grammar-note-of-minna-no-nihongo/</id>
     <published>2016-03-11T16:00:00.000Z</published>
     <updated>2016-05-01T09:31:30.000Z</updated>
     <content type="html"><![CDATA[
@@ -2101,18 +2101,18 @@ B&#xFF1A;&#x4E0D;&#x5BA2;&#x6C14;&#x3002;/&#x54EA;&#x91CC;&#x54EA;&#x91CC;&#x300
     
     </summary>
     
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://yuchen-lea.github.io/tags/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="语法" scheme="http://yuchen-lea.gitcafe.io/tags/%E8%AF%AD%E6%B3%95/"/>
+      <category term="语法" scheme="http://yuchen-lea.github.io/tags/%E8%AF%AD%E6%B3%95/"/>
     
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[日语的长音]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-02-05-Choonpu/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-02-05-Choonpu/</id>
+    <link href="http://yuchen-lea.github.io/2016-02-05-Choonpu/"/>
+    <id>http://yuchen-lea.github.io/2016-02-05-Choonpu/</id>
     <published>2016-02-04T16:00:00.000Z</published>
     <updated>2016-03-18T04:45:14.000Z</updated>
     <content type="html"><![CDATA[
@@ -2334,22 +2334,22 @@ B&#xFF1A;&#x4E0D;&#x5BA2;&#x6C14;&#x3002;/&#x54EA;&#x91CC;&#x54EA;&#x91CC;&#x300
     
     </summary>
     
-      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
+      <category term="!what" scheme="http://yuchen-lea.github.io/tags/what/"/>
     
-      <category term="发音" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%8F%91%E9%9F%B3/"/>
+      <category term="发音" scheme="http://yuchen-lea.github.io/tags/%E5%8F%91%E9%9F%B3/"/>
     
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://yuchen-lea.github.io/tags/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="日语口语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
+      <category term="日语口语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[压缩PNG图片]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-30-minify-png/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-30-minify-png/</id>
+    <link href="http://yuchen-lea.github.io/2016-01-30-minify-png/"/>
+    <id>http://yuchen-lea.github.io/2016-01-30-minify-png/</id>
     <published>2016-01-29T16:00:00.000Z</published>
     <updated>2016-01-30T06:55:52.364Z</updated>
     <content type="html"><![CDATA[
@@ -2467,24 +2467,24 @@ B&#xFF1A;&#x4E0D;&#x5BA2;&#x6C14;&#x3002;/&#x54EA;&#x91CC;&#x54EA;&#x91CC;&#x300
 <div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x8BA8;&#x8BBA;Windows&#x5E73;&#x53F0;&#]]>
     </summary>
     
-      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
     
-      <category term="PNG" scheme="http://yuchen-lea.gitcafe.io/tags/PNG/"/>
+      <category term="PNG" scheme="http://yuchen-lea.github.io/tags/PNG/"/>
     
-      <category term="压缩" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%8E%8B%E7%BC%A9/"/>
+      <category term="压缩" scheme="http://yuchen-lea.github.io/tags/%E5%8E%8B%E7%BC%A9/"/>
     
-      <category term="软件" scheme="http://yuchen-lea.gitcafe.io/tags/%E8%BD%AF%E4%BB%B6/"/>
+      <category term="软件" scheme="http://yuchen-lea.github.io/tags/%E8%BD%AF%E4%BB%B6/"/>
     
-      <category term="多媒体处理" scheme="http://yuchen-lea.gitcafe.io/categories/%E5%A4%9A%E5%AA%92%E4%BD%93%E5%A4%84%E7%90%86/"/>
+      <category term="多媒体处理" scheme="http://yuchen-lea.github.io/categories/%E5%A4%9A%E5%AA%92%E4%BD%93%E5%A4%84%E7%90%86/"/>
     
-      <category term="图像" scheme="http://yuchen-lea.gitcafe.io/categories/%E5%A4%9A%E5%AA%92%E4%BD%93%E5%A4%84%E7%90%86/%E5%9B%BE%E5%83%8F/"/>
+      <category term="图像" scheme="http://yuchen-lea.github.io/categories/%E5%A4%9A%E5%AA%92%E4%BD%93%E5%A4%84%E7%90%86/%E5%9B%BE%E5%83%8F/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[部署Hexo到GitCafe]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-30-deploy-hexo-on-gitcafe/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-30-deploy-hexo-on-gitcafe/</id>
+    <link href="http://yuchen-lea.github.io/2016-01-30-deploy-hexo-on-gitcafe/"/>
+    <id>http://yuchen-lea.github.io/2016-01-30-deploy-hexo-on-gitcafe/</id>
     <published>2016-01-29T16:00:00.000Z</published>
     <updated>2016-03-11T03:18:05.760Z</updated>
     <content type="html"><![CDATA[
@@ -2570,20 +2570,20 @@ B&#xFF1A;&#x4E0D;&#x5BA2;&#x6C14;&#x3002;/&#x54EA;&#x91CC;&#x54EA;&#x91CC;&#x300
 <div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5728;G]]>
     </summary>
     
-      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
     
-      <category term="gitcafe" scheme="http://yuchen-lea.gitcafe.io/tags/gitcafe/"/>
+      <category term="gitcafe" scheme="http://yuchen-lea.github.io/tags/gitcafe/"/>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+      <category term="hexo" scheme="http://yuchen-lea.github.io/tags/hexo/"/>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+      <category term="hexo" scheme="http://yuchen-lea.github.io/categories/hexo/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[《关于锻炼的真相》笔记]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-29-the-truth-about-exercise/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-29-the-truth-about-exercise/</id>
+    <link href="http://yuchen-lea.github.io/2016-01-29-the-truth-about-exercise/"/>
+    <id>http://yuchen-lea.github.io/2016-01-29-the-truth-about-exercise/</id>
     <published>2016-01-28T16:00:00.000Z</published>
     <updated>2016-01-30T06:58:58.924Z</updated>
     <content type="html"><![CDATA[
@@ -2748,22 +2748,22 @@ NEAT=&#x975E;&#x8FD0;&#x52A8;&#x751F;&#x70ED;&#x4F5C;&#x7528;=&#x65E5;&#x5E38;&#
     
     </summary>
     
-      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
     
-      <category term="!why" scheme="http://yuchen-lea.gitcafe.io/tags/why/"/>
+      <category term="!why" scheme="http://yuchen-lea.github.io/tags/why/"/>
     
-      <category term="BBC" scheme="http://yuchen-lea.gitcafe.io/tags/BBC/"/>
+      <category term="BBC" scheme="http://yuchen-lea.github.io/tags/BBC/"/>
     
-      <category term="锻炼" scheme="http://yuchen-lea.gitcafe.io/tags/%E9%94%BB%E7%82%BC/"/>
+      <category term="锻炼" scheme="http://yuchen-lea.github.io/tags/%E9%94%BB%E7%82%BC/"/>
     
-      <category term="健康" scheme="http://yuchen-lea.gitcafe.io/categories/%E5%81%A5%E5%BA%B7/"/>
+      <category term="健康" scheme="http://yuchen-lea.github.io/categories/%E5%81%A5%E5%BA%B7/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[日语中的浊音与半浊音]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-27-japanese-voiced-sounds/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-27-japanese-voiced-sounds/</id>
+    <link href="http://yuchen-lea.github.io/2016-01-27-japanese-voiced-sounds/"/>
+    <id>http://yuchen-lea.github.io/2016-01-27-japanese-voiced-sounds/</id>
     <published>2016-01-26T16:00:00.000Z</published>
     <updated>2016-03-18T04:36:28.000Z</updated>
     <content type="html"><![CDATA[
@@ -3150,24 +3150,24 @@ NEAT=&#x975E;&#x8FD0;&#x52A8;&#x751F;&#x70ED;&#x4F5C;&#x7528;=&#x65E5;&#x5E38;&#
     
     </summary>
     
-      <category term="半浊音" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%8D%8A%E6%B5%8A%E9%9F%B3/"/>
+      <category term="半浊音" scheme="http://yuchen-lea.github.io/tags/%E5%8D%8A%E6%B5%8A%E9%9F%B3/"/>
     
-      <category term="发音" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%8F%91%E9%9F%B3/"/>
+      <category term="发音" scheme="http://yuchen-lea.github.io/tags/%E5%8F%91%E9%9F%B3/"/>
     
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://yuchen-lea.github.io/tags/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="浊音" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%B5%8A%E9%9F%B3/"/>
+      <category term="浊音" scheme="http://yuchen-lea.github.io/tags/%E6%B5%8A%E9%9F%B3/"/>
     
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="日语口语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
+      <category term="日语口语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[用HabitRPG游戏化你的生活！]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-27-RPG-your-life/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-27-RPG-your-life/</id>
+    <link href="http://yuchen-lea.github.io/2016-01-27-RPG-your-life/"/>
+    <id>http://yuchen-lea.github.io/2016-01-27-RPG-your-life/</id>
     <published>2016-01-26T16:00:00.000Z</published>
     <updated>2016-04-29T15:36:28.000Z</updated>
     <content type="html"><![CDATA[
@@ -4011,24 +4011,24 @@ NEAT=&#x975E;&#x8FD0;&#x52A8;&#x751F;&#x70ED;&#x4F5C;&#x7528;=&#x65E5;&#x5E38;&#
     
     </summary>
     
-      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
     
-      <category term="GTD" scheme="http://yuchen-lea.gitcafe.io/tags/GTD/"/>
+      <category term="GTD" scheme="http://yuchen-lea.github.io/tags/GTD/"/>
     
-      <category term="习惯" scheme="http://yuchen-lea.gitcafe.io/tags/%E4%B9%A0%E6%83%AF/"/>
+      <category term="习惯" scheme="http://yuchen-lea.github.io/tags/%E4%B9%A0%E6%83%AF/"/>
     
-      <category term="应用" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%BA%94%E7%94%A8/"/>
+      <category term="应用" scheme="http://yuchen-lea.github.io/tags/%E5%BA%94%E7%94%A8/"/>
     
-      <category term="生活" scheme="http://yuchen-lea.gitcafe.io/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://yuchen-lea.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
-      <category term="效率" scheme="http://yuchen-lea.gitcafe.io/categories/%E7%94%9F%E6%B4%BB/%E6%95%88%E7%8E%87/"/>
+      <category term="效率" scheme="http://yuchen-lea.github.io/categories/%E7%94%9F%E6%B4%BB/%E6%95%88%E7%8E%87/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[音读和训读]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-25-onyomi-and-kunyomi/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-25-onyomi-and-kunyomi/</id>
+    <link href="http://yuchen-lea.github.io/2016-01-25-onyomi-and-kunyomi/"/>
+    <id>http://yuchen-lea.github.io/2016-01-25-onyomi-and-kunyomi/</id>
     <published>2016-01-24T16:00:00.000Z</published>
     <updated>2016-01-25T16:35:24.000Z</updated>
     <content type="html"><![CDATA[
@@ -4320,22 +4320,22 @@ Jared Diamond, &#x67AA;&#x70AE;&#x3001;&#x75C5;&#x83CC;&#x4E0E;&#x94A2;&#x94C1;[
     
     </summary>
     
-      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
+      <category term="!what" scheme="http://yuchen-lea.github.io/tags/what/"/>
     
-      <category term="发音" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%8F%91%E9%9F%B3/"/>
+      <category term="发音" scheme="http://yuchen-lea.github.io/tags/%E5%8F%91%E9%9F%B3/"/>
     
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://yuchen-lea.github.io/tags/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="日语知识" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E7%9F%A5%E8%AF%86/"/>
+      <category term="日语知识" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E7%9F%A5%E8%AF%86/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[日本文字的由来]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-25-japanese-origin/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-25-japanese-origin/</id>
+    <link href="http://yuchen-lea.github.io/2016-01-25-japanese-origin/"/>
+    <id>http://yuchen-lea.github.io/2016-01-25-japanese-origin/</id>
     <published>2016-01-24T16:00:00.000Z</published>
     <updated>2016-01-25T16:34:51.801Z</updated>
     <content type="html"><![CDATA[
@@ -4627,22 +4627,22 @@ Jared Diamond, &#x67AA;&#x70AE;&#x3001;&#x75C5;&#x83CC;&#x4E0E;&#x94A2;&#x94C1;[
     
     </summary>
     
-      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
+      <category term="!what" scheme="http://yuchen-lea.github.io/tags/what/"/>
     
-      <category term="文字" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%96%87%E5%AD%97/"/>
+      <category term="文字" scheme="http://yuchen-lea.github.io/tags/%E6%96%87%E5%AD%97/"/>
     
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://yuchen-lea.github.io/tags/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="日语知识" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E7%9F%A5%E8%AF%86/"/>
+      <category term="日语知识" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E7%9F%A5%E8%AF%86/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[博文规范]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-24-standard-of-post/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-24-standard-of-post/</id>
+    <link href="http://yuchen-lea.github.io/2016-01-24-standard-of-post/"/>
+    <id>http://yuchen-lea.github.io/2016-01-24-standard-of-post/</id>
     <published>2016-01-23T16:00:00.000Z</published>
     <updated>2016-01-28T04:01:33.184Z</updated>
     <content type="html"><![CDATA[
@@ -4737,14 +4737,14 @@ Jared Diamond, &#x67AA;&#x70AE;&#x3001;&#x75C5;&#x83CC;&#x4E0E;&#x94A2;&#x94C1;[
 <div class="alert alert-i]]>
     </summary>
     
-      <category term="!who" scheme="http://yuchen-lea.gitcafe.io/tags/who/"/>
+      <category term="!who" scheme="http://yuchen-lea.github.io/tags/who/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Hexo多级类别的层级显示]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-23-display-hexo-category-in-hierarchy/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-23-display-hexo-category-in-hierarchy/</id>
+    <link href="http://yuchen-lea.github.io/2016-01-23-display-hexo-category-in-hierarchy/"/>
+    <id>http://yuchen-lea.github.io/2016-01-23-display-hexo-category-in-hierarchy/</id>
     <published>2016-01-22T16:00:00.000Z</published>
     <updated>2016-01-25T16:39:52.936Z</updated>
     <content type="html"><![CDATA[
@@ -4900,24 +4900,24 @@ Jared Diamond, &#x67AA;&#x70AE;&#x3001;&#x75C5;&#x83CC;&#x4E0E;&#x94A2;&#x94C1;[
     
     </summary>
     
-      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
     
-      <category term="CSS" scheme="http://yuchen-lea.gitcafe.io/tags/CSS/"/>
+      <category term="CSS" scheme="http://yuchen-lea.github.io/tags/CSS/"/>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+      <category term="hexo" scheme="http://yuchen-lea.github.io/tags/hexo/"/>
     
-      <category term="多级类别" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%A4%9A%E7%BA%A7%E7%B1%BB%E5%88%AB/"/>
+      <category term="多级类别" scheme="http://yuchen-lea.github.io/tags/%E5%A4%9A%E7%BA%A7%E7%B1%BB%E5%88%AB/"/>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+      <category term="hexo" scheme="http://yuchen-lea.github.io/categories/hexo/"/>
     
-      <category term="hexo美化" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E7%BE%8E%E5%8C%96/"/>
+      <category term="hexo美化" scheme="http://yuchen-lea.github.io/categories/hexo/hexo%E7%BE%8E%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[org-mode下设置多级类别]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-22-multi-level-category-for-hexo-in-org/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-22-multi-level-category-for-hexo-in-org/</id>
+    <link href="http://yuchen-lea.github.io/2016-01-22-multi-level-category-for-hexo-in-org/"/>
+    <id>http://yuchen-lea.github.io/2016-01-22-multi-level-category-for-hexo-in-org/</id>
     <published>2016-01-21T16:00:00.000Z</published>
     <updated>2016-01-25T16:39:43.174Z</updated>
     <content type="html"><![CDATA[
@@ -5025,24 +5025,24 @@ categories:<br>
     
     </summary>
     
-      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+      <category term="hexo" scheme="http://yuchen-lea.github.io/tags/hexo/"/>
     
-      <category term="org-mode" scheme="http://yuchen-lea.gitcafe.io/tags/org-mode/"/>
+      <category term="org-mode" scheme="http://yuchen-lea.github.io/tags/org-mode/"/>
     
-      <category term="多级类别" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%A4%9A%E7%BA%A7%E7%B1%BB%E5%88%AB/"/>
+      <category term="多级类别" scheme="http://yuchen-lea.github.io/tags/%E5%A4%9A%E7%BA%A7%E7%B1%BB%E5%88%AB/"/>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+      <category term="hexo" scheme="http://yuchen-lea.github.io/categories/hexo/"/>
     
-      <category term="hexo写作" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E5%86%99%E4%BD%9C/"/>
+      <category term="hexo写作" scheme="http://yuchen-lea.github.io/categories/hexo/hexo%E5%86%99%E4%BD%9C/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[使用七牛为Hexo存储图片等资源]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-21-use-qiniu-store-file-for-hexo/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-21-use-qiniu-store-file-for-hexo/</id>
+    <link href="http://yuchen-lea.github.io/2016-01-21-use-qiniu-store-file-for-hexo/"/>
+    <id>http://yuchen-lea.github.io/2016-01-21-use-qiniu-store-file-for-hexo/</id>
     <published>2016-01-20T16:00:00.000Z</published>
     <updated>2016-01-25T16:39:26.389Z</updated>
     <content type="html"><![CDATA[
@@ -5491,24 +5491,24 @@ Gitcafe&#x6709; 512Mb &#x7684;&#x603B;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;Gi
     
     </summary>
     
-      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+      <category term="hexo" scheme="http://yuchen-lea.github.io/tags/hexo/"/>
     
-      <category term="七牛" scheme="http://yuchen-lea.gitcafe.io/tags/%E4%B8%83%E7%89%9B/"/>
+      <category term="七牛" scheme="http://yuchen-lea.github.io/tags/%E4%B8%83%E7%89%9B/"/>
     
-      <category term="插件" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%8F%92%E4%BB%B6/"/>
+      <category term="插件" scheme="http://yuchen-lea.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+      <category term="hexo" scheme="http://yuchen-lea.github.io/categories/hexo/"/>
     
-      <category term="hexo写作" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E5%86%99%E4%BD%9C/"/>
+      <category term="hexo写作" scheme="http://yuchen-lea.github.io/categories/hexo/hexo%E5%86%99%E4%BD%9C/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[hexo目录结构小探]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-18-hexo-dir-struct/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-18-hexo-dir-struct/</id>
+    <link href="http://yuchen-lea.github.io/2016-01-18-hexo-dir-struct/"/>
+    <id>http://yuchen-lea.github.io/2016-01-18-hexo-dir-struct/</id>
     <published>2016-01-17T16:00:00.000Z</published>
     <updated>2016-01-25T16:39:10.569Z</updated>
     <content type="html"><![CDATA[
@@ -5930,20 +5930,20 @@ css<br>
     
     </summary>
     
-      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
+      <category term="!what" scheme="http://yuchen-lea.github.io/tags/what/"/>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+      <category term="hexo" scheme="http://yuchen-lea.github.io/tags/hexo/"/>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+      <category term="hexo" scheme="http://yuchen-lea.github.io/categories/hexo/"/>
     
-      <category term="hexo知识" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E7%9F%A5%E8%AF%86/"/>
+      <category term="hexo知识" scheme="http://yuchen-lea.github.io/categories/hexo/hexo%E7%9F%A5%E8%AF%86/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[给hexo添加RSS]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-18-add-rss-to-hexo/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-18-add-rss-to-hexo/</id>
+    <link href="http://yuchen-lea.github.io/2016-01-18-add-rss-to-hexo/"/>
+    <id>http://yuchen-lea.github.io/2016-01-18-add-rss-to-hexo/</id>
     <published>2016-01-17T16:00:00.000Z</published>
     <updated>2016-01-25T16:37:59.025Z</updated>
     <content type="html"><![CDATA[
@@ -5993,7 +5993,7 @@ hub - URL of the PubSubHubbub hubs (Leave it empty if you don&apos;t use it)<br>
 <li>&#x4FEE;&#x6539; <code>url:</code> &#x4E3A;&#x535A;&#x5BA2;&#x7AD9;&#x70B9;&#x5730;&#x5740;
 &#x9ED8;&#x8BA4;&#x4E3A; <code>http://yoursite.com/</code> &#xFF0C;&#x4F46;&#x662F;&#x4E3A;&#x4E86;RSS&#x5730;&#x5740;&#x7684;&#x6B63;&#x786E;&#x5F15;&#x7528;&#xFF0C;&#x5E94;&#x5C06;&#x5176;&#x6539;&#x4E3A;&#x81EA;&#x5DF1;&#x7684;&#x535A;&#x5BA2;&#x5730;&#x5740;&#xFF0C;&#x4F8B;&#x5982;&#x6211;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E3A;&#xFF1A;
 <p class="verse">
-url: <a href="http://yuchen-lea.gitcafe.io/">http://yuchen-lea.gitcafe.io/</a><br>
+url: <a href="http://yuchen-lea.gitcafe.io/" target="_blank" rel="external">http://yuchen-lea.gitcafe.io/</a><br>
 </p>
 </li>
 </ol>
@@ -6070,24 +6070,24 @@ rss: /atom.xml<br>
     
     </summary>
     
-      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
     
-      <category term="RSS" scheme="http://yuchen-lea.gitcafe.io/tags/RSS/"/>
+      <category term="RSS" scheme="http://yuchen-lea.github.io/tags/RSS/"/>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+      <category term="hexo" scheme="http://yuchen-lea.github.io/tags/hexo/"/>
     
-      <category term="插件" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%8F%92%E4%BB%B6/"/>
+      <category term="插件" scheme="http://yuchen-lea.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+      <category term="hexo" scheme="http://yuchen-lea.github.io/categories/hexo/"/>
     
-      <category term="hexo设置" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E8%AE%BE%E7%BD%AE/"/>
+      <category term="hexo设置" scheme="http://yuchen-lea.github.io/categories/hexo/hexo%E8%AE%BE%E7%BD%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[五十音图学习小结]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-17-sum-of-gojuon/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-17-sum-of-gojuon/</id>
+    <link href="http://yuchen-lea.github.io/2016-01-17-sum-of-gojuon/"/>
+    <id>http://yuchen-lea.github.io/2016-01-17-sum-of-gojuon/</id>
     <published>2016-01-17T06:42:00.000Z</published>
     <updated>2016-03-18T04:37:52.000Z</updated>
     <content type="html"><![CDATA[
@@ -7187,22 +7187,22 @@ rss: /atom.xml<br>
     
     </summary>
     
-      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
+      <category term="!what" scheme="http://yuchen-lea.github.io/tags/what/"/>
     
-      <category term="五十音" scheme="http://yuchen-lea.gitcafe.io/tags/%E4%BA%94%E5%8D%81%E9%9F%B3/"/>
+      <category term="五十音" scheme="http://yuchen-lea.github.io/tags/%E4%BA%94%E5%8D%81%E9%9F%B3/"/>
     
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://yuchen-lea.github.io/tags/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="日语口语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
+      <category term="日语口语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[日语的声调]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2016-01-15-japanese-accent/"/>
-    <id>http://yuchen-lea.gitcafe.io/2016-01-15-japanese-accent/</id>
+    <link href="http://yuchen-lea.github.io/2016-01-15-japanese-accent/"/>
+    <id>http://yuchen-lea.github.io/2016-01-15-japanese-accent/</id>
     <published>2016-01-15T06:16:00.000Z</published>
     <updated>2016-01-31T09:56:36.000Z</updated>
     <content type="html"><![CDATA[
@@ -7517,22 +7517,22 @@ rss: /atom.xml<br>
     
     </summary>
     
-      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
+      <category term="!what" scheme="http://yuchen-lea.github.io/tags/what/"/>
     
-      <category term="发音" scheme="http://yuchen-lea.gitcafe.io/tags/%E5%8F%91%E9%9F%B3/"/>
+      <category term="发音" scheme="http://yuchen-lea.github.io/tags/%E5%8F%91%E9%9F%B3/"/>
     
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://yuchen-lea.github.io/tags/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="日语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="日语口语" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
+      <category term="日语口语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[科普课小结]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2015-12-25-sum-of-popular-science/"/>
-    <id>http://yuchen-lea.gitcafe.io/2015-12-25-sum-of-popular-science/</id>
+    <link href="http://yuchen-lea.github.io/2015-12-25-sum-of-popular-science/"/>
+    <id>http://yuchen-lea.github.io/2015-12-25-sum-of-popular-science/</id>
     <published>2015-12-25T12:32:00.000Z</published>
     <updated>2016-01-25T16:37:25.815Z</updated>
     <content type="html"><![CDATA[
@@ -7624,20 +7624,20 @@ rss: /atom.xml<br>
     
     </summary>
     
-      <category term="!what" scheme="http://yuchen-lea.gitcafe.io/tags/what/"/>
+      <category term="!what" scheme="http://yuchen-lea.github.io/tags/what/"/>
     
-      <category term="!who" scheme="http://yuchen-lea.gitcafe.io/tags/who/"/>
+      <category term="!who" scheme="http://yuchen-lea.github.io/tags/who/"/>
     
-      <category term="教学" scheme="http://yuchen-lea.gitcafe.io/tags/%E6%95%99%E5%AD%A6/"/>
+      <category term="教学" scheme="http://yuchen-lea.github.io/tags/%E6%95%99%E5%AD%A6/"/>
     
-      <category term="支教" scheme="http://yuchen-lea.gitcafe.io/categories/%E6%94%AF%E6%95%99/"/>
+      <category term="支教" scheme="http://yuchen-lea.github.io/categories/%E6%94%AF%E6%95%99/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[更换hexo主题]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2015-12-12-set-hexo-theme/"/>
-    <id>http://yuchen-lea.gitcafe.io/2015-12-12-set-hexo-theme/</id>
+    <link href="http://yuchen-lea.github.io/2015-12-12-set-hexo-theme/"/>
+    <id>http://yuchen-lea.github.io/2015-12-12-set-hexo-theme/</id>
     <published>2015-12-11T16:00:00.000Z</published>
     <updated>2016-01-25T16:36:48.685Z</updated>
     <content type="html"><![CDATA[
@@ -7830,20 +7830,20 @@ Hexo&#x4E3B;&#x9898;&#x5927;&#x591A;&#x6258;&#x7BA1;&#x5728;Github&#x4E0A;&#xFF0
     
     </summary>
     
-      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+      <category term="hexo" scheme="http://yuchen-lea.github.io/tags/hexo/"/>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+      <category term="hexo" scheme="http://yuchen-lea.github.io/categories/hexo/"/>
     
-      <category term="hexo美化" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/hexo%E7%BE%8E%E5%8C%96/"/>
+      <category term="hexo美化" scheme="http://yuchen-lea.github.io/categories/hexo/hexo%E7%BE%8E%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[在Github上搭建Hexo博客]]></title>
-    <link href="http://yuchen-lea.gitcafe.io/2015-12-09-build-hexo-blog/"/>
-    <id>http://yuchen-lea.gitcafe.io/2015-12-09-build-hexo-blog/</id>
+    <link href="http://yuchen-lea.github.io/2015-12-09-build-hexo-blog/"/>
+    <id>http://yuchen-lea.github.io/2015-12-09-build-hexo-blog/</id>
     <published>2015-12-09T13:07:00.000Z</published>
     <updated>2016-01-25T16:37:05.176Z</updated>
     <content type="html"><![CDATA[
@@ -8059,7 +8059,7 @@ INFO Hexo is running at <a href="http://0.0.0.0:4000/" target="_blank" rel="exte
 </p>
 
 <p>
-&#x73B0;&#x5728;&#xFF0C;&#x8BBF;&#x95EE; <a href="http://yuchen-lea.github.io" target="_blank" rel="external">http://yuchen-lea.github.io</a> &#xFF08;&#x628A; <code>yuchen-lea</code> &#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x7528;&#x6237;&#x540D;&#xFF09;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4F60;&#x7684;&#x6210;&#x679C;&#x3002;
+&#x73B0;&#x5728;&#xFF0C;&#x8BBF;&#x95EE; <a href="http://yuchen-lea.github.io">http://yuchen-lea.github.io</a> &#xFF08;&#x628A; <code>yuchen-lea</code> &#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x7528;&#x6237;&#x540D;&#xFF09;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4F60;&#x7684;&#x6210;&#x679C;&#x3002;
 </p>
 </div>
 </div>
@@ -8160,11 +8160,11 @@ INFO Hexo is running at <a href="http://0.0.0.0:4000/" target="_blank" rel="exte
     
     </summary>
     
-      <category term="!how" scheme="http://yuchen-lea.gitcafe.io/tags/how/"/>
+      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/tags/hexo/"/>
+      <category term="hexo" scheme="http://yuchen-lea.github.io/tags/hexo/"/>
     
-      <category term="hexo" scheme="http://yuchen-lea.gitcafe.io/categories/hexo/"/>
+      <category term="hexo" scheme="http://yuchen-lea.github.io/categories/hexo/"/>
     
   </entry>
   
