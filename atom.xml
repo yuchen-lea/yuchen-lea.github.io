@@ -2486,12 +2486,17 @@ B&#xFF1A;&#x4E0D;&#x5BA2;&#x6C14;&#x3002;/&#x54EA;&#x91CC;&#x54EA;&#x91CC;&#x300
     <link href="http://yuchen-lea.github.io/2016-01-30-deploy-hexo-on-gitcafe/"/>
     <id>http://yuchen-lea.github.io/2016-01-30-deploy-hexo-on-gitcafe/</id>
     <published>2016-01-29T16:00:00.000Z</published>
-    <updated>2016-03-11T03:18:05.760Z</updated>
+    <updated>2016-05-02T00:28:24.000Z</updated>
     <content type="html"><![CDATA[
 
 <p>
 <div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5728;GitCafe&#x4E0A;&#x642D;&#x5EFA;Hexo&#x535A;&#x5BA2;</div>
 </p>
+
+<p>
+<div class="alert alert-warning"><i class="fa fa-bell"></i>  GitCafe &#x9879;&#x76EE;&#x5DF2;&#x8FC1;&#x79FB;&#x81F3;Coding.net<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>&#xFF0C;2016&#x5E74; 5&#x6708; 31&#x65E5; &#x540E; GitCafe &#x7684;&#x6240;&#x6709;&#x9879;&#x76EE;&#x90FD;&#x5C06;&#x88AB;&#x6C38;&#x4E45;&#x5220;&#x9664;&#x3002;&#x5728;Coding.net&#x4E0A;&#x90E8;&#x7F72;Hexo&#x535A;&#x5BA2;&#x7684;&#x6587;&#x7AE0;&#x6B63;&#x5728;&#x5B8C;&#x5584;&#x4E2D;&#x3002;</div>
+</p>
+
 
 <ol class="org-ol">
 <li>&#x521B;&#x5EFA;&#x65B0;&#x9879;&#x76EE;
@@ -2520,7 +2525,7 @@ B&#xFF1A;&#x4E0D;&#x5BA2;&#x6C14;&#x3002;/&#x54EA;&#x91CC;&#x54EA;&#x91CC;&#x300
 <ul class="org-ul">
 <li><code>;</code> &#x540E;&#x4E00;&#x5B9A;&#x8981;&#x6709;&#x7A7A;&#x683C;
 </li>
-<li>branch&#x7684;&#x503C;&#x4E00;&#x5B9A;&#x8981;&#x662F; <code>gitcafe-pages</code> &#xFF0C;&#x5426;&#x5219;&#x4E0A;&#x4F20;&#x5B8C;&#x6210;&#x540E;&#x7F51;&#x9875;&#x663E;&#x793A;&#x4E0D;&#x6210;&#x529F;<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>
+<li>branch&#x7684;&#x503C;&#x4E00;&#x5B9A;&#x8981;&#x662F; <code>gitcafe-pages</code> &#xFF0C;&#x5426;&#x5219;&#x4E0A;&#x4F20;&#x5B8C;&#x6210;&#x540E;&#x7F51;&#x9875;&#x663E;&#x793A;&#x4E0D;&#x6210;&#x529F;<sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup>
 </li>
 </ul>
 </li>
@@ -2554,6 +2559,10 @@ B&#xFF1A;&#x4E0D;&#x5BA2;&#x6C14;&#x3002;/&#x54EA;&#x91CC;&#x54EA;&#x91CC;&#x300
 <div id="text-footnotes">
 
 <div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<a href="https://gitcafe.com/migration" target="_blank" rel="external">GitCafe - Share a cup of Open Source</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
 <a href="https://help.gitcafe.com/manuals/help/pages-services" target="_blank" rel="external">Pages &#x670D;&#x52A1; - GitCafe Help</a>
 </p></div>
 
