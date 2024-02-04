@@ -244,279 +244,6 @@
             
               
                 
-                <a class="post-title-link" href="/2024-02-04-android-emacs-with-doom_emacs/" itemprop="url">
-                  在 Android Emacs 中使用 doom-emacs
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2024-02-04T00:00:00+08:00" content="2024-02-04">
-              2024-02-04
-            </time>
-          </span>
-
-          <span class="post-count">
-		书写 1,774 字
-	  </span> 
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Emacs/" itemprop="url" rel="index">
-                    <span itemprop="name">Emacs</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-	<span id="busuanzi_container_page_pv">
-		&nbsp; | &nbsp; 访问 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次
-	</span> 
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2024-02-04-android-emacs-with-doom_emacs/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2024-02-04-android-emacs-with-doom_emacs/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              
-
-<p>
-<div class="alert alert-info"><i class="fa fa-info"></i>  本文目标：在一个安卓设备上，成功安装GUI Emacs且能使用 Termux 管理 Emacs 所用的 git 等工具。同时，成功加载 doom-emacs 配置。</div>
-</p>
-
-
-<p>
-2023 年初，即将发布的 Emacs 30.1 将对 Android GUI 的支持包括其中。这意味着除了桌面端，移动端也有原生的 Emacs 体验了。（当然，iOS由于其自身特性，未来也不可能支持 Emacs。）
-</p>
-
-<p>
-与常规安卓应用不同的是，要想更好的在安卓平台使用 Emacs，直接安装 APK 远远不足，还需要进行额外配置。
-</p>
-
-<p>
-此外，因为 <a href="https://github.com/hlissner/doom-emacs/" target="_blank" rel="external">doom-emacs</a> 的配置涉及到调用 Emacs 本身，但是安卓系统又没有提供现成的 emacs 可执行命令，配置起来不如桌面端顺畅。在此分享我的配置经验，希望多少能帮到一些朋友。
-</p>
-
-<p>
-在此特别感谢 <a href="https://emacs-china.org/u/oldosfan" target="_blank" rel="external">oldosfan</a>，ta 是 Android Port 主要贡献者，并且在如何在 Android Emacs 配置 doom-emacs 对我帮助良多。
-</p>
-
-<div id="outline-container-org9044121" class="outline-2">
-<h2 id="org9044121"><span class="section-number-2">1.</span> 安装 Android Emacs</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-最佳方式是安装特定版本的Emacs和Termux，二者共享相同的 <code>sharedUserId</code> manifest attribute 和签名，这意味着二者可以互相访问对方的数据文件夹（ <code>/data/data/org.gnu.emacs/</code> 和 <code>/data/data/com.termux/</code> ），这样使用 Termux 来安装 GNU/Linux 应用程序后，Emacs 中就可以运行这些应用程序。
-</p>
-
-<hr>
-
-<ol class="org-ol">
-<li>Emacs 和 termux 必须按照特定的顺序安装特定的版本，如果之前已经安装过，请先卸载，以避免  <code>sharedUserId</code>  或签名冲突。</li>
-<li><b>先</b>​安装特定版本的 Termux，从 <a href="https://sourceforge.net/projects/android-ports-for-gnu-emacs/files/termux/" target="_blank" rel="external">Android ports for GNU Emacs - Browse /termux at SourceForge.net</a> 下载APK文件进行安装。安装完成先不要打开 Termux。</li>
-<li><b>再</b>​从上一个网址中选择合适版本的 Emacs 来安装。
-<ul class="org-ul">
-<li>👎 不推荐F-Droid 的版本，因为：
-<ul class="org-ul">
-<li>版本并非最新：缺少错误修复和新功能。</li>
-<li>缺少许多依赖包：GnuTLS, image libraries, tree-sitter</li>
-</ul></li>
-<li>挑选主要依据​<b>安卓系统版本</b>​和​<b>芯片CPU架构</b>​。例如 <code>emacs-30.0.50-29-arm64-v8a.apk</code> 适用于运行 Android 10.0 或更高版本的 aarch64 设备，是一个常见的选择。如果安装的版本不匹配，将无法正常执行。</li>
-</ul></li>
-<li><p>
-两个都安装完成，打开 Termux，执行以下命令，安装并更新所有应用程序。
-</p>
-<pre class="example">
-pkg update &amp;&amp; pkg upgrade
-</pre>
-
-<ul class="org-ul">
-<li>如果太慢，可以考虑Termux换成国内镜像源。</li>
-</ul></li>
-<li><p>
-打开 Emacs，在 ~/.emacs.d/early-init.el 中加入：
-</p>
-
-<div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">when</span> <span class="list">(<span class="keyword">string-equal</span> system-type <span class="string">"android"</span>)</span></span><br><span class="line">  <span class="comment">;; Add Termux binaries to PATH environment</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">termuxpath</span> <span class="string">"/data/data/com.termux/files/usr/bin"</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setenv</span> <span class="string">"PATH"</span> <span class="list">(<span class="keyword">concat</span> <span class="list">(<span class="keyword">getenv</span> <span class="string">"PATH"</span>)</span> <span class="string">":"</span> termuxpath)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> exec-path <span class="list">(<span class="keyword">append</span> exec-path <span class="list">(<span class="keyword">list</span> termuxpath)</span>)</span>)</span>)</span>)</span></span><br></pre></td></tr></table></figure>
-</div>
-<ul class="org-ul">
-<li>该代码将 Emacs 与 Termux 文件系统绑定，从而让 Emacs 访问通过 Termux 安装的程序。</li>
-<li>🤔 官方文档还对 <code>LD_LIBRARY_PATH</code> 环境变量进行了配置。但是配置之后，在 Emacs 中运行 mpv 会出现问题，不配置这个变量也暂未发现问题。留待观察。</li>
-</ul></li>
-<li>重启 Emacs，应用配置。如果你在 Termux 中已经安装了 git，可以尝试在 Emacs 执行 <code>(executable-find "git")</code> 。如果返回git的路径，说明配置成功。</li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-org951e012" class="outline-2">
-<h2 id="org951e012"><span class="section-number-2">2.</span> 使用 doom-emacs 配置</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-因为，Android 中没有 Emacs 可执行文件，shell 路径也不同，因此需要一定的修改才能进行 doom install。以下操作​<b>请注意区分</b>​，是在Termux中运行，还是在 Emacs Shell 中运行。
-</p>
-
-<hr>
-
-<ol class="org-ol">
-<li><p>
-在 Termux 中安装 Git
-</p>
-<pre class="example">
-pkg install git
-</pre></li>
-<li><p>
-在 Termux 中，git clone doom-emacs 到 Emacs 主目录
-</p>
-<pre class="example">
-git clone --depth 1 https://github.com/hlissner/doom-emacs /data/data/org.gnu.emacs/files/.emacs.d.doom
-</pre></li>
-<li><p>
-在 Android Emacs 的 shell 环境中，软链接 emacs 可执行文件：
-</p>
-<pre class="example">
-ln -s /data/data/org.gnu.emacs/lib/libandroid-emacs.so /data/data/com.termux/files/usr/bin/emacs
-</pre>
-
-<ul class="org-ul">
-<li><p>
-链接成功后，在Android Emacs中运行 <code>emacs --version</code> 应该可以看到：
-</p>
-<blockquote>
-<p>
-emacs &#x2013;version
-GNU Emacs 30.0.50
-Copyright (C) 2024 Free Software Foundation, Inc.
-GNU Emacs comes with ABSOLUTELY NO WARRANTY.
-You may redistribute copies of GNU Emacs
-under the terms of the GNU General Public License.
-For more information about these matters, see the file named COPYING.
-</p>
-</blockquote></li>
-<li><p>
-否则，在执行doom时会报错：
-</p>
-<blockquote>
-<p>
-Error: failed to run Emacs with command 'emacs'
-</p>
-
-<p>
-Are you sure Emacs is installed and in your $PATH?
-</p>
-</blockquote></li>
-</ul></li>
-
-<li>编辑 <code>.emacs.d.doom/bin/doom</code> ，修改 Shebang：​<code>#!/usr/bin/env sh</code> →  <code>#!/system/bin/sh</code></li>
-<li>把 <code>~/.emacs.d/early-init.el</code> 中的内容添加到 <code>.emacs.d.doom/early-init.el</code>​，以便生成 doom env 文件的时候把 Termux 路径加入到 <code>PATH</code> 环境变量。</li>
-<li>执行 doom install，如果提示 <code>error ("Failed to run \"git\"; see buffer *straight-process*")</code> ，可以尝试：
-<ul class="org-ul">
-<li>检查 doom 的 env 文件是否把 Termux 路径加入到 <code>PATH</code></li>
-<li>在 eshell中执行命令，不要在 shell 中执行</li>
-<li>执行 (setq android-use-exec-loader nil)</li>
-</ul></li>
-<li>安装完成之后，把 <code>.emacs.d.doom</code> 软链接为 <code>.emacs.d=。建议不要直接改名，这样未来改变 =.emacs.d</code> 指向的路径就可以切换配置，进行debug。</li>
-<li>重新启动，Emacs 应该可以加载 doom-emacs 配置了。由于 Android 和桌面端的路径以及支持的功能并不完全一致。一般需要对 doom-emacs 配置进行调整。</li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-org0589df7" class="outline-2">
-<h2 id="org0589df7"><span class="section-number-2">3.</span> 更新历史</h2>
-<div class="outline-text-2" id="text-3">
-<ul class="org-ul">
-<li><span class="timestamp-wrapper"><span class="timestamp">[2024-02-04 日] </span></span> 初稿</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgf040600" class="outline-2">
-<h2 id="orgf040600"><span class="section-number-2">4.</span> 参考</h2>
-<div class="outline-text-2" id="text-4">
-<ul class="org-ul">
-<li><a href="https://www.reddit.com/r/emacs/comments/16hwjby/how_to_get_graphical_not_termuxbased_emacs_on/" target="_blank" rel="external">How to get graphical (not Termux-based) Emacs on Android along with file-sync and shared init files across platforms. : emacs</a></li>
-<li><a href="https://marek-g.github.io/posts/tips_and_tricks/emacs_on_android/" target="_blank" rel="external">Emacs on Android | Home Page</a></li>
-</ul>
-</div>
-</div>
-
-<p class="date">Date: 2024-02-04 日 00:00</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
-
-            
-          </span>
-        
-      
-	
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016-05-14-find-max-under-conditions-in-excel/" itemprop="url">
                   在Excel查找满足条件的最大值
                 </a>
@@ -4597,6 +4324,438 @@ NEAT=非运动生热作用=日常生活消耗的热量
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016-01-27-japanese-voiced-sounds/" itemprop="url">
+                  日语中的浊音与半浊音
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-01-27T00:00:00+08:00" content="2016-01-27">
+              2016-01-27
+            </time>
+          </span>
+
+          <span class="post-count">
+		书写 3,024 字
+	  </span> 
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/日语/" itemprop="url" rel="index">
+                    <span itemprop="name">日语</span>
+                  </a>
+                </span>
+
+                
+                
+                  > 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/日语/日语口语/" itemprop="url" rel="index">
+                    <span itemprop="name">日语口语</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+	<span id="busuanzi_container_page_pv">
+		&nbsp; | &nbsp; 访问 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次
+	</span> 
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016-01-27-japanese-voiced-sounds/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-27-japanese-voiced-sounds/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              
+
+
+<div id="outline-container-org039456f" class="outline-2">
+<h2 id="org039456f"><span class="section-number-2">1.</span> 浊音</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+浊音一共有四行，其发音和写法都是从五十音图中的四行浊化而来：
+</p>
+
+<ul class="org-ul">
+<li>k→g：か行→が行</li>
+<li>s→z：さ行→ざ行</li>
+<li>t→d：た行→だ行</li>
+<li>h→b：は行→ば行</li>
+</ul>
+
+<p>
+发音时声带振动，写法在对应的清音假名右上角加上 <b>浊点゛</b> （形状为两点） 即可。
+</p>
+</div>
+
+<div id="outline-container-org79abe27" class="outline-3">
+<h3 id="org79abe27"><span class="section-number-3">1.1.</span> が行</h3>
+<div class="outline-text-3" id="text-1-1">
+<p class="verse">
+がぎぐげご<br>
+ガギグゲゴ<br>
+</p>
+<p>
+从か行浊化而来，先回顾一下か行的发音 ka、ki、ku、ke、ko：<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/ka_hang_songqiyin.mp3&bg=0xE0E6ED&leftbg=0x7B90A4&lefticon=0xF2F2F2&rightbg=0xAAB1B8&rightbghover=0x357DCE&righticon=0xF2F2F2&righticonhover=0xFFFFFF&text=0x357DCE&slider=0x357DCE&track=0xF5F5F5&border=0xF5F5F5&loader=0x94ACC2&autostart=no&loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object> 
+</p>
+
+<p>
+浊化后が行的发音为 ga、gi、gu、ge、go：<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/ga_hang.mp3&bg=0xE0E6ED&leftbg=0x7B90A4&lefticon=0xF2F2F2&rightbg=0xAAB1B8&rightbghover=0x357DCE&righticon=0xF2F2F2&righticonhover=0xFFFFFF&text=0x357DCE&slider=0x357DCE&track=0xF5F5F5&border=0xF5F5F5&loader=0x94ACC2&autostart=no&loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object> 
+</p>
+
+<p>
+が行的假名位于词中和词尾时，可在开始时加上点鼻音n，发成 <b>鼻浊音</b> nga、ngi、ngu、nge、ngo：<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/ga_hang_bizhuoyin.mp3&bg=0xE0E6ED&leftbg=0x7B90A4&lefticon=0xF2F2F2&rightbg=0xAAB1B8&rightbghover=0x357DCE&righticon=0xF2F2F2&righticonhover=0xFFFFFF&text=0x357DCE&slider=0x357DCE&track=0xF5F5F5&border=0xF5F5F5&loader=0x94ACC2&autostart=no&loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object> 
+</p>
+
+<p>
+位于词中和词尾发成鼻浊音是比较正统、老派的发音方式，现在很多日本年轻人一律将が行发成 ga、gi、gu、ge、go，而不管假名位于词汇的什么位置。
+</p>
+
+<div class="HTML" id="org360795d">
+<p>
+&lt;!&#x2013; more &#x2013;&gt;
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf98013d" class="outline-3">
+<h3 id="orgf98013d"><span class="section-number-3">1.2.</span> ざ行</h3>
+<div class="outline-text-3" id="text-1-2">
+<p class="verse">
+ざじずぜぞ<br>
+ザジズゼゾ<br>
+</p>
+
+<p>
+从さ行浊化而来，さ行的发音 sa、shi、su、se、so：<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/sa_hang.mp3&bg=0xE0E6ED&leftbg=0x7B90A4&lefticon=0xF2F2F2&rightbg=0xAAB1B8&rightbghover=0x357DCE&righticon=0xF2F2F2&righticonhover=0xFFFFFF&text=0x357DCE&slider=0x357DCE&track=0xF5F5F5&border=0xF5F5F5&loader=0x94ACC2&autostart=no&loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object> 
+</p>
+
+<p>
+浊化后ざ行的发音为 za、ji、ju、ze、zo：<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/za_hang.mp3&bg=0xE0E6ED&leftbg=0x7B90A4&lefticon=0xF2F2F2&rightbg=0xAAB1B8&rightbghover=0x357DCE&righticon=0xF2F2F2&righticonhover=0xFFFFFF&text=0x357DCE&slider=0x357DCE&track=0xF5F5F5&border=0xF5F5F5&loader=0x94ACC2&autostart=no&loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object> 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge07e25c" class="outline-3">
+<h3 id="orge07e25c"><span class="section-number-3">1.3.</span> だ行</h3>
+<div class="outline-text-3" id="text-1-3">
+<p class="verse">
+だぢづでど<br>
+ダヂヅデド<br>
+</p>
+
+<p>
+从た行浊化而来，た行的发音 ta、chi、tsu、te、to：<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/ta_hang_songqiyin.mp3&bg=0xE0E6ED&leftbg=0x7B90A4&lefticon=0xF2F2F2&rightbg=0xAAB1B8&rightbghover=0x357DCE&righticon=0xF2F2F2&righticonhover=0xFFFFFF&text=0x357DCE&slider=0x357DCE&track=0xF5F5F5&border=0xF5F5F5&loader=0x94ACC2&autostart=no&loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object> 
+</p>
+
+<p>
+浊化后だ行的发音为 da、ji、zu、de、do：<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/da_hang.mp3&bg=0xE0E6ED&leftbg=0x7B90A4&lefticon=0xF2F2F2&rightbg=0xAAB1B8&rightbghover=0x357DCE&righticon=0xF2F2F2&righticonhover=0xFFFFFF&text=0x357DCE&slider=0x357DCE&track=0xF5F5F5&border=0xF5F5F5&loader=0x94ACC2&autostart=no&loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object> 
+</p>
+
+<p>
+<div class="alert alert-warning"><i class="fa fa-bell"></i>  ざ行和だ行中有两个假名的发音是一样的：じ/ジ VS ぢ/ヂ、ず/ズ VS づ/ヅ。所以遇到含有ji、ju发音的词汇还要额外关注一下，它用的是哪个ji或ju。</div>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org858d20b" class="outline-3">
+<h3 id="org858d20b"><span class="section-number-3">1.4.</span> ば行</h3>
+<div class="outline-text-3" id="text-1-4">
+<p class="verse">
+ばびぶべぼ<br>
+バビブベボ<br>
+</p>
+
+<p>
+从は行浊化而来，は行的发音 ha、hi、fu、he、ho：<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/ha_hang.mp3&bg=0xE0E6ED&leftbg=0x7B90A4&lefticon=0xF2F2F2&rightbg=0xAAB1B8&rightbghover=0x357DCE&righticon=0xF2F2F2&righticonhover=0xFFFFFF&text=0x357DCE&slider=0x357DCE&track=0xF5F5F5&border=0xF5F5F5&loader=0x94ACC2&autostart=no&loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object> 
+</p>
+
+<p>
+浊化后ば行的发音为 ba、bi、bu、be、bo：<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/ba_hang.mp3&bg=0xE0E6ED&leftbg=0x7B90A4&lefticon=0xF2F2F2&rightbg=0xAAB1B8&rightbghover=0x357DCE&righticon=0xF2F2F2&righticonhover=0xFFFFFF&text=0x357DCE&slider=0x357DCE&track=0xF5F5F5&border=0xF5F5F5&loader=0x94ACC2&autostart=no&loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object> 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org106ccc8" class="outline-3">
+<h3 id="org106ccc8"><span class="section-number-3">1.5.</span> 区分浊音和不送气音</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+在总结 <a href="\2016-01-17-sum-of-gojuon">五十音图</a>时提到，有两行清音行有送气音和不送气音两种读法，分别是か行和た行。か行不送气音的读法有些类似が行，た行不送气音的读法有些类似だ行，但是， <b>类似不等于一样</b> ，二者最大的区别在于 <b>不送气音还是清音，声带不震动，が行和だ行是浊音行，声带振动</b> 。
+</p>
+
+<p>
+细心对比：
+</p>
+<ul class="org-ul">
+<li>か行送气音 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/ka_hang_songqiyin.mp3&bg=0xE0E6ED&leftbg=0x7B90A4&lefticon=0xF2F2F2&rightbg=0xAAB1B8&rightbghover=0x357DCE&righticon=0xF2F2F2&righticonhover=0xFFFFFF&text=0x357DCE&slider=0x357DCE&track=0xF5F5F5&border=0xF5F5F5&loader=0x94ACC2&autostart=no&loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object></li>
+<li>か行不送气音 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/ka_hang_busongqiyin.mp3&bg=0xE0E6ED&leftbg=0x7B90A4&lefticon=0xF2F2F2&rightbg=0xAAB1B8&rightbghover=0x357DCE&righticon=0xF2F2F2&righticonhover=0xFFFFFF&text=0x357DCE&slider=0x357DCE&track=0xF5F5F5&border=0xF5F5F5&loader=0x94ACC2&autostart=no&loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object></li>
+<li>が行 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/ga_hang.mp3&bg=0xE0E6ED&leftbg=0x7B90A4&lefticon=0xF2F2F2&rightbg=0xAAB1B8&rightbghover=0x357DCE&righticon=0xF2F2F2&righticonhover=0xFFFFFF&text=0x357DCE&slider=0x357DCE&track=0xF5F5F5&border=0xF5F5F5&loader=0x94ACC2&autostart=no&loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object></li>
+<li>た行送气音 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/ta_hang_songqiyin.mp3&bg=0xE0E6ED&leftbg=0x7B90A4&lefticon=0xF2F2F2&rightbg=0xAAB1B8&rightbghover=0x357DCE&righticon=0xF2F2F2&righticonhover=0xFFFFFF&text=0x357DCE&slider=0x357DCE&track=0xF5F5F5&border=0xF5F5F5&loader=0x94ACC2&autostart=no&loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object></li>
+<li>た行不送气音 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/ta_hang_busongqiyin.mp3&bg=0xE0E6ED&leftbg=0x7B90A4&lefticon=0xF2F2F2&rightbg=0xAAB1B8&rightbghover=0x357DCE&righticon=0xF2F2F2&righticonhover=0xFFFFFF&text=0x357DCE&slider=0x357DCE&track=0xF5F5F5&border=0xF5F5F5&loader=0x94ACC2&autostart=no&loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object></li>
+<li>だ行 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/da_hang.mp3&bg=0xE0E6ED&leftbg=0x7B90A4&lefticon=0xF2F2F2&rightbg=0xAAB1B8&rightbghover=0x357DCE&righticon=0xF2F2F2&righticonhover=0xFFFFFF&text=0x357DCE&slider=0x357DCE&track=0xF5F5F5&border=0xF5F5F5&loader=0x94ACC2&autostart=no&loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object></li>
+</ul>
+
+<p>
+此外，不送气音的适用情况和が行鼻浊音的适用情况也是相同的：
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="org-left">
+
+<col class="org-left">
+
+<col class="org-left">
+
+<col class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">名称</th>
+<th scope="col" class="org-left">发音</th>
+<th scope="col" class="org-left">适用情况</th>
+<th scope="col" class="org-left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">か行、た行送气音</td>
+<td class="org-left">气流比较大</td>
+<td class="org-left">词头</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">か行、た行不送气音</td>
+<td class="org-left">气流稍微收敛</td>
+<td class="org-left">词中、词尾</td>
+<td class="org-left">听起来像g-，但是发音还是发k-，声带不振动</td>
+</tr>
+
+<tr>
+<td class="org-left">が行鼻浊音</td>
+<td class="org-left">发音开始带点鼻音n</td>
+<td class="org-left">词中、词尾</td>
+<td class="org-left">发成鼻浊音是正统方式，不带鼻音直接发g-也是可以的，而且现在严格发鼻浊音的日本人也越来越少了</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org373b711" class="outline-2">
+<h2 id="org373b711"><span class="section-number-2">2.</span> 半浊音</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+日语中有一行半浊音，来自清音行は行，在对应假名右上角加上 <b>半浊音符゜</b> ，即变成ぱ行：
+</p>
+
+<p class="verse">
+ぱぴぷぺぽ<br>
+パピプペポ<br>
+</p>
+
+<p>
+读作 pa、pi、pu、pe、po：<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+<param name="movie">
+<param name="quality" value="high">
+<param value="transparent" name="wmode">
+<embed src="http://7xqb0u.com1.z0.glb.clouddn.com/player.swf?soundFile=http://7xqb0u.com1.z0.glb.clouddn.com/audio/jp/pa_hang.mp3&bg=0xE0E6ED&leftbg=0x7B90A4&lefticon=0xF2F2F2&rightbg=0xAAB1B8&rightbghover=0x357DCE&righticon=0xF2F2F2&righticonhover=0xFFFFFF&text=0x357DCE&slider=0x357DCE&track=0xF5F5F5&border=0xF5F5F5&loader=0x94ACC2&autostart=no&loop=no" width="290" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent">
+</object> 
+</p>
+
+<p>
+也有送气音与不送气音的区分，ぱ行的不送气音读法听起来像ば行。
+</p>
+
+<p>
+<div class="alert alert-success"><i class="fa fa-lightbulb-o"></i>  原先日本人ば行和ぱ行的写法一样，仅依靠语感来判断是读b-还是p-。于是葡萄牙人发明了半浊音符゜，用以区分ば行和ぱ行。</div>
+</p>
+</div>
+</div>
+<div id="outline-container-org313b7ea" class="outline-2">
+<h2 id="org313b7ea"><span class="section-number-2">3.</span> 更新历史</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li><span class="timestamp-wrapper"><span class="timestamp">[2016-03-18 五] </span></span> 补充ぱ行送气音与不送气音的相关内容</li>
+<li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-27 三] </span></span> 拟定初稿</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbd2ecab" class="outline-2">
+<h2 id="orgbd2ecab"><span class="section-number-2">4.</span> 参考</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li><a href="http://www.wanmen.org/courses/YYRYYY/topics/YYRYYY12A" target="_blank" rel="external">万门大学|日语五十音图语音入门|浊音半浊音</a></li>
+<li><a href="https://ja.wikipedia.org/wiki/%E5%8D%8A%E6%BF%81%E7%82%B9" target="_blank" rel="external">半濁点 - Wikipedia</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%B5%8A%E9%9F%B3%E7%AC%A6" target="_blank" rel="external">浊音符 - 维基百科，自由的百科全书</a></li>
+</ul>
+</div>
+</div>
+
+<p class="date">Date: 2016-01-27 三 00:00</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
+
+            
+          </span>
+        
+      
+	
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
 
   </section>
 
@@ -4648,21 +4807,21 @@ NEAT=非运动生热作用=日常生活消耗的热量
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-count">32</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

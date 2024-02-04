@@ -965,7 +965,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #202d5e;
+  background: #0ff798;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -2070,6 +2070,9 @@ a.fancybox {
 .post-body .fancybox img {
   cursor: zoom-in;
 }
+code {
+  text-shadow: none !important;
+}
 th {
   background-color: rgba(97,121,142,0.4);
 }
@@ -2589,6 +2592,9 @@ a.list-group-item.active>.badge,
 .alert>p+p {
   margin-top: 5px;
 }
+.alert code {
+  border-radius: 5px;
+}
 .alert-dismissable {
   padding-right: 35px;
 }
@@ -2629,6 +2635,7 @@ a.list-group-item.active>.badge,
 }
 .alert-info code {
   background: rgba(45,105,135,0.8);
+  color: #fff;
 }
 .alert-info a {
   color: #3a87ad;
