@@ -244,6 +244,270 @@
             
               
                 
+                <a class="post-title-link" href="/2024-02-04-android-emacs-with-doom-emacs-en/" itemprop="url">
+                  Using doom-emacs in Android Emacs
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2024-02-04T00:00:00+08:00" content="2024-02-04">
+              2024-02-04
+            </time>
+          </span>
+
+          <span class="post-count">
+		书写 1,392 字
+	  </span> 
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Emacs/" itemprop="url" rel="index">
+                    <span itemprop="name">Emacs</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+	<span id="busuanzi_container_page_pv">
+		&nbsp; | &nbsp; 访问 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次
+	</span> 
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2024-02-04-android-emacs-with-doom-emacs-en/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2024-02-04-android-emacs-with-doom-emacs-en/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              
+
+<p>
+In early 2023, the upcoming Emacs 30.1 release included support for Android GUI. This means that besides desktop, there will also be a native Emacs experience on mobile. (Of course, due to its own restrictions, iOS will not never support Emacs in the future.)
+</p>
+
+<p>
+Unlike regular Android apps, just installing the APK is far from enough to use Emacs well on Android; additional configuration is required.
+</p>
+
+<p>
+Moreover, since the configuration of <a href="https://github.com/hlissner/doom-emacs/" target="_blank" rel="external">doom-emacs</a> involves calling Emacs itself, and the Android system does not provide a ready-made emacs executable command, the configuration is not as smooth as on desktop. Here I share my configuration experience, hoping to help some people.
+</p>
+
+<p>
+Special thanks to <a href="https://emacs-china.org/u/oldosfan" target="_blank" rel="external">oldosfan</a>, the main contributor to the Android Port, who has been of great help to me in configuring doom-emacs on Android Emacs.
+</p>
+
+<div id="outline-container-org4af3537" class="outline-2">
+<h2 id="org4af3537"><span class="section-number-2">1.</span> Installing Android Emacs</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+The best way is to install specific versions of Emacs and Termux, sharing the same <code>sharedUserId</code> manifest attribute and signature, meaning they can access each other's data folders (<code>/data/data/org.gnu.emacs/</code> and <code>/data/data/com.termux/</code>), allowing Emacs to run applications installed through Termux.
+</p>
+
+<hr>
+
+<ol class="org-ol">
+<li>Emacs and termux must be installed in a specific order and version. If installed previously, please uninstall first to avoid <code>sharedUserId</code> or signature conflicts.</li>
+<li><b>First</b>, install a specific version of Termux from <a href="https://sourceforge.net/projects/android-ports-for-gnu-emacs/files/termux/" target="_blank" rel="external">Android ports for GNU Emacs - Browse /termux at SourceForge.net</a>. Do not open Termux after installing.</li>
+<li><b>Then</b>, choose a suitable version of Emacs to install from the same website.
+<ul class="org-ul">
+<li>👎 The version from F-Droid is not recommended because:
+<ul class="org-ul">
+<li>It's not the latest version: missing bug fixes and new features.</li>
+<li>It lacks many dependency packages: GnuTLS, image libraries, tree-sitter</li>
+</ul></li>
+<li>The main selection criteria are <b>Android system version</b> and <b>chip CPU architecture</b>. For example, <code>emacs-30.0.50-29-arm64-v8a.apk</code> is suitable for devices running Android 10.0 or higher on aarch64, a common choice. If the installed version does not match, it will not work properly.</li>
+</ul></li>
+<li><p>
+After both are installed, open Termux and execute the following command to install and update all applications.
+</p>
+<pre class="example">
+pkg update &amp;&amp; pkg upgrade
+</pre></li>
+<li><p>
+Open Emacs and add to ~/.emacs.d/early-init.el:
+</p>
+
+<div class="org-src-container">
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">when</span> <span class="list">(<span class="keyword">string-equal</span> system-type <span class="string">"android"</span>)</span></span><br><span class="line">  <span class="comment">;; Add Termux binaries to PATH environment</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">termuxpath</span> <span class="string">"/data/data/com.termux/files/usr/bin"</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setenv</span> <span class="string">"PATH"</span> <span class="list">(<span class="keyword">concat</span> <span class="list">(<span class="keyword">getenv</span> <span class="string">"PATH"</span>)</span> <span class="string">":"</span> termuxpath)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> exec-path <span class="list">(<span class="keyword">append</span> exec-path <span class="list">(<span class="keyword">list</span> termuxpath)</span>)</span>)</span>)</span>)</span></span><br></pre></td></tr></table></figure>
+</div>
+<ul class="org-ul">
+<li>This code binds Emacs with the Termux file system, allowing Emacs to access programs installed through Termux.</li>
+<li>🤔 The official documentation also configures the <code>LD_LIBRARY_PATH</code> environment variable. However, configuring it causes problems running mpv in Emacs, and not configuring it has not shown problems so far. To be observed.</li>
+</ul></li>
+<li>Restart Emacs to apply the configuration. If you have already installed git in Termux, you can try executing <code>(executable-find "git")</code> in Emacs. If it returns the path to git, the configuration is successful.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org1060818" class="outline-2">
+<h2 id="org1060818"><span class="section-number-2">2.</span> Using doom-emacs configuration</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Because there is no Emacs executable file in Android and the shell path is different, some modifications are necessary for doom install. Please pay attention to distinguish whether the following operations are run in Termux or in Emacs Shell.
+</p>
+
+<hr>
+
+<ol class="org-ol">
+<li><p>
+Install Git in Termux
+</p>
+<pre class="example">
+pkg install git
+</pre></li>
+<li><p>
+In Termux, <code>git clone</code> doom-emacs to the Emacs main directory
+</p>
+<pre class="example">
+git clone --depth 1 https://github.com/hlissner/doom-emacs /data/data/org.gnu.emacs/files/.emacs.d.doom
+</pre></li>
+<li><p>
+In the shell environment of Android Emacs, soft link the emacs executable file:
+</p>
+<pre class="example">
+ln -s /data/data/org.gnu.emacs/lib/libandroid-emacs.so /data/data/com.termux/files/usr/bin/emacs
+</pre>
+
+<ul class="org-ul">
+<li><p>
+After successful linking, running <code>emacs --version</code> in Android Emacs should show:
+</p>
+<blockquote>
+<p>
+emacs &#x2013;version
+GNU Emacs 30.0.50
+Copyright (C) 2024 Free Software Foundation, Inc.
+GNU Emacs comes with ABSOLUTELY NO WARRANTY.
+You may redistribute copies of GNU Emacs
+under the terms of the GNU General Public License.
+For more information about these matters, see the file named COPYING.
+</p>
+</blockquote></li>
+<li><p>
+Otherwise, when executing doom, it will report an error:
+</p>
+<blockquote>
+<p>
+Error: failed to run Emacs with command 'emacs'
+</p>
+
+<p>
+Are you sure Emacs is installed and in your $PATH?
+</p>
+</blockquote></li>
+</ul></li>
+
+<li>Edit <code>.emacs.d.doom/bin/doom</code>, change the Shebang: <code>#!/usr/bin/env sh</code> → <code>#!/system/bin/sh</code></li>
+<li>Add the contents of <code>~/.emacs.d/early-init.el</code> to <code>.emacs.d.doom/early-init.el</code>, to add the Termux path to the <code>PATH</code> environment variable when generating the doom env file.</li>
+<li>Execute <code>doom install</code> in Android Emacs, if it prompts <code>error ("Failed to run \"git\"; see buffer *straight-process*")</code>, you can try:
+<ul class="org-ul">
+<li>Checking if the Termux path is added to the <code>PATH</code> in doom's env file</li>
+<li>Execute commands in eshell, not in shell</li>
+<li>Execute (setq android-use-exec-loader nil)</li>
+</ul></li>
+<li>After installation, link <code>.emacs.d.doom</code> as <code>.emacs.d</code>. It is recommended not to rename directly, so that changing the path pointed to by <code>.emacs.d</code> in the future can switch configurations for debugging.</li>
+<li>Restart, and Emacs should be able to load the doom-emacs configuration. Since the paths and supported features on Android and desktop are not completely consistent, the doom-emacs configuration generally needs to be adjusted. Enjoy your doom-emacs on Android.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org2d3cd85" class="outline-2">
+<h2 id="org2d3cd85"><span class="section-number-2">3.</span> Update History</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li><span class="timestamp-wrapper"><span class="timestamp">[2024-02-04 日] </span></span> First draft</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7ec59ee" class="outline-2">
+<h2 id="org7ec59ee"><span class="section-number-2">4.</span> References</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li><a href="https://www.reddit.com/r/emacs/comments/16hwjby/how_to_get_graphical_not_termuxbased_emacs_on/" target="_blank" rel="external">How to get graphical (not Termux-based) Emacs on Android along with file-sync and shared init files across platforms. : emacs</a></li>
+<li><a href="https://marek-g.github.io/posts/tips_and_tricks/emacs_on_android/" target="_blank" rel="external">Emacs on Android | Home Page</a></li>
+</ul>
+</div>
+</div>
+
+<p class="date">Date: 2024-02-04 日 00:00</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
+
+            
+          </span>
+        
+      
+	
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2024-02-04-android-emacs-with-doom-emacs/" itemprop="url">
                   在 Android Emacs 中使用 doom-emacs
                 </a>
@@ -459,270 +723,6 @@ Are you sure Emacs is installed and in your $PATH?
 </div>
 <div id="outline-container-orgcce4f03" class="outline-2">
 <h2 id="orgcce4f03"><span class="section-number-2">4.</span> 参考</h2>
-<div class="outline-text-2" id="text-4">
-<ul class="org-ul">
-<li><a href="https://www.reddit.com/r/emacs/comments/16hwjby/how_to_get_graphical_not_termuxbased_emacs_on/" target="_blank" rel="external">How to get graphical (not Termux-based) Emacs on Android along with file-sync and shared init files across platforms. : emacs</a></li>
-<li><a href="https://marek-g.github.io/posts/tips_and_tricks/emacs_on_android/" target="_blank" rel="external">Emacs on Android | Home Page</a></li>
-</ul>
-</div>
-</div>
-
-<p class="date">Date: 2024-02-04 日 00:00</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
-
-            
-          </span>
-        
-      
-	
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2024-02-04-android-emacs-with-doom-emacs-en/" itemprop="url">
-                  Using doom-emacs in Android Emacs
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2024-02-04T00:00:00+08:00" content="2024-02-04">
-              2024-02-04
-            </time>
-          </span>
-
-          <span class="post-count">
-		书写 1,392 字
-	  </span> 
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Emacs/" itemprop="url" rel="index">
-                    <span itemprop="name">Emacs</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-	<span id="busuanzi_container_page_pv">
-		&nbsp; | &nbsp; 访问 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次
-	</span> 
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2024-02-04-android-emacs-with-doom-emacs-en/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2024-02-04-android-emacs-with-doom-emacs-en/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              
-
-<p>
-In early 2023, the upcoming Emacs 30.1 release included support for Android GUI. This means that besides desktop, there will also be a native Emacs experience on mobile. (Of course, due to its own restrictions, iOS will not never support Emacs in the future.)
-</p>
-
-<p>
-Unlike regular Android apps, just installing the APK is far from enough to use Emacs well on Android; additional configuration is required.
-</p>
-
-<p>
-Moreover, since the configuration of <a href="https://github.com/hlissner/doom-emacs/" target="_blank" rel="external">doom-emacs</a> involves calling Emacs itself, and the Android system does not provide a ready-made emacs executable command, the configuration is not as smooth as on desktop. Here I share my configuration experience, hoping to help some people.
-</p>
-
-<p>
-Special thanks to <a href="https://emacs-china.org/u/oldosfan" target="_blank" rel="external">oldosfan</a>, the main contributor to the Android Port, who has been of great help to me in configuring doom-emacs on Android Emacs.
-</p>
-
-<div id="outline-container-org4af3537" class="outline-2">
-<h2 id="org4af3537"><span class="section-number-2">1.</span> Installing Android Emacs</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-The best way is to install specific versions of Emacs and Termux, sharing the same <code>sharedUserId</code> manifest attribute and signature, meaning they can access each other's data folders (<code>/data/data/org.gnu.emacs/</code> and <code>/data/data/com.termux/</code>), allowing Emacs to run applications installed through Termux.
-</p>
-
-<hr>
-
-<ol class="org-ol">
-<li>Emacs and termux must be installed in a specific order and version. If installed previously, please uninstall first to avoid <code>sharedUserId</code> or signature conflicts.</li>
-<li><b>First</b>, install a specific version of Termux from <a href="https://sourceforge.net/projects/android-ports-for-gnu-emacs/files/termux/" target="_blank" rel="external">Android ports for GNU Emacs - Browse /termux at SourceForge.net</a>. Do not open Termux after installing.</li>
-<li><b>Then</b>, choose a suitable version of Emacs to install from the same website.
-<ul class="org-ul">
-<li>👎 The version from F-Droid is not recommended because:
-<ul class="org-ul">
-<li>It's not the latest version: missing bug fixes and new features.</li>
-<li>It lacks many dependency packages: GnuTLS, image libraries, tree-sitter</li>
-</ul></li>
-<li>The main selection criteria are <b>Android system version</b> and <b>chip CPU architecture</b>. For example, <code>emacs-30.0.50-29-arm64-v8a.apk</code> is suitable for devices running Android 10.0 or higher on aarch64, a common choice. If the installed version does not match, it will not work properly.</li>
-</ul></li>
-<li><p>
-After both are installed, open Termux and execute the following command to install and update all applications.
-</p>
-<pre class="example">
-pkg update &amp;&amp; pkg upgrade
-</pre></li>
-<li><p>
-Open Emacs and add to ~/.emacs.d/early-init.el:
-</p>
-
-<div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">when</span> <span class="list">(<span class="keyword">string-equal</span> system-type <span class="string">"android"</span>)</span></span><br><span class="line">  <span class="comment">;; Add Termux binaries to PATH environment</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">termuxpath</span> <span class="string">"/data/data/com.termux/files/usr/bin"</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setenv</span> <span class="string">"PATH"</span> <span class="list">(<span class="keyword">concat</span> <span class="list">(<span class="keyword">getenv</span> <span class="string">"PATH"</span>)</span> <span class="string">":"</span> termuxpath)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> exec-path <span class="list">(<span class="keyword">append</span> exec-path <span class="list">(<span class="keyword">list</span> termuxpath)</span>)</span>)</span>)</span>)</span></span><br></pre></td></tr></table></figure>
-</div>
-<ul class="org-ul">
-<li>This code binds Emacs with the Termux file system, allowing Emacs to access programs installed through Termux.</li>
-<li>🤔 The official documentation also configures the <code>LD_LIBRARY_PATH</code> environment variable. However, configuring it causes problems running mpv in Emacs, and not configuring it has not shown problems so far. To be observed.</li>
-</ul></li>
-<li>Restart Emacs to apply the configuration. If you have already installed git in Termux, you can try executing <code>(executable-find "git")</code> in Emacs. If it returns the path to git, the configuration is successful.</li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-org1060818" class="outline-2">
-<h2 id="org1060818"><span class="section-number-2">2.</span> Using doom-emacs configuration</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-Because there is no Emacs executable file in Android and the shell path is different, some modifications are necessary for doom install. Please pay attention to distinguish whether the following operations are run in Termux or in Emacs Shell.
-</p>
-
-<hr>
-
-<ol class="org-ol">
-<li><p>
-Install Git in Termux
-</p>
-<pre class="example">
-pkg install git
-</pre></li>
-<li><p>
-In Termux, <code>git clone</code> doom-emacs to the Emacs main directory
-</p>
-<pre class="example">
-git clone --depth 1 https://github.com/hlissner/doom-emacs /data/data/org.gnu.emacs/files/.emacs.d.doom
-</pre></li>
-<li><p>
-In the shell environment of Android Emacs, soft link the emacs executable file:
-</p>
-<pre class="example">
-ln -s /data/data/org.gnu.emacs/lib/libandroid-emacs.so /data/data/com.termux/files/usr/bin/emacs
-</pre>
-
-<ul class="org-ul">
-<li><p>
-After successful linking, running <code>emacs --version</code> in Android Emacs should show:
-</p>
-<blockquote>
-<p>
-emacs &#x2013;version
-GNU Emacs 30.0.50
-Copyright (C) 2024 Free Software Foundation, Inc.
-GNU Emacs comes with ABSOLUTELY NO WARRANTY.
-You may redistribute copies of GNU Emacs
-under the terms of the GNU General Public License.
-For more information about these matters, see the file named COPYING.
-</p>
-</blockquote></li>
-<li><p>
-Otherwise, when executing doom, it will report an error:
-</p>
-<blockquote>
-<p>
-Error: failed to run Emacs with command 'emacs'
-</p>
-
-<p>
-Are you sure Emacs is installed and in your $PATH?
-</p>
-</blockquote></li>
-</ul></li>
-
-<li>Edit <code>.emacs.d.doom/bin/doom</code>, change the Shebang: <code>#!/usr/bin/env sh</code> → <code>#!/system/bin/sh</code></li>
-<li>Add the contents of <code>~/.emacs.d/early-init.el</code> to <code>.emacs.d.doom/early-init.el</code>, to add the Termux path to the <code>PATH</code> environment variable when generating the doom env file.</li>
-<li>Execute <code>doom install</code> in Android Emacs, if it prompts <code>error ("Failed to run \"git\"; see buffer *straight-process*")</code>, you can try:
-<ul class="org-ul">
-<li>Checking if the Termux path is added to the <code>PATH</code> in doom's env file</li>
-<li>Execute commands in eshell, not in shell</li>
-<li>Execute (setq android-use-exec-loader nil)</li>
-</ul></li>
-<li>After installation, link <code>.emacs.d.doom</code> as <code>.emacs.d</code>. It is recommended not to rename directly, so that changing the path pointed to by <code>.emacs.d</code> in the future can switch configurations for debugging.</li>
-<li>Restart, and Emacs should be able to load the doom-emacs configuration. Since the paths and supported features on Android and desktop are not completely consistent, the doom-emacs configuration generally needs to be adjusted. Enjoy your doom-emacs on Android.</li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-org2d3cd85" class="outline-2">
-<h2 id="org2d3cd85"><span class="section-number-2">3.</span> Update History</h2>
-<div class="outline-text-2" id="text-3">
-<ul class="org-ul">
-<li><span class="timestamp-wrapper"><span class="timestamp">[2024-02-04 日] </span></span> First draft</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org7ec59ee" class="outline-2">
-<h2 id="org7ec59ee"><span class="section-number-2">4.</span> References</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><a href="https://www.reddit.com/r/emacs/comments/16hwjby/how_to_get_graphical_not_termuxbased_emacs_on/" target="_blank" rel="external">How to get graphical (not Termux-based) Emacs on Android along with file-sync and shared init files across platforms. : emacs</a></li>
