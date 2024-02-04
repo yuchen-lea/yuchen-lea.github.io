@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不积小流，无以成江海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yuchen-lea.github.io/"/>
-  <updated>2024-02-04T03:54:23.965Z</updated>
+  <updated>2024-02-04T04:03:28.154Z</updated>
   <id>http://yuchen-lea.github.io/</id>
   
   <author>
@@ -13,187 +13,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title><![CDATA[在 Android Emacs 中使用 doom-emacs]]></title>
-    <link href="http://yuchen-lea.github.io/2024-02-04-android-emacs-with-doom-emacs/"/>
-    <id>http://yuchen-lea.github.io/2024-02-04-android-emacs-with-doom-emacs/</id>
-    <published>2024-02-03T16:00:00.000Z</published>
-    <updated>2024-02-04T03:54:23.965Z</updated>
-    <content type="html"><![CDATA[
-
-<p>
-<div class="alert alert-info"><i class="fa fa-info"></i>  本文目标：在一个安卓设备上，成功安装GUI Emacs且能使用 Termux 管理 Emacs 所用的 git 等工具。同时，成功加载 doom-emacs 配置。</div>
-</p>
-
-<p>
-2023 年初，即将发布的 Emacs 30.1 将对 Android GUI 的支持包括其中。这意味着除了桌面端，移动端也有原生的 Emacs 体验了。（当然，iOS由于其自身特性，未来也不可能支持 Emacs。）
-</p>
-
-<p>
-与常规安卓应用不同的是，要想更好的在安卓平台使用 Emacs，直接安装 APK 远远不足，还需要进行额外配置。
-</p>
-
-<p>
-此外，因为 <a href="https://github.com/hlissner/doom-emacs/" target="_blank" rel="external">doom-emacs</a> 的配置涉及到调用 Emacs 本身，但是安卓系统又没有提供现成的 emacs 可执行命令，配置起来不如桌面端顺畅。在此分享我的配置经验，希望多少能帮到一些朋友。
-</p>
-
-<p>
-在此特别感谢 <a href="https://emacs-china.org/u/oldosfan" target="_blank" rel="external">oldosfan</a>，ta 是 Android Port 主要贡献者，并且在如何在 Android Emacs 配置 doom-emacs 对我帮助良多。
-</p>
-
-<div id="outline-container-org1bde81e" class="outline-2">
-<h2 id="org1bde81e"><span class="section-number-2">1.</span> 安装 Android Emacs</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-最佳方式是安装特定版本的Emacs和Termux，二者共享相同的 <code>sharedUserId</code> manifest attribute 和签名，这意味着二者可以互相访问对方的数据文件夹（ <code>/data/data/org.gnu.emacs/</code> 和 <code>/data/data/com.termux/</code> ），这样使用 Termux 来安装 GNU/Linux 应用程序后，Emacs 中就可以运行这些应用程序。
-</p>
-
-<hr>
-
-<ol class="org-ol">
-<li>Emacs 和 termux 必须按照特定的顺序安装特定的版本，如果之前已经安装过，请先卸载，以避免  <code>sharedUserId</code>  或签名冲突。</li>
-<li><b>先</b>​安装特定版本的 Termux，从 <a href="https://sourceforge.net/projects/android-ports-for-gnu-emacs/files/termux/" target="_blank" rel="external">Android ports for GNU Emacs - Browse /termux at SourceForge.net</a> 下载APK文件进行安装。安装完成先不要打开 Termux。</li>
-<li><b>再</b>​从上一个网址中选择合适版本的 Emacs 来安装。
-<ul class="org-ul">
-<li>👎 不推荐F-Droid 的版本，因为：
-<ul class="org-ul">
-<li>版本并非最新：缺少错误修复和新功能。</li>
-<li>缺少许多依赖包：GnuTLS, image libraries, tree-sitter</li>
-</ul></li>
-<li>挑选主要依据​<b>安卓系统版本</b>​和​<b>芯片CPU架构</b>​。例如 <code>emacs-30.0.50-29-arm64-v8a.apk</code> 适用于运行 Android 10.0 或更高版本的 aarch64 设备，是一个常见的选择。如果安装的版本不匹配，将无法正常执行。</li>
-</ul></li>
-<li><p>
-两个都安装完成，打开 Termux，执行以下命令，安装并更新所有应用程序。
-</p>
-<pre class="example">
-pkg update &amp;&amp; pkg upgrade
-</pre>
-
-<ul class="org-ul">
-<li>如果太慢，可以考虑Termux换成国内镜像源。</li>
-</ul></li>
-<li><p>
-打开 Emacs，在 ~/.emacs.d/early-init.el 中加入：
-</p>
-
-<div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">when</span> <span class="list">(<span class="keyword">string-equal</span> system-type <span class="string">"android"</span>)</span></span><br><span class="line">  <span class="comment">;; Add Termux binaries to PATH environment</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">termuxpath</span> <span class="string">"/data/data/com.termux/files/usr/bin"</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setenv</span> <span class="string">"PATH"</span> <span class="list">(<span class="keyword">concat</span> <span class="list">(<span class="keyword">getenv</span> <span class="string">"PATH"</span>)</span> <span class="string">":"</span> termuxpath)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> exec-path <span class="list">(<span class="keyword">append</span> exec-path <span class="list">(<span class="keyword">list</span> termuxpath)</span>)</span>)</span>)</span>)</span></span><br></pre></td></tr></table></figure>
-</div>
-<ul class="org-ul">
-<li>该代码将 Emacs 与 Termux 文件系统绑定，从而让 Emacs 访问通过 Termux 安装的程序。</li>
-<li>🤔 官方文档还对 <code>LD_LIBRARY_PATH</code> 环境变量进行了配置。但是配置之后，在 Emacs 中运行 mpv 会出现问题，不配置这个变量也暂未发现问题。留待观察。</li>
-</ul></li>
-<li>重启 Emacs，应用配置。如果你在 Termux 中已经安装了 git，可以尝试在 Emacs 执行 <code>(executable-find "git")</code> 。如果返回git的路径，说明配置成功。</li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-orgfde6c77" class="outline-2">
-<h2 id="orgfde6c77"><span class="section-number-2">2.</span> 使用 doom-emacs 配置</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-因为，Android 中没有 Emacs 可执行文件，shell 路径也不同，因此需要一定的修改才能进行 doom install。以下操作​<b>请注意区分</b>​，是在Termux中运行，还是在 Emacs Shell 中运行。
-</p>
-
-<hr>
-
-<ol class="org-ol">
-<li><p>
-在 Termux 中安装 Git
-</p>
-<pre class="example">
-pkg install git
-</pre></li>
-<li><p>
-在 Termux 中，=git clone= doom-emacs 到 Emacs 主目录
-</p>
-<pre class="example">
-git clone --depth 1 https://github.com/hlissner/doom-emacs /data/data/org.gnu.emacs/files/.emacs.d.doom
-</pre></li>
-<li><p>
-在 Android Emacs 的 shell 环境中，软链接 emacs 可执行文件：
-</p>
-<pre class="example">
-ln -s /data/data/org.gnu.emacs/lib/libandroid-emacs.so /data/data/com.termux/files/usr/bin/emacs
-</pre>
-
-<ul class="org-ul">
-<li><p>
-链接成功后，在Android Emacs中运行 <code>emacs --version</code> 应该可以看到：
-</p>
-<blockquote>
-<p>
-emacs &#x2013;version
-GNU Emacs 30.0.50
-Copyright (C) 2024 Free Software Foundation, Inc.
-GNU Emacs comes with ABSOLUTELY NO WARRANTY.
-You may redistribute copies of GNU Emacs
-under the terms of the GNU General Public License.
-For more information about these matters, see the file named COPYING.
-</p>
-</blockquote></li>
-<li><p>
-否则，在执行doom时会报错：
-</p>
-<blockquote>
-<p>
-Error: failed to run Emacs with command 'emacs'
-</p>
-
-<p>
-Are you sure Emacs is installed and in your $PATH?
-</p>
-</blockquote></li>
-</ul></li>
-
-<li>编辑 <code>.emacs.d.doom/bin/doom</code> ，修改 Shebang：​<code>#!/usr/bin/env sh</code> →  <code>#!/system/bin/sh</code></li>
-<li>把 <code>~/.emacs.d/early-init.el</code> 中的内容添加到 <code>.emacs.d.doom/early-init.el</code>​，以便生成 doom env 文件的时候把 Termux 路径加入到 <code>PATH</code> 环境变量。</li>
-<li><b>在 Android Emacs 的 shell 环境</b>​中执行 doom install，如果提示 <code>error ("Failed to run \"git\"; see buffer *straight-process*")</code> ，可以尝试：
-<ul class="org-ul">
-<li>检查 doom 的 env 文件是否把 Termux 路径加入到 <code>PATH</code></li>
-<li>在 eshell中执行命令，不要在 shell 中执行</li>
-<li>执行 (setq android-use-exec-loader nil)</li>
-</ul></li>
-<li>安装完成之后，把 <code>.emacs.d.doom</code> 软链接为 <code>.emacs.d=。建议不要直接改名，这样未来改变 =.emacs.d</code> 指向的路径就可以切换配置，进行debug。</li>
-<li>重新启动，Emacs 应该可以加载 doom-emacs 配置了。由于 Android 和桌面端的路径以及支持的功能并不完全一致。一般需要对 doom-emacs 配置进行调整。享受在 Android 上使用 Emacs 的快乐吧。</li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-orgc7f4970" class="outline-2">
-<h2 id="orgc7f4970"><span class="section-number-2">3.</span> 更新历史</h2>
-<div class="outline-text-2" id="text-3">
-<ul class="org-ul">
-<li><span class="timestamp-wrapper"><span class="timestamp">[2024-02-04 日] </span></span> 初稿</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org47c62d6" class="outline-2">
-<h2 id="org47c62d6"><span class="section-number-2">4.</span> 参考</h2>
-<div class="outline-text-2" id="text-4">
-<ul class="org-ul">
-<li><a href="https://www.reddit.com/r/emacs/comments/16hwjby/how_to_get_graphical_not_termuxbased_emacs_on/" target="_blank" rel="external">How to get graphical (not Termux-based) Emacs on Android along with file-sync and shared init files across platforms. : emacs</a></li>
-<li><a href="https://marek-g.github.io/posts/tips_and_tricks/emacs_on_android/" target="_blank" rel="external">Emacs on Android | Home Page</a></li>
-</ul>
-</div>
-</div>
-
-<p class="date">Date: 2024-02-04 日 00:00</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[
-
-<p>
-<div class="alert alert-info"><i class="fa fa-info"></i>  本文目标：在一个安卓设备上，成功安装GUI Emacs且能使用 Termux 管理 Emacs 所用的 git 等工具。同时，成功加载 doom-ema]]>
-    </summary>
-    
-      <category term="Emacs" scheme="http://yuchen-lea.github.io/tags/Emacs/"/>
-    
-      <category term="Emacs" scheme="http://yuchen-lea.github.io/categories/Emacs/"/>
-    
-  </entry>
   
   <entry>
     <title><![CDATA[Using doom-emacs in Android Emacs]]></title>
@@ -3097,12 +2916,6 @@ B：不客气。/哪里哪里。
 <div class="alert a]]>
     </summary>
     
-      <category term="日语" scheme="http://yuchen-lea.github.io/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="语法" scheme="http://yuchen-lea.github.io/tags/%E8%AF%AD%E6%B3%95/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
-    
   </entry>
   
   <entry>
@@ -3299,16 +3112,6 @@ B：不客气。/哪里哪里。
 <ul class="]]>
     </summary>
     
-      <category term="!what" scheme="http://yuchen-lea.github.io/tags/what/"/>
-    
-      <category term="发音" scheme="http://yuchen-lea.github.io/tags/%E5%8F%91%E9%9F%B3/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.github.io/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="日语口语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
-    
   </entry>
   
   <entry>
@@ -3433,14 +3236,6 @@ B：不客气。/哪里哪里。
 <li>测试平台：win8.1</l]]>
     </summary>
     
-      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
-    
-      <category term="PNG" scheme="http://yuchen-lea.github.io/tags/PNG/"/>
-    
-      <category term="压缩" scheme="http://yuchen-lea.github.io/tags/%E5%8E%8B%E7%BC%A9/"/>
-    
-      <category term="软件" scheme="http://yuchen-lea.github.io/tags/%E8%BD%AF%E4%BB%B6/"/>
-    
       <category term="多媒体处理" scheme="http://yuchen-lea.github.io/categories/%E5%A4%9A%E5%AA%92%E4%BD%93%E5%A4%84%E7%90%86/"/>
     
       <category term="图像" scheme="http://yuchen-lea.github.io/categories/%E5%A4%9A%E5%AA%92%E4%BD%93%E5%A4%84%E7%90%86/%E5%9B%BE%E5%83%8F/"/>
@@ -3540,14 +3335,6 @@ B：不客气。/哪里哪里。
 <p>
 <div class="alert alert-warning"><]]>
     </summary>
-    
-      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
-    
-      <category term="gitcafe" scheme="http://yuchen-lea.github.io/tags/gitcafe/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.github.io/tags/hexo/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.github.io/categories/hexo/"/>
     
   </entry>
   
@@ -3692,14 +3479,6 @@ NEAT=非运动生热作用=日常生活消耗的热量
 <p>
 <div class="alert alert-info"><i class="fa fa-info"></i>  本文旨在总结 <a href="http://movie.douban.com/subject/24844982/" target="_blank" r]]>
     </summary>
-    
-      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
-    
-      <category term="!why" scheme="http://yuchen-lea.github.io/tags/why/"/>
-    
-      <category term="BBC" scheme="http://yuchen-lea.github.io/tags/BBC/"/>
-    
-      <category term="锻炼" scheme="http://yuchen-lea.github.io/tags/%E9%94%BB%E7%82%BC/"/>
     
       <category term="健康" scheme="http://yuchen-lea.github.io/categories/%E5%81%A5%E5%BA%B7/"/>
     
@@ -4029,18 +3808,6 @@ NEAT=非运动生热作用=日常生活消耗的热量
 <h2 id="org039456f"><span class="section-number-2">1.</span> 浊音</h2>
 <div class]]>
     </summary>
-    
-      <category term="半浊音" scheme="http://yuchen-lea.github.io/tags/%E5%8D%8A%E6%B5%8A%E9%9F%B3/"/>
-    
-      <category term="发音" scheme="http://yuchen-lea.github.io/tags/%E5%8F%91%E9%9F%B3/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.github.io/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="浊音" scheme="http://yuchen-lea.github.io/tags/%E6%B5%8A%E9%9F%B3/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="日语口语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
     
   </entry>
   
@@ -4767,14 +4534,6 @@ NEAT=非运动生热作用=日常生活消耗的热量
 <div class="alert alert-info"><i class="fa fa-info"></i>  本文旨在介绍 <a href="https://habitica.com" target="_blank" rel="external">HabitRP]]>
     </summary>
     
-      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
-    
-      <category term="GTD" scheme="http://yuchen-lea.github.io/tags/GTD/"/>
-    
-      <category term="习惯" scheme="http://yuchen-lea.github.io/tags/%E4%B9%A0%E6%83%AF/"/>
-    
-      <category term="应用" scheme="http://yuchen-lea.github.io/tags/%E5%BA%94%E7%94%A8/"/>
-    
       <category term="生活" scheme="http://yuchen-lea.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
       <category term="效率" scheme="http://yuchen-lea.github.io/categories/%E7%94%9F%E6%B4%BB/%E6%95%88%E7%8E%87/"/>
@@ -5053,16 +4812,6 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 <div id="outline-container-orga749f99" ]]>
     </summary>
     
-      <category term="!what" scheme="http://yuchen-lea.github.io/tags/what/"/>
-    
-      <category term="发音" scheme="http://yuchen-lea.github.io/tags/%E5%8F%91%E9%9F%B3/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.github.io/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="日语知识" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E7%9F%A5%E8%AF%86/"/>
-    
   </entry>
   
   <entry>
@@ -5319,16 +5068,6 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 <div id="outline-container-org7a5c1cf" class="outline-2">]]>
     </summary>
     
-      <category term="!what" scheme="http://yuchen-lea.github.io/tags/what/"/>
-    
-      <category term="文字" scheme="http://yuchen-lea.github.io/tags/%E6%96%87%E5%AD%97/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.github.io/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="日语知识" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E7%9F%A5%E8%AF%86/"/>
-    
   </entry>
   
   <entry>
@@ -5554,18 +5293,6 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 前文介绍了如何为文章设置多级类别。设置完成后，<a href="http]]>
     </summary>
     
-      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
-    
-      <category term="CSS" scheme="http://yuchen-lea.github.io/tags/CSS/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.github.io/tags/hexo/"/>
-    
-      <category term="多级类别" scheme="http://yuchen-lea.github.io/tags/%E5%A4%9A%E7%BA%A7%E7%B1%BB%E5%88%AB/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.github.io/categories/hexo/"/>
-    
-      <category term="hexo美化" scheme="http://yuchen-lea.github.io/categories/hexo/hexo%E7%BE%8E%E5%8C%96/"/>
-    
   </entry>
   
   <entry>
@@ -5654,18 +5381,6 @@ Markdown中设置多级类别，只需要在Front-matter<sup><a id="fnr.1" class
 </p>
 <p class="vers]]>
     </summary>
-    
-      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.github.io/tags/hexo/"/>
-    
-      <category term="org-mode" scheme="http://yuchen-lea.github.io/tags/org-mode/"/>
-    
-      <category term="多级类别" scheme="http://yuchen-lea.github.io/tags/%E5%A4%9A%E7%BA%A7%E7%B1%BB%E5%88%AB/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.github.io/categories/hexo/"/>
-    
-      <category term="hexo写作" scheme="http://yuchen-lea.github.io/categories/hexo/hexo%E5%86%99%E4%BD%9C/"/>
     
   </entry>
   
@@ -6025,18 +5740,6 @@ qiniu:<br>
 <h2 id="orgf40693b"><span class="section-number-2">1.</span> 七牛是什么</h2>
 <div cl]]>
     </summary>
-    
-      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.github.io/tags/hexo/"/>
-    
-      <category term="七牛" scheme="http://yuchen-lea.github.io/tags/%E4%B8%83%E7%89%9B/"/>
-    
-      <category term="插件" scheme="http://yuchen-lea.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.github.io/categories/hexo/"/>
-    
-      <category term="hexo写作" scheme="http://yuchen-lea.github.io/categories/hexo/hexo%E5%86%99%E4%BD%9C/"/>
     
   </entry>
   
@@ -6442,14 +6145,6 @@ css<br>
 如果你想修改Hexo的布局、显示样式，或是为其增添RSS、评论等新模块却]]>
     </summary>
     
-      <category term="!what" scheme="http://yuchen-lea.github.io/tags/what/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.github.io/tags/hexo/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.github.io/categories/hexo/"/>
-    
-      <category term="hexo知识" scheme="http://yuchen-lea.github.io/categories/hexo/hexo%E7%9F%A5%E8%AF%86/"/>
-    
   </entry>
   
   <entry>
@@ -6581,18 +6276,6 @@ rss: /atom.xml<br>
 <h2 id="orgaf1e716"><span class="section-number-2">1.</span> 安装RSS插件到本地</h2>
 <d]]>
     </summary>
-    
-      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
-    
-      <category term="RSS" scheme="http://yuchen-lea.github.io/tags/RSS/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.github.io/tags/hexo/"/>
-    
-      <category term="插件" scheme="http://yuchen-lea.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.github.io/categories/hexo/"/>
-    
-      <category term="hexo设置" scheme="http://yuchen-lea.github.io/categories/hexo/hexo%E8%AE%BE%E7%BD%AE/"/>
     
   </entry>
   
@@ -7551,16 +7234,6 @@ rss: /atom.xml<br>
 五十音很重要！虽然一上午就把平假名、片假名都记下了，不过还是打算从头看一遍<a href="http://www.wanmen.org/courses/YYRYYY" target="_blank" rel="external">万门大学的日语语音入门系列</a> ，]]>
     </summary>
     
-      <category term="!what" scheme="http://yuchen-lea.github.io/tags/what/"/>
-    
-      <category term="五十音" scheme="http://yuchen-lea.github.io/tags/%E4%BA%94%E5%8D%81%E9%9F%B3/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.github.io/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="日语口语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
-    
   </entry>
   
   <entry>
@@ -7839,16 +7512,6 @@ rss: /atom.xml<br>
 <div class="alert alert]]>
     </summary>
     
-      <category term="!what" scheme="http://yuchen-lea.github.io/tags/what/"/>
-    
-      <category term="发音" scheme="http://yuchen-lea.github.io/tags/%E5%8F%91%E9%9F%B3/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.github.io/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="日语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="日语口语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8F%A3%E8%AF%AD/"/>
-    
   </entry>
   
   <entry>
@@ -7916,12 +7579,6 @@ rss: /atom.xml<br>
 <li>光能→电能，发电，学校可以卖到电网赚钱</li>
 <]]>
     </summary>
-    
-      <category term="!what" scheme="http://yuchen-lea.github.io/tags/what/"/>
-    
-      <category term="!who" scheme="http://yuchen-lea.github.io/tags/who/"/>
-    
-      <category term="教学" scheme="http://yuchen-lea.github.io/tags/%E6%95%99%E5%AD%A6/"/>
     
       <category term="支教" scheme="http://yuchen-lea.github.io/categories/%E6%94%AF%E6%95%99/"/>
     
@@ -8077,14 +7734,6 @@ theme-name即这个主题的名称，当然你可以自取，不过一般我们�
 
 <div id="outline-container-org1691d2c" ]]>
     </summary>
-    
-      <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.github.io/tags/hexo/"/>
-    
-      <category term="hexo" scheme="http://yuchen-lea.github.io/categories/hexo/"/>
-    
-      <category term="hexo美化" scheme="http://yuchen-lea.github.io/categories/hexo/hexo%E7%BE%8E%E5%8C%96/"/>
     
   </entry>
   

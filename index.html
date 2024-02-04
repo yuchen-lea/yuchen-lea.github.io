@@ -212,287 +212,6 @@
 
     
     
-      
-      
-        
-        
-        
-      
-
-      
-    
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2024-02-04-android-emacs-with-doom-emacs/" itemprop="url">
-                  在 Android Emacs 中使用 doom-emacs
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2024-02-04T00:00:00+08:00" content="2024-02-04">
-              2024-02-04
-            </time>
-          </span>
-
-          <span class="post-count">
-		书写 1,791 字
-	  </span> 
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Emacs/" itemprop="url" rel="index">
-                    <span itemprop="name">Emacs</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-	<span id="busuanzi_container_page_pv">
-		&nbsp; | &nbsp; 访问 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次
-	</span> 
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2024-02-04-android-emacs-with-doom-emacs/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2024-02-04-android-emacs-with-doom-emacs/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              
-
-<p>
-<div class="alert alert-info"><i class="fa fa-info"></i>  本文目标：在一个安卓设备上，成功安装GUI Emacs且能使用 Termux 管理 Emacs 所用的 git 等工具。同时，成功加载 doom-emacs 配置。</div>
-</p>
-
-<p>
-2023 年初，即将发布的 Emacs 30.1 将对 Android GUI 的支持包括其中。这意味着除了桌面端，移动端也有原生的 Emacs 体验了。（当然，iOS由于其自身特性，未来也不可能支持 Emacs。）
-</p>
-
-<p>
-与常规安卓应用不同的是，要想更好的在安卓平台使用 Emacs，直接安装 APK 远远不足，还需要进行额外配置。
-</p>
-
-<p>
-此外，因为 <a href="https://github.com/hlissner/doom-emacs/" target="_blank" rel="external">doom-emacs</a> 的配置涉及到调用 Emacs 本身，但是安卓系统又没有提供现成的 emacs 可执行命令，配置起来不如桌面端顺畅。在此分享我的配置经验，希望多少能帮到一些朋友。
-</p>
-
-<p>
-在此特别感谢 <a href="https://emacs-china.org/u/oldosfan" target="_blank" rel="external">oldosfan</a>，ta 是 Android Port 主要贡献者，并且在如何在 Android Emacs 配置 doom-emacs 对我帮助良多。
-</p>
-
-<div id="outline-container-org1bde81e" class="outline-2">
-<h2 id="org1bde81e"><span class="section-number-2">1.</span> 安装 Android Emacs</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-最佳方式是安装特定版本的Emacs和Termux，二者共享相同的 <code>sharedUserId</code> manifest attribute 和签名，这意味着二者可以互相访问对方的数据文件夹（ <code>/data/data/org.gnu.emacs/</code> 和 <code>/data/data/com.termux/</code> ），这样使用 Termux 来安装 GNU/Linux 应用程序后，Emacs 中就可以运行这些应用程序。
-</p>
-
-<hr>
-
-<ol class="org-ol">
-<li>Emacs 和 termux 必须按照特定的顺序安装特定的版本，如果之前已经安装过，请先卸载，以避免  <code>sharedUserId</code>  或签名冲突。</li>
-<li><b>先</b>​安装特定版本的 Termux，从 <a href="https://sourceforge.net/projects/android-ports-for-gnu-emacs/files/termux/" target="_blank" rel="external">Android ports for GNU Emacs - Browse /termux at SourceForge.net</a> 下载APK文件进行安装。安装完成先不要打开 Termux。</li>
-<li><b>再</b>​从上一个网址中选择合适版本的 Emacs 来安装。
-<ul class="org-ul">
-<li>👎 不推荐F-Droid 的版本，因为：
-<ul class="org-ul">
-<li>版本并非最新：缺少错误修复和新功能。</li>
-<li>缺少许多依赖包：GnuTLS, image libraries, tree-sitter</li>
-</ul></li>
-<li>挑选主要依据​<b>安卓系统版本</b>​和​<b>芯片CPU架构</b>​。例如 <code>emacs-30.0.50-29-arm64-v8a.apk</code> 适用于运行 Android 10.0 或更高版本的 aarch64 设备，是一个常见的选择。如果安装的版本不匹配，将无法正常执行。</li>
-</ul></li>
-<li><p>
-两个都安装完成，打开 Termux，执行以下命令，安装并更新所有应用程序。
-</p>
-<pre class="example">
-pkg update &amp;&amp; pkg upgrade
-</pre>
-
-<ul class="org-ul">
-<li>如果太慢，可以考虑Termux换成国内镜像源。</li>
-</ul></li>
-<li><p>
-打开 Emacs，在 ~/.emacs.d/early-init.el 中加入：
-</p>
-
-<div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">when</span> <span class="list">(<span class="keyword">string-equal</span> system-type <span class="string">"android"</span>)</span></span><br><span class="line">  <span class="comment">;; Add Termux binaries to PATH environment</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">termuxpath</span> <span class="string">"/data/data/com.termux/files/usr/bin"</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setenv</span> <span class="string">"PATH"</span> <span class="list">(<span class="keyword">concat</span> <span class="list">(<span class="keyword">getenv</span> <span class="string">"PATH"</span>)</span> <span class="string">":"</span> termuxpath)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> exec-path <span class="list">(<span class="keyword">append</span> exec-path <span class="list">(<span class="keyword">list</span> termuxpath)</span>)</span>)</span>)</span>)</span></span><br></pre></td></tr></table></figure>
-</div>
-<ul class="org-ul">
-<li>该代码将 Emacs 与 Termux 文件系统绑定，从而让 Emacs 访问通过 Termux 安装的程序。</li>
-<li>🤔 官方文档还对 <code>LD_LIBRARY_PATH</code> 环境变量进行了配置。但是配置之后，在 Emacs 中运行 mpv 会出现问题，不配置这个变量也暂未发现问题。留待观察。</li>
-</ul></li>
-<li>重启 Emacs，应用配置。如果你在 Termux 中已经安装了 git，可以尝试在 Emacs 执行 <code>(executable-find "git")</code> 。如果返回git的路径，说明配置成功。</li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-orgfde6c77" class="outline-2">
-<h2 id="orgfde6c77"><span class="section-number-2">2.</span> 使用 doom-emacs 配置</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-因为，Android 中没有 Emacs 可执行文件，shell 路径也不同，因此需要一定的修改才能进行 doom install。以下操作​<b>请注意区分</b>​，是在Termux中运行，还是在 Emacs Shell 中运行。
-</p>
-
-<hr>
-
-<ol class="org-ol">
-<li><p>
-在 Termux 中安装 Git
-</p>
-<pre class="example">
-pkg install git
-</pre></li>
-<li><p>
-在 Termux 中，=git clone= doom-emacs 到 Emacs 主目录
-</p>
-<pre class="example">
-git clone --depth 1 https://github.com/hlissner/doom-emacs /data/data/org.gnu.emacs/files/.emacs.d.doom
-</pre></li>
-<li><p>
-在 Android Emacs 的 shell 环境中，软链接 emacs 可执行文件：
-</p>
-<pre class="example">
-ln -s /data/data/org.gnu.emacs/lib/libandroid-emacs.so /data/data/com.termux/files/usr/bin/emacs
-</pre>
-
-<ul class="org-ul">
-<li><p>
-链接成功后，在Android Emacs中运行 <code>emacs --version</code> 应该可以看到：
-</p>
-<blockquote>
-<p>
-emacs &#x2013;version
-GNU Emacs 30.0.50
-Copyright (C) 2024 Free Software Foundation, Inc.
-GNU Emacs comes with ABSOLUTELY NO WARRANTY.
-You may redistribute copies of GNU Emacs
-under the terms of the GNU General Public License.
-For more information about these matters, see the file named COPYING.
-</p>
-</blockquote></li>
-<li><p>
-否则，在执行doom时会报错：
-</p>
-<blockquote>
-<p>
-Error: failed to run Emacs with command 'emacs'
-</p>
-
-<p>
-Are you sure Emacs is installed and in your $PATH?
-</p>
-</blockquote></li>
-</ul></li>
-
-<li>编辑 <code>.emacs.d.doom/bin/doom</code> ，修改 Shebang：​<code>#!/usr/bin/env sh</code> →  <code>#!/system/bin/sh</code></li>
-<li>把 <code>~/.emacs.d/early-init.el</code> 中的内容添加到 <code>.emacs.d.doom/early-init.el</code>​，以便生成 doom env 文件的时候把 Termux 路径加入到 <code>PATH</code> 环境变量。</li>
-<li><b>在 Android Emacs 的 shell 环境</b>​中执行 doom install，如果提示 <code>error ("Failed to run \"git\"; see buffer *straight-process*")</code> ，可以尝试：
-<ul class="org-ul">
-<li>检查 doom 的 env 文件是否把 Termux 路径加入到 <code>PATH</code></li>
-<li>在 eshell中执行命令，不要在 shell 中执行</li>
-<li>执行 (setq android-use-exec-loader nil)</li>
-</ul></li>
-<li>安装完成之后，把 <code>.emacs.d.doom</code> 软链接为 <code>.emacs.d=。建议不要直接改名，这样未来改变 =.emacs.d</code> 指向的路径就可以切换配置，进行debug。</li>
-<li>重新启动，Emacs 应该可以加载 doom-emacs 配置了。由于 Android 和桌面端的路径以及支持的功能并不完全一致。一般需要对 doom-emacs 配置进行调整。享受在 Android 上使用 Emacs 的快乐吧。</li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-orgc7f4970" class="outline-2">
-<h2 id="orgc7f4970"><span class="section-number-2">3.</span> 更新历史</h2>
-<div class="outline-text-2" id="text-3">
-<ul class="org-ul">
-<li><span class="timestamp-wrapper"><span class="timestamp">[2024-02-04 日] </span></span> 初稿</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org47c62d6" class="outline-2">
-<h2 id="org47c62d6"><span class="section-number-2">4.</span> 参考</h2>
-<div class="outline-text-2" id="text-4">
-<ul class="org-ul">
-<li><a href="https://www.reddit.com/r/emacs/comments/16hwjby/how_to_get_graphical_not_termuxbased_emacs_on/" target="_blank" rel="external">How to get graphical (not Termux-based) Emacs on Android along with file-sync and shared init files across platforms. : emacs</a></li>
-<li><a href="https://marek-g.github.io/posts/tips_and_tricks/emacs_on_android/" target="_blank" rel="external">Emacs on Android | Home Page</a></li>
-</ul>
-</div>
-</div>
-
-<p class="date">Date: 2024-02-04 日 00:00</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
-
-            
-          </span>
-        
-      
-	
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
 
     
       
@@ -1843,21 +1562,6 @@ PDF Expert支持的同步服务有：Dropbox、OneDrive、Google Drive、SugarSy
 		书写 12,165 字
 	  </span> 
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/日语/" itemprop="url" rel="index">
-                    <span itemprop="name">日语</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
 	<span id="busuanzi_container_page_pv">
@@ -3953,33 +3657,6 @@ B：不客气。/哪里哪里。
 	  </span> 
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/日语/" itemprop="url" rel="index">
-                    <span itemprop="name">日语</span>
-                  </a>
-                </span>
-
-                
-                
-                  > 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/日语/日语口语/" itemprop="url" rel="index">
-                    <span itemprop="name">日语口语</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
 	<span id="busuanzi_container_page_pv">
 		&nbsp; | &nbsp; 访问 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次
@@ -4476,21 +4153,6 @@ B：不客气。/哪里哪里。
 	  </span> 
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
 	<span id="busuanzi_container_page_pv">
 		&nbsp; | &nbsp; 访问 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次
@@ -4621,6 +4283,245 @@ B：不客气。/哪里哪里。
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016-01-29-the-truth-about-exercise/" itemprop="url">
+                  《关于锻炼的真相》笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-01-29T00:00:00+08:00" content="2016-01-29">
+              2016-01-29
+            </time>
+          </span>
+
+          <span class="post-count">
+		书写 1,093 字
+	  </span> 
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/健康/" itemprop="url" rel="index">
+                    <span itemprop="name">健康</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+	<span id="busuanzi_container_page_pv">
+		&nbsp; | &nbsp; 访问 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次
+	</span> 
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016-01-29-the-truth-about-exercise/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-29-the-truth-about-exercise/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              
+
+<p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  本文旨在总结 <a href="http://movie.douban.com/subject/24844982/" target="_blank" rel="external">BBC地平线系列：关于锻炼的真相</a> 一片的脉络框架与知识点。</div>
+</p>
+
+<p>
+<img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/mindmap_the_truth_about_exercise.png">
+</p>
+
+<div id="outline-container-org1652417" class="outline-2">
+<h2 id="org1652417"><span class="section-number-2">1.</span> 关于跑步</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>如何计算消耗的卡路里：通过测定吸入的氧气、呼出二氧化碳的量</li>
+<li>跑步消耗的卡路里并不多，约为每分钟16卡路里</li>
+<li>要想通过跑步减肥，需要长期坚持并控制饮食的卡路里摄入量</li>
+</ul>
+
+<div class="HTML" id="orgab25f05">
+<p>
+&lt;!&#x2013; more &#x2013;&gt;
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org497cc20" class="outline-2">
+<h2 id="org497cc20"><span class="section-number-2">2.</span> 散步可以降低血液中的脂肪含量</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+脂肪在体内的去向：
+</p>
+<ol class="org-ol">
+<li>首先进入血液，这会增加血管壁脂肪堆积的风险</li>
+<li>然后会在体内存储。体内的脂肪有2种类型：
+<ol class="org-ol">
+<li>皮下脂肪：例如腰部脂肪，无害，甚至还可起到保护作用（缓冲）</li>
+<li>内脏脂肪：危害大，Ⅱ型糖尿病与内脏脂肪有直接的关联</li>
+</ol></li>
+</ol>
+
+<p>
+长时间散步可以：
+</p>
+<ol class="org-ol">
+<li>产生脂蛋白脂肪酶，消耗血液中脂肪的，使得致血管壁脂肪堆积和内脏脂肪堆积可能性减少</li>
+<li>锻炼肌肉（个人觉得此项作用可忽略）。</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org3e08fac" class="outline-2">
+<h2 id="org3e08fac"><span class="section-number-2">3.</span> HIIT</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+HIIT即短时高强度训练，相比传统的跑步等锻炼项目，效率更高，因其：
+</p>
+
+<ol class="org-ol">
+<li>分解肌肉的糖原储备（血糖的储存形式）</li>
+<li>调动更多的肌肉组织（HIIT骑车约70%，散步、慢跑约25%）。</li>
+</ol>
+
+<p>
+一般的，HIIT可以改善：
+</p>
+
+<ul class="org-ul">
+<li>胰岛素敏感度：胰岛素降低血糖的能力</li>
+<li>有氧适能（最大摄氧量）：心肺供氧的能力。奥运选手最大摄氧量是75ml/kg，很多人只有20多。但是该水平的改善情况很大程度取决于基因。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc380185" class="outline-2">
+<h2 id="orgc380185"><span class="section-number-2">4.</span> NEAT</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+NEAT=非运动生热作用=日常生活消耗的热量
+</p>
+
+<p>
+不要久坐：久坐一小时，导致黏性物质聚集，血糖、血脂升高，去健身房的短时间锻炼也很难弥补这种恶果。
+</p>
+
+<p>
+消耗卡路里并不意味要大量流汗。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org44a37d2" class="outline-2">
+<h2 id="org44a37d2"><span class="section-number-2">5.</span> 锻炼效果因人而异</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+每个人对相同类型的运动有不同的反应情况，大约20%的人是有氧适能零收益者，大约15%能从有氧运动获得很大益处。
+</p>
+
+<p>
+这主要源于11种基因的不同。James Timmons教授基于其研究成果成立 <a href="http://www.xrgenomics.com/" target="_blank" rel="external">XRGenomics</a> 公司提供了XRPredict+ DNA检测服务。检测结果可以让你了解自己对锻炼的反应情况，从而选择最适合自己的锻炼方式。<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> 网站提供了DNA检测报告样例，详见<a href="http://www.xrgenomics.com/media/85712/XRPredictExampleReport.pdf" target="_blank" rel="external">这里</a>。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc6d8489" class="outline-2">
+<h2 id="orgc6d8489"><span class="section-number-2">6.</span> 更新历史</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-30 六] </span></span> 补充XRPredict+ DNA检测相关内容</li>
+<li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-29 五] </span></span> 拟定初稿</li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="http://www.lboro.ac.uk/microsites/enterprise/enterprise-awards/2013/social/personalised-exercise.html" target="_blank" rel="external">Personalised Exercise | Social Impact | Enterprise Awards | Loughborough University</a>
+</p></div></div>
+
+
+</div>
+</div>
+<p class="date">Date: 2016-01-29 五 00:00</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
+
+            
+          </span>
+        
+      
+	
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
 
   </section>
 
@@ -4672,14 +4573,14 @@ B：不客气。/哪里哪里。
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>

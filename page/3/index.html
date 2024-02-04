@@ -212,248 +212,6 @@
 
     
     
-      
-      
-
-      
-    
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016-01-18-add-rss-to-hexo/" itemprop="url">
-                  给hexo添加RSS
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2016-01-18T00:00:00+08:00" content="2016-01-18">
-              2016-01-18
-            </time>
-          </span>
-
-          <span class="post-count">
-		书写 845 字
-	  </span> 
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-                  > 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/hexo设置/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo设置</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-	<span id="busuanzi_container_page_pv">
-		&nbsp; | &nbsp; 访问 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次
-	</span> 
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016-01-18-add-rss-to-hexo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-18-add-rss-to-hexo/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              
-
-
-<div id="outline-container-orgaf1e716" class="outline-2">
-<h2 id="orgaf1e716"><span class="section-number-2">1.</span> 安装RSS插件到本地</h2>
-<div class="outline-text-2" id="text-1">
-<div class="org-src-container">
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
-</div>
-
-<div class="HTML" id="orgcc8760b">
-<p>
-&lt;!&#x2013; more &#x2013;&gt;
-</p>
-
-</div>
-</div>
-</div>
-
-<div id="outline-container-org02640a0" class="outline-2">
-<h2 id="org02640a0"><span class="section-number-2">2.</span> 设置全站配置文件 <code>_config.yml</code></h2>
-<div class="outline-text-2" id="text-2">
-<ol class="org-ol">
-<li><p>
-启用插件：
-</p>
-<p class="verse">
-plugins:<br>
-&#xa0;&#xa0;&#xa0;&#xa0;- hexo-generator-feed<br>
-</p></li>
-<li><p>
-设置插件：
-</p>
-<p class="verse">
-feed:<br>
-&#xa0;&#xa0;type: atom<br>
-&#xa0;&#xa0;path: atom.xml<br>
-&#xa0;&#xa0;limit: 0<br>
-&#xa0;&#xa0;hub:<br>
-</p>
-
-<p>
-参数说明：
-</p>
-<p class="verse">
-type - Feed type. (atom/rss2)<br>
-path - Feed path. (Default: atom.xml/rss2.xml)<br>
-limit - Maximum number of posts in the feed (Use <code>0</code> or <code>false</code> to show all posts)<br>
-hub - URL of the PubSubHubbub hubs (Leave it empty if you don't use it)<br>
-</p></li>
-<li><p>
-修改 <code>url:</code> 为博客站点地址
-默认为 <code>http://yoursite.com/</code> ，但是为了RSS地址的正确引用，应将其改为自己的博客地址，例如我的配置文件为：
-</p>
-<p class="verse">
-url: <a href="http://yuchen-lea.gitcafe.io/" target="_blank" rel="external">http://yuchen-lea.gitcafe.io/</a><br>
-</p></li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-org1f912d6" class="outline-2">
-<h2 id="org1f912d6"><span class="section-number-2">3.</span> 设置主题配置文件 <code>_config.yml</code></h2>
-<div class="outline-text-2" id="text-3">
-<ol class="org-ol">
-<li><p>
-如果主题设置中内置有RSS：
-只要设置其地址与全站设置文件中的一致即可：
-</p>
-<p class="verse">
-rss: /atom.xml<br>
-</p></li>
-
-<li><p>
-如果主题设置中没有内置RSS：
-在完成上述步骤后，还需自行为站点添加RSS链接。更改站点的布局需要修改模版文件，一般在 <code>layout</code> 目录下。如果要在header加入RSS链接，找到 <code>header.ejs</code> 文件，在相应位置添加代码：
-</p>
-<div class="org-src-container">
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span> <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/atom.xml"</span>&gt;</span>RSS<span class="tag">&lt;/<span class="title">a</span>&gt;</span> <span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</div></li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-org2d7be5e" class="outline-2">
-<h2 id="org2d7be5e"><span class="section-number-2">4.</span> 检查 RSS 文件的正确性</h2>
-<div class="outline-text-2" id="text-4">
-<ol class="org-ol">
-<li>执行 <code>hexo g</code> ，在 <code>public</code> 目录应生成 <code>atom.xml</code></li>
-<li>执行 <code>hexo s</code> , 查看页面的RSS收取点能否打开，文章链接是否正确</li>
-</ol>
-</div>
-</div>
-<div id="outline-container-org39cb755" class="outline-2">
-<h2 id="org39cb755"><span class="section-number-2">5.</span> 更新历史</h2>
-<div class="outline-text-2" id="text-5">
-<ul class="org-ul">
-<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-22 五&gt; </span></span> 增加 检查 RSS 文件的正确性 部分</li>
-<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-18 一&gt; </span></span> 拟定初稿</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org2f4356a" class="outline-2">
-<h2 id="org2f4356a"><span class="section-number-2">6.</span> 参考</h2>
-<div class="outline-text-2" id="text-6">
-<ul class="org-ul">
-<li><a href="http://www.zipperary.com/2013/06/02/hexo-guide-5/" target="_blank" rel="external">hexo系列教程：（五）hexo博客的优化技巧续 | Zippera's blog</a></li>
-<li><a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="external">GitHub - hexojs/hexo-generator-feed: Feed generator for Hexo.</a></li>
-</ul>
-</div>
-</div>
-
-<p class="date">Date: 2016-01-18 一 00:00</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
-
-            
-          </span>
-        
-      
-	
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
 
     
       
@@ -497,33 +255,6 @@ rss: /atom.xml<br>
 		书写 8,773 字
 	  </span> 
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/日语/" itemprop="url" rel="index">
-                    <span itemprop="name">日语</span>
-                  </a>
-                </span>
-
-                
-                
-                  > 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/日语/日语口语/" itemprop="url" rel="index">
-                    <span itemprop="name">日语口语</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
 	<span id="busuanzi_container_page_pv">
@@ -1562,33 +1293,6 @@ rss: /atom.xml<br>
 	  </span> 
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/日语/" itemprop="url" rel="index">
-                    <span itemprop="name">日语</span>
-                  </a>
-                </span>
-
-                
-                
-                  > 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/日语/日语口语/" itemprop="url" rel="index">
-                    <span itemprop="name">日语口语</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
 	<span id="busuanzi_container_page_pv">
 		&nbsp; | &nbsp; 访问 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次
@@ -2098,33 +1802,6 @@ rss: /atom.xml<br>
 		书写 1,086 字
 	  </span> 
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-                  > 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/hexo美化/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo美化</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
 	<span id="busuanzi_container_page_pv">
@@ -2772,14 +2449,14 @@ npm ERR! network <a id="orgaed7544"></a>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
