@@ -53,12 +53,44 @@
 
 
 
-<meta name="description" content="&amp;#x672C;&amp;#x6587;&amp;#x65E8;&amp;#x5728;&amp;#x4ECB;&amp;#x7ECD; HabitRPG &amp;#x7684;&amp;#x673A;&amp;#x5236;&amp;#xFF0C;&amp;#x63A2;&amp;#x7D22;&amp;#x5982;&amp;#x4F55;&amp;#x5145;&amp;#x5206;&amp;#x5229;&amp;#x7528;&amp;#x6B64;&amp;#x5DE5;&amp;#x5177;&amp;#x8BA9;&amp;#x751F;&amp;#x6D3">
+<meta name="description" content="本文旨在介绍 HabitRPG 的机制，探索如何充分利用此工具让生活更高效、更有趣。文中内容不涉及技能、团队、装备、职业等深度玩法。
+
+
+
+  HabitRPG 在大陆地区访问可能不稳定，需翻墙使用。
+
+
+
+  个人喜欢清楚机理之后再采取行动，偏向实践的朋友可跳过前面介绍，直接阅读 RPG游戏化你自己的生活吧！ 部分。
+
+
+
+  完善中
+
+
+
+HabitRPG = Habit + RPG，旨在以R">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用HabitRPG游戏化你的生活！">
 <meta property="og:url" content="http://yuchen-lea.github.io/2016-01-27-RPG-your-life/index.html">
 <meta property="og:site_name" content="跬步">
-<meta property="og:description" content="&amp;#x672C;&amp;#x6587;&amp;#x65E8;&amp;#x5728;&amp;#x4ECB;&amp;#x7ECD; HabitRPG &amp;#x7684;&amp;#x673A;&amp;#x5236;&amp;#xFF0C;&amp;#x63A2;&amp;#x7D22;&amp;#x5982;&amp;#x4F55;&amp;#x5145;&amp;#x5206;&amp;#x5229;&amp;#x7528;&amp;#x6B64;&amp;#x5DE5;&amp;#x5177;&amp;#x8BA9;&amp;#x751F;&amp;#x6D3">
+<meta property="og:description" content="本文旨在介绍 HabitRPG 的机制，探索如何充分利用此工具让生活更高效、更有趣。文中内容不涉及技能、团队、装备、职业等深度玩法。
+
+
+
+  HabitRPG 在大陆地区访问可能不稳定，需翻墙使用。
+
+
+
+  个人喜欢清楚机理之后再采取行动，偏向实践的朋友可跳过前面介绍，直接阅读 RPG游戏化你自己的生活吧！ 部分。
+
+
+
+  完善中
+
+
+
+HabitRPG = Habit + RPG，旨在以R">
 <meta property="og:image" content="http://7xqb0u.com1.z0.glb.clouddn.com/images/habitica_ui.png">
 <meta property="og:image" content="http://7xqb0u.com1.z0.glb.clouddn.com/images/habitica_task_color.jpg">
 <meta property="og:image" content="http://7xqb0u.com1.z0.glb.clouddn.com/images/habitica_habit_direction.png">
@@ -68,7 +100,23 @@
 <meta property="og:updated_time" content="2016-04-29T15:36:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用HabitRPG游戏化你的生活！">
-<meta name="twitter:description" content="&amp;#x672C;&amp;#x6587;&amp;#x65E8;&amp;#x5728;&amp;#x4ECB;&amp;#x7ECD; HabitRPG &amp;#x7684;&amp;#x673A;&amp;#x5236;&amp;#xFF0C;&amp;#x63A2;&amp;#x7D22;&amp;#x5982;&amp;#x4F55;&amp;#x5145;&amp;#x5206;&amp;#x5229;&amp;#x7528;&amp;#x6B64;&amp;#x5DE5;&amp;#x5177;&amp;#x8BA9;&amp;#x751F;&amp;#x6D3">
+<meta name="twitter:description" content="本文旨在介绍 HabitRPG 的机制，探索如何充分利用此工具让生活更高效、更有趣。文中内容不涉及技能、团队、装备、职业等深度玩法。
+
+
+
+  HabitRPG 在大陆地区访问可能不稳定，需翻墙使用。
+
+
+
+  个人喜欢清楚机理之后再采取行动，偏向实践的朋友可跳过前面介绍，直接阅读 RPG游戏化你自己的生活吧！ 部分。
+
+
+
+  完善中
+
+
+
+HabitRPG = Habit + RPG，旨在以R">
 
 
 
@@ -248,7 +296,7 @@
           </span>
 
           <span class="post-count">
-		书写 5,842 字
+		书写 5,624 字
 	  </span> 
 
           
@@ -311,308 +359,292 @@
         <span itemprop="articleBody">
 
 <p>
-<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x4ECB;&#x7ECD; <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> &#x7684;&#x673A;&#x5236;&#xFF0C;&#x63A2;&#x7D22;&#x5982;&#x4F55;&#x5145;&#x5206;&#x5229;&#x7528;&#x6B64;&#x5DE5;&#x5177;&#x8BA9;&#x751F;&#x6D3B;&#x66F4;&#x9AD8;&#x6548;&#x3001;&#x66F4;&#x6709;&#x8DA3;&#x3002;&#x6587;&#x4E2D;&#x5185;&#x5BB9;&#x4E0D;&#x6D89;&#x53CA;&#x6280;&#x80FD;&#x3001;&#x56E2;&#x961F;&#x3001;&#x88C5;&#x5907;&#x3001;&#x804C;&#x4E1A;&#x7B49;&#x6DF1;&#x5EA6;&#x73A9;&#x6CD5;&#x3002;</div>
+<div class="alert alert-info"><i class="fa fa-info"></i>  本文旨在介绍 <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> 的机制，探索如何充分利用此工具让生活更高效、更有趣。文中内容不涉及技能、团队、装备、职业等深度玩法。</div>
 </p>
 
 <p>
-<div class="alert alert-warning"><i class="fa fa-bell"></i>  <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> &#x5728;&#x5927;&#x9646;&#x5730;&#x533A;&#x8BBF;&#x95EE;&#x53EF;&#x80FD;&#x4E0D;&#x7A33;&#x5B9A;&#xFF0C;&#x9700;&#x7FFB;&#x5899;&#x4F7F;&#x7528;&#x3002;</div>
+<div class="alert alert-warning"><i class="fa fa-bell"></i>  <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> 在大陆地区访问可能不稳定，需翻墙使用。</div>
 </p>
 
 <p>
-<div class="alert alert-success"><i class="fa fa-lightbulb-o"></i>  &#x4E2A;&#x4EBA;&#x559C;&#x6B22;&#x6E05;&#x695A;&#x673A;&#x7406;&#x4E4B;&#x540E;&#x518D;&#x91C7;&#x53D6;&#x884C;&#x52A8;&#xFF0C;&#x504F;&#x5411;&#x5B9E;&#x8DF5;&#x7684;&#x670B;&#x53CB;&#x53EF;&#x8DF3;&#x8FC7;&#x524D;&#x9762;&#x4ECB;&#x7ECD;&#xFF0C;&#x76F4;&#x63A5;&#x9605;&#x8BFB; RPG&#x6E38;&#x620F;&#x5316;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x751F;&#x6D3B;&#x5427;&#xFF01; &#x90E8;&#x5206;&#x3002;</div>
+<div class="alert alert-success"><i class="fa fa-lightbulb-o"></i>  个人喜欢清楚机理之后再采取行动，偏向实践的朋友可跳过前面介绍，直接阅读 RPG游戏化你自己的生活吧！ 部分。</div>
 </p>
 
 <p>
-<div class="alert alert-warning"><i class="fa fa-bell"></i>  &#x5B8C;&#x5584;&#x4E2D;</div>
+<div class="alert alert-warning"><i class="fa fa-bell"></i>  完善中</div>
 </p>
 
 <p>
-<a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> = Habit + RPG&#xFF0C;&#x65E8;&#x5728;&#x4EE5;RPG&#x6E38;&#x620F;&#x5316;&#x673A;&#x5236;&#xFF0C;&#x6FC0;&#x52B1;&#x6211;&#x4EEC;&#x6709;&#x6548;&#x53C8;&#x4E0D;&#x4E4F;&#x4E50;&#x8DA3;&#x5730;&#x6539;&#x53D8;&#x574F;&#x4E60;&#x60EF;&#x3001;&#x517B;&#x6210;&#x65B0;&#x4E60;&#x60EF;&#xFF0C;&#x7BA1;&#x7406;&#x81EA;&#x5DF1;&#x7684;&#x751F;&#x6D3B;&#x3002;
+<a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> = Habit + RPG，旨在以RPG游戏化机制，激励我们有效又不乏乐趣地改变坏习惯、养成新习惯，管理自己的生活。
 </p>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> &#x57FA;&#x672C;&#x672F;&#x8BED;</h2>
+<div id="outline-container-orgaf49e9b" class="outline-2">
+<h2 id="orgaf49e9b"><span class="section-number-2">1.</span> 基本术语</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-&#x9996;&#x5148;&#x719F;&#x6089;&#x4E00;&#x4E0B;  <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> &#x6D89;&#x53CA;&#x7684;&#x672F;&#x8BED;&#xFF0C;&#x5728;&#x4E0B;&#x6587;&#x4E2D;&#x518D;&#x6B21;&#x51FA;&#x73B0;&#x65F6;&#x4E0D;&#x4E88;&#x8D58;&#x8FF0;&#xFF08;&#x66F4;&#x591A;&#x53C2;&#x89C1; <a href="http://habitica.wikia.com/wiki/Glossary" target="_blank" rel="external">Glossary - Habitica Wiki - Wikia</a> &#xFF09;&#xFF1A;
+首先熟悉一下  <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> 涉及的术语，在下文中再次出现时不予赘述（更多参见 <a href="http://habitica.wikia.com/wiki/Glossary" target="_blank" rel="external">Glossary - Habitica Wiki - Wikia</a> ）：
 </p>
 
 <ul class="org-ul">
-<li>&#x5065;&#x5EB7; (HP) &#x53CD;&#x6620;&#x5B8C;&#x6210;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x548C;&#x6212;&#x9664;&#x574F;&#x4E60;&#x60EF;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x53EF;&#x4ECE;&#x7EA2;&#x8272;&#x8FDB;&#x5EA6;&#x6761;&#x67E5;&#x770B;&#xFF0C;&#x5DE6;&#x7AEF;&#x6807;&#x5FD7;&#x4E3A;&#x6807;&#x5FD7;  
-</li>
-<li>&#x7ECF;&#x9A8C;&#x503C; (XP) &#x53CD;&#x6620;&#x73A9;&#x5BB6;&#x8FDB;&#x5EA6;&#x3002;&#x53EF;&#x4ECE;&#x9EC4;&#x8272;&#x8FDB;&#x5EA6;&#x6761;&#x67E5;&#x770B;&#xFF0C;&#x5DE6;&#x7AEF;&#x6807;&#x5FD7;&#x4E3A; &#x2605;&#x3002;&#x968F;&#x7740;&#x7B49;&#x7EA7;&#x7684;&#x589E;&#x957F;&#xFF0C;&#x5347;&#x7EA7;&#x6240;&#x9700;&#x7684;&#x7ECF;&#x9A8C;&#x503C;&#x4E5F;&#x589E;&#x52A0;&#x3002;
-</li>
-<li>&#x9B54;&#x6CD5;&#x503C;&#xFF08;MP&#xFF09;&#x4E0E;&#x6280;&#x80FD;&#x7684;&#x4F7F;&#x7528;&#x6709;&#x5173;&#x3002;&#x53EF;&#x4ECE;&#x84DD;&#x8272;&#x8FDB;&#x5EA6;&#x6761;&#x67E5;&#x770B;&#x3002;&#x53EA;&#x6709;&#x5728;&#x7B49;&#x7EA7;&#x5230;&#x8FBE;10&#x7EA7;&#x5E76;&#x9009;&#x62E9;&#x804C;&#x4E1A;&#x4E4B;&#x540E;&#x624D;&#x4F1A;&#x663E;&#x793A;&#x3002;
-</li>
-<li>&#x7B49;&#x7EA7; Level &#x53CD;&#x6620;&#x73A9;&#x5BB6;&#x8FDB;&#x5EA6;&#x3002;&#x90E8;&#x5206;&#x529F;&#x80FD;&#x53EA;&#x6709;&#x5728;&#x8FBE;&#x5230;&#x7279;&#x5B9A;&#x7B49;&#x7EA7;&#x624D;&#x4F1A;&#x89E3;&#x9501;&#xFF08;&#x8BE6;&#x60C5;&#x53C2;&#x89C1;<a href="http://habitica.wikia.com/wiki/Level#Unlocks" target="_blank" rel="external">&#x8FD9;&#x91CC;</a>&#xFF09;&#x3002;
-</li>
-<li>&#x91D1;&#x5E01;&#xFF08;GP&#xFF09;&#x6E38;&#x620F;&#x5185;&#x7684;&#x901A;&#x884C;&#x8D27;&#x5E01;&#xFF0C;&#x53EF;&#x8D2D;&#x4E70;&#x5956;&#x52B1;&#x3001;&#x88C5;&#x5907;&#x7B49;&#x3002;100&#x94F6;=1&#x91D1;
-</li>
-<li>&#x8FDE;&#x51FB; Streaks &#x9700;&#x6309;&#x65F6;&#x5B8C;&#x6210;&#x7684;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x8FDE;&#x7EED;&#x5B8C;&#x6210;&#x7684;&#x6B21;&#x6570;&#x3002;
-</li>
-<li>&#x6389;&#x843D; Drops &#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x6389;&#x843D;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7269;&#x54C1;&#xFF0C;&#x5982;&#x5BA0;&#x7269;&#x86CB;&#x3001;&#x836F;&#x6C34;&#x7B49;&#x3002;&#x8BE5;&#x529F;&#x80FD;&#x5728;&#x8FBE;&#x5230;&#x7B49;&#x7EA7; 3 &#x540E;&#x89E3;&#x9501;&#x3002;
-</li>
-<li>&#x4EFB;&#x52A1;&#x5206;&#x503C; task value &#x53CD;&#x6620;&#x4E86;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x5B8C;&#x6210;&#x60C5;&#x51B5;&#x3002;&#x662F; <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> &#x6839;&#x636E;&#x7528;&#x6237;&#x7684;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x60C5;&#x51B5;&#x4E3A;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x81EA;&#x52A8;&#x8BA1;&#x7B97;&#x5F97;&#x51FA;&#x7684;&#x6570;&#x503C;&#x3002;
-</li>
-<li>&#x4EFB;&#x52A1;&#x989C;&#x8272; &#x4E0E;&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x76F8;&#x5173;&#xFF0C;&#x4ECE;&#x4F4E;&#x5230;&#x9AD8;&#x7684;&#x989C;&#x8272;&#x5206;&#x522B;&#x4E3A;&#xFF1A;&#x7EA2;&#x2192;&#x6A59;&#x2192;&#x9EC4;&#x2192;&#x7EFF;&#x2192;&#x84DD;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x5B8C;&#x6210;&#x7684;&#x4EFB;&#x52A1;&#x53D8;&#x4E3A;&#x7070;&#x8272;&#x3002;
-</li>
-<li>&#x4F11;&#x606F; Rest in the Inn<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup> &#x6709;&#x65F6;&#x5019;&#x9700;&#x8981;&#x6682;&#x505C;HabitRPG&#xFF0C;&#x4F8B;&#x5982;&#x51C6;&#x5907;&#x4EAB;&#x53D7;&#x5047;&#x671F;&#xFF0C;&#x90A3;&#x4E48;&#x5230;&#x5BA2;&#x6808;&#x4E2D;&#x4F11;&#x606F;&#x5C31;&#x4E0D;&#x4F1A;&#x56E0;&#x4E3A;&#x6CA1;&#x5B8C;&#x6210;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x800C;&#x635F;&#x5931;HP&#x548C;&#x8FDE;&#x51FB;&#x3002;
-</li>
-<li>&#x73A9;&#x5BB6;&#x5C5E;&#x6027;&#xFF1A;&#x6709;&#x529B;&#x91CF;&#x3001;&#x667A;&#x529B;&#x3001;&#x4F53;&#x8D28;&#x3001;&#x611F;&#x77E5;&#x56DB;&#x9879;&#x3002;&#x4E0E;&#x4E00;&#x4E9B;&#x6280;&#x80FD;&#x6709;&#x5173;&#xFF0C;&#x589E;&#x52A0;&#x53EF;&#x73A9;&#x6027;&#x3002;
-</li>
+<li>健康 (HP) 反映完成每日任务和戒除坏习惯的情况。可从红色进度条查看，左端标志为标志 ❤</li>
+<li>经验值 (XP) 反映玩家进度。可从黄色进度条查看，左端标志为 ★。随着等级的增长，升级所需的经验值也增加。</li>
+<li>魔法值（MP）与技能的使用有关。可从蓝色进度条查看。只有在等级到达10级并选择职业之后才会显示。</li>
+<li>等级 Level 反映玩家进度。部分功能只有在达到特定等级才会解锁（详情参见<a href="http://habitica.wikia.com/wiki/Level#Unlocks" target="_blank" rel="external">这里</a>）。</li>
+<li>金币（GP）游戏内的通行货币，可购买奖励、装备等。100银=1金</li>
+<li>连击 Streaks 需按时完成的每日任务连续完成的次数。</li>
+<li>掉落 Drops 完成任务时，可能会掉落一些特殊物品，如宠物蛋、药水等。该功能在达到等级 3 后解锁。</li>
+<li>任务分值 task value 反映了一个任务的完成情况。是 <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> 根据用户的任务完成情况为每个任务自动计算得出的数值。</li>
+<li>任务颜色 与任务分值相关，从低到高的颜色分别为：红→橙→黄→绿→蓝。此外，完成的任务变为灰色。</li>
+<li>休息 Rest in the Inn<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> 有时候需要暂停HabitRPG，例如准备享受假期，那么到客栈中休息就不会因为没完成每日任务而损失HP和连击。</li>
+<li>玩家属性：有力量、智力、体质、感知四项。与一些技能有关，增加可玩性。</li>
 </ul>
 
-<a id="more"></a>
+<div class="HTML" id="org4f32457">
+<p>
+&lt;!&#x2013; more &#x2013;&gt;
+</p>
+
+</div>
 </div>
 </div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> &#x754C;&#x9762;</h2>
+<div id="outline-container-org3ecf3b8" class="outline-2">
+<h2 id="org3ecf3b8"><span class="section-number-2">2.</span> 界面</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/habitica_ui.png">
 </p>
 
 <p>
-<a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> &#x7684;&#x7F51;&#x9875;&#x754C;&#x9762;&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#x53EF;&#x5206;&#x6210;&#x56DB;&#x5927;&#x90E8;&#x5206;&#xFF0C;&#x5206;&#x522B;&#x4E3A;&#xFF1A;&#x83DC;&#x5355;&#x533A;&#x3001;&#x72B6;&#x6001;&#x533A;&#x3001;&#x529F;&#x80FD;&#x533A;&#x548C;&#x4FE1;&#x606F;&#x533A;&#x3002;
+<a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> 的网页界面从上到下可分成四大部分，分别为：菜单区、状态区、功能区和信息区。
 </p>
 
 <ul class="org-ul">
-<li>&#x83DC;&#x5355;&#x533A;&#xFF1A;&#x70B9;&#x51FB;&#x76F8;&#x5E94;&#x9009;&#x9879;&#x5361;&#x8FDB;&#x884C;&#x76F8;&#x5173;&#x8BBE;&#x7F6E;&#xFF0C;&#x6B64;&#x5916;&#x8FD8;&#x663E;&#x793A;&#x4E86;&#x91D1;&#x5E01;&#x6570;&#x989D;&#x3002;
-</li>
-<li>&#x72B6;&#x6001;&#x533A;&#xFF1A;&#x663E;&#x793A;&#x5F53;&#x524D;&#x73A9;&#x5BB6;&#x7684;&#x5404;&#x79CD;&#x72B6;&#x6001;
+<li>菜单区：点击相应选项卡进行相关设置，此外还显示了金币数额。</li>
+<li>状态区：显示当前玩家的各种状态
 <ul class="org-ul">
-<li>&#x2461; &#x663E;&#x793A;&#x73A9;&#x5BB6;&#x8BBE;&#x7F6E;&#x7684;&#x5934;&#x50CF;&#x3001;&#x88C5;&#x5907;&#x3001;&#x5BA0;&#x7269;&#xFF0C;&#x53F3;&#x4E0B;&#x89D2;&#x663E;&#x793A;&#x5F53;&#x524D;&#x7B49;&#x7EA7;&#x4E3A;10&#x7EA7;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x4F7F;&#x7528;&#x7684;&#x6280;&#x80FD;&#xFF0C;&#x4F1A;&#x5728;&#x7B49;&#x7EA7;&#x524D;&#x663E;&#x793A;&#x3002;&#x56FE;&#x4E2D;&#x7684;&#x2191;&#x8868;&#x793A;&#x56E0;&#x4E3A;&#x6628;&#x5929;&#x5B8C;&#x6210;&#x4E86;&#x6240;&#x6709;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#xFF0C;&#x4ECA;&#x5929;&#x6709;&#x589E;&#x76CA;&#x9B54;&#x6CD5;&#x52A0;&#x6301;&#x3002;
-</li>
-<li>&#x2462; <b>&#x7EA2;&#x8272;</b> &#x8868;&#x793A;&#x5065;&#x5EB7;&#x503C;&#xFF08;HP&#xFF09;
-</li>
-<li>&#x2463; <b>&#x9EC4;&#x8272;</b> &#x8868;&#x793A;&#x7ECF;&#x9A8C;&#x503C;&#xFF08;XP&#xFF09;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4ECE;&#x8FD9;&#x91CC;&#x770B;&#x5230;&#x8FD8;&#x9700;&#x8981;&#x591A;&#x5C11;XP&#x80FD;&#x5347;&#x7EA7;
-</li>
-<li>&#x2464; <b>&#x84DD;&#x8272;</b> &#x8868;&#x793A;&#x9B54;&#x6CD5;&#x503C;&#xFF08;MP&#xFF09;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x7B49;&#x7EA7;&#x5230;&#x8FBE;10&#x7EA7;&#x5E76;&#x9009;&#x62E9;&#x804C;&#x4E1A;&#x4E4B;&#x540E;&#x624D;&#x4F1A;&#x663E;&#x793A;
-</li>
-</ul>
-</li>
-<li>&#x529F;&#x80FD;&#x533A;
+<li>② 显示玩家设置的头像、装备、宠物，右下角显示当前等级为10级，如果有使用的技能，会在等级前显示。图中的↑表示因为昨天完成了所有每日任务，今天有增益魔法加持。</li>
+<li>③ <b>红色</b> 表示健康值（HP）</li>
+<li>④ <b>黄色</b> 表示经验值（XP），你可以从这里看到还需要多少XP能升级</li>
+<li>⑤ <b>蓝色</b> 表示魔法值（MP），只有在等级到达10级并选择职业之后才会显示</li>
+</ul></li>
+<li>功能区
 <ul class="org-ul">
-<li>&#x2465; &#x589E;&#x52A0;&#x3001;&#x4FEE;&#x6539;&#x3001;&#x5220;&#x9664;&#x6807;&#x7B7E;
-</li>
-<li>&#x2466; &#x641C;&#x7D22;&#x4EFB;&#x52A1;&#x6216;&#x5956;&#x52B1;
-</li>
-</ul>
-</li>
-<li>&#x4FE1;&#x606F;&#x533A;&#xFF1A;&#x4F60;&#x4E3A;&#x81EA;&#x5DF1;&#x5236;&#x5B9A;&#x7684;&#x4EFB;&#x52A1;&#x548C;&#x5956;&#x52B1;&#xFF0C;&#x5171;&#x6709;4&#x4E2A;&#x5217;&#x8868;&#xFF0C;&#x2467;&#x2468;&#x2469;&#x662F;3&#x4E2A;&#x4EFB;&#x52A1;&#x5217;&#x8868;&#xFF0C; &#x662F;&#x5956;&#x52B1;&#x5217;&#x8868;
-</li>
+<li>⑥ 增加、修改、删除标签</li>
+<li>⑦ 搜索任务或奖励</li>
+</ul></li>
+<li>信息区：你为自己制定的任务和奖励，共有4个列表，⑧⑨⑩是3个任务列表，⑪是奖励列表</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> &#x6709;&#x5173;GTD&#x7684;&#x6E38;&#x620F;&#x673A;&#x5236;</h2>
+<div id="outline-container-orgf1c381b" class="outline-2">
+<h2 id="orgf1c381b"><span class="section-number-2">3.</span> 有关GTD的游戏机制</h2>
 <div class="outline-text-2" id="text-3">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
-<col class="left">
+<col class="org-left">
 
-<col class="left">
+<col class="org-left">
 
-<col class="left">
+<col class="org-left">
 
-<col class="left">
+<col class="org-left">
 
-<col class="left">
+<col class="org-left">
 
-<col class="left">
+<col class="org-left">
 
-<col class="left">
+<col class="org-left">
 
-<col class="left">
+<col class="org-left">
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="left">&#xA0;</th>
-<th scope="col" class="left">&#x5065;&#x5EB7;</th>
-<th scope="col" class="left">&#x7ECF;&#x9A8C;&#x503C;</th>
-<th scope="col" class="left">&#x7B49;&#x7EA7;</th>
-<th scope="col" class="left">&#x91D1;&#x5E01;</th>
-<th scope="col" class="left">&#x8FDE;&#x51FB;</th>
-<th scope="col" class="left">&#x4EFB;&#x52A1;&#x5206;&#x503C;</th>
-<th scope="col" class="left">&#x4EFB;&#x52A1;&#x989C;&#x8272;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">健康</th>
+<th scope="col" class="org-left">经验值</th>
+<th scope="col" class="org-left">等级</th>
+<th scope="col" class="org-left">金币</th>
+<th scope="col" class="org-left">连击</th>
+<th scope="col" class="org-left">任务分值</th>
+<th scope="col" class="org-left">任务颜色</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="left">&#x6C89;&#x6EBA;&#x574F;&#x4E60;&#x60EF;&#xFF08;-&#xFF09;</td>
-<td class="left">-HP</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#x51CF;&#x5C11;</td>
-<td class="left">&#x53D8;&#x7EA2;</td>
+<td class="org-left">沉溺坏习惯（-）</td>
+<td class="org-left">-HP</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">减少</td>
+<td class="org-left">变红</td>
 </tr>
 
 <tr>
-<td class="left">&#x6267;&#x884C;&#x597D;&#x4E60;&#x60EF;&#xFF08;+&#xFF09;</td>
-<td class="left">&#xA0;</td>
-<td class="left">+XP</td>
-<td class="left">&#xA0;</td>
-<td class="left">+GP</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#x589E;&#x52A0;</td>
-<td class="left">&#x53D8;&#x84DD;</td>
+<td class="org-left">执行好习惯（+）</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">+XP</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">+GP</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">增加</td>
+<td class="org-left">变蓝</td>
 </tr>
 
 <tr>
-<td class="left">&#x6CA1;&#x5B8C;&#x6210;&#x5355;&#x5411;&#x4E60;&#x60EF;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#x53D8;&#x4E3A;&#x4E00;&#x534A;</td>
-<td class="left">&#x53D8;&#x9EC4;</td>
+<td class="org-left">没完成单向习惯</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">变为一半</td>
+<td class="org-left">变黄</td>
 </tr>
 
 <tr>
-<td class="left">&#x5B8C;&#x6210;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;</td>
-<td class="left">&#xA0;</td>
-<td class="left">+XP</td>
-<td class="left">&#xA0;</td>
-<td class="left">+GP</td>
-<td class="left">+1</td>
-<td class="left">&#x589E;&#x52A0;</td>
-<td class="left">&#x53D8;&#x7070;</td>
+<td class="org-left">完成每日任务</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">+XP</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">+GP</td>
+<td class="org-left">+1</td>
+<td class="org-left">增加</td>
+<td class="org-left">变灰</td>
 </tr>
 
 <tr>
-<td class="left">&#x6CA1;&#x5B8C;&#x6210;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;</td>
-<td class="left">-HP</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#x91CD;&#x7F6E;&#x4E3A;0</td>
-<td class="left">&#x51CF;&#x5C11;</td>
-<td class="left">&#x53D8;&#x7EA2;</td>
+<td class="org-left">没完成每日任务</td>
+<td class="org-left">-HP</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">重置为0</td>
+<td class="org-left">减少</td>
+<td class="org-left">变红</td>
 </tr>
 
 <tr>
-<td class="left">&#x5B8C;&#x6210;&#x5F85;&#x529E;&#x4E8B;&#x9879;</td>
-<td class="left">&#xA0;</td>
-<td class="left">+XP</td>
-<td class="left">&#xA0;</td>
-<td class="left">+GP</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#x53D8;&#x7070;</td>
+<td class="org-left">完成待办事项</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">+XP</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">+GP</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">变灰</td>
 </tr>
 
 <tr>
-<td class="left">&#x5EF6;&#x540E;&#x5F85;&#x529E;&#x4E8B;&#x9879;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#x51CF;&#x5C11;</td>
-<td class="left">&#x53D8;&#x7EA2;</td>
+<td class="org-left">延后待办事项</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">减少</td>
+<td class="org-left">变红</td>
 </tr>
 
 <tr>
-<td class="left">&#x5347;&#x7EA7;</td>
-<td class="left">&#x6062;&#x590D;&#x6EE1;&#x503C;</td>
-<td class="left">XP&#x6EE1;&#x503C;&#x65F6;&#x53D1;&#x751F;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
+<td class="org-left">升级</td>
+<td class="org-left">恢复满值</td>
+<td class="org-left">XP满值时发生</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left">&#x6B7B;&#x4EA1;</td>
-<td class="left">HP&#x51CF;&#x4E3A;0&#x65F6;&#x53D1;&#x751F;</td>
-<td class="left">&#xA0;</td>
-<td class="left">-1&#x7EA7;</td>
-<td class="left">&#x51CF;&#x4E3A;0</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
+<td class="org-left">死亡</td>
+<td class="org-left">HP减为0时发生</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">-1级</td>
+<td class="org-left">减为0</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 </tbody>
 </table>
 
 <p>
-&#x7ECF;&#x9A8C;&#x3001;&#x91D1;&#x5E01;&#x7684;&#x5956;&#x52B1;&#x503C;&#x4EE5;&#x53CA;&#x5065;&#x5EB7;&#x7684;&#x635F;&#x5BB3;&#x503C;&#x7684;&#x591A;&#x5C11;&#x90FD;&#x4E0E;&#x4EFB;&#x52A1;&#x7684;&#x56F0;&#x96BE;&#x7A0B;&#x5EA6;&#x6709;&#x5173;&#x3002; <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> <b>&#x9F13;&#x52B1;&#x73A9;&#x5BB6;&#x53BB;&#x6311;&#x6218;&#x90A3;&#x4E9B;&#x56F0;&#x96BE;&#x7684;&#x4EFB;&#x52A1;</b> &#xFF0C;&#x56E0;&#x6B64;&#x4EFB;&#x52A1;&#x8D8A;&#x56F0;&#x96BE;&#xFF0C;&#x5B8C;&#x6210;&#x65F6;&#x7ED9;&#x4E88;&#x7684;&#x5956;&#x52B1;&#x8D8A;&#x591A;&#xFF0C;&#x5931;&#x8D25;&#x65F6;&#x65BD;&#x4EE5;&#x7684;&#x60E9;&#x7F5A;&#x8D8A;&#x5927;&#x3002;&#x800C;&#x4EFB;&#x52A1;&#x7684;&#x56F0;&#x96BE;&#x7A0B;&#x5EA6;&#x662F;&#x7531; <code>&#x4EFB;&#x52A1;&#x96BE;&#x5EA6;</code> &#x548C; <code>&#x4EFB;&#x52A1;&#x5206;&#x503C;</code> &#x6765;&#x5171;&#x540C;&#x8861;&#x91CF;&#x3002;&#x524D;&#x8005;&#x662F;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x540E;&#x8005;&#x4E3A; <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> &#x4E3A;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x81EA;&#x52A8;&#x8BA1;&#x7B97;&#x5F97;&#x51FA;&#x7684;&#x6570;&#x503C;&#x3002;&#x4E3A;&#x4E86;&#x589E;&#x52A0;&#x53EF;&#x73A9;&#x5EA6;&#xFF0C;&#x5728;&#x5956;&#x60E9;&#x529B;&#x5EA6;&#x7684;&#x8BBE;&#x8BA1;&#x673A;&#x5236;&#x4E2D;&#x8FD8;&#x5F15;&#x5165;&#x4E86;&#x73A9;&#x5BB6;&#x5C5E;&#x6027;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x8BE6;&#x89C1;&#x4E0B;&#x8868;&#xFF1A;
+经验、金币的奖励值以及健康的损害值的多少都与任务的困难程度有关。 <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> <b>鼓励玩家去挑战那些困难的任务</b> ，因此任务越困难，完成时给予的奖励越多，失败时施以的惩罚越大。而任务的困难程度是由 <code>任务难度</code> 和 <code>任务分值</code> 来共同衡量。前者是用户自定义的，后者为 <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> 为每个任务自动计算得出的数值。为了增加可玩度，在奖惩力度的设计机制中还引入了玩家属性的概念，详见下表：
 </p>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
-<col class="left">
+<col class="org-left">
 
-<col class="left">
+<col class="org-left">
 
-<col class="left">
+<col class="org-left">
 
-<col class="left">
+<col class="org-left">
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="left">&#xA0;</th>
-<th scope="col" class="left">XP&#x7684;&#x5956;&#x52B1;</th>
-<th scope="col" class="left">GP&#x7684;&#x5956;&#x52B1;</th>
-<th scope="col" class="left">HP&#x7684;&#x635F;&#x5BB3;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">XP的奖励</th>
+<th scope="col" class="org-left">GP的奖励</th>
+<th scope="col" class="org-left">HP的损害</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="left">&#x4EFB;&#x52A1;&#x96BE;&#x5EA6;</td>
-<td class="left">&#x8D8A;&#x5927;&#x8D8A;&#x591A;</td>
-<td class="left">&#x8D8A;&#x5927;&#x8D8A;&#x591A;</td>
-<td class="left">&#x8D8A;&#x5927;&#x8D8A;&#x591A;</td>
+<td class="org-left">任务难度</td>
+<td class="org-left">越大越多</td>
+<td class="org-left">越大越多</td>
+<td class="org-left">越大越多</td>
 </tr>
 
 <tr>
-<td class="left">&#x4EFB;&#x52A1;&#x5206;&#x503C;</td>
-<td class="left">&#x8D8A;&#x4F4E;&#x8D8A;&#x591A;</td>
-<td class="left">&#x8D8A;&#x4F4E;&#x8D8A;&#x591A;</td>
-<td class="left">&#x8D8A;&#x4F4E;&#x8D8A;&#x591A;</td>
+<td class="org-left">任务分值</td>
+<td class="org-left">越低越多</td>
+<td class="org-left">越低越多</td>
+<td class="org-left">越低越多</td>
 </tr>
 
 <tr>
-<td class="left">&#x73A9;&#x5BB6;&#x4F53;&#x8D28;</td>
-<td class="left">\</td>
-<td class="left">\</td>
-<td class="left">&#x8D8A;&#x9AD8;&#x8D8A;&#x5C11;</td>
+<td class="org-left">玩家体质</td>
+<td class="org-left">\</td>
+<td class="org-left">\</td>
+<td class="org-left">越高越少</td>
 </tr>
 
 <tr>
-<td class="left">&#x73A9;&#x5BB6;&#x611F;&#x77E5;</td>
-<td class="left">\</td>
-<td class="left">&#x8D8A;&#x9AD8;&#x8D8A;&#x591A;</td>
-<td class="left">\</td>
+<td class="org-left">玩家感知</td>
+<td class="org-left">\</td>
+<td class="org-left">越高越多</td>
+<td class="org-left">\</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> &#x90E8;&#x5206;&#x672F;&#x8BED;&#x8BE6;&#x89E3;</h2>
+<div id="outline-container-org244edc7" class="outline-2">
+<h2 id="org244edc7"><span class="section-number-2">4.</span> 部分术语详解</h2>
 <div class="outline-text-2" id="text-4">
-</div><div id="outline-container-&#x4EFB;&#x52A1;&#x5206;&#x503C;" class="outline-3">
-<h3 id="&#x4EFB;&#x52A1;&#x5206;&#x503C;"><a id="sec-4-1" name="sec-4-1"></a><span class="section-number-3">4.1</span> &#x4EFB;&#x52A1;&#x5206;&#x503C;<sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup></h3>
-<div class="outline-text-3" id="text-&#x4EFB;&#x52A1;&#x5206;&#x503C;">
-
+</div>
+<div id="outline-container-任务分值" class="outline-3">
+<h3 id="任务分值"><span class="section-number-3">4.1.</span> 任务分值<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup></h3>
+<div class="outline-text-3" id="text-任务分值">
 <p>
-&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x53CD;&#x6620;&#x4E86;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x5B8C;&#x6210;&#x60C5;&#x51B5;&#xFF1A;&#x65B0;&#x4EFB;&#x52A1;&#x7684;&#x521D;&#x59CB;&#x503C;&#x4E3A;0&#xFF0C;&#x8D8A;&#x591A;&#x5730;&#x88AB;&#x6267;&#x884C;&#xFF0C;&#x5206;&#x503C;&#x8D8A;&#x9AD8;&#xFF0C;&#x53CD;&#x4E4B;&#x5206;&#x503C;&#x8D8A;&#x4F4E;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x5206;&#x503C;&#x7684;&#x7EDD;&#x5BF9;&#x503C;&#x8D8A;&#x5927;&#xFF0C;&#x5B83;&#x6539;&#x53D8;&#x7684;&#x901F;&#x5EA6;&#x4E5F;&#x8D8A;&#x6162;&#x3002;
+任务分值反映了一个任务的完成情况：新任务的初始值为0，越多地被执行，分值越高，反之分值越低。同时，分值的绝对值越大，它改变的速度也越慢。
 </p>
 
 <p>
-&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x7684;&#x9AD8;&#x4F4E;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x989C;&#x8272;&#x6765;&#x53CD;&#x6620;&#xFF0C;&#x56E0;&#x6B64;&#x901A;&#x8FC7;&#x989C;&#x8272;&#x5373;&#x53EF; <b>&#x7C97;&#x7565;&#x5224;&#x65AD;</b> &#x4EFB;&#x52A1;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x65B0;&#x4EFB;&#x52A1;&#x90FD;&#x662F;&#x9EC4;&#x8272;&#xFF08;&#x4E2D;&#x6027;&#xFF09;&#xFF0C;&#x8D8A;&#x591A;&#x5730;&#x88AB;&#x5B8C;&#x6210;&#xFF0C;&#x5206;&#x503C;&#x8D8A;&#x9AD8;&#xFF0C;&#x989C;&#x8272;&#x5148;&#x53D8;&#x7EFF;&#x518D;&#x53D8;&#x84DD;&#xFF08;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x8F83;&#x597D;&#xFF09;&#xFF1B;&#x53CD;&#x4E4B;&#x5206;&#x503C;&#x8D8A;&#x4F4E;&#xFF0C;&#x989C;&#x8272;&#x5148;&#x53D8;&#x6A59;&#x518D;&#x53D8;&#x7EA2;&#xFF08;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x8F83;&#x5DEE;&#xFF09;&#x3002;
+任务分值的高低用不同的颜色来反映，因此通过颜色即可 <b>粗略判断</b> 任务的情况。新任务都是黄色（中性），越多地被完成，分值越高，颜色先变绿再变蓝（任务完成较好）；反之分值越低，颜色先变橙再变红（任务完成较差）。
 </p>
 
 <p>
@@ -623,244 +655,224 @@
 
 
 <colgroup>
-<col class="left">
+<col class="org-left">
 
-<col class="left">
+<col class="org-left">
 
-<col class="left">
+<col class="org-left">
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="left">&#x989C;&#x8272;</th>
-<th scope="col" class="left">&#x5206;&#x503C;</th>
-<th scope="col" class="left">&#x6539;&#x53D8;&#x989C;&#x8272;&#x7684;&#x70B9;&#x51FB;&#x6B21;&#x6570;</th>
+<th scope="col" class="org-left">颜色</th>
+<th scope="col" class="org-left">分值</th>
+<th scope="col" class="org-left">改变颜色的点击次数</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="left">Bright Blue</td>
-<td class="left">&gt;10</td>
-<td class="left">12 positive</td>
+<td class="org-left">Bright Blue</td>
+<td class="org-left">&gt;10</td>
+<td class="org-left">12 positive</td>
 </tr>
 
 <tr>
-<td class="left">Blue Grey</td>
-<td class="left">5~10</td>
-<td class="left">6 positive</td>
+<td class="org-left">Blue Grey</td>
+<td class="org-left">5~10</td>
+<td class="org-left">6 positive</td>
 </tr>
 
 <tr>
-<td class="left">Green</td>
-<td class="left">1~5</td>
-<td class="left">1 positive</td>
+<td class="org-left">Green</td>
+<td class="org-left">1~5</td>
+<td class="org-left">1 positive</td>
 </tr>
 
 <tr>
-<td class="left">Yellow</td>
-<td class="left">-1~1</td>
-<td class="left">0 clicks</td>
+<td class="org-left">Yellow</td>
+<td class="org-left">-1~1</td>
+<td class="org-left">0 clicks</td>
 </tr>
 
 <tr>
-<td class="left">Orange</td>
-<td class="left">-10~-1</td>
-<td class="left">1 negative</td>
+<td class="org-left">Orange</td>
+<td class="org-left">-10~-1</td>
+<td class="org-left">1 negative</td>
 </tr>
 
 <tr>
-<td class="left">Red</td>
-<td class="left">-20~-10</td>
-<td class="left">9 negative</td>
+<td class="org-left">Red</td>
+<td class="org-left">-20~-10</td>
+<td class="org-left">9 negative</td>
 </tr>
 
 <tr>
-<td class="left">Dark Red</td>
-<td class="left">&lt;-20</td>
-<td class="left">16 negative</td>
+<td class="org-left">Dark Red</td>
+<td class="org-left">&lt;-20</td>
+<td class="org-left">16 negative</td>
 </tr>
 </tbody>
 </table>
 
 <p>
-&#x8981;&#x67E5;&#x770B; <b>&#x5177;&#x4F53;&#x5206;&#x503C;</b> &#xFF0C;&#x70B9;&#x51FB; <code>&#x8FDB;&#x5EA6;</code> &#x56FE;&#x6807;&#x5C06;&#x5F39;&#x51FA;&#x8FD1;&#x671F;&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x7684;&#x66F2;&#x7EBF;&#x56FE;&#x3002;&#x5149;&#x6807;&#x6307;&#x5411;&#x5373;&#x53EF;&#x663E;&#x793A;&#x5BF9;&#x5E94;&#x65E5;&#x671F;&#x7684;&#x5206;&#x503C;&#x3002;
+要查看 <b>具体分值</b> ，点击 <code>进度</code> 图标将弹出近期任务分值的曲线图。光标指向即可显示对应日期的分值。
 </p>
 </div>
 
-<div id="outline-container-sec-4-1-1" class="outline-4">
-<h4 id="sec-4-1-1"><span class="section-number-4">4.1.1</span> &#x4EFB;&#x52A1;&#x5206;&#x503C;&#x7684;&#x5F71;&#x54CD;</h4>
+<div id="outline-container-orgfa23053" class="outline-4">
+<h4 id="orgfa23053"><span class="section-number-4">4.1.1.</span> 任务分值的影响</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <ul class="org-ul">
-<li>&#x8D8A;&#x5927;&#xFF08;&#x989C;&#x8272;&#x8D8A;&#x84DD;&#xFF0C;&#x8868;&#x793A;&#x662F;&#x7ECF;&#x5E38;&#x6027;&#x5B8C;&#x6210;&#x7684;&#x4EFB;&#x52A1;&#xFF09;&#xFF1A;
+<li>越大（颜色越蓝，表示是经常性完成的任务）：
 <ul class="org-ul">
-<li>XP&#x3001;GP&#x5956;&#x52B1;&#x503C;&#x51CF;&#x5C11;
-</li>
-<li>HP&#x635F;&#x5931;&#x503C;&#x51CF;&#x5C11;
-</li>
-<li>&#x5B9D;&#x7269;&#x6389;&#x51FA;&#x7387;&#x964D;&#x4F4E;&#xFF0C;&#x7136;&#x800C;&#x5F53;&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x8D85;&#x8FC7;21.27&#x540E;&#xFF0C;&#x5B9D;&#x7269;&#x6389;&#x51FA;&#x7387;&#x53C8;&#x5F00;&#x59CB;&#x5347;&#x9AD8;
-</li>
-<li>&#x7279;&#x5B9A;&#x6280;&#x80FD;&#x7684;&#x4F7F;&#x7528;&#x6548;&#x7387;&#x66F4;&#x9AD8;
-</li>
-</ul>
-</li>
-<li>&#x8D8A;&#x5C0F;&#xFF08;&#x989C;&#x8272;&#x8D8A;&#x7EA2;&#xFF0C;&#x8868;&#x793A;&#x662F;&#x4E0D;&#x5BB9;&#x6613;&#x5B8C;&#x6210;&#x7684;&#x4EFB;&#x52A1;&#xFF09;&#xFF1A;
+<li>XP、GP奖励值减少</li>
+<li>HP损失值减少</li>
+<li>宝物掉出率降低，然而当任务分值超过21.27后，宝物掉出率又开始升高</li>
+<li>特定技能的使用效率更高</li>
+</ul></li>
+<li>越小（颜色越红，表示是不容易完成的任务）：
 <ul class="org-ul">
-<li>XP&#x3001;GP&#x5956;&#x52B1;&#x503C;&#x589E;&#x52A0;
-</li>
-<li>HP&#x635F;&#x5931;&#x503C;&#x589E;&#x52A0;
-</li>
-<li>&#x5B9D;&#x7269;&#x6389;&#x51FA;&#x7387;&#x589E;&#x52A0;
-</li>
-</ul>
-</li>
+<li>XP、GP奖励值增加</li>
+<li>HP损失值增加</li>
+<li>宝物掉出率增加</li>
+</ul></li>
 </ul>
 
 <p>
-&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x5E76;&#x65E0;&#x4E0A;&#x9650;&#x548C;&#x4E0B;&#x9650;&#xFF0C;&#x4F46;&#x662F; <b>&#x4EFB;&#x52A1;&#x5206;&#x503C;&#x5BF9;&#x5956;&#x60E9;&#x529B;&#x5EA6;&#x7684;&#x52A0;&#x6210;&#x4F5C;&#x7528;&#x662F;&#x6709;&#x9650;&#x5EA6;&#x7684;</b> &#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x8D85;&#x8FC7;&#x7279;&#x5B9A;&#x8303;&#x56F4;&#x540E;&#xFF0C;&#x5956;&#x52B1;&#x4EE5;&#x53CA;&#x635F;&#x5BB3;&#x503C;&#x90FD;&#x4E0D;&#x4F1A;&#x518D;&#x589E;&#x52A0;&#x6216;&#x51CF;&#x5C11;&#x3002;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x662F; [-47.27, 21.27]&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x867D;&#x7136;&#x5206;&#x503C;&#x8D8A;&#x5927;&#xFF0C;&#x5956;&#x52B1;&#x503C;&#x8D8A;&#x5C0F;&#xFF0C;&#x4F46;&#x662F;&#x5206;&#x503C;30&#x548C;22&#x7684;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#x83B7;&#x5F97;&#x5956;&#x52B1;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF1B;&#x5206;&#x503C;&#x8D8A;&#x5C0F;&#xFF0C;&#x635F;&#x5931;&#x503C;&#x8D8A;&#x5927;&#xFF0C;&#x4F46;&#x662F;&#x5206;&#x503C;-48&#x548C;-60&#x7684;&#x4EFB;&#x52A1;&#x6CA1;&#x8FBE;&#x6210;&#x65F6;&#x6263;&#x9664;&#x7684;HP&#x4E5F;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;
+任务分值并无上限和下限，但是 <b>任务分值对奖惩力度的加成作用是有限度的</b> 。也就是说，超过特定范围后，奖励以及损害值都不会再增加或减少。具体来说，是 [-47.27, 21.27]。也就是说虽然分值越大，奖励值越小，但是分值30和22的任务完成后获得奖励是一样的；分值越小，损失值越大，但是分值-48和-60的任务没达成时扣除的HP也是一样的。
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-4-2" class="outline-3">
-<h3 id="sec-4-2"><span class="section-number-3">4.2</span> &#x8FDE;&#x51FB;&#x7EAA;&#x5F55;<sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup></h3>
+<div id="outline-container-org1cc05a8" class="outline-3">
+<h3 id="org1cc05a8"><span class="section-number-3">4.2.</span> 连击纪录<sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup></h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
-&#x8FDE;&#x51FB; Streaks&#xFF0C;&#x8BB0;&#x5F55;&#x9700;&#x6309;&#x65F6;&#x5B8C;&#x6210;&#x7684;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x8FDE;&#x7EED;&#x5B8C;&#x6210;&#x7684;&#x6B21;&#x6570;&#x3002;
+连击 Streaks，记录需按时完成的每日任务连续完成的次数。
 </p>
 
 <p>
-&#x8FDE;&#x51FB;&#x6B21;&#x6570;&#x6108;&#x9AD8;&#xFF0C;&#x80FD;&#x83B7;&#x5F97;&#x66F4;&#x591A;&#x7684;GP&#x548C;&#x66F4;&#x5927;&#x7684;&#x6389;&#x843D;&#x673A;&#x4F1A;&#x3002;&#x5982;&#x679C;&#x4F60;&#x5B9E;&#x73B0;21&#x5929;&#x8FDE;&#x51FB;&#xFF0C;&#x4F60;&#x5C06;&#x8D62;&#x5F97;&#x8FDE;&#x51FB;&#x6210;&#x5C31;&#x5FBD;&#x7AE0;&#x3002;&#x6B64;&#x9879;&#x6210;&#x5C31;&#x53EF;&#x79EF;&#x7D2F;&#xFF0C;&#x6362;&#x8A00;&#x4E4B;&#xFF0C;&#x5982;&#x679C;&#x53C8;&#x8FDE;&#x7EED;21&#x5929;&#x5B8C;&#x6210;&#x67D0;&#x4E9B;&#x4EFB;&#x52A1;&#xFF0C;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x53E6;&#x4E00;&#x679A;&#x8FDE;&#x51FB;&#x6210;&#x5C31;&#x5FBD;&#x7AE0;&#x3002;&#x6BCF;&#x4E2A;&#x5FBD;&#x7AE0;&#x90FD;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x6389;&#x843D;&#x7684;&#x673A;&#x4F1A;&#x3002;
+连击次数愈高，能获得更多的GP和更大的掉落机会。如果你实现21天连击，你将赢得连击成就徽章。此项成就可积累，换言之，如果又连续21天完成某些任务，你还可以获得另一枚连击成就徽章。每个徽章都可以增加掉落的机会。
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> &#x6E38;&#x620F;&#x5316;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x751F;&#x6D3B;&#x5427;&#xFF01;</h2>
+<div id="outline-container-org07580a3" class="outline-2">
+<h2 id="org07580a3"><span class="section-number-2">5.</span> 游戏化你自己的生活吧！</h2>
 <div class="outline-text-2" id="text-5">
-</div><div id="outline-container-sec-5-1" class="outline-3">
-<h3 id="sec-5-1"><span class="section-number-3">5.1</span> &#x5EFA;&#x7ACB;&#x4EFB;&#x52A1;&#x6E05;&#x5355;</h3>
+</div>
+<div id="outline-container-org61ac29f" class="outline-3">
+<h3 id="org61ac29f"><span class="section-number-3">5.1.</span> 建立任务清单</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
-&#x4EFB;&#x52A1;&#x6E05;&#x5355;&#x6709;&#x4E09;&#x7C7B;&#xFF1A;&#x4E60;&#x60EF;&#x3001;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x3001;&#x5F85;&#x529E;&#x4E8B;&#x9879;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4E0B;&#x9762;&#x7684;&#x8868;&#x683C;&#x51B3;&#x5B9A;&#x4E00;&#x9879;&#x4EFB;&#x52A1;&#x5E94;&#x8BE5;&#x5F52;&#x4E3A;&#x54EA;&#x4E00;&#x7C7B;&#xFF1A;
+任务清单有三类：习惯、每日任务、待办事项，你可以根据下面的表格决定一项任务应该归为哪一类：
 </p>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
-<col class="left">
+<col class="org-left">
 
-<col class="left">
+<col class="org-left">
 
-<col class="left">
+<col class="org-left">
 
-<col class="left">
+<col class="org-left">
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="left">&#xA0;</th>
-<th scope="col" class="left">&#x4E60;&#x60EF;</th>
-<th scope="col" class="left">&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;</th>
-<th scope="col" class="left">&#x5F85;&#x529E;&#x4E8B;&#x9879;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">习惯</th>
+<th scope="col" class="org-left">每日任务</th>
+<th scope="col" class="org-left">待办事项</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="left">&#x9891;&#x7387;</td>
-<td class="left">&#x7ECF;&#x5E38;&#x6027;&#xFF1A;&#x53EF;&#x6BCF;&#x5929;&#x591A;&#x6B21;</td>
-<td class="left">&#x7ECF;&#x5E38;&#x6027;&#xFF1A;&#x4E00;&#x5929;&#x4E00;&#x6B21;&#x6216;&#x4E00;&#x5468;&#x51E0;&#x6B21;</td>
-<td class="left">&#x4E00;&#x6B21;&#x6027;&#x6216;&#x4E0D;&#x7ECF;&#x5E38;&#x53D1;&#x751F;</td>
+<td class="org-left">频率</td>
+<td class="org-left">经常性：可每天多次</td>
+<td class="org-left">经常性：一天一次或一周几次</td>
+<td class="org-left">一次性或不经常发生</td>
 </tr>
 
 <tr>
-<td class="left">&#x8BA1;&#x5212;</td>
-<td class="left">/</td>
-<td class="left">&#x9700;&#x6309;&#x65F6;&#x5B8C;&#x6210;</td>
-<td class="left">/</td>
+<td class="org-left">计划</td>
+<td class="org-left">/</td>
+<td class="org-left">需按时完成</td>
+<td class="org-left">/</td>
 </tr>
 
 <tr>
-<td class="left">&#x5956;&#x52B1;</td>
-<td class="left">&#x8FBE;&#x6210;&#x591A;&#x6B21;&#x597D;&#x4E60;&#x60EF;&#x6709;&#x591A;&#x6B21;&#x5956;&#x52B1;</td>
-<td class="left">&#xA0;</td>
-<td class="left">&#xA0;</td>
+<td class="org-left">奖励</td>
+<td class="org-left">达成多次好习惯有多次奖励</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left">&#x60E9;&#x7F5A;</td>
-<td class="left">&#x6CA1;&#x5B8C;&#x6210;&#x65F6;&#x65E0;&#x60E9;&#x7F5A;&#xFF0C;&#x4F46;&#x88AB;&#x574F;&#x4E60;&#x60EF;&#x51FB;&#x5012;&#x6709;&#x60E9;&#x7F5A;</td>
-<td class="left">&#x4E00;&#x5929;&#x7ED3;&#x675F;&#x65F6;&#xFF0C;&#x5982;&#x6709;&#x672A;&#x5B8C;&#x6210;&#x7684;&#x4E8B;&#x9879;&#x6709;&#x60E9;&#x7F5A;</td>
-<td class="left">&#x6CA1;&#x5B8C;&#x6210;&#x65F6;&#x65E0;&#x60E9;&#x7F5A;</td>
+<td class="org-left">惩罚</td>
+<td class="org-left">没完成时无惩罚，但被坏习惯击倒有惩罚</td>
+<td class="org-left">一天结束时，如有未完成的事项有惩罚</td>
+<td class="org-left">没完成时无惩罚</td>
 </tr>
 
 <tr>
-<td class="left">&#x60C5;&#x5883;</td>
-<td class="left">&#x517B;&#x6210;&#x6216;&#x6212;&#x6389;&#x4E60;&#x60EF;</td>
-<td class="left">&#x91CD;&#x590D;&#x6027;&#x7684;&#x5E38;&#x89C4;&#x6D41;&#x7A0B;</td>
-<td class="left">&#x6BCF;&#x5929;3&#x5757;&#x5927;&#x77F3;&#x5934;</td>
+<td class="org-left">情境</td>
+<td class="org-left">养成或戒掉习惯</td>
+<td class="org-left">重复性的常规流程</td>
+<td class="org-left">每天3块大石头</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<div id="outline-container-sec-5-1-1" class="outline-4">
-<h4 id="sec-5-1-1"><span class="section-number-4">5.1.1</span> &#x4E60;&#x60EF;<sup><a id="fnr.4" name="fnr.4" class="footref" href="#fn.4">4</a></sup></h4>
+<div id="outline-container-orgebf2881" class="outline-4">
+<h4 id="orgebf2881"><span class="section-number-4">5.1.1.</span> 习惯<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup></h4>
 <div class="outline-text-4" id="text-5-1-1">
 <p>
-&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;&#x4E60;&#x60EF;&#x7684; <code>&#x65B9;&#x5411;/&#x52A8;&#x4F5C;</code> &#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5EFA;&#x7ACB;3&#x79CD;&#x4E60;&#x60EF;&#xFF1A;
+通过设置习惯的 <code>方向/动作</code> ，你可以建立3种习惯：
 </p>
 
 <p>
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/habitica_habit_direction.png">
 </p>
 <ul class="org-ul">
-<li>&#x597D;&#x4E60;&#x60EF; &#x5982;&#x679C;&#x60F3;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x4F60;&#x60F3;&#x57F9;&#x517B;&#x7684;&#x597D;&#x4E60;&#x60EF;&#xFF0C;&#x90A3;&#x4E48;&#x53EA;&#x52FE;&#x9009; <code>+</code>
-     <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/habitica_good_habit.png">
-</li>
-<li>&#x574F;&#x4E60;&#x60EF; &#x5982;&#x679C;&#x60F3;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x4F60;&#x60F3;&#x6212;&#x9664;&#x7684;&#x574F;&#x4E60;&#x60EF;&#xFF0C;&#x90A3;&#x4E48;&#x53EA;&#x52FE;&#x9009; <code>-</code>
-     <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/habitica_bad_habit.png"> 
-</li>
-<li>&#x53CC;&#x5411;&#x4E60;&#x60EF; &#x5982;&#x679C;&#x4E00;&#x4E2A;&#x4E60;&#x60EF;&#x5305;&#x542B;&#x79EF;&#x6781;&#x548C;&#x6D88;&#x6781;&#x4E24;&#x9762;&#xFF0C;&#x5219;&#x540C;&#x65F6;&#x52FE;&#x9009; <code>+</code> &#x548C; <code>-</code>
-     <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/habitica_good-bad_habit.png"> 
-</li>
+<li>好习惯 如果想建立一个你想培养的好习惯，那么只勾选 <code>+</code>
+<img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/habitica_good_habit.png"></li>
+<li>坏习惯 如果想建立一个你想戒除的坏习惯，那么只勾选 <code>-</code>
+<img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/habitica_bad_habit.png"></li>
+<li>双向习惯 如果一个习惯包含积极和消极两面，则同时勾选 <code>+</code> 和 <code>-</code>
+<img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/habitica_good-bad_habit.png"></li>
 </ul>
 
 <p>
-&#x4F60;&#x53EF;&#x4EE5;&#x4E3A;&#x81EA;&#x5DF1;&#x751F;&#x6D3B;&#x7684;&#x65B9;&#x65B9;&#x9762;&#x9762;&#x90FD;&#x5EFA;&#x7ACB;&#x60F3;&#x57F9;&#x517B;/&#x6212;&#x9664;&#x7684;&#x4E60;&#x60EF;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;
+你可以为自己生活的方方面面都建立想培养/戒除的习惯，例如：
 </p>
 <ul class="org-ul">
-<li>+/- &#x4E03;&#x70B9;&#x4E4B;&#x524D;/&#x540E;&#x8D77;&#x5E8A;
-</li>
-<li>+/- &#x810F;&#x8863;&#x7269;&#x653E;&#x5728;&#x810F;&#x8863;&#x7BD3;/&#x4E71;&#x5806;
-</li>
-<li>+ &#x9605;&#x8BFB;1&#x7BC7;&#x4F18;&#x8D28;&#x6587;&#x7AE0;
-</li>
-<li>+ &#x4E3A;1&#x4E2A;&#x7AE0;&#x8282;&#x505A;&#x4E86;&#x7B14;&#x8BB0;
-</li>
+<li>+/- 七点之前/后起床</li>
+<li>+/- 脏衣物放在脏衣篓/乱堆</li>
+<li>+ 阅读1篇优质文章</li>
+<li>+ 为1个章节做了笔记</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-5-1-2" class="outline-4">
-<h4 id="sec-5-1-2"><span class="section-number-4">5.1.2</span> &#x6BCF;&#x65E5;&#x4EFB;&#x52A1;</h4>
+<div id="outline-container-org9b6e271" class="outline-4">
+<h4 id="org9b6e271"><span class="section-number-4">5.1.2.</span> 每日任务</h4>
 <div class="outline-text-4" id="text-5-1-2">
 <p>
-&#x6211;&#x7684;&#x6BCF;&#x65E5;&#x4EFB;&#x52A1;&#x4E3B;&#x8981;&#x6709;2&#x79CD;&#xFF1A;
+我的每日任务主要有2种：
 </p>
 
 <ol class="org-ol">
-<li>&#x6BCF;&#x65E5;&#x5E38;&#x89C4;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x505A;&#x662F;&#x7279;&#x522B;&#x60F3;&#x517B;&#x6210;&#x7684;&#x4E60;&#x60EF;&#xFF0C;&#x5982;&#x679C;&#x6BCF;&#x5929;&#x4E0D;&#x5B8C;&#x6210;&#x4F1A;&#x6709;&#x6263;&#x5206;&#x60E9;&#x7F5A;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;
+<li>每日常规，可以看做是特别想养成的习惯，如果每天不完成会有扣分惩罚，例如：
 <ul class="org-ul">
-<li>&#x6BCF;&#x5929;&#x627E;&#x4E00;&#x4E2A;&#x65F6;&#x95F4;&#x5B8C;&#x6210;&#x201C;&#x6E05;&#x7A7A;&#x6536;&#x4EF6;&#x5323;&#x201D;
-</li>
-<li>12&#x70B9;&#x524D;&#x7761;&#x89C9;
-</li>
-<li>&#x6BCF;&#x5929;&#x81F3;&#x5C11;&#x4E00;&#x74F6;&#x6C34;
-</li>
-</ul>
-</li>
-<li>&#x4ECA;&#x65E5;&#x4E00;&#x5B9A;&#x8981;&#x5B8C;&#x6210;&#x7684;&#x4E09;&#x4EF6;&#x4E8B;&#xFF1A;&#x5728;&#x524D;&#x4E00;&#x5929;&#x7761;&#x524D;&#x5217;&#x51FA;
-</li>
+<li>每天找一个时间完成“清空收件匣”</li>
+<li>12点前睡觉</li>
+<li>每天至少一瓶水</li>
+</ul></li>
+<li>今日一定要完成的三件事：在前一天睡前列出</li>
 </ol>
 </div>
 
@@ -869,202 +881,162 @@
 
 
 
-<ol class="org-ol"><li><a id="sec-5-1-2-1" name="sec-5-1-2-1"></a>&#x7070;&#x8272; Dailies<br><div class="outline-text-5" id="text-5-1-2-1">
+<ol class="org-ol">
+<li><a id="org007a295"></a>灰色 Dailies<br>
+<div class="outline-text-5" id="text-5-1-2-1">
 <p>
-&#x663E;&#x793A;&#x4E3A;&#x7070;&#x8272;&#x53EF;&#x80FD;&#x6709;&#x4E24;&#x4E2A;&#x539F;&#x56E0;&#xFF1A;
+显示为灰色可能有两个原因：
 </p>
 <ol class="org-ol">
-<li>&#x4ECA;&#x65E5;&#x5DF2;&#x5B8C;&#x6210;
-</li>
-<li>&#x672A;&#x8BA1;&#x5212;&#x5728;&#x4ECA;&#x65E5;&#x6267;&#x884C;
-</li>
+<li>今日已完成</li>
+<li>未计划在今日执行</li>
 </ol>
 
 <p>
-&#x5728;&#x7B2C;2&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7528;&#x6237;&#xFF1A;
+在第2种情况下，用户：
 </p>
 <ul class="org-ul">
-<li>&#x4E0D;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#xFF0C;&#x4E0D;&#x4F1A;&#x635F;&#x5931;HP&#xFF0C;&#x4E5F;&#x4E0D;&#x4F1A;&#x4E2D;&#x65AD;&#x8FDE;&#x51FB;&#x6570;
-</li>
-<li>&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x4EA6;&#x53EF;&#x83B7;&#x5F97;XP&#x3001;GP&#x548C;&#x8FDE;&#x51FB;
-</li>
+<li>不执行任务，不会损失HP，也不会中断连击数</li>
+<li>执行任务亦可获得XP、GP和连击</li>
 </ul>
 </div>
-</li></ol>
+</li>
+</ol>
 </div>
 
-<div id="outline-container-sec-5-1-3" class="outline-4">
-<h4 id="sec-5-1-3"><span class="section-number-4">5.1.3</span> &#x5F85;&#x529E;&#x4E8B;&#x9879;</h4>
+<div id="outline-container-org6bff439" class="outline-4">
+<h4 id="org6bff439"><span class="section-number-4">5.1.3.</span> 待办事项</h4>
 <div class="outline-text-4" id="text-5-1-3">
 <ul class="org-ul">
-<li>&#x9002;&#x7528;&#x60C5;&#x5883;&#xFF1A;&#x4E00;&#x6B21;&#x6027;&#x7684;&#x91CD;&#x8981;&#x6311;&#x6218;&#xFF0C;&#x4E0D;&#x4E00;&#x5B9A;&#x6709;&#x5B8C;&#x6210;&#x65F6;&#x95F4;&#xFF08;&#x4F46;&#x53EF;&#x4EE5;&#x8BBE;&#x5B9A;&#x65F6;&#x9650;&#xFF09;&#xFF0C;&#x4F46;&#x662F;&#x5B8C;&#x6210;&#x540E;&#x5C31;&#x7ED3;&#x675F;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x80FD;&#x6210;&#x5C31;&#x611F;&#x7279;&#x522B;&#x5927;&#x3002;
-</li>
+<li>适用情境：一次性的重要挑战，不一定有完成时间（但可以设定时限），但是完成后就结束，并且可能成就感特别大。</li>
 
-<li>&#x4E3E;&#x4F8B;&#xFF1A;
+<li>举例：
 <ul class="org-ul">
-<li>&#x5199;&#x5B8C;&#x201C;HabitRPG&#x201D;&#x5FC3;&#x5F97;&#x6559;&#x5B66;
-</li>
-<li>&#x6574;&#x7406;Cousera&#x5B66;&#x4E60;&#x7B14;&#x8BB0;
-</li>
-</ul>
-</li>
+<li>写完“HabitRPG”心得教学</li>
+<li>整理Cousera学习笔记</li>
+</ul></li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-5-2" class="outline-3">
-<h3 id="sec-5-2"><span class="section-number-3">5.2</span> &#x5956;&#x52B1;</h3>
+<div id="outline-container-org4394c65" class="outline-3">
+<h3 id="org4394c65"><span class="section-number-3">5.2.</span> 奖励</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
-&#x5728; <a href="#sec-1">1</a> &#x4E2D;&#x63D0;&#x5230;&#xFF0C;&#x5956;&#x52B1; Rewards &#x5206; <b>&#x5185;&#x7F6E;</b> &#x7684;&#x88C5;&#x5907;&#x7B49;&#x5956;&#x52B1;&#x548C;&#x4E2A;&#x4EBA; <b>&#x81EA;&#x5B9A;&#x4E49;</b> &#x5956;&#x52B1;&#x4E24;&#x79CD;&#xFF0C;&#x8BE5;&#x8282;&#x4E3B;&#x8981;&#x8BA8;&#x8BBA;&#x5982;&#x4F55;&#x81EA;&#x5DF1;&#x8BBE;&#x7F6E;&#x5956;&#x52B1;&#xFF0C;&#x628A;&#x771F;&#x5B9E;&#x4E16;&#x754C;&#x7684;&#x5956;&#x8D4F;&#x7528;&#x91D1;&#x5E01;&#x6765;&#x5151;&#x6362;&#x3002;&#x6982;&#x8A00;&#x4E4B;&#xFF0C;&#x6B65;&#x9AA4;&#x5C31;&#x4E24;&#x4E2A;&#xFF1A;
+在 <a href="#orgaf49e9b">1</a> 中提到，奖励 Rewards 分 <b>内置</b> 的装备等奖励和个人 <b>自定义</b> 奖励两种，该节主要讨论如何自己设置奖励，把真实世界的奖赏用金币来兑换。概言之，步骤就两个：
 </p>
 
 <ol class="org-ol">
-<li>&#x627E;&#x5230;&#x6FC0;&#x52B1;&#x4F60;&#x7684;&#x4E8B;&#x7269;
-</li>
-<li>&#x4E3A;&#x5956;&#x52B1;&#x5236;&#x5B9A;&#x5408;&#x9002;&#x7684;&#x5151;&#x6362;&#x4EF7;&#x683C;
-</li>
+<li>找到激励你的事物</li>
+<li>为奖励制定合适的兑换价格</li>
 </ol>
 </div>
 
-<div id="outline-container-sec-5-2-1" class="outline-4">
-<h4 id="sec-5-2-1"><span class="section-number-4">5.2.1</span> &#x627E;&#x5230;&#x6FC0;&#x52B1;&#x4F60;&#x7684;&#x4E8B;&#x7269;</h4>
+<div id="outline-container-orgf8725a2" class="outline-4">
+<h4 id="orgf8725a2"><span class="section-number-4">5.2.1.</span> 找到激励你的事物</h4>
 <div class="outline-text-4" id="text-5-2-1">
 <p>
-&#x60F3;&#x4E00;&#x4E0B;&#xFF0C;&#x505A;&#x4EC0;&#x4E48;&#x4E8B;&#x60C5;&#x4F1A;&#x4EE4;&#x4F60;&#x5FC3;&#x60C5;&#x6109;&#x60A6;&#xFF1F;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x601D;&#x8DEF;&#xFF0C;&#x4E0D;&#x59A8;&#x53C2;&#x8003;&#x4EE5;&#x4E0B;&#xFF1A;
+想一下，做什么事情会令你心情愉悦？如果没有思路，不妨参考以下：
 </p>
 
 <ul class="org-ul">
-<li>&#x57FA;&#x4E8E;&#x65F6;&#x95F4;&#x7684;&#x5956;&#x52B1;
+<li>基于时间的奖励
 <ul class="org-ul">
-<li>1h &#x4F11;&#x95F2;&#x9605;&#x8BFB;
-</li>
-<li>20min &#x5C0F;&#x7761;
-</li>
-</ul>
-</li>
-<li>&#x57FA;&#x4E8E;&#x91D1;&#x94B1;&#x7684;&#x5956;&#x52B1;
+<li>1h 休闲阅读</li>
+<li>20min 小睡</li>
+</ul></li>
+<li>基于金钱的奖励
 <ul class="org-ul">
-<li>&#x4E2D;&#x6587;&#x7EC3;&#x5B57;&#x94A2;&#x7B14;&#xFF08;&#xFFE5;500&#x4EE5;&#x5185;&#xFF09;
-</li>
-<li>SONOS&#x97F3;&#x54CD;&#xFF08;&#xFFE5;1000&#xFF09;
-</li>
-</ul>
-</li>
-<li>&#x5176;&#x4ED6;&#x5956;&#x52B1;&#xFF1A;&#x4E0D;&#x600E;&#x4E48;&#x8D39;&#x94B1;&#x4F46;&#x662F;&#x8BA9;&#x4EBA;&#x5FC3;&#x60C5;&#x6109;&#x5FEB;&#x7684;&#x4E8B;&#x60C5;&#xFF01;
+<li>中文练字钢笔（￥500以内）</li>
+<li>SONOS音响（￥1000）</li>
+</ul></li>
+<li>其他奖励：不怎么费钱但是让人心情愉快的事情！
 <ul class="org-ul">
-<li>&#x770B;&#x4E00;&#x90E8;&#x7535;&#x5F71;
-</li>
-<li>&#x53BB;&#x535A;&#x7269;&#x9986;
-</li>
-</ul>
-</li>
+<li>看一部电影</li>
+<li>去博物馆</li>
+</ul></li>
 </ul>
 
 <p>
-&#x8BBE;&#x7F6E;&#x5956;&#x52B1;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5EFA;&#x8BAE;&#x65E2;&#x6709;&#x4E00;&#x4E9B;&#x5C0F;&#x7684;&#x65E5;&#x5E38;&#x5956;&#x52B1;&#xFF0C;&#x4E5F;&#x6709;&#x5927;&#x7684;&#x957F;&#x671F;&#x5956;&#x52B1;&#x3002;
+设置奖励的时候，建议既有一些小的日常奖励，也有大的长期奖励。
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-5-2-2" class="outline-4">
-<h4 id="sec-5-2-2"><span class="section-number-4">5.2.2</span> &#x4E3A;&#x5956;&#x52B1;&#x5236;&#x5B9A;&#x5408;&#x9002;&#x7684;&#x5151;&#x6362;&#x4EF7;&#x683C;</h4>
+<div id="outline-container-org82bc957" class="outline-4">
+<h4 id="org82bc957"><span class="section-number-4">5.2.2.</span> 为奖励制定合适的兑换价格</h4>
 <div class="outline-text-4" id="text-5-2-2">
 <p>
-&#x4E0E;&#x8D2D;&#x7269;&#x65F6;&#x9700;&#x8981;&#x8003;&#x8651; <b>&#x6536;&#x5165;</b> &#x548C; <b>&#x652F;&#x51FA;</b> &#x4E24;&#x65B9;&#x9762;&#x7C7B;&#x4F3C;&#xFF0C;&#x5728;&#x4E3A;&#x5956;&#x52B1;&#x5236;&#x5B9A;&#x5151;&#x6362;&#x4EF7;&#x683C;&#x65F6;&#xFF0C;&#x4E5F;&#x9700;&#x8981;&#x8003;&#x8651;&#x4E24;&#x65B9;&#x9762;&#xFF1A;
+与购物时需要考虑 <b>收入</b> 和 <b>支出</b> 两方面类似，在为奖励制定兑换价格时，也需要考虑两方面：
 </p>
 
 <ul class="org-ul">
-<li>&#x5982;&#x679C;&#x6211;&#x5B8C;&#x6210;&#x6240;&#x6709;&#x7684;&#x5F53;&#x65E5;&#x4EFB;&#x52A1;&#xFF0C;&#x53EF;&#x4EE5;&#x8D5A;&#x591A;&#x5C11;&#x91D1;&#x5E01;&#xFF1F;&#x8D5A;&#x5F97;&#x5C11;&#xFF0C;&#x5B9A;&#x4EF7;&#x4F4E;&#xFF1B;&#x8D5A;&#x5F97;&#x591A;&#xFF0C;&#x5B9A;&#x4EF7;&#x9AD8;&#x3002;
-</li>
-<li>&#x5956;&#x52B1;&#x4EF7;&#x683C;&#x7684;&#x5B9A;&#x5236;&#x53EF;&#x7EFC;&#x5408;&#x8003;&#x8651;&#x4EE5;&#x4E0B;&#x51E0;&#x70B9;&#xFF1A;
+<li>如果我完成所有的当日任务，可以赚多少金币？赚得少，定价低；赚得多，定价高。</li>
+<li>奖励价格的定制可综合考虑以下几点：
 <ul class="org-ul">
-<li>&#x4F60;&#x5E0C;&#x671B;&#x591A;&#x4E45;&#x7ED9;&#x81EA;&#x5DF1;&#x4E00;&#x6B21;&#x5956;&#x52B1;&#xFF1F;
-</li>
-<li>&#x8FD9;&#x4E2A;&#x5956;&#x52B1;&#x9700;&#x8981;&#x82B1;&#x8D39;&#x591A;&#x5C11;&#x94B1;&#xFF1F;
-</li>
-<li>&#x5DE5;&#x4F5C;&#x591A;&#x4E45;&#x503C;&#x5F97;&#x8FD9;&#x4E2A;&#x5956;&#x52B1;&#xFF1F;
-
-<p>
-&#x4F8B;&#x5982;&#x8FBE;&#x6210;1&#x5929;&#x7684;&#x76EE;&#x6807;&#x53EF;&#x4EE5;&#x5151;&#x6362;&#x770B;&#x4E00;&#x96C6;&#x7535;&#x89C6;&#x5267;&#xFF0C;1/2 day x 1 week (&#x5373; 3.5 days) &#x7684;&#x5DE5;&#x4F5C;&#x80FD;&#x8BA9;&#x6211;&#x5FC3;&#x65E0;&#x8D1F;&#x62C5;&#x5730;&#x5468;&#x65E5;&#x53BB;&#x516C;&#x56ED;&#x3002; 
+<li>你希望多久给自己一次奖励？</li>
+<li>这个奖励需要花费多少钱？</li>
+<li><p>
+工作多久值得这个奖励？
 </p>
-</li>
-</ul>
-</li>
+
+<p>
+例如达成1天的目标可以兑换看一集电视剧，1/2 day x 1 week (即 3.5 days) 的工作能让我心无负担地周日去公园。 
+</p></li>
+</ul></li>
 </ul>
 
 <p>
-&#x8981;&#x4FDD;&#x8BC1;&#x4F60;&#x53EF;&#x4EE5;&#x56E0;&#x81EA;&#x5DF1;&#x7684;&#x52AA;&#x529B;&#x4EAB;&#x53D7;&#x6070;&#x5F53;&#x7684;&#x5956;&#x52B1;&#xFF01;
+要保证你可以因自己的努力享受恰当的奖励！
 </p>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6"><span class="section-number-2">6</span> &#x589E;&#x52A0;&#x53EF;&#x73A9;&#x6027;&#x7684;&#x6E38;&#x620F;&#x673A;&#x5236;</h2>
+<div id="outline-container-org3135c44" class="outline-2">
+<h2 id="org3135c44"><span class="section-number-2">6.</span> 增加可玩性的游戏机制</h2>
 <div class="outline-text-2" id="text-6">
 <p>
-&#x4E2A;&#x4EBA;&#x5BF9;&#x6B64;&#x5174;&#x81F4;&#x7F3A;&#x7F3A;&#xFF0C;&#x5728;&#x6B64;&#x4EC5;&#x7B80;&#x5355;&#x5217;&#x4E3E;&#x51E0;&#x70B9;&#xFF0C;&#x6709;&#x5174;&#x8DA3;&#x7684;&#x670B;&#x53CB;&#x53EF;&#x81EA;&#x884C;&#x63A2;&#x7A76;&#xFF1A;
+个人对此兴致缺缺，在此仅简单列举几点，有兴趣的朋友可自行探究：
 </p>
 
 <ul class="org-ul">
-<li>&#x8BBE;&#x7F6E;&#x89D2;&#x8272;&#x5F62;&#x8C61;
-</li>
-<li>&#x8D2D;&#x4E70;&#x88C5;&#x5907;
-</li>
-<li>&#x5728;&#x5BA2;&#x6808;&#x4E2D;&#x53EF;&#x4EE5;&#x968F;&#x610F;&#x7684;&#x548C;&#x5176;&#x4ED6;&#x4EBA;&#x4E00;&#x8D77;&#x4EA4;&#x6D41;&#x5FC3;&#x5F97;&#xFF0C;&#x8BA8;&#x8BBA;&#x95EE;&#x9898;&#x3002;
-</li>
-<li>&#x8FBE;&#x5230;&#x7B49;&#x7EA7; 4 &#x540E;&#xFF0C;&#x5B8C;&#x6210;&#x67D0;&#x4E9B;&#x6311;&#x6218;&#x4F1A;&#x968F;&#x673A;&#x6389;&#x843D;&#x4E00;&#x4E9B;&#x5B9D;&#x7269;&#xFF0C;&#x50CF;&#x662F;&#x5BA0;&#x7269;&#x86CB;&#x3001;&#x5BA0;&#x7269;&#x836F;&#x6C34;&#x3001;&#x5BA0;&#x7269;&#x98DF;&#x7269;&#x3002;&#x628A;&#x836F;&#x6C34;&#x6DCB;&#x5230;&#x86CB;&#x4E0A;&#xFF0C;&#x4FBF;&#x80FD;&#x83B7;&#x5F97;&#x81EA;&#x5DF1;&#x7684;&#x5BA0;&#x7269;&#xFF0C;&#x800C;&#x5582;&#x5BA0;&#x7269;&#x5403;&#x98DF;&#x7269;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x8BA9;&#x5BA0;&#x7269;&#x957F;&#x5927;&#xFF0C;&#x6700;&#x540E;&#x53D8;&#x6210;&#x81EA;&#x5DF1;&#x7684;&#x5750;&#x9A91;&#x3002;
-</li>
-<li>&#x8FBE;&#x5230;&#x7B49;&#x7EA7; 10 &#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x89D2;&#x8272;&#x804C;&#x4E1A;&#xFF0C;&#x7EC4;&#x6210;&#x961F;&#x4F0D;&#x3001;&#x516C;&#x4F1A;&#xFF0C;&#x4E00;&#x8D77;&#x53BB;&#x6311;&#x6218;&#x66F4;&#x591A;&#x9B54;&#x738B;&#x4EFB;&#x52A1;
-</li>
+<li>设置角色形象</li>
+<li>购买装备</li>
+<li>在客栈中可以随意的和其他人一起交流心得，讨论问题。</li>
+<li>达到等级 4 后，完成某些挑战会随机掉落一些宝物，像是宠物蛋、宠物药水、宠物食物。把药水淋到蛋上，便能获得自己的宠物，而喂宠物吃食物，则可以让宠物长大，最后变成自己的坐骑。</li>
+<li>达到等级 10 后，可以选择角色职业，组成队伍、公会，一起去挑战更多魔王任务</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7"><span class="section-number-2">7</span> &#x66F4;&#x65B0;&#x5386;&#x53F2;</h2>
+<div id="outline-container-orgb1bac0c" class="outline-2">
+<h2 id="orgb1bac0c"><span class="section-number-2">7.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-7">
 <ul class="org-ul">
-<li><span class="timestamp-wrapper"><span class="timestamp">[2016-04-29 &#x5468;&#x4E94;]</span></span> &#x589E;&#x52A0;&#x5173;&#x4E8E;&#x201C;&#x5956;&#x52B1;&#x201D;&#x7684;&#x4ECB;&#x7ECD;
-</li>
-<li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-29 &#x5468;&#x4E94;]</span></span> &#x62DF;&#x5B9A;&#x521D;&#x7A3F;
-</li>
+<li><span class="timestamp-wrapper"><span class="timestamp">[2016-04-29 五] </span></span> 增加关于“奖励”的介绍</li>
+<li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-29 五] </span></span> 拟定初稿</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-8" class="outline-2">
-<h2 id="sec-8"><span class="section-number-2">8</span> &#x53C2;&#x8003;</h2>
+<div id="outline-container-org0a32601" class="outline-2">
+<h2 id="org0a32601"><span class="section-number-2">8.</span> 参考</h2>
 <div class="outline-text-2" id="text-8">
 <ul class="org-ul">
-<li><a href="http://www.playpcesor.com/2015/01/habitrpg.html" target="_blank" rel="external">HabitRPG &#x6559;&#x5B66;&#xFF1A;&#x628A;&#x517B;&#x6210;&#x597D;&#x4E60;&#x60EF;&#x8BBE;&#x8BA1;&#x6210;&#x597D;&#x73A9;&#x7684;&#x751F;&#x6D3B;&#x6E38;&#x620F; - &#x7535;&#x8111;&#x73A9;&#x7269;</a>
-</li>
-<li><a href="http://habitica.wikia.com/wiki/Sample_Habits" target="_blank" rel="external">Sample Habits - Habitica Wiki - Wikia</a>
-</li>
-<li><a href="http://habitica.wikia.com/wiki/Sample_Dailies" target="_blank" rel="external">Sample Dailies - Habitica Wiki - Wikia</a>
-</li>
-<li><a href="http://habitica.wikia.com/wiki/Sample_To-Dos" target="_blank" rel="external">Sample To-Dos - Habitica Wiki - Wikia</a>
-</li>
-<li><a href="http://habitica.wikia.com/wiki/Naming_Your_Tasks" target="_blank" rel="external">Naming Your Tasks - Habitica Wiki - Wikia</a>
-</li>
-<li><a href="http://habitica.wikia.com/wiki/Task_Types:_Habits_versus_Dailies_versus_To-Dos" target="_blank" rel="external">Task Type Choice: Habit, Daily, or To-Do - Habitica Wiki - Wikia</a>
-</li>
-<li><a href="http://habitica.wikia.com/wiki/Health_Points" target="_blank" rel="external">Health Points - Habitica Wiki - Wikia</a>
-</li>
-<li><a href="http://habitica.wikia.com/wiki/Experience_Points" target="_blank" rel="external">Experience Points - Habitica Wiki - Wikia</a>
-</li>
-<li><a href="http://habitica.wikia.com/wiki/Gold" target="_blank" rel="external">Gold Points - Habitica Wiki - Wikia</a>
-</li>
-<li><a href="http://habitica.wikia.com/wiki/Difficulty" target="_blank" rel="external">Difficulty - Habitica Wiki - Wikia</a>
-</li>
-<li><a href="http://habitica.wikia.com/wiki/Dailies" target="_blank" rel="external">Dailies - Habitica Wiki - Wikia</a>
-</li>
-<li><a href="http://habitica.wikia.com/wiki/To-Dos" target="_blank" rel="external">To-Dos - Habitica Wiki - Wikia</a>
-</li>
-<li><a href="http://habitica.wikia.com/wiki/Rewards" target="_blank" rel="external">Rewards - Habitica Wiki - Wikia</a>
-</li>
-<li><a href="http://habitica.wikia.com/wiki/Sample_Custom_Rewards" target="_blank" rel="external">Sample Custom Rewards - Habitica Wiki - Wikia</a>
-</li>
+<li><a href="http://www.playpcesor.com/2015/01/habitrpg.html" target="_blank" rel="external">HabitRPG 教学：把养成好习惯设计成好玩的生活游戏 - 电脑玩物</a></li>
+<li><a href="http://habitica.wikia.com/wiki/Sample_Habits" target="_blank" rel="external">Sample Habits - Habitica Wiki - Wikia</a></li>
+<li><a href="http://habitica.wikia.com/wiki/Sample_Dailies" target="_blank" rel="external">Sample Dailies - Habitica Wiki - Wikia</a></li>
+<li><a href="http://habitica.wikia.com/wiki/Sample_To-Dos" target="_blank" rel="external">Sample To-Dos - Habitica Wiki - Wikia</a></li>
+<li><a href="http://habitica.wikia.com/wiki/Naming_Your_Tasks" target="_blank" rel="external">Naming Your Tasks - Habitica Wiki - Wikia</a></li>
+<li><a href="http://habitica.wikia.com/wiki/Task_Types:_Habits_versus_Dailies_versus_To-Dos" target="_blank" rel="external">Task Type Choice: Habit, Daily, or To-Do - Habitica Wiki - Wikia</a></li>
+<li><a href="http://habitica.wikia.com/wiki/Health_Points" target="_blank" rel="external">Health Points - Habitica Wiki - Wikia</a></li>
+<li><a href="http://habitica.wikia.com/wiki/Experience_Points" target="_blank" rel="external">Experience Points - Habitica Wiki - Wikia</a></li>
+<li><a href="http://habitica.wikia.com/wiki/Gold" target="_blank" rel="external">Gold Points - Habitica Wiki - Wikia</a></li>
+<li><a href="http://habitica.wikia.com/wiki/Difficulty" target="_blank" rel="external">Difficulty - Habitica Wiki - Wikia</a></li>
+<li><a href="http://habitica.wikia.com/wiki/Dailies" target="_blank" rel="external">Dailies - Habitica Wiki - Wikia</a></li>
+<li><a href="http://habitica.wikia.com/wiki/To-Dos" target="_blank" rel="external">To-Dos - Habitica Wiki - Wikia</a></li>
+<li><a href="http://habitica.wikia.com/wiki/Rewards" target="_blank" rel="external">Rewards - Habitica Wiki - Wikia</a></li>
+<li><a href="http://habitica.wikia.com/wiki/Sample_Custom_Rewards" target="_blank" rel="external">Sample Custom Rewards - Habitica Wiki - Wikia</a></li>
 </ul>
 </div>
 </div>
@@ -1072,27 +1044,27 @@
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
 
-<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
 <a href="http://habitica.wikia.com/wiki/Rest_in_the_Inn" target="_blank" rel="external">Rest in the Inn - Habitica Wiki - Wikia</a>
-</p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
 <a href="http://habitica.wikia.com/wiki/Task_Value#Task_Colors" target="_blank" rel="external">Task Value - Habitica Wiki - Wikia</a>
-</p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3" role="doc-backlink">3</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
 <a href="http://habitica.wikia.com/wiki/Streaks" target="_blank" rel="external">Streaks - Habitica Wiki - Wikia</a>
-</p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4" role="doc-backlink">4</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
 <a href="http://habitica.wikia.com/wiki/Habits#Setting_Up_Your_Habit_List" target="_blank" rel="external">Habits - Habitica Wiki - Wikia</a>
-</p></div>
+</p></div></div>
 
 
 </div>
 </div>
-<p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">[2016-01-27 &#x5468;&#x4E09;]</span></span></p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
+<p class="date">Date: 2016-01-27 三 00:00</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
 </span>
 
 	<div class="cc-licens" style="border-radius: 10px; margin-top: 20px; padding: 20px 30px; background-color: rgb(233, 233, 233);" >
@@ -1125,16 +1097,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016-01-27-japanese-voiced-sounds/" rel="next" title="日语中的浊音与半浊音">
-                <i class="fa fa-chevron-left"></i> 日语中的浊音与半浊音
+              <a href="/2016-01-25-onyomi-and-kunyomi/" rel="next" title="音读和训读">
+                <i class="fa fa-chevron-left"></i> 音读和训读
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016-01-29-the-truth-about-exercise/" rel="prev" title="《关于锻炼的真相》笔记">
-                《关于锻炼的真相》笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2016-01-27-japanese-voiced-sounds/" rel="prev" title="日语中的浊音与半浊音">
+                日语中的浊音与半浊音 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1212,21 +1184,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">33</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -1271,7 +1243,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-1"><span class="nav-text">1 基本术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-2"><span class="nav-text">2 界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-3"><span class="nav-text">3 有关GTD的游戏机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-4"><span class="nav-text">4 部分术语详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务分值"><span class="nav-text">4.1 任务分值2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sec-4-1-1"><span class="nav-text">4.1.1 任务分值的影响</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sec-4-2"><span class="nav-text">4.2 连击纪录3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-5"><span class="nav-text">5 游戏化你自己的生活吧！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sec-5-1"><span class="nav-text">5.1 建立任务清单</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sec-5-1-1"><span class="nav-text">5.1.1 习惯4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sec-5-1-2"><span class="nav-text">5.1.2 每日任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sec-5-1-3"><span class="nav-text">5.1.3 待办事项</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sec-5-2"><span class="nav-text">5.2 奖励</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sec-5-2-1"><span class="nav-text">5.2.1 找到激励你的事物</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sec-5-2-2"><span class="nav-text">5.2.2 为奖励制定合适的兑换价格</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-6"><span class="nav-text">6 增加可玩性的游戏机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-7"><span class="nav-text">7 更新历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-8"><span class="nav-text">8 参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">Footnotes: </span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#orgaf49e9b"><span class="nav-text">1. 基本术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org3ecf3b8"><span class="nav-text">2. 界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orgf1c381b"><span class="nav-text">3. 有关GTD的游戏机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org244edc7"><span class="nav-text">4. 部分术语详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务分值"><span class="nav-text">4.1. 任务分值2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#orgfa23053"><span class="nav-text">4.1.1. 任务分值的影响</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#org1cc05a8"><span class="nav-text">4.2. 连击纪录3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org07580a3"><span class="nav-text">5. 游戏化你自己的生活吧！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#org61ac29f"><span class="nav-text">5.1. 建立任务清单</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#orgebf2881"><span class="nav-text">5.1.1. 习惯4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#org9b6e271"><span class="nav-text">5.1.2. 每日任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#org6bff439"><span class="nav-text">5.1.3. 待办事项</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#org4394c65"><span class="nav-text">5.2. 奖励</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#orgf8725a2"><span class="nav-text">5.2.1. 找到激励你的事物</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#org82bc957"><span class="nav-text">5.2.2. 为奖励制定合适的兑换价格</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org3135c44"><span class="nav-text">6. 增加可玩性的游戏机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orgb1bac0c"><span class="nav-text">7. 更新历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org0a32601"><span class="nav-text">8. 参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">Footnotes: </span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -1292,7 +1264,7 @@
         <div class="copyright" >
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>

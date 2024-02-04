@@ -53,28 +53,64 @@
 
 
 
-<meta name="description" content="&amp;#x672C;&amp;#x6587;&amp;#x65E8;&amp;#x5728;&amp;#x4ECB;&amp;#x7ECD;hexo&amp;#x7684;&amp;#x6587;&amp;#x4EF6;&amp;#x3001;&amp;#x76EE;&amp;#x5F55;&amp;#x7ED3;&amp;#x6784;&amp;#x53CA;&amp;#x5176;&amp;#x529F;&amp;#x80FD;&amp;#x3002;
+<meta name="description" content="本文旨在介绍hexo的文件、目录结构及其功能。
 
 
 
-&amp;#x5982;&amp;#x679C;&amp;#x4F60;&amp;#x60F3;&amp;#x4">
+如果你想修改Hexo的布局、显示样式，或是为其增添RSS、评论等新模块却无从下手，那就先来了解一下Hexo的目录结构吧。知道各个文件、目录的作用之后，至少在看到别人写在XX中增加代码时，知道XX是个什么东西。
+
+
+
+1. Hexo目录结构
+
+
+我的Hexo目录结构：
+
+
+
+
+&amp;lt;!&amp;#x2013; more &amp;#x2013;&amp;gt;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo目录结构小探">
 <meta property="og:url" content="http://yuchen-lea.github.io/2016-01-18-hexo-dir-struct/index.html">
 <meta property="og:site_name" content="跬步">
-<meta property="og:description" content="&amp;#x672C;&amp;#x6587;&amp;#x65E8;&amp;#x5728;&amp;#x4ECB;&amp;#x7ECD;hexo&amp;#x7684;&amp;#x6587;&amp;#x4EF6;&amp;#x3001;&amp;#x76EE;&amp;#x5F55;&amp;#x7ED3;&amp;#x6784;&amp;#x53CA;&amp;#x5176;&amp;#x529F;&amp;#x80FD;&amp;#x3002;
+<meta property="og:description" content="本文旨在介绍hexo的文件、目录结构及其功能。
 
 
 
-&amp;#x5982;&amp;#x679C;&amp;#x4F60;&amp;#x60F3;&amp;#x4">
+如果你想修改Hexo的布局、显示样式，或是为其增添RSS、评论等新模块却无从下手，那就先来了解一下Hexo的目录结构吧。知道各个文件、目录的作用之后，至少在看到别人写在XX中增加代码时，知道XX是个什么东西。
+
+
+
+1. Hexo目录结构
+
+
+我的Hexo目录结构：
+
+
+
+
+&amp;lt;!&amp;#x2013; more &amp;#x2013;&amp;gt;">
 <meta property="og:updated_time" content="2016-01-25T16:39:10.569Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo目录结构小探">
-<meta name="twitter:description" content="&amp;#x672C;&amp;#x6587;&amp;#x65E8;&amp;#x5728;&amp;#x4ECB;&amp;#x7ECD;hexo&amp;#x7684;&amp;#x6587;&amp;#x4EF6;&amp;#x3001;&amp;#x76EE;&amp;#x5F55;&amp;#x7ED3;&amp;#x6784;&amp;#x53CA;&amp;#x5176;&amp;#x529F;&amp;#x80FD;&amp;#x3002;
+<meta name="twitter:description" content="本文旨在介绍hexo的文件、目录结构及其功能。
 
 
 
-&amp;#x5982;&amp;#x679C;&amp;#x4F60;&amp;#x60F3;&amp;#x4">
+如果你想修改Hexo的布局、显示样式，或是为其增添RSS、评论等新模块却无从下手，那就先来了解一下Hexo的目录结构吧。知道各个文件、目录的作用之后，至少在看到别人写在XX中增加代码时，知道XX是个什么东西。
+
+
+
+1. Hexo目录结构
+
+
+我的Hexo目录结构：
+
+
+
+
+&amp;lt;!&amp;#x2013; more &amp;#x2013;&amp;gt;">
 
 
 
@@ -254,7 +290,7 @@
           </span>
 
           <span class="post-count">
-		书写 2,700 字
+		书写 2,369 字
 	  </span> 
 
           
@@ -317,387 +353,371 @@
         <span itemprop="articleBody">
 
 <p>
-<div class="alert alert-info"><i class="fa fa-info"></i>  &#x672C;&#x6587;&#x65E8;&#x5728;&#x4ECB;&#x7ECD;hexo&#x7684;&#x6587;&#x4EF6;&#x3001;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x53CA;&#x5176;&#x529F;&#x80FD;&#x3002;</div>
+<div class="alert alert-info"><i class="fa fa-info"></i>  本文旨在介绍hexo的文件、目录结构及其功能。</div>
 </p>
 
 <p>
-&#x5982;&#x679C;&#x4F60;&#x60F3;&#x4FEE;&#x6539;Hexo&#x7684;&#x5E03;&#x5C40;&#x3001;&#x663E;&#x793A;&#x6837;&#x5F0F;&#xFF0C;&#x6216;&#x662F;&#x4E3A;&#x5176;&#x589E;&#x6DFB;RSS&#x3001;&#x8BC4;&#x8BBA;&#x7B49;&#x65B0;&#x6A21;&#x5757;&#x5374;&#x65E0;&#x4ECE;&#x4E0B;&#x624B;&#xFF0C;&#x90A3;&#x5C31;&#x5148;&#x6765;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;Hexo&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5427;&#x3002;&#x77E5;&#x9053;&#x5404;&#x4E2A;&#x6587;&#x4EF6;&#x3001;&#x76EE;&#x5F55;&#x7684;&#x4F5C;&#x7528;&#x4E4B;&#x540E;&#xFF0C;&#x81F3;&#x5C11;&#x5728;&#x770B;&#x5230;&#x522B;&#x4EBA;&#x5199;&#x5728;XX&#x4E2D;&#x589E;&#x52A0;&#x4EE3;&#x7801;&#x65F6;&#xFF0C;&#x77E5;&#x9053;XX&#x662F;&#x4E2A;&#x4EC0;&#x4E48;&#x4E1C;&#x897F;&#x3002;
+如果你想修改Hexo的布局、显示样式，或是为其增添RSS、评论等新模块却无从下手，那就先来了解一下Hexo的目录结构吧。知道各个文件、目录的作用之后，至少在看到别人写在XX中增加代码时，知道XX是个什么东西。
 </p>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Hexo&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h2>
+<div id="outline-container-org9529260" class="outline-2">
+<h2 id="org9529260"><span class="section-number-2">1.</span> Hexo目录结构</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-&#x6211;&#x7684;Hexo&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#xFF1A;
+我的Hexo目录结构：
 </p>
 
-<a id="more"></a>
+<div class="HTML" id="orgce05631">
+<p>
+&lt;!&#x2013; more &#x2013;&gt;
+</p>
+
+</div>
 
 <p class="verse">
 .<br>
-&#x251C;&#x2500;&#x2500; _config.yml<br>
-&#x251C;&#x2500;&#x2500; package.json<br>
-&#x251C;&#x2500;.deploy_git<br>
-&#x251C;&#x2500;node_modules<br>
-&#x251C;&#x2500;public<br>
-&#x251C;&#x2500;scaffolds<br>
-&#x251C;&#x2500;source<br>
-&#x2502;  &#x251C;&#x2500;about<br>
-&#x2502;  &#x251C;&#x2500;audio<br>
-&#x2502;  &#x251C;&#x2500;img<br>
-&#x2502;  &#x251C;&#x2500;_drafts<br>
-&#x2502;  &#x2514;&#x2500;_posts<br>
-&#x2514;&#x2500;themes<br>
-&#xA0;&#xA0;&#xA0;&#xA0;&#x251C;&#x2500;landscape<br>
-&#xA0;&#xA0;&#xA0;&#xA0;&#x2514;&#x2500;next<br>
+├── _config.yml<br>
+├── package.json<br>
+├─.deploy_git<br>
+├─node_modules<br>
+├─public<br>
+├─scaffolds<br>
+├─source<br>
+│  ├─about<br>
+│  ├─audio<br>
+│  ├─img<br>
+│  ├─_drafts<br>
+│  └─_posts<br>
+└─themes<br>
+&#xa0;&#xa0;&#xa0;&#xa0;├─landscape<br>
+&#xa0;&#xa0;&#xa0;&#xa0;└─next<br>
 </p>
 
 <p>
-&#x6709;&#x4E9B;&#x662F;&#x521D;&#x59CB;&#x5316;&#x540E;&#xFF0C;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x7684;&#xFF0C;&#x4E5F;&#x6709;&#x5728;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x624B;&#x52A8;&#x6216;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x7684;&#x3002;&#x6709;&#x4E9B;&#x50CF;&#x5148;&#x5929;&#x548C;&#x540E;&#x5929;&#x7684;&#x611F;&#x89C9; ^_^
+有些是初始化后，自动创建的，也有在使用过程中，手动或自动创建的。有些像先天和后天的感觉 ^_^
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> _config.yml</h2>
+<div id="outline-container-org8c8e66a" class="outline-2">
+<h2 id="org8c8e66a"><span class="section-number-2">2.</span> _config.yml</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-&#x521D;&#x59CB;&#x5316;&#x65F6;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x3002;
+初始化时自动创建。
 </p>
 
 <p>
-&#x7F51;&#x7AD9;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6B64;&#x914D;&#x7F6E;&#x5927;&#x90E8;&#x5206;&#x7684;&#x53C2;&#x6570;&#x3002;&#x5177;&#x4F53;&#x8BBE;&#x7F6E;&#x53C2;&#x89C1; <a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">&#x914D;&#x7F6E; | Hexo</a> &#x3002;
+网站的配置信息文件，可以在此配置大部分的参数。具体设置参见 <a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">配置 | Hexo</a> 。
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> package.json</h2>
+<div id="outline-container-org0b405cd" class="outline-2">
+<h2 id="org0b405cd"><span class="section-number-2">3.</span> package.json</h2>
 <div class="outline-text-2" id="text-3">
 <p>
-&#x521D;&#x59CB;&#x5316;&#x65F6;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x3002;
+初始化时自动创建。
 </p>
 
 <p>
-&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x53EF;&#x4EE5;&#x67E5;&#x770B;hexo&#x7684;&#x7248;&#x672C;&#x4EE5;&#x53CA;&#x5B89;&#x88C5;&#x7684;&#x6269;&#x5C55;&#x7248;&#x672C;&#x3002;
+应用程序的信息。可以查看hexo的版本以及安装的扩展版本。
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> .deploy_git</h2>
+<div id="outline-container-org91b0929" class="outline-2">
+<h2 id="org91b0929"><span class="section-number-2">4.</span> .deploy_git</h2>
 <div class="outline-text-2" id="text-4">
 <p>
-&#x5728;&#x90E8;&#x7F72;&#x5230;github&#x540E;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x3002;
+在部署到github后自动创建。
 </p>
 
 <p>
-&#x6B64;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x5185;&#x5BB9; = github&#x7AD9;&#x70B9;&#x4E2D;&#x5BF9;&#x4E8E;repository&#x4E2D;&#x7684;&#x5185;&#x5BB9; = &#x6700;&#x8FD1;&#x4E00;&#x6B21;&#x4E0A;&#x4F20;&#x5230;&#x7AD9;&#x70B9;&#x7684;public&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x5185;&#x5BB9;
+此目录中的内容 = github站点中对于repository中的内容 = 最近一次上传到站点的public目录中的内容
 </p>
 
 <p>
-&#x56E0;&#x6B64;&#xFF0C;&#x8BE5;&#x76EE;&#x5F55;&#x7684;&#x7ED3;&#x6784;&#x548C; <code>public</code> &#x76EE;&#x5F55;&#x57FA;&#x672C;&#x4E00;&#x81F4;&#xFF08;&#x4E0D;&#x4E00;&#x81F4;&#x7684;&#x60C5;&#x51B5;&#x662F;&#x7531;&#x4E8E;&#x91CD;&#x65B0;&#x751F;&#x6210;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x53D1;&#x5E03;&#x7AD9;&#x70B9;&#x9020;&#x6210;&#xFF0C;&#x6B64;&#x65F6; <code>public</code> &#x5185;&#x5BB9;&#x65B0;&#x4E8E; <code>.deploy_git</code> &#x5185;&#x5BB9;&#xFF09;&#x3002;
+因此，该目录的结构和 <code>public</code> 目录基本一致（不一致的情况是由于重新生成，但是没有发布站点造成，此时 <code>public</code> 内容新于 <code>.deploy_git</code> 内容）。
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> node_modules</h2>
+<div id="outline-container-org7fdffe1" class="outline-2">
+<h2 id="org7fdffe1"><span class="section-number-2">5.</span> node_modules</h2>
 <div class="outline-text-2" id="text-5">
 <p>
-&#x5B58;&#x653E;&#x5B89;&#x88C5;&#x7684;Hexo&#x6269;&#x5C55;&#x3002;
+存放安装的Hexo扩展。
 </p>
 
 <p class="verse">
 node_modules<br>
-&#x251C;&#x2500;.bin<br>
-&#x251C;&#x2500;hexo<br>
-&#x251C;&#x2500;hexo-deployer-git<br>
-&#x251C;&#x2500;hexo-generator-archive<br>
-&#x251C;&#x2500;hexo-generator-category<br>
-&#x251C;&#x2500;hexo-generator-feed<br>
-&#x251C;&#x2500;hexo-generator-index<br>
-&#x251C;&#x2500;hexo-generator-tag<br>
-&#x251C;&#x2500;hexo-renderer-ejs<br>
-&#x251C;&#x2500;hexo-renderer-marked<br>
-&#x251C;&#x2500;hexo-renderer-org<br>
-&#x251C;&#x2500;hexo-renderer-stylus<br>
-&#x2514;&#x2500;hexo-server<br>
+├─.bin<br>
+├─hexo<br>
+├─hexo-deployer-git<br>
+├─hexo-generator-archive<br>
+├─hexo-generator-category<br>
+├─hexo-generator-feed<br>
+├─hexo-generator-index<br>
+├─hexo-generator-tag<br>
+├─hexo-renderer-ejs<br>
+├─hexo-renderer-marked<br>
+├─hexo-renderer-org<br>
+├─hexo-renderer-stylus<br>
+└─hexo-server<br>
 </p>
 
 <p>
-Hexo &#x9ED8;&#x8BA4;&#x5B89;&#x88C5;&#xFF1A;
+Hexo 默认安装：
 </p>
 
 <ul class="org-ul">
-<li>hexo: &#x4E3B;&#x7A0B;&#x5E8F;
-</li>
-<li>hexo-deployer-git: git&#x90E8;&#x7F72;
-</li>
-<li>hexo-generator-archive: &#x5B58;&#x6863;&#x9875;&#x9762;&#x751F;&#x6210;&#x5668;
-</li>
-<li>hexo-generator-category: &#x7C7B;&#x522B;&#x751F;&#x6210;&#x5668;
-</li>
-<li>hexo-generator-index: index&#x751F;&#x6210;&#x5668;
-</li>
-<li>hexo-generator-tag: &#x6807;&#x7B7E;&#x751F;&#x6210;&#x5668;
-</li>
-<li>hexo-renderer-ejs: &#x8FDB;&#x4E00;&#x6B65;&#x4E86;&#x89E3; <a href="http://www.embeddedjs.com/" target="_blank" rel="external">EJS</a> <a href="https://github.com/tj/ejs" target="_blank" rel="external">tj/ejs &#xB7; GitHub</a>
-</li>
-<li>hexo-renderer-stylus: &#x8FDB;&#x4E00;&#x6B65;&#x4E86;&#x89E3; <a href="http://learnboost.github.io/stylus/" target="_blank" rel="external">Stylus</a> <a href="https://github.com/hexojs/hexo-renderer-stylus" target="_blank" rel="external">GitHub - hexojs/hexo-renderer-stylus: Stylus renderer for Hexo</a>
-</li>
-<li>hexo-renderer-marked: Markdown&#x5F15;&#x64CE;&#xFF0C;&#x8BA9;&#x4F60;&#x53EF;&#x4EE5;&#x7528;markdown&#x683C;&#x5F0F;&#x4E66;&#x5199;&#x535A;&#x5BA2;
-</li>
-<li>hexo-server: &#x670D;&#x52A1;&#x5668;&#xFF0C;&#x8BA9;&#x4F60;&#x53EF;&#x4EE5;&#x672C;&#x5730;&#x9884;&#x89C8;&#x535A;&#x5BA2;
-</li>
+<li>hexo: 主程序</li>
+<li>hexo-deployer-git: git部署</li>
+<li>hexo-generator-archive: 存档页面生成器</li>
+<li>hexo-generator-category: 类别生成器</li>
+<li>hexo-generator-index: index生成器</li>
+<li>hexo-generator-tag: 标签生成器</li>
+<li>hexo-renderer-ejs: 进一步了解 <a href="http://www.embeddedjs.com/" target="_blank" rel="external">EJS</a> <a href="https://github.com/tj/ejs" target="_blank" rel="external">tj/ejs · GitHub</a></li>
+<li>hexo-renderer-stylus: 进一步了解 <a href="http://learnboost.github.io/stylus/" target="_blank" rel="external">Stylus</a> <a href="https://github.com/hexojs/hexo-renderer-stylus" target="_blank" rel="external">GitHub - hexojs/hexo-renderer-stylus: Stylus renderer for Hexo</a></li>
+<li>hexo-renderer-marked: Markdown引擎，让你可以用markdown格式书写博客</li>
+<li>hexo-server: 服务器，让你可以本地预览博客</li>
 </ul>
 
 <p>
-&#x5728;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;&#x4E2D;&#x81EA;&#x5DF1;&#x5B89;&#x88C5;&#x7684;&#x6269;&#x5C55;&#x4E5F;&#x4F1A;&#x5728;&#x6B64;&#x65B0;&#x5EFA;&#x76EE;&#x5F55;&#xFF0C;&#x6BD4;&#x5982;&#x6211;&#x5B89;&#x88C5;&#x7684;&#xFF1A;
+在使用过程中自己安装的扩展也会在此新建目录，比如我安装的：
 </p>
 
 <ul class="org-ul">
-<li>hexo-generator-feed&#xFF1A;&#x751F;&#x6210;RSS
-</li>
-<li>hexo-renderer-org&#xFF1A;&#x53EF;&#x4EE5;&#x7528;org-mode&#x4E66;&#x5199;&#x535A;&#x5BA2;
-</li>
+<li>hexo-generator-feed：生成RSS</li>
+<li>hexo-renderer-org：可以用org-mode书写博客</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6"><span class="section-number-2">6</span> public</h2>
+<div id="outline-container-org78bc24a" class="outline-2">
+<h2 id="org78bc24a"><span class="section-number-2">6.</span> public</h2>
 <div class="outline-text-2" id="text-6">
 <p>
-&#x6267;&#x884C; <code>hexo g</code> &#x547D;&#x4EE4;&#xFF0C;Hexo&#x7A0B;&#x5E8F;&#x4F1A;&#x89E3;&#x6790; <code>source</code> &#x3001;&#x5F53;&#x524D;&#x4F7F;&#x7528;&#x7684;theme&#xFF0C;&#x751F;&#x6210;&#x7684;&#x9759;&#x6001;&#x7F51;&#x9875;&#x5185;&#x5BB9;&#x76EE;&#x5F55;&#x5C31;&#x662F; <code>piblic</code> &#x3002;&#x6267;&#x884C; <code>hexo d</code> &#x5219;&#x5C06;&#x8BE5;&#x76EE;&#x5F55;&#x5185;&#x5BB9;&#x590D;&#x5236;&#x5230; <code>.deploy_git</code> &#x76EE;&#x5F55;&#x3002;
+执行 <code>hexo g</code> 命令，Hexo程序会解析 <code>source</code> 、当前使用的theme，生成的静态网页内容目录就是 <code>piblic</code> 。执行 <code>hexo d</code> 则将该目录内容复制到 <code>.deploy_git</code> 目录。
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7"><span class="section-number-2">7</span> scaffolds</h2>
+<div id="outline-container-org9a6defb" class="outline-2">
+<h2 id="org9a6defb"><span class="section-number-2">7.</span> scaffolds</h2>
 <div class="outline-text-2" id="text-7">
 <p>
-&#x6A21;&#x7248; &#x6587;&#x4EF6;&#x5939;&#x3002;&#x5F53;&#x65B0;&#x5EFA;&#x6587;&#x7AE0;&#x65F6;&#xFF0C;Hexo &#x4F1A;&#x6839;&#x636E; scaffold &#x6765;&#x5EFA;&#x7ACB;&#x6587;&#x4EF6;&#x3002;&#x66F4;&#x591A;&#x53C2;&#x89C1; <a href="https://hexo.io/zh-cn/docs/templates.html" target="_blank" rel="external">&#x6A21;&#x7248; | Hexo</a> &#x3002;
+模版 文件夹。当新建文章时，Hexo 会根据 scaffold 来建立文件。更多参见 <a href="https://hexo.io/zh-cn/docs/templates.html" target="_blank" rel="external">模版 | Hexo</a> 。
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-8" class="outline-2">
-<h2 id="sec-8"><span class="section-number-2">8</span> source</h2>
+<div id="outline-container-orgbb3a13d" class="outline-2">
+<h2 id="orgbb3a13d"><span class="section-number-2">8.</span> source</h2>
 <div class="outline-text-2" id="text-8">
 <p>
-&#x5B58;&#x653E;&#x7528;&#x6237;&#x8D44;&#x6E90;&#x7684;&#x5730;&#x65B9;&#x3002;
+存放用户资源的地方。
 </p>
 </div>
 
-<div id="outline-container-sec-8-1" class="outline-3">
-<h3 id="sec-8-1"><span class="section-number-3">8.1</span> _posts &#x6587;&#x4EF6;&#x5939;</h3>
+<div id="outline-container-org4a9ddcf" class="outline-3">
+<h3 id="org4a9ddcf"><span class="section-number-3">8.1.</span> _posts 文件夹</h3>
 <div class="outline-text-3" id="text-8-1">
 <p>
-&#x5B58;&#x653E;&#x535A;&#x5BA2;&#x6587;&#x7AE0;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5176;&#x4E2D;&#x7684;markdown&#x6587;&#x4EF6;&#x3001;html&#x6587;&#x4EF6;&#x3001;org&#x6587;&#x4EF6;&#x7B49;&#x4F1A;&#x88AB;&#x89E3;&#x6790;&#x5E76;&#x653E;&#x5230; public &#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x53D1;&#x5E03;&#x5230;&#x7AD9;&#x70B9;&#x3002;
+存放博客文章的地方，其中的markdown文件、html文件、org文件等会被解析并放到 public 文件夹，发布到站点。
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-8-2" class="outline-3">
-<h3 id="sec-8-2"><span class="section-number-3">8.2</span> &#x5176;&#x4ED6;&#x5F00;&#x5934;&#x547D;&#x540D;&#x4E3A; _ (&#x4E0B;&#x5212;&#x7EBF;)&#x7684;&#x6587;&#x4EF6; / &#x6587;&#x4EF6;&#x5939;</h3>
+<div id="outline-container-org238af78" class="outline-3">
+<h3 id="org238af78"><span class="section-number-3">8.2.</span> 其他开头命名为 _ (下划线)的文件 / 文件夹</h3>
 <div class="outline-text-3" id="text-8-2">
 <p>
-&#x5C06;&#x4F1A;&#x88AB;&#x5FFD;&#x7565;&#x3002;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x5728;source&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA; <code>_drafts</code> &#x76EE;&#x5F55;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x672A;&#x5B8C;&#x6210;&#x7684;&#x8349;&#x7A3F;&#xFF0C;&#x5176;&#x4E2D;&#x5185;&#x5BB9;&#x4E0D;&#x4F1A;&#x53D1;&#x5E03;&#x5230;&#x7F51;&#x7AD9;&#x3002;
+将会被忽略。因此可以在source目录下创建 <code>_drafts</code> 目录用于存放未完成的草稿，其中内容不会发布到网站。
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-8-3" class="outline-3">
-<h3 id="sec-8-3"><span class="section-number-3">8.3</span> &#x5176;&#x4ED6;&#x5F00;&#x5934;&#x975E;_&#x7684;&#x6587;&#x4EF6; / &#x6587;&#x4EF6;&#x5939;</h3>
+<div id="outline-container-org0c89621" class="outline-3">
+<h3 id="org0c89621"><span class="section-number-3">8.3.</span> 其他开头非_的文件 / 文件夹</h3>
 <div class="outline-text-3" id="text-8-3">
 <p>
-&#x4F1A;&#x88AB;&#x62F7;&#x8D1D;&#x5230;public&#x76EE;&#x5F55;&#x5E76;&#x4E0A;&#x4F20;&#x5230;&#x7AD9;&#x70B9;&#x3002;
+会被拷贝到public目录并上传到站点。
 </p>
 <ul class="org-ul">
-<li>&#x53EF;&#x4EE5;&#x521B;&#x5EFA; <code>img</code> &#x76EE;&#x5F55;&#x6765;&#x5B58;&#x653E;&#x5728;&#x535A;&#x5BA2;&#x5F15;&#x7528;&#x5230;&#x7684;&#x56FE;&#x7247;&#x7B49;&#x3002;
-</li>
-<li>&#x8981;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x9875;&#x9762;&#xFF08;&#x4F8B;&#x5982;about&#xFF09;&#xFF0C;&#x6267;&#x884C; <code>hexo new page PageName</code> &#x547D;&#x4EE4;&#x5373;&#x4F1A;&#x5728; <code>source</code> &#x4E2D;&#x81EA;&#x52A8;&#x65B0;&#x5EFA;&#x5B50;&#x76EE;&#x5F55; <code>PageName</code> &#x3002;
-</li>
-<li>favicon.ico &#x5728;&#x4E3B;&#x9898;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x5F15;&#x7528; <code>/favicon.ico</code> &#x6765;&#x8BBE;&#x7F6E;&#x7AD9;&#x70B9;&#x7684;&#x9875;&#x9762;&#x56FE;&#x6807;&#x3002;
-</li>
+<li>可以创建 <code>img</code> 目录来存放在博客引用到的图片等。</li>
+<li>要添加新的页面（例如about），执行 <code>hexo new page PageName</code> 命令即会在 <code>source</code> 中自动新建子目录 <code>PageName</code> 。</li>
+<li>favicon.ico 在主题配置文件中引用 <code>/favicon.ico</code> 来设置站点的页面图标。</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-9" class="outline-2">
-<h2 id="sec-9"><span class="section-number-2">9</span> themes<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
+<div id="outline-container-org2fe82b7" class="outline-2">
+<h2 id="org2fe82b7"><span class="section-number-2">9.</span> themes<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup></h2>
 <div class="outline-text-2" id="text-9">
 <p>
-&#x4E3B;&#x9898; &#x6587;&#x4EF6;&#x5939;&#x3002;&#x9ED8;&#x8BA4;&#x5B89;&#x88C5; <code>landscape</code> &#x4E3B;&#x9898;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5B89;&#x88C5;&#x65B0;&#x4E3B;&#x9898;&#x5230; <code>themes</code> &#x76EE;&#x5F55;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x65B0;&#x5EFA;&#x4E3B;&#x9898;&#x3002;&#x4E00;&#x4E2A;&#x4E3B;&#x9898;&#x7684;&#x57FA;&#x672C;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;
+主题 文件夹。默认安装 <code>landscape</code> 主题，你可以安装新主题到 <code>themes</code> 目录，也可以自己新建主题。一个主题的基本结构如下：
 </p>
 
 <p class="verse">
 .<br>
-&#x251C;&#x2500;&#x2500; _config.yml<br>
-&#x251C;&#x2500;&#x2500; languages<br>
-&#x251C;&#x2500;&#x2500; layout<br>
-&#x251C;&#x2500;&#x2500; scripts<br>
-&#x2514;&#x2500;&#x2500; source<br>
+├── _config.yml<br>
+├── languages<br>
+├── layout<br>
+├── scripts<br>
+└── source<br>
 </p>
 </div>
 
-<div id="outline-container-sec-9-1" class="outline-3">
-<h3 id="sec-9-1"><span class="section-number-3">9.1</span> _config.yml</h3>
+<div id="outline-container-org79833f9" class="outline-3">
+<h3 id="org79833f9"><span class="section-number-3">9.1.</span> _config.yml</h3>
 <div class="outline-text-3" id="text-9-1">
 <p>
-&#x4E3B;&#x9898;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;
+主题的配置文件。
 </p>
 </div>
 </div>
-<div id="outline-container-sec-9-2" class="outline-3">
-<h3 id="sec-9-2"><span class="section-number-3">9.2</span> languages</h3>
+<div id="outline-container-org42d15f6" class="outline-3">
+<h3 id="org42d15f6"><span class="section-number-3">9.2.</span> languages</h3>
 <div class="outline-text-3" id="text-9-2">
 <p>
-&#x8BED;&#x8A00;&#x6587;&#x4EF6;&#x5939;&#x3002;&#x6839;&#x636E; Hexo &#x76EE;&#x5F55;&#x4E2D; <code>_config.yml</code> &#x8BBE;&#x7F6E;&#x7684;&#x8BED;&#x8A00;&#x6765;&#x9009;&#x62E9;&#x7AD9;&#x70B9;&#x4EE5;&#x54EA;&#x79CD;&#x8BED;&#x8A00;&#x6765;&#x5448;&#x73B0;&#x3002;
+语言文件夹。根据 Hexo 目录中 <code>_config.yml</code> 设置的语言来选择站点以哪种语言来呈现。
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-9-3" class="outline-3">
-<h3 id="sec-9-3"><span class="section-number-3">9.3</span> layout</h3>
+<div id="outline-container-org93d1cd5" class="outline-3">
+<h3 id="org93d1cd5"><span class="section-number-3">9.3.</span> layout</h3>
 <div class="outline-text-3" id="text-9-3">
 <p>
-&#x5B58;&#x653E;&#x4E3B;&#x9898;&#x7684;&#x6A21;&#x677F;&#x6587;&#x4EF6;&#xFF0C;&#x51B3;&#x5B9A;&#x4E86;&#x7F51;&#x7AD9;&#x5185;&#x5BB9;&#x7684;&#x5448;&#x73B0;&#x65B9;&#x5F0F;&#x3002;Hexo &#x6839;&#x636E;&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x7684;&#x6269;&#x5C55;&#x540D;&#x6765;&#x51B3;&#x5B9A;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x6A21;&#x677F;&#x5F15;&#x64CE;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;
+存放主题的模板文件，决定了网站内容的呈现方式。Hexo 根据模板文件的扩展名来决定所使用的模板引擎，例如：
 </p>
 
 <p class="verse">
-layout.ejs   - &#x4F7F;&#x7528; EJS<br>
-layout.swig  - &#x4F7F;&#x7528; Swig<br>
+layout.ejs   - 使用 EJS<br>
+layout.swig  - 使用 Swig<br>
 </p>
 
 <p>
-&#x66F4;&#x591A;&#x53C2;&#x89C1;:
+更多参见:
 </p>
 <ul class="org-ul">
-<li><a href="https://hexo.io/zh-cn/docs/templates.html" target="_blank" rel="external">&#x6A21;&#x7248; | Hexo</a>
-</li>
-<li><a href="http://paularmstrong.github.io/swig/" target="_blank" rel="external">Swig - A Node.js and Browser JavaScript Template Engine</a>
-</li>
+<li><a href="https://hexo.io/zh-cn/docs/templates.html" target="_blank" rel="external">模版 | Hexo</a></li>
+<li><a href="http://paularmstrong.github.io/swig/" target="_blank" rel="external">Swig - A Node.js and Browser JavaScript Template Engine</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-9-4" class="outline-3">
-<h3 id="sec-9-4"><span class="section-number-3">9.4</span> scripts</h3>
+<div id="outline-container-orgf8a0758" class="outline-3">
+<h3 id="orgf8a0758"><span class="section-number-3">9.4.</span> scripts</h3>
 <div class="outline-text-3" id="text-9-4">
 <p>
-&#x811A;&#x672C;&#x6587;&#x4EF6;&#x5939;&#x3002;&#x5728;&#x542F;&#x52A8;&#x65F6;&#xFF0C;Hexo &#x4F1A;&#x8F7D;&#x5165;&#x6B64;&#x6587;&#x4EF6;&#x5939;&#x5185;&#x7684; JavaScript &#x6587;&#x4EF6;&#x3002;
+脚本文件夹。在启动时，Hexo 会载入此文件夹内的 JavaScript 文件。
 </p>
 
 <p>
-&#x66F4;&#x591A;&#x53C2;&#x89C1;<a href="https://hexo.io/zh-cn/docs/plugins.html" target="_blank" rel="external">&#x63D2;&#x4EF6; | Hexo</a>&#x3002;
+更多参见<a href="https://hexo.io/zh-cn/docs/plugins.html" target="_blank" rel="external">插件 | Hexo</a>。
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-9-5" class="outline-3">
-<h3 id="sec-9-5"><span class="section-number-3">9.5</span> source</h3>
+<div id="outline-container-org2e48da2" class="outline-3">
+<h3 id="org2e48da2"><span class="section-number-3">9.5.</span> source</h3>
 <div class="outline-text-3" id="text-9-5">
 <p>
-&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x9664;&#x4E86;&#x6A21;&#x677F;&#x4EE5;&#x5916;&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x4F8B;&#x5982; CSS&#x3001;JavaScript &#x6587;&#x4EF6;&#x7B49;&#xFF0C;&#x90FD;&#x5E94;&#x8BE5;&#x653E;&#x5728;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x3002;
+资源文件夹，除了模板以外的资源，例如 CSS、JavaScript 文件等，都应该放在这个文件夹中。
 </p>
 
 <p>
-&#x6587;&#x4EF6;&#x6216;&#x6587;&#x4EF6;&#x5939;&#x5F00;&#x5934;&#x540D;&#x79F0;&#x4E3A; _&#xFF08;&#x4E0B;&#x5212;&#x7EBF;&#xFF09;&#x6216;&#x9690;&#x85CF;&#x7684;&#x6587;&#x4EF6;&#x4F1A;&#x88AB;&#x5FFD;&#x7565;&#x3002;
+文件或文件夹开头名称为 _（下划线）或隐藏的文件会被忽略。
 </p>
 
 <p>
-&#x5982;&#x679C;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x88AB;&#x6E32;&#x67D3;&#x7684;&#x8BDD;&#xFF0C;&#x4F1A;&#x7ECF;&#x8FC7;&#x89E3;&#x6790;&#x7136;&#x540E;&#x50A8;&#x5B58;&#x5230; public &#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x76F4;&#x63A5;&#x62F7;&#x8D1D;&#x5230; public &#x6587;&#x4EF6;&#x5939;&#x3002;
+如果文件可以被渲染的话，会经过解析然后储存到 public 文件夹，否则会直接拷贝到 public 文件夹。
 </p>
 
 <p>
-&#x4EE5;next&#x4E3B;&#x9898;&#x4E3A;&#x4F8B;&#xFF0C;&#x5176; <code>source</code> &#x76EE;&#x5F55;&#x7684;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;
+以next主题为例，其 <code>source</code> 目录的结构如下：
 </p>
 
 <p class="verse">
 source<br>
-&#xA0;&#xA0;&#x251C;&#x2500;css<br>
-&#xA0;&#xA0;&#x251C;&#x2500;fonts<br>
-&#xA0;&#xA0;&#x251C;&#x2500;images<br>
-&#xA0;&#xA0;&#x251C;&#x2500;js<br>
-&#xA0;&#xA0;&#x2514;&#x2500;vendors<br>
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x251C;&#x2500;fancybox<br>
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x2502;  &#x2514;&#x2500;source<br>
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x2502;      &#x2514;&#x2500;helpers<br>
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x251C;&#x2500;fastclick<br>
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x2502;  &#x2514;&#x2500;lib<br>
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x251C;&#x2500;font-awesome<br>
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x2502;  &#x251C;&#x2500;css<br>
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x2502;  &#x2514;&#x2500;fonts<br>
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x251C;&#x2500;jquery<br>
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x251C;&#x2500;jquery_lazyload<br>
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x2514;&#x2500;velocity<br>
+&#xa0;&#xa0;├─css<br>
+&#xa0;&#xa0;├─fonts<br>
+&#xa0;&#xa0;├─images<br>
+&#xa0;&#xa0;├─js<br>
+&#xa0;&#xa0;└─vendors<br>
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;├─fancybox<br>
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;│  └─source<br>
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;│      └─helpers<br>
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;├─fastclick<br>
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;│  └─lib<br>
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;├─font-awesome<br>
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;│  ├─css<br>
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;│  └─fonts<br>
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;├─jquery<br>
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;├─jquery_lazyload<br>
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;└─velocity<br>
 </p>
 </div>
 
-<div id="outline-container-sec-9-5-1" class="outline-4">
-<h4 id="sec-9-5-1"><span class="section-number-4">9.5.1</span> css</h4>
+<div id="outline-container-org5659a73" class="outline-4">
+<h4 id="org5659a73"><span class="section-number-4">9.5.1.</span> css</h4>
 <div class="outline-text-4" id="text-9-5-1">
 <p>
-&#x591A;&#x4E3A;styl&#x6587;&#x4EF6;&#xFF0C;next&#x7684;css&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;
+多为styl文件，next的css目录结构如下：
 </p>
 
 <p class="verse">
 css<br>
-&#x251C;&#x2500;_common<br>
-&#x2502;  &#x251C;&#x2500;_component<br>
-&#x2502;  &#x251C;&#x2500;_core<br>
-&#x2502;  &#x251C;&#x2500;_fonts<br>
-&#x2502;  &#x251C;&#x2500;_page<br>
-&#x2502;  &#x251C;&#x2500;_section<br>
-&#x2502;  &#x2514;&#x2500;_vendor<br>
-&#x251C;&#x2500;_custom<br>
-&#x251C;&#x2500;_mixins<br>
-&#x251C;&#x2500;_variables<br>
-&#x2514;&#x2500;main.styl<br>
+├─_common<br>
+│  ├─_component<br>
+│  ├─_core<br>
+│  ├─_fonts<br>
+│  ├─_page<br>
+│  ├─_section<br>
+│  └─_vendor<br>
+├─_custom<br>
+├─_mixins<br>
+├─_variables<br>
+└─main.styl<br>
 </p>
 
 <p>
-&#x5982;&#x679C;&#x60F3;&#x81EA;&#x5B9A;&#x4E49;CSS&#xFF0C;&#x4E3B;&#x8981;&#x4FEE;&#x6539;2&#x4E2A;&#x5730;&#x65B9;&#xFF1A;
+如果想自定义CSS，主要修改2个地方：
 </p>
 <ol class="org-ol">
-<li>_variables
-</li>
-<li>_custom
-</li>
+<li>_variables</li>
+<li>_custom</li>
 </ol>
 </div>
 </div>
 
-<div id="outline-container-sec-9-5-2" class="outline-4">
-<h4 id="sec-9-5-2"><span class="section-number-4">9.5.2</span> vendors</h4>
+<div id="outline-container-orgfd1eee5" class="outline-4">
+<h4 id="orgfd1eee5"><span class="section-number-4">9.5.2.</span> vendors</h4>
 <div class="outline-text-4" id="text-9-5-2">
 <p>
-&#x5F15;&#x7528;&#x7684;&#x4E00;&#x4E9B;&#x5C0F;&#x63D2;&#x4EF6;&#x3002;
+引用的一些小插件。
 </p>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-10" class="outline-2">
-<h2 id="sec-10"><span class="section-number-2">10</span> &#x66F4;&#x65B0;&#x5386;&#x53F2;</h2>
+<div id="outline-container-orgfcd7dc7" class="outline-2">
+<h2 id="orgfcd7dc7"><span class="section-number-2">10.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-10">
 <ul class="org-ul">
-<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-22 &#x5468;&#x4E94;&gt;</span></span> &#x589E;&#x52A0; public &#x76EE;&#x5F55;&#x8BF4;&#x660E;
-</li>
-<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-18 &#x5468;&#x4E00;&gt;</span></span> &#x62DF;&#x5B9A;&#x521D;&#x7A3F;
-</li>
+<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-22 五&gt; </span></span> 增加 public 目录说明</li>
+<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-18 一&gt; </span></span> 拟定初稿</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-11" class="outline-2">
-<h2 id="sec-11"><span class="section-number-2">11</span> &#x53C2;&#x8003;</h2>
+<div id="outline-container-org461d24c" class="outline-2">
+<h2 id="org461d24c"><span class="section-number-2">11.</span> 参考</h2>
 <div class="outline-text-2" id="text-11">
 <p>
-<a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="external">&#x5EFA;&#x7AD9; | Hexo</a>
+<a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="external">建站 | Hexo</a>
 </p>
 </div>
 </div>
@@ -705,15 +725,15 @@ css<br>
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
 
-<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
-<a href="https://hexo.io/zh-cn/docs/themes.html" target="_blank" rel="external">&#x4E3B;&#x9898; | Hexo</a>
-</p></div>
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="https://hexo.io/zh-cn/docs/themes.html" target="_blank" rel="external">主题 | Hexo</a>
+</p></div></div>
 
 
 </div>
 </div>
-<p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-18 &#x5468;&#x4E00;&gt;</span></span></p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
+<p class="date">Date: 2016-01-18 一 00:00</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
 </span>
 
 	<div class="cc-licens" style="border-radius: 10px; margin-top: 20px; padding: 20px 30px; background-color: rgb(233, 233, 233);" >
@@ -829,21 +849,21 @@ css<br>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">33</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -888,7 +908,7 @@ css<br>
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-1"><span class="nav-text">1 Hexo目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-2"><span class="nav-text">2 _config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-3"><span class="nav-text">3 package.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-4"><span class="nav-text">4 .deploy_git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-5"><span class="nav-text">5 node_modules</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-6"><span class="nav-text">6 public</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-7"><span class="nav-text">7 scaffolds</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-8"><span class="nav-text">8 source</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sec-8-1"><span class="nav-text">8.1 _posts 文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sec-8-2"><span class="nav-text">8.2 其他开头命名为 _ (下划线)的文件 / 文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sec-8-3"><span class="nav-text">8.3 其他开头非_的文件 / 文件夹</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-9"><span class="nav-text">9 themes1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sec-9-1"><span class="nav-text">9.1 _config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sec-9-2"><span class="nav-text">9.2 languages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sec-9-3"><span class="nav-text">9.3 layout</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sec-9-4"><span class="nav-text">9.4 scripts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sec-9-5"><span class="nav-text">9.5 source</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sec-9-5-1"><span class="nav-text">9.5.1 css</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sec-9-5-2"><span class="nav-text">9.5.2 vendors</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-10"><span class="nav-text">10 更新历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sec-11"><span class="nav-text">11 参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">Footnotes: </span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#org9529260"><span class="nav-text">1. Hexo目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org8c8e66a"><span class="nav-text">2. _config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org0b405cd"><span class="nav-text">3. package.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org91b0929"><span class="nav-text">4. .deploy_git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org7fdffe1"><span class="nav-text">5. node_modules</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org78bc24a"><span class="nav-text">6. public</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org9a6defb"><span class="nav-text">7. scaffolds</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orgbb3a13d"><span class="nav-text">8. source</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#org4a9ddcf"><span class="nav-text">8.1. _posts 文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#org238af78"><span class="nav-text">8.2. 其他开头命名为 _ (下划线)的文件 / 文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#org0c89621"><span class="nav-text">8.3. 其他开头非_的文件 / 文件夹</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org2fe82b7"><span class="nav-text">9. themes1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#org79833f9"><span class="nav-text">9.1. _config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#org42d15f6"><span class="nav-text">9.2. languages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#org93d1cd5"><span class="nav-text">9.3. layout</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#orgf8a0758"><span class="nav-text">9.4. scripts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#org2e48da2"><span class="nav-text">9.5. source</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#org5659a73"><span class="nav-text">9.5.1. css</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#orgfd1eee5"><span class="nav-text">9.5.2. vendors</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orgfcd7dc7"><span class="nav-text">10. 更新历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org461d24c"><span class="nav-text">11. 参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">Footnotes: </span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -909,7 +929,7 @@ css<br>
         <div class="copyright" >
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>

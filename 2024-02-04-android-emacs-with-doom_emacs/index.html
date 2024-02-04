@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="!how,RSS,hexo,插件," />
+  <meta name="keywords" content="Emacs," />
 
 
 
@@ -53,109 +53,43 @@
 
 
 
-<meta name="description" content="1. 安装RSS插件到本地
-
-
-npm install hexo-generator-feed
+<meta name="description" content="本文目标：在一个安卓设备上，成功安装GUI Emacs且能使用 Termux 管理 Emacs 所用的 git 等工具。同时，成功加载 doom-emacs 配置。
 
 
 
 
-&amp;lt;!&amp;#x2013; more &amp;#x2013;&amp;gt;
+2023 年初，即将发布的 Emacs 30.1 将对 Android GUI 的支持包括其中。这意味着除了桌面端，移动端也有原生的 Emacs 体验了。（当然，iOS由于其自身特性，未来也不可能支持 Emacs。）
 
 
 
-
-
-
-
-2. 设置全站配置文件 _config.yml
-
-
-
-启用插件：
-
-
-plugins:
-&amp;#xa0;&amp;#xa0;&amp;#xa0;&amp;#xa0;- hexo-generator-feed
-
-
-设置插件：
-
-
-feed:
-&amp;#x">
+与">
 <meta property="og:type" content="article">
-<meta property="og:title" content="给hexo添加RSS">
-<meta property="og:url" content="http://yuchen-lea.github.io/2016-01-18-add-rss-to-hexo/index.html">
+<meta property="og:title" content="在 Android Emacs 中使用 doom-emacs">
+<meta property="og:url" content="http://yuchen-lea.github.io/2024-02-04-android-emacs-with-doom_emacs/index.html">
 <meta property="og:site_name" content="跬步">
-<meta property="og:description" content="1. 安装RSS插件到本地
-
-
-npm install hexo-generator-feed
+<meta property="og:description" content="本文目标：在一个安卓设备上，成功安装GUI Emacs且能使用 Termux 管理 Emacs 所用的 git 等工具。同时，成功加载 doom-emacs 配置。
 
 
 
 
-&amp;lt;!&amp;#x2013; more &amp;#x2013;&amp;gt;
+2023 年初，即将发布的 Emacs 30.1 将对 Android GUI 的支持包括其中。这意味着除了桌面端，移动端也有原生的 Emacs 体验了。（当然，iOS由于其自身特性，未来也不可能支持 Emacs。）
 
 
 
-
-
-
-
-2. 设置全站配置文件 _config.yml
-
-
-
-启用插件：
-
-
-plugins:
-&amp;#xa0;&amp;#xa0;&amp;#xa0;&amp;#xa0;- hexo-generator-feed
-
-
-设置插件：
-
-
-feed:
-&amp;#x">
-<meta property="og:updated_time" content="2016-01-25T16:37:59.025Z">
+与">
+<meta property="og:updated_time" content="2024-02-04T02:44:55.618Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="给hexo添加RSS">
-<meta name="twitter:description" content="1. 安装RSS插件到本地
-
-
-npm install hexo-generator-feed
+<meta name="twitter:title" content="在 Android Emacs 中使用 doom-emacs">
+<meta name="twitter:description" content="本文目标：在一个安卓设备上，成功安装GUI Emacs且能使用 Termux 管理 Emacs 所用的 git 等工具。同时，成功加载 doom-emacs 配置。
 
 
 
 
-&amp;lt;!&amp;#x2013; more &amp;#x2013;&amp;gt;
+2023 年初，即将发布的 Emacs 30.1 将对 Android GUI 的支持包括其中。这意味着除了桌面端，移动端也有原生的 Emacs 体验了。（当然，iOS由于其自身特性，未来也不可能支持 Emacs。）
 
 
 
-
-
-
-
-2. 设置全站配置文件 _config.yml
-
-
-
-启用插件：
-
-
-plugins:
-&amp;#xa0;&amp;#xa0;&amp;#xa0;&amp;#xa0;- hexo-generator-feed
-
-
-设置插件：
-
-
-feed:
-&amp;#x">
+与">
 
 
 
@@ -167,7 +101,7 @@ feed:
   };
 </script>
 
-  <title> 给hexo添加RSS | 跬步 </title>
+  <title> 在 Android Emacs 中使用 doom-emacs | 跬步 </title>
   <script type="text/javascript" src="/js/test/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/test/jquery-2.0.3.min.js"></script>
 
@@ -320,7 +254,7 @@ feed:
             
             
               
-                给hexo添加RSS
+                在 Android Emacs 中使用 doom-emacs
               
             
           </h1>
@@ -329,13 +263,13 @@ feed:
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-01-18T00:00:00+08:00" content="2016-01-18">
-              2016-01-18
+            <time itemprop="dateCreated" datetime="2024-02-04T00:00:00+08:00" content="2024-02-04">
+              2024-02-04
             </time>
           </span>
 
           <span class="post-count">
-		书写 845 字
+		书写 1,774 字
 	  </span> 
 
           
@@ -343,20 +277,8 @@ feed:
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-                  > 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/hexo设置/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo设置</span>
+                  <a href="/categories/Emacs/" itemprop="url" rel="index">
+                    <span itemprop="name">Emacs</span>
                   </a>
                 </span>
 
@@ -375,8 +297,8 @@ feed:
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016-01-18-add-rss-to-hexo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-01-18-add-rss-to-hexo/" itemprop="commentsCount"></span>
+                <a href="/2024-02-04-android-emacs-with-doom_emacs/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2024-02-04-android-emacs-with-doom_emacs/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -397,124 +319,172 @@ feed:
       
         <span itemprop="articleBody">
 
+<p>
+<div class="alert alert-info"><i class="fa fa-info"></i>  本文目标：在一个安卓设备上，成功安装GUI Emacs且能使用 Termux 管理 Emacs 所用的 git 等工具。同时，成功加载 doom-emacs 配置。</div>
+</p>
 
-<div id="outline-container-orgaf1e716" class="outline-2">
-<h2 id="orgaf1e716"><span class="section-number-2">1.</span> 安装RSS插件到本地</h2>
+
+<p>
+2023 年初，即将发布的 Emacs 30.1 将对 Android GUI 的支持包括其中。这意味着除了桌面端，移动端也有原生的 Emacs 体验了。（当然，iOS由于其自身特性，未来也不可能支持 Emacs。）
+</p>
+
+<p>
+与常规安卓应用不同的是，要想更好的在安卓平台使用 Emacs，直接安装 APK 远远不足，还需要进行额外配置。
+</p>
+
+<p>
+此外，因为 <a href="https://github.com/hlissner/doom-emacs/" target="_blank" rel="external">doom-emacs</a> 的配置涉及到调用 Emacs 本身，但是安卓系统又没有提供现成的 emacs 可执行命令，配置起来不如桌面端顺畅。在此分享我的配置经验，希望多少能帮到一些朋友。
+</p>
+
+<p>
+在此特别感谢 <a href="https://emacs-china.org/u/oldosfan" target="_blank" rel="external">oldosfan</a>，ta 是 Android Port 主要贡献者，并且在如何在 Android Emacs 配置 doom-emacs 对我帮助良多。
+</p>
+
+<div id="outline-container-org9044121" class="outline-2">
+<h2 id="org9044121"><span class="section-number-2">1.</span> 安装 Android Emacs</h2>
 <div class="outline-text-2" id="text-1">
-<div class="org-src-container">
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
-</div>
-
-<div class="HTML" id="orgcc8760b">
 <p>
-&lt;!&#x2013; more &#x2013;&gt;
+最佳方式是安装特定版本的Emacs和Termux，二者共享相同的 <code>sharedUserId</code> manifest attribute 和签名，这意味着二者可以互相访问对方的数据文件夹（ <code>/data/data/org.gnu.emacs/</code> 和 <code>/data/data/com.termux/</code> ），这样使用 Termux 来安装 GNU/Linux 应用程序后，Emacs 中就可以运行这些应用程序。
 </p>
 
+<hr>
+
+<ol class="org-ol">
+<li>Emacs 和 termux 必须按照特定的顺序安装特定的版本，如果之前已经安装过，请先卸载，以避免  <code>sharedUserId</code>  或签名冲突。</li>
+<li><b>先</b>​安装特定版本的 Termux，从 <a href="https://sourceforge.net/projects/android-ports-for-gnu-emacs/files/termux/" target="_blank" rel="external">Android ports for GNU Emacs - Browse /termux at SourceForge.net</a> 下载APK文件进行安装。安装完成先不要打开 Termux。</li>
+<li><b>再</b>​从上一个网址中选择合适版本的 Emacs 来安装。
+<ul class="org-ul">
+<li>👎 不推荐F-Droid 的版本，因为：
+<ul class="org-ul">
+<li>版本并非最新：缺少错误修复和新功能。</li>
+<li>缺少许多依赖包：GnuTLS, image libraries, tree-sitter</li>
+</ul></li>
+<li>挑选主要依据​<b>安卓系统版本</b>​和​<b>芯片CPU架构</b>​。例如 <code>emacs-30.0.50-29-arm64-v8a.apk</code> 适用于运行 Android 10.0 或更高版本的 aarch64 设备，是一个常见的选择。如果安装的版本不匹配，将无法正常执行。</li>
+</ul></li>
+<li><p>
+两个都安装完成，打开 Termux，执行以下命令，安装并更新所有应用程序。
+</p>
+<pre class="example">
+pkg update &amp;&amp; pkg upgrade
+</pre>
+
+<ul class="org-ul">
+<li>如果太慢，可以考虑Termux换成国内镜像源。</li>
+</ul></li>
+<li><p>
+打开 Emacs，在 ~/.emacs.d/early-init.el 中加入：
+</p>
+
+<div class="org-src-container">
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">when</span> <span class="list">(<span class="keyword">string-equal</span> system-type <span class="string">"android"</span>)</span></span><br><span class="line">  <span class="comment">;; Add Termux binaries to PATH environment</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">termuxpath</span> <span class="string">"/data/data/com.termux/files/usr/bin"</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setenv</span> <span class="string">"PATH"</span> <span class="list">(<span class="keyword">concat</span> <span class="list">(<span class="keyword">getenv</span> <span class="string">"PATH"</span>)</span> <span class="string">":"</span> termuxpath)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> exec-path <span class="list">(<span class="keyword">append</span> exec-path <span class="list">(<span class="keyword">list</span> termuxpath)</span>)</span>)</span>)</span>)</span></span><br></pre></td></tr></table></figure>
 </div>
+<ul class="org-ul">
+<li>该代码将 Emacs 与 Termux 文件系统绑定，从而让 Emacs 访问通过 Termux 安装的程序。</li>
+<li>🤔 官方文档还对 <code>LD_LIBRARY_PATH</code> 环境变量进行了配置。但是配置之后，在 Emacs 中运行 mpv 会出现问题，不配置这个变量也暂未发现问题。留待观察。</li>
+</ul></li>
+<li>重启 Emacs，应用配置。如果你在 Termux 中已经安装了 git，可以尝试在 Emacs 执行 <code>(executable-find "git")</code> 。如果返回git的路径，说明配置成功。</li>
+</ol>
 </div>
 </div>
 
-<div id="outline-container-org02640a0" class="outline-2">
-<h2 id="org02640a0"><span class="section-number-2">2.</span> 设置全站配置文件 <code>_config.yml</code></h2>
+<div id="outline-container-org951e012" class="outline-2">
+<h2 id="org951e012"><span class="section-number-2">2.</span> 使用 doom-emacs 配置</h2>
 <div class="outline-text-2" id="text-2">
+<p>
+因为，Android 中没有 Emacs 可执行文件，shell 路径也不同，因此需要一定的修改才能进行 doom install。以下操作​<b>请注意区分</b>​，是在Termux中运行，还是在 Emacs Shell 中运行。
+</p>
+
+<hr>
+
 <ol class="org-ol">
 <li><p>
-启用插件：
+在 Termux 中安装 Git
 </p>
-<p class="verse">
-plugins:<br>
-&#xa0;&#xa0;&#xa0;&#xa0;- hexo-generator-feed<br>
-</p></li>
+<pre class="example">
+pkg install git
+</pre></li>
 <li><p>
-设置插件：
+在 Termux 中，git clone doom-emacs 到 Emacs 主目录
 </p>
-<p class="verse">
-feed:<br>
-&#xa0;&#xa0;type: atom<br>
-&#xa0;&#xa0;path: atom.xml<br>
-&#xa0;&#xa0;limit: 0<br>
-&#xa0;&#xa0;hub:<br>
+<pre class="example">
+git clone --depth 1 https://github.com/hlissner/doom-emacs /data/data/org.gnu.emacs/files/.emacs.d.doom
+</pre></li>
+<li><p>
+在 Android Emacs 的 shell 环境中，软链接 emacs 可执行文件：
+</p>
+<pre class="example">
+ln -s /data/data/org.gnu.emacs/lib/libandroid-emacs.so /data/data/com.termux/files/usr/bin/emacs
+</pre>
+
+<ul class="org-ul">
+<li><p>
+链接成功后，在Android Emacs中运行 <code>emacs --version</code> 应该可以看到：
+</p>
+<blockquote>
+<p>
+emacs &#x2013;version
+GNU Emacs 30.0.50
+Copyright (C) 2024 Free Software Foundation, Inc.
+GNU Emacs comes with ABSOLUTELY NO WARRANTY.
+You may redistribute copies of GNU Emacs
+under the terms of the GNU General Public License.
+For more information about these matters, see the file named COPYING.
+</p>
+</blockquote></li>
+<li><p>
+否则，在执行doom时会报错：
+</p>
+<blockquote>
+<p>
+Error: failed to run Emacs with command 'emacs'
 </p>
 
 <p>
-参数说明：
+Are you sure Emacs is installed and in your $PATH?
 </p>
-<p class="verse">
-type - Feed type. (atom/rss2)<br>
-path - Feed path. (Default: atom.xml/rss2.xml)<br>
-limit - Maximum number of posts in the feed (Use <code>0</code> or <code>false</code> to show all posts)<br>
-hub - URL of the PubSubHubbub hubs (Leave it empty if you don't use it)<br>
-</p></li>
-<li><p>
-修改 <code>url:</code> 为博客站点地址
-默认为 <code>http://yoursite.com/</code> ，但是为了RSS地址的正确引用，应将其改为自己的博客地址，例如我的配置文件为：
-</p>
-<p class="verse">
-url: <a href="http://yuchen-lea.gitcafe.io/" target="_blank" rel="external">http://yuchen-lea.gitcafe.io/</a><br>
-</p></li>
+</blockquote></li>
+</ul></li>
+
+<li>编辑 <code>.emacs.d.doom/bin/doom</code> ，修改 Shebang：​<code>#!/usr/bin/env sh</code> →  <code>#!/system/bin/sh</code></li>
+<li>把 <code>~/.emacs.d/early-init.el</code> 中的内容添加到 <code>.emacs.d.doom/early-init.el</code>​，以便生成 doom env 文件的时候把 Termux 路径加入到 <code>PATH</code> 环境变量。</li>
+<li>执行 doom install，如果提示 <code>error ("Failed to run \"git\"; see buffer *straight-process*")</code> ，可以尝试：
+<ul class="org-ul">
+<li>检查 doom 的 env 文件是否把 Termux 路径加入到 <code>PATH</code></li>
+<li>在 eshell中执行命令，不要在 shell 中执行</li>
+<li>执行 (setq android-use-exec-loader nil)</li>
+</ul></li>
+<li>安装完成之后，把 <code>.emacs.d.doom</code> 软链接为 <code>.emacs.d=。建议不要直接改名，这样未来改变 =.emacs.d</code> 指向的路径就可以切换配置，进行debug。</li>
+<li>重新启动，Emacs 应该可以加载 doom-emacs 配置了。由于 Android 和桌面端的路径以及支持的功能并不完全一致。一般需要对 doom-emacs 配置进行调整。</li>
 </ol>
 </div>
 </div>
 
-<div id="outline-container-org1f912d6" class="outline-2">
-<h2 id="org1f912d6"><span class="section-number-2">3.</span> 设置主题配置文件 <code>_config.yml</code></h2>
+<div id="outline-container-org0589df7" class="outline-2">
+<h2 id="org0589df7"><span class="section-number-2">3.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-3">
-<ol class="org-ol">
-<li><p>
-如果主题设置中内置有RSS：
-只要设置其地址与全站设置文件中的一致即可：
-</p>
-<p class="verse">
-rss: /atom.xml<br>
-</p></li>
-
-<li><p>
-如果主题设置中没有内置RSS：
-在完成上述步骤后，还需自行为站点添加RSS链接。更改站点的布局需要修改模版文件，一般在 <code>layout</code> 目录下。如果要在header加入RSS链接，找到 <code>header.ejs</code> 文件，在相应位置添加代码：
-</p>
-<div class="org-src-container">
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span> <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/atom.xml"</span>&gt;</span>RSS<span class="tag">&lt;/<span class="title">a</span>&gt;</span> <span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</div></li>
-</ol>
+<ul class="org-ul">
+<li><span class="timestamp-wrapper"><span class="timestamp">[2024-02-04 日] </span></span> 初稿</li>
+</ul>
 </div>
 </div>
-
-<div id="outline-container-org2d7be5e" class="outline-2">
-<h2 id="org2d7be5e"><span class="section-number-2">4.</span> 检查 RSS 文件的正确性</h2>
+<div id="outline-container-orgf040600" class="outline-2">
+<h2 id="orgf040600"><span class="section-number-2">4.</span> 参考</h2>
 <div class="outline-text-2" id="text-4">
-<ol class="org-ol">
-<li>执行 <code>hexo g</code> ，在 <code>public</code> 目录应生成 <code>atom.xml</code></li>
-<li>执行 <code>hexo s</code> , 查看页面的RSS收取点能否打开，文章链接是否正确</li>
-</ol>
-</div>
-</div>
-<div id="outline-container-org39cb755" class="outline-2">
-<h2 id="org39cb755"><span class="section-number-2">5.</span> 更新历史</h2>
-<div class="outline-text-2" id="text-5">
 <ul class="org-ul">
-<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-22 五&gt; </span></span> 增加 检查 RSS 文件的正确性 部分</li>
-<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-18 一&gt; </span></span> 拟定初稿</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org2f4356a" class="outline-2">
-<h2 id="org2f4356a"><span class="section-number-2">6.</span> 参考</h2>
-<div class="outline-text-2" id="text-6">
-<ul class="org-ul">
-<li><a href="http://www.zipperary.com/2013/06/02/hexo-guide-5/" target="_blank" rel="external">hexo系列教程：（五）hexo博客的优化技巧续 | Zippera's blog</a></li>
-<li><a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="external">GitHub - hexojs/hexo-generator-feed: Feed generator for Hexo.</a></li>
+<li><a href="https://www.reddit.com/r/emacs/comments/16hwjby/how_to_get_graphical_not_termuxbased_emacs_on/" target="_blank" rel="external">How to get graphical (not Termux-based) Emacs on Android along with file-sync and shared init files across platforms. : emacs</a></li>
+<li><a href="https://marek-g.github.io/posts/tips_and_tricks/emacs_on_android/" target="_blank" rel="external">Emacs on Android | Home Page</a></li>
 </ul>
 </div>
 </div>
 
-<p class="date">Date: 2016-01-18 一 00:00</p>
+<p class="date">Date: 2024-02-04 日 00:00</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
 </span>
 
 	<div class="cc-licens" style="border-radius: 10px; margin-top: 20px; padding: 20px 30px; background-color: rgb(233, 233, 233);" >
 			<p><strong><i class="fa fa-info"></i>  版权声明</strong></p>
 			<p>本文由<a href="http://yuchen-lea.github.io/about" mlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">宇晨</a>创作，采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p>
-			<p>首发于<a href="http://yuchen-lea.github.io/">跬步</a>，转载或引用请注明出处，本文永久链接：<a href="/2016-01-18-add-rss-to-hexo/">给hexo添加RSS</a></p>
+			<p>首发于<a href="http://yuchen-lea.github.io/">跬步</a>，转载或引用请注明出处，本文永久链接：<a href="/2024-02-04-android-emacs-with-doom_emacs/">在 Android Emacs 中使用 doom-emacs</a></p>
 			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0; height: 46px;" src="/images/cc-by-nc-sa.png" /></a>
 	</div>
 
@@ -526,13 +496,7 @@ rss: /atom.xml<br>
       
         <div class="post-tags">
           
-            <a href="/tags/how/" rel="tag">#!how</a>
-          
-            <a href="/tags/RSS/" rel="tag">#RSS</a>
-          
-            <a href="/tags/hexo/" rel="tag">#hexo</a>
-          
-            <a href="/tags/插件/" rel="tag">#插件</a>
+            <a href="/tags/Emacs/" rel="tag">#Emacs</a>
           
         </div>
       
@@ -541,17 +505,13 @@ rss: /atom.xml<br>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016-01-17-sum-of-gojuon/" rel="next" title="五十音图学习小结">
-                <i class="fa fa-chevron-left"></i> 五十音图学习小结
+              <a href="/2016-05-14-find-max-under-conditions-in-excel/" rel="next" title="在Excel查找满足条件的最大值">
+                <i class="fa fa-chevron-left"></i> 在Excel查找满足条件的最大值
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016-01-18-hexo-dir-struct/" rel="prev" title="hexo目录结构小探">
-                hexo目录结构小探 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -578,8 +538,8 @@ rss: /atom.xml<br>
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016-01-18-add-rss-to-hexo/"
-           data-title="给hexo添加RSS" data-url="http://yuchen-lea.github.io/2016-01-18-add-rss-to-hexo/">
+      <div class="ds-thread" data-thread-key="2024-02-04-android-emacs-with-doom_emacs/"
+           data-title="在 Android Emacs 中使用 doom-emacs" data-url="http://yuchen-lea.github.io/2024-02-04-android-emacs-with-doom_emacs/">
       </div>
     
   </div>
@@ -687,7 +647,7 @@ rss: /atom.xml<br>
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#orgaf1e716"><span class="nav-text">1. 安装RSS插件到本地</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org02640a0"><span class="nav-text">2. 设置全站配置文件 _config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org1f912d6"><span class="nav-text">3. 设置主题配置文件 _config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org2d7be5e"><span class="nav-text">4. 检查 RSS 文件的正确性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org39cb755"><span class="nav-text">5. 更新历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org2f4356a"><span class="nav-text">6. 参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#org9044121"><span class="nav-text">1. 安装 Android Emacs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org951e012"><span class="nav-text">2. 使用 doom-emacs 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org0589df7"><span class="nav-text">3. 更新历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orgf040600"><span class="nav-text">4. 参考</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
