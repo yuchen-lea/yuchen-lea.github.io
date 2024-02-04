@@ -4971,6 +4971,10 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
     
       <category term="日语" scheme="http://yuchen-lea.github.io/tags/%E6%97%A5%E8%AF%AD/"/>
     
+      <category term="日语" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="日语知识" scheme="http://yuchen-lea.github.io/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E7%9F%A5%E8%AF%86/"/>
+    
   </entry>
   
   <entry>
@@ -5675,6 +5679,10 @@ qiniu:<br>
       <category term="七牛" scheme="http://yuchen-lea.github.io/tags/%E4%B8%83%E7%89%9B/"/>
     
       <category term="插件" scheme="http://yuchen-lea.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.github.io/categories/hexo/"/>
+    
+      <category term="hexo写作" scheme="http://yuchen-lea.github.io/categories/hexo/hexo%E5%86%99%E4%BD%9C/"/>
     
   </entry>
   
@@ -7719,6 +7727,10 @@ theme-name即这个主题的名称，当然你可以自取，不过一般我们�
       <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
     
       <category term="hexo" scheme="http://yuchen-lea.github.io/tags/hexo/"/>
+    
+      <category term="hexo" scheme="http://yuchen-lea.github.io/categories/hexo/"/>
+    
+      <category term="hexo美化" scheme="http://yuchen-lea.github.io/categories/hexo/hexo%E7%BE%8E%E5%8C%96/"/>
     
   </entry>
   
