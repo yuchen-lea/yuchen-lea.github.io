@@ -525,7 +525,7 @@ Are you sure Emacs is installed and in your $PATH?
           </span>
 
           <span class="post-count">
-		书写 1,738 字
+		书写 1,779 字
 	  </span> 
 
           
@@ -579,6 +579,10 @@ Are you sure Emacs is installed and in your $PATH?
               
 
 <p>
+本文目标：在一个安卓设备上，成功安装GUI Emacs且能使用 Termux 管理 Emacs 所用的 git 等工具。同时，成功加载 doom-emacs 配置。
+</p>
+
+<p>
 2023 年初，即将发布的 Emacs 30.1 将对 Android GUI 的支持包括其中。这意味着除了桌面端，移动端也有原生的 Emacs 体验了。（当然，iOS由于其自身特性，未来也不可能支持 Emacs。）
 </p>
 
@@ -594,8 +598,8 @@ Are you sure Emacs is installed and in your $PATH?
 在此特别感谢 <a href="https://emacs-china.org/u/oldosfan" target="_blank" rel="external">oldosfan</a>，ta 是 Android Port 主要贡献者，并且在如何在 Android Emacs 配置 doom-emacs 对我帮助良多。
 </p>
 
-<div id="outline-container-org41b5df2" class="outline-2">
-<h2 id="org41b5df2"><span class="section-number-2">1.</span> 安装 Android Emacs</h2>
+<div id="outline-container-org9d6a7f6" class="outline-2">
+<h2 id="org9d6a7f6"><span class="section-number-2">1.</span> 安装 Android Emacs</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 最佳方式是安装特定版本的Emacs和Termux，二者共享相同的 <code>sharedUserId</code> manifest attribute 和签名，这意味着二者可以互相访问对方的数据文件夹（ <code>/data/data/org.gnu.emacs/</code> 和 <code>/data/data/com.termux/</code> ），这样使用 Termux 来安装 GNU/Linux 应用程序后，Emacs 中就可以运行这些应用程序。
@@ -641,8 +645,8 @@ pkg update &amp;&amp; pkg upgrade
 </div>
 </div>
 
-<div id="outline-container-orgbd6f1f9" class="outline-2">
-<h2 id="orgbd6f1f9"><span class="section-number-2">2.</span> 使用 doom-emacs 配置</h2>
+<div id="outline-container-org171c639" class="outline-2">
+<h2 id="org171c639"><span class="section-number-2">2.</span> 使用 doom-emacs 配置</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 因为，Android 中没有 Emacs 可执行文件，shell 路径也不同，因此需要一定的修改才能进行 doom install。以下操作​<b>请注意区分</b>​，是在Termux中运行，还是在 Emacs Shell 中运行。
@@ -713,16 +717,16 @@ Are you sure Emacs is installed and in your $PATH?
 </div>
 </div>
 
-<div id="outline-container-orgc06a562" class="outline-2">
-<h2 id="orgc06a562"><span class="section-number-2">3.</span> 更新历史</h2>
+<div id="outline-container-orgbdd1cf6" class="outline-2">
+<h2 id="orgbdd1cf6"><span class="section-number-2">3.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">[2024-02-04 日] </span></span> 初稿</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcce4f03" class="outline-2">
-<h2 id="orgcce4f03"><span class="section-number-2">4.</span> 参考</h2>
+<div id="outline-container-org3aa7c9f" class="outline-2">
+<h2 id="org3aa7c9f"><span class="section-number-2">4.</span> 参考</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><a href="https://www.reddit.com/r/emacs/comments/16hwjby/how_to_get_graphical_not_termuxbased_emacs_on/" target="_blank" rel="external">How to get graphical (not Termux-based) Emacs on Android along with file-sync and shared init files across platforms. : emacs</a></li>
