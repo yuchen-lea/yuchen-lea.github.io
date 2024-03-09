@@ -316,8 +316,8 @@
         <span itemprop="articleBody">
 
 
-<div id="outline-container-orgf40693b" class="outline-2">
-<h2 id="orgf40693b"><span class="section-number-2">1.</span> 七牛是什么</h2>
+<div id="outline-container-org5a149a4" class="outline-2">
+<h2 id="org5a149a4"><span class="section-number-2">1.</span> 七牛是什么</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="http://www.qiniu.com/" target="_blank" rel="external">七牛</a> 是一个云存储服务商，注册并实名认证之后<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>后，你将免费享有 10GB 存储空间，每月 10GB 下载流量、100 万次 GET 请求、 10 万次 PUT/DELETE 请求。七牛的定位不是像百度云一样的 <b>网盘</b> ，也不是同坚果云一般的 <b>同步云</b> ，而是 <b>CDN</b> <sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup> ，让你在浏览网页的时候最快的接收到页面中的图片、音频等文件，所以非常适合个人、企业用户用来储存站点资源。对于个人博主来说，你可以把博客中的图片、音频、视频等媒体上传到七牛，在博客中引用；也可以将站点需要加载的CSS、JS等文件上传到七牛，以加速网站。
@@ -325,8 +325,8 @@
 </div>
 </div>
 
-<div id="outline-container-org8ffa387" class="outline-2">
-<h2 id="org8ffa387"><span class="section-number-2">2.</span> 为什么选用七牛</h2>
+<div id="outline-container-org9c49d0b" class="outline-2">
+<h2 id="org9c49d0b"><span class="section-number-2">2.</span> 为什么选用七牛</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>与直接部署到站点相比：
@@ -367,7 +367,7 @@ Gitcafe有 512Mb 的总空间限制，Github虽没有找到类似的说明，但
 </p>
 
 
-<div class="HTML" id="org5e20647">
+<div class="HTML" id="orgcce5aa3">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -376,8 +376,8 @@ Gitcafe有 512Mb 的总空间限制，Github虽没有找到类似的说明，但
 </div>
 </div>
 
-<div id="outline-container-org90e1094" class="outline-2">
-<h2 id="org90e1094"><span class="section-number-2">3.</span> 七牛空间的设置</h2>
+<div id="outline-container-orgdeb2554" class="outline-2">
+<h2 id="orgdeb2554"><span class="section-number-2">3.</span> 七牛空间的设置</h2>
 <div class="outline-text-2" id="text-3">
 <ol class="org-ol">
 <li>点击 <a href="https://portal.qiniu.com/signup?code=3lbz03l9r6c7m" target="_blank" rel="external">这里</a> 申请七牛账户</li>
@@ -389,8 +389,8 @@ Gitcafe有 512Mb 的总空间限制，Github虽没有找到类似的说明，但
 </div>
 </div>
 
-<div id="outline-container-orga6c4535" class="outline-2">
-<h2 id="orga6c4535"><span class="section-number-2">4.</span> 设置 <code>hexo-qiniu-sync</code> 插件</h2>
+<div id="outline-container-orgd39be42" class="outline-2">
+<h2 id="orgd39be42"><span class="section-number-2">4.</span> 设置 <code>hexo-qiniu-sync</code> 插件</h2>
 <div class="outline-text-2" id="text-4">
 <ol class="org-ol">
 <li><p>
@@ -429,7 +429,7 @@ qiniu:<br>
 </p>
 <ul class="org-ul">
 <li><code>bucket</code> ：修改为你刚才申请的七牛空间名称</li>
-<li><code>access_key</code> 、 <code>secret_key</code> : 上传密钥AccessKey、SecretKey。即<a href="#org90e1094">3</a> 第3步复制的AK和SK。</li>
+<li><code>access_key</code> 、 <code>secret_key</code> : 上传密钥AccessKey、SecretKey。即<a href="#orgdeb2554">3</a> 第3步复制的AK和SK。</li>
 <li><code>urlPrefix</code> : 七牛空间地址的前缀。 <b>重要！必填！</b> 因为现在七牛已经取消了二级域名，外链前缀类似设置中的 <code>http://7xqb0u.com1.z0.glb.clouddn.com</code> ，插件不能根据 <code>bucket</code> 自动生成外链前缀了。你可以进入自己创建的空间在域名设置中看到自己的七牛测试域名，也可以查看一个已上传的文件外链地址，确认前缀无误。这个参数的设置是保证解析成网页文件时，外链地址正确的关键之一！</li>
 </ul>
 
@@ -448,8 +448,8 @@ qiniu:<br>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgd334d71" class="outline-2">
-<h2 id="orgd334d71"><span class="section-number-2">5.</span> 配置本地目录</h2>
+<div id="outline-container-org1fdbbed" class="outline-2">
+<h2 id="org1fdbbed"><span class="section-number-2">5.</span> 配置本地目录</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 下文实例都是基于前文的设置基础，不予赘述。
@@ -479,16 +479,16 @@ qiniu:<br>
 </div>
 </div>
 
-<div id="outline-container-orgf5b27a7" class="outline-2">
-<h2 id="orgf5b27a7"><span class="section-number-2">6.</span> 引用七牛资源</h2>
+<div id="outline-container-org17f6622" class="outline-2">
+<h2 id="org17f6622"><span class="section-number-2">6.</span> 引用七牛资源</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 前文说过，七牛配合插件，可以比较方便地根据本地路径来引用文件，这一功能是利用Hexo的标签插件实现，我们来看看具体操作是怎样的。
 </p>
 </div>
 
-<div id="outline-container-orgf1ef436" class="outline-3">
-<h3 id="orgf1ef436"><span class="section-number-3">6.1.</span> 引用图片</h3>
+<div id="outline-container-orgca93fc7" class="outline-3">
+<h3 id="orgca93fc7"><span class="section-number-3">6.1.</span> 引用图片</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 图片的引用是最典型的情况。让我们来看最简单的情况：如果你想引用储存在 <code>cdn/images</code> 下的图片 <code>demo.jpg</code> ，只需在文章中插入：
@@ -542,8 +542,8 @@ qiniu:<br>
 </p>
 </div>
 
-<div id="outline-container-org62a6495" class="outline-4">
-<h4 id="org62a6495"><span class="section-number-4">6.1.1.</span> 图片引用的高阶版</h4>
+<div id="outline-container-orge2d44a8" class="outline-4">
+<h4 id="orge2d44a8"><span class="section-number-4">6.1.1.</span> 图片引用的高阶版</h4>
 <div class="outline-text-4" id="text-6-1-1">
 <p>
 高级用法的通用模版：
@@ -583,8 +583,8 @@ qiniu:<br>
 </div>
 </div>
 
-<div id="outline-container-org8fca0c6" class="outline-3">
-<h3 id="org8fca0c6"><span class="section-number-3">6.2.</span> 引用CSS和JS</h3>
+<div id="outline-container-orgfd6e730" class="outline-3">
+<h3 id="orgfd6e730"><span class="section-number-3">6.2.</span> 引用CSS和JS</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 只是引用的标签名不同：
@@ -596,8 +596,8 @@ qiniu:<br>
 </div>
 </div>
 
-<div id="outline-container-orgb4424c6" class="outline-2">
-<h2 id="orgb4424c6"><span class="section-number-2">7.</span> 同步到七牛</h2>
+<div id="outline-container-org25e5e47" class="outline-2">
+<h2 id="org25e5e47"><span class="section-number-2">7.</span> 同步到七牛</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 网站<sup><a id="fnr.4.100" class="footref" href="#fn.4" role="doc-backlink">4</a></sup>说使用 <code>hexo server</code> 命令（简写为 <code>hexo s</code> ）即可自动上传到七牛，但是我和很多网友<sup><a id="fnr.6" class="footref" href="#fn.6" role="doc-backlink">6</a></sup>都发现，此方法无效。好在提供的另一种方法也很简便，运行 <code>hexo qiniu s</code> 命令即可同步到七牛。
@@ -605,16 +605,16 @@ qiniu:<br>
 </div>
 </div>
 
-<div id="outline-container-org2b6aadc" class="outline-2">
-<h2 id="org2b6aadc"><span class="section-number-2">8.</span> 更新历史</h2>
+<div id="outline-container-orgeeff138" class="outline-2">
+<h2 id="orgeeff138"><span class="section-number-2">8.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-21 四&gt; </span></span> 拟定初稿</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org077c21a" class="outline-2">
-<h2 id="org077c21a"><span class="section-number-2">9.</span> 参考</h2>
+<div id="outline-container-orgfa21b98" class="outline-2">
+<h2 id="orgfa21b98"><span class="section-number-2">9.</span> 参考</h2>
 <div class="outline-text-2" id="text-9">
 <ul class="org-ul">
 <li><a href="https://github.com/gyk001/hexo-qiniu-sync" target="_blank" rel="external">gyk001/hexo-qiniu-sync - Github</a> <code>hexo-qiniu-sync</code> 的官方说明文档部分内容已过时，建议参考本文实践。</li>
@@ -832,7 +832,7 @@ qiniu:<br>
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#orgf40693b"><span class="nav-text">1. 七牛是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org8ffa387"><span class="nav-text">2. 为什么选用七牛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org90e1094"><span class="nav-text">3. 七牛空间的设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orga6c4535"><span class="nav-text">4. 设置 hexo-qiniu-sync 插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orgd334d71"><span class="nav-text">5. 配置本地目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orgf5b27a7"><span class="nav-text">6. 引用七牛资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#orgf1ef436"><span class="nav-text">6.1. 引用图片</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#org62a6495"><span class="nav-text">6.1.1. 图片引用的高阶版</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#org8fca0c6"><span class="nav-text">6.2. 引用CSS和JS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orgb4424c6"><span class="nav-text">7. 同步到七牛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org2b6aadc"><span class="nav-text">8. 更新历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org077c21a"><span class="nav-text">9. 参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">Footnotes: </span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#org5a149a4"><span class="nav-text">1. 七牛是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org9c49d0b"><span class="nav-text">2. 为什么选用七牛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orgdeb2554"><span class="nav-text">3. 七牛空间的设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orgd39be42"><span class="nav-text">4. 设置 hexo-qiniu-sync 插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org1fdbbed"><span class="nav-text">5. 配置本地目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org17f6622"><span class="nav-text">6. 引用七牛资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#orgca93fc7"><span class="nav-text">6.1. 引用图片</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#orge2d44a8"><span class="nav-text">6.1.1. 图片引用的高阶版</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#orgfd6e730"><span class="nav-text">6.2. 引用CSS和JS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#org25e5e47"><span class="nav-text">7. 同步到七牛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orgeeff138"><span class="nav-text">8. 更新历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orgfa21b98"><span class="nav-text">9. 参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">Footnotes: </span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

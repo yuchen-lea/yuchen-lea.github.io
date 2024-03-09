@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不积小流，无以成江海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yuchen-lea.github.io/"/>
-  <updated>2024-02-04T04:03:28.154Z</updated>
+  <updated>2024-03-09T02:40:06.575Z</updated>
   <id>http://yuchen-lea.github.io/</id>
   
   <author>
@@ -15,184 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Using doom-emacs in Android Emacs]]></title>
-    <link href="http://yuchen-lea.github.io/2024-02-04-android-emacs-with-doom-emacs-en/"/>
-    <id>http://yuchen-lea.github.io/2024-02-04-android-emacs-with-doom-emacs-en/</id>
-    <published>2024-02-03T16:00:00.000Z</published>
-    <updated>2024-02-04T04:03:28.154Z</updated>
-    <content type="html"><![CDATA[
-
-<p>
-In early 2023, the upcoming Emacs 30.1 release included support for Android GUI. This means that besides desktop, there will also be a native Emacs experience on mobile. (Of course, due to its own restrictions, iOS will not never support Emacs in the future.)
-</p>
-
-<p>
-Unlike regular Android apps, just installing the APK is far from enough to use Emacs well on Android; additional configuration is required.
-</p>
-
-<p>
-Moreover, since the configuration of <a href="https://github.com/hlissner/doom-emacs/" target="_blank" rel="external">doom-emacs</a> involves calling Emacs itself, and the Android system does not provide a ready-made emacs executable command, the configuration is not as smooth as on desktop. Here I share my configuration experience, hoping to help some people.
-</p>
-
-<p>
-Special thanks to <a href="https://emacs-china.org/u/oldosfan" target="_blank" rel="external">oldosfan</a>, the main contributor to the Android Port, who has been of great help to me in configuring doom-emacs on Android Emacs.
-</p>
-
-<div id="outline-container-org4af3537" class="outline-2">
-<h2 id="org4af3537"><span class="section-number-2">1.</span> Installing Android Emacs</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-The best way is to install specific versions of Emacs and Termux, sharing the same <code>sharedUserId</code> manifest attribute and signature, meaning they can access each other's data folders (<code>/data/data/org.gnu.emacs/</code> and <code>/data/data/com.termux/</code>), allowing Emacs to run applications installed through Termux.
-</p>
-
-<hr>
-
-<ol class="org-ol">
-<li>Emacs and termux must be installed in a specific order and version. If installed previously, please uninstall first to avoid <code>sharedUserId</code> or signature conflicts.</li>
-<li><b>First</b>, install a specific version of Termux from <a href="https://sourceforge.net/projects/android-ports-for-gnu-emacs/files/termux/" target="_blank" rel="external">Android ports for GNU Emacs - Browse /termux at SourceForge.net</a>. Do not open Termux after installing.</li>
-<li><b>Then</b>, choose a suitable version of Emacs to install from the same website.
-<ul class="org-ul">
-<li>👎 The version from F-Droid is not recommended because:
-<ul class="org-ul">
-<li>It's not the latest version: missing bug fixes and new features.</li>
-<li>It lacks many dependency packages: GnuTLS, image libraries, tree-sitter</li>
-</ul></li>
-<li>The main selection criteria are <b>Android system version</b> and <b>chip CPU architecture</b>. For example, <code>emacs-30.0.50-29-arm64-v8a.apk</code> is suitable for devices running Android 10.0 or higher on aarch64, a common choice. If the installed version does not match, it will not work properly.</li>
-</ul></li>
-<li><p>
-After both are installed, open Termux and execute the following command to install and update all applications.
-</p>
-<pre class="example">
-pkg update &amp;&amp; pkg upgrade
-</pre></li>
-<li><p>
-Open Emacs and add to ~/.emacs.d/early-init.el:
-</p>
-
-<div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">when</span> <span class="list">(<span class="keyword">string-equal</span> system-type <span class="string">"android"</span>)</span></span><br><span class="line">  <span class="comment">;; Add Termux binaries to PATH environment</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">termuxpath</span> <span class="string">"/data/data/com.termux/files/usr/bin"</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setenv</span> <span class="string">"PATH"</span> <span class="list">(<span class="keyword">concat</span> <span class="list">(<span class="keyword">getenv</span> <span class="string">"PATH"</span>)</span> <span class="string">":"</span> termuxpath)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> exec-path <span class="list">(<span class="keyword">append</span> exec-path <span class="list">(<span class="keyword">list</span> termuxpath)</span>)</span>)</span>)</span>)</span></span><br></pre></td></tr></table></figure>
-</div>
-<ul class="org-ul">
-<li>This code binds Emacs with the Termux file system, allowing Emacs to access programs installed through Termux.</li>
-<li>🤔 The official documentation also configures the <code>LD_LIBRARY_PATH</code> environment variable. However, configuring it causes problems running mpv in Emacs, and not configuring it has not shown problems so far. To be observed.</li>
-</ul></li>
-<li>Restart Emacs to apply the configuration. If you have already installed git in Termux, you can try executing <code>(executable-find "git")</code> in Emacs. If it returns the path to git, the configuration is successful.</li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-org1060818" class="outline-2">
-<h2 id="org1060818"><span class="section-number-2">2.</span> Using doom-emacs configuration</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-Because there is no Emacs executable file in Android and the shell path is different, some modifications are necessary for doom install. Please pay attention to distinguish whether the following operations are run in Termux or in Emacs Shell.
-</p>
-
-<hr>
-
-<ol class="org-ol">
-<li><p>
-Install Git in Termux
-</p>
-<pre class="example">
-pkg install git
-</pre></li>
-<li><p>
-In Termux, <code>git clone</code> doom-emacs to the Emacs main directory
-</p>
-<pre class="example">
-git clone --depth 1 https://github.com/hlissner/doom-emacs /data/data/org.gnu.emacs/files/.emacs.d.doom
-</pre></li>
-<li><p>
-In the shell environment of Android Emacs, soft link the emacs executable file:
-</p>
-<pre class="example">
-ln -s /data/data/org.gnu.emacs/lib/libandroid-emacs.so /data/data/com.termux/files/usr/bin/emacs
-</pre>
-
-<ul class="org-ul">
-<li><p>
-After successful linking, running <code>emacs --version</code> in Android Emacs should show:
-</p>
-<blockquote>
-<p>
-emacs &#x2013;version
-GNU Emacs 30.0.50
-Copyright (C) 2024 Free Software Foundation, Inc.
-GNU Emacs comes with ABSOLUTELY NO WARRANTY.
-You may redistribute copies of GNU Emacs
-under the terms of the GNU General Public License.
-For more information about these matters, see the file named COPYING.
-</p>
-</blockquote></li>
-<li><p>
-Otherwise, when executing doom, it will report an error:
-</p>
-<blockquote>
-<p>
-Error: failed to run Emacs with command 'emacs'
-</p>
-
-<p>
-Are you sure Emacs is installed and in your $PATH?
-</p>
-</blockquote></li>
-</ul></li>
-
-<li>Edit <code>.emacs.d.doom/bin/doom</code>, change the Shebang: <code>#!/usr/bin/env sh</code> → <code>#!/system/bin/sh</code></li>
-<li>Add the contents of <code>~/.emacs.d/early-init.el</code> to <code>.emacs.d.doom/early-init.el</code>, to add the Termux path to the <code>PATH</code> environment variable when generating the doom env file.</li>
-<li>Execute <code>doom install</code> in Android Emacs, if it prompts <code>error ("Failed to run \"git\"; see buffer *straight-process*")</code>, you can try:
-<ul class="org-ul">
-<li>Checking if the Termux path is added to the <code>PATH</code> in doom's env file</li>
-<li>Execute commands in eshell, not in shell</li>
-<li>Execute (setq android-use-exec-loader nil)</li>
-</ul></li>
-<li>After installation, link <code>.emacs.d.doom</code> as <code>.emacs.d</code>. It is recommended not to rename directly, so that changing the path pointed to by <code>.emacs.d</code> in the future can switch configurations for debugging.</li>
-<li>Restart, and Emacs should be able to load the doom-emacs configuration. Since the paths and supported features on Android and desktop are not completely consistent, the doom-emacs configuration generally needs to be adjusted. Enjoy your doom-emacs on Android.</li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-org2d3cd85" class="outline-2">
-<h2 id="org2d3cd85"><span class="section-number-2">3.</span> Update History</h2>
-<div class="outline-text-2" id="text-3">
-<ul class="org-ul">
-<li><span class="timestamp-wrapper"><span class="timestamp">[2024-02-04 日] </span></span> First draft</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org7ec59ee" class="outline-2">
-<h2 id="org7ec59ee"><span class="section-number-2">4.</span> References</h2>
-<div class="outline-text-2" id="text-4">
-<ul class="org-ul">
-<li><a href="https://www.reddit.com/r/emacs/comments/16hwjby/how_to_get_graphical_not_termuxbased_emacs_on/" target="_blank" rel="external">How to get graphical (not Termux-based) Emacs on Android along with file-sync and shared init files across platforms. : emacs</a></li>
-<li><a href="https://marek-g.github.io/posts/tips_and_tricks/emacs_on_android/" target="_blank" rel="external">Emacs on Android | Home Page</a></li>
-</ul>
-</div>
-</div>
-
-<p class="date">Date: 2024-02-04 日 00:00</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[
-
-<p>
-In early 2023, the upcoming Emacs 30.1 release included support for Android GUI. This means that besides desktop, there will also be a]]>
-    </summary>
-    
-      <category term="Emacs" scheme="http://yuchen-lea.github.io/tags/Emacs/"/>
-    
-      <category term="Emacs" scheme="http://yuchen-lea.github.io/categories/Emacs/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[在 Android Emacs 中使用 doom-emacs]]></title>
     <link href="http://yuchen-lea.github.io/2024-02-04-android-emacs-with-doom-emacs/"/>
     <id>http://yuchen-lea.github.io/2024-02-04-android-emacs-with-doom-emacs/</id>
     <published>2024-02-03T16:00:00.000Z</published>
-    <updated>2024-02-04T04:09:50.688Z</updated>
+    <updated>2024-03-09T02:40:06.575Z</updated>
     <content type="html"><![CDATA[
 
 <p>
@@ -215,8 +42,8 @@ In early 2023, the upcoming Emacs 30.1 release included support for Android GUI.
 在此特别感谢 <a href="https://emacs-china.org/u/oldosfan" target="_blank" rel="external">oldosfan</a>，ta 是 Android Port 主要贡献者，并且在如何在 Android Emacs 配置 doom-emacs 对我帮助良多。
 </p>
 
-<div id="outline-container-org9d6a7f6" class="outline-2">
-<h2 id="org9d6a7f6"><span class="section-number-2">1.</span> 安装 Android Emacs</h2>
+<div id="outline-container-org54166a1" class="outline-2">
+<h2 id="org54166a1"><span class="section-number-2">1.</span> 安装 Android Emacs</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 最佳方式是安装特定版本的Emacs和Termux，二者共享相同的 <code>sharedUserId</code> manifest attribute 和签名，这意味着二者可以互相访问对方的数据文件夹（ <code>/data/data/org.gnu.emacs/</code> 和 <code>/data/data/com.termux/</code> ），这样使用 Termux 来安装 GNU/Linux 应用程序后，Emacs 中就可以运行这些应用程序。
@@ -262,8 +89,8 @@ pkg update &amp;&amp; pkg upgrade
 </div>
 </div>
 
-<div id="outline-container-org171c639" class="outline-2">
-<h2 id="org171c639"><span class="section-number-2">2.</span> 使用 doom-emacs 配置</h2>
+<div id="outline-container-org04693f9" class="outline-2">
+<h2 id="org04693f9"><span class="section-number-2">2.</span> 使用 doom-emacs 配置</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 因为，Android 中没有 Emacs 可执行文件，shell 路径也不同，因此需要一定的修改才能进行 doom install。以下操作​<b>请注意区分</b>​，是在Termux中运行，还是在 Emacs Shell 中运行。
@@ -320,13 +147,20 @@ Are you sure Emacs is installed and in your $PATH?
 </blockquote></li>
 </ul></li>
 
-<li>编辑 <code>.emacs.d.doom/bin/doom</code> ，修改 Shebang：​<code>#!/usr/bin/env sh</code> →  <code>#!/system/bin/sh</code></li>
-<li>把 <code>~/.emacs.d/early-init.el</code> 中的内容添加到 <code>.emacs.d.doom/early-init.el</code>​，以便生成 doom env 文件的时候把 Termux 路径加入到 <code>PATH</code> 环境变量。</li>
-<li><b>在 Android Emacs 的 shell 环境</b>​中执行 doom install，如果提示 <code>error ("Failed to run \"git\"; see buffer *straight-process*")</code> ，可以尝试：
+<li>编辑 <code>.emacs.d.doom/bin/doom</code> ，修改 Shebang：​<code>#!/usr/bin/env sh</code> →  <code>#!/system/bin/sh</code>
+<ul class="org-ul">
+<li><a href="https://www.reddit.com/r/emacs/comments/1aif4wy/comment/kpemk2a/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button" target="_blank" rel="external">hlissner</a> 建议不要修改doom Shebang，直接在执行命令时指定 shell，例如 <code>sh ~/.emacs.d/bin/doom install=。很遗憾，由于 cache 机制该方案并不生效，必须修改 doom Shebang。升级doom需要使用 =doom upgrade --force</code> 并再次修改 Shebang。</li>
+</ul></li>
+<li>把 <code>~/.emacs.d/early-init.el</code> 中的内容添加到 <code>~/.doom.d/init.el</code>​，以便生成 doom env 文件的时候把 Termux 路径加入到 <code>PATH</code> 环境变量。</li>
+<li><b>在 Android Emacs 的 shell 环境</b>​中执行 doom install
+<ul class="org-ul">
+<li>在Android Emacs 的 shell 环境中执行 doom install 非常慢，可以考虑把其他环境的 repos 文件夹复制到 <code>~/.emacs.d.doom/.local/straight/repos</code> 再执行 doom install，跳过 git clone，加快速度。</li>
+<li>如果提示 <code>error ("Failed to run \"git\"; see buffer *straight-process*")</code> ，可以尝试：
 <ul class="org-ul">
 <li>检查 doom 的 env 文件是否把 Termux 路径加入到 <code>PATH</code></li>
 <li>在 eshell中执行命令，不要在 shell 中执行</li>
 <li>执行 (setq android-use-exec-loader nil)</li>
+</ul></li>
 </ul></li>
 <li>安装完成之后，把 <code>.emacs.d.doom</code> 软链接为 <code>.emacs.d=。建议不要直接改名，这样未来改变 =.emacs.d</code> 指向的路径就可以切换配置，进行debug。</li>
 <li>重新启动，Emacs 应该可以加载 doom-emacs 配置了。由于 Android 和桌面端的路径以及支持的功能并不完全一致。一般需要对 doom-emacs 配置进行调整。享受在 Android 上使用 Emacs 的快乐吧。</li>
@@ -334,16 +168,17 @@ Are you sure Emacs is installed and in your $PATH?
 </div>
 </div>
 
-<div id="outline-container-orgbdd1cf6" class="outline-2">
-<h2 id="orgbdd1cf6"><span class="section-number-2">3.</span> 更新历史</h2>
+<div id="outline-container-org963cca3" class="outline-2">
+<h2 id="org963cca3"><span class="section-number-2">3.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
+<li><span class="timestamp-wrapper"><span class="timestamp">[2024-03-09 六] </span></span> 编辑文件从 <code>.emacs.d.doom/early-init.el</code> → =~/.doom.d/init.el=，减少对 doom-emacs repo 的修改，感谢 <a href="https://www.reddit.com/r/emacs/comments/1aif4wy/comment/kpemk2a/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button" target="_blank" rel="external">hlissner</a></li>
 <li><span class="timestamp-wrapper"><span class="timestamp">[2024-02-04 日] </span></span> 初稿</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3aa7c9f" class="outline-2">
-<h2 id="org3aa7c9f"><span class="section-number-2">4.</span> 参考</h2>
+<div id="outline-container-orge24bd94" class="outline-2">
+<h2 id="orge24bd94"><span class="section-number-2">4.</span> 参考</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><a href="https://www.reddit.com/r/emacs/comments/16hwjby/how_to_get_graphical_not_termuxbased_emacs_on/" target="_blank" rel="external">How to get graphical (not Termux-based) Emacs on Android along with file-sync and shared init files across platforms. : emacs</a></li>
@@ -373,6 +208,186 @@ Are you sure Emacs is installed and in your $PATH?
   </entry>
   
   <entry>
+    <title><![CDATA[Using doom-emacs in Android Emacs]]></title>
+    <link href="http://yuchen-lea.github.io/2024-02-04-android-emacs-with-doom-emacs-en/"/>
+    <id>http://yuchen-lea.github.io/2024-02-04-android-emacs-with-doom-emacs-en/</id>
+    <published>2024-02-03T16:00:00.000Z</published>
+    <updated>2024-03-09T02:39:48.606Z</updated>
+    <content type="html"><![CDATA[
+
+<p>
+In early 2023, the upcoming Emacs 30.1 release included support for Android GUI. This means that besides desktop, there will also be a native Emacs experience on mobile. (Of course, due to its own restrictions, iOS will not never support Emacs in the future.)
+</p>
+
+<p>
+Unlike regular Android apps, just installing the APK is far from enough to use Emacs well on Android; additional configuration is required.
+</p>
+
+<p>
+Moreover, since the configuration of <a href="https://github.com/hlissner/doom-emacs/" target="_blank" rel="external">doom-emacs</a> involves calling Emacs itself, and the Android system does not provide a ready-made emacs executable command, the configuration is not as smooth as on desktop. Here I share my configuration experience, hoping to help some people.
+</p>
+
+<p>
+Special thanks to <a href="https://emacs-china.org/u/oldosfan" target="_blank" rel="external">oldosfan</a>, the main contributor to the Android Port, who has been of great help to me in configuring doom-emacs on Android Emacs.
+</p>
+
+<div id="outline-container-orge08945b" class="outline-2">
+<h2 id="orge08945b"><span class="section-number-2">1.</span> Installing Android Emacs</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+The best way is to install specific versions of Emacs and Termux, sharing the same <code>sharedUserId</code> manifest attribute and signature, meaning they can access each other's data folders (<code>/data/data/org.gnu.emacs/</code> and <code>/data/data/com.termux/</code>), allowing Emacs to run applications installed through Termux.
+</p>
+
+<hr>
+
+<ol class="org-ol">
+<li>Emacs and termux must be installed in a specific order and version. If installed previously, please uninstall first to avoid <code>sharedUserId</code> or signature conflicts.</li>
+<li><b>First</b>, install a specific version of Termux from <a href="https://sourceforge.net/projects/android-ports-for-gnu-emacs/files/termux/" target="_blank" rel="external">Android ports for GNU Emacs - Browse /termux at SourceForge.net</a>. Do not open Termux after installing.</li>
+<li><b>Then</b>, choose a suitable version of Emacs to install from the same website.
+<ul class="org-ul">
+<li>👎 The version from F-Droid is not recommended because:
+<ul class="org-ul">
+<li>It's not the latest version: missing bug fixes and new features.</li>
+<li>It lacks many dependency packages: GnuTLS, image libraries, tree-sitter</li>
+</ul></li>
+<li>The main selection criteria are <b>Android system version</b> and <b>chip CPU architecture</b>. For example, <code>emacs-30.0.50-29-arm64-v8a.apk</code> is suitable for devices running Android 10.0 or higher on aarch64, a common choice. If the installed version does not match, it will not work properly.</li>
+</ul></li>
+<li><p>
+After both are installed, open Termux and execute the following command to install and update all applications.
+</p>
+<pre class="example">
+pkg update &amp;&amp; pkg upgrade
+</pre></li>
+<li><p>
+Open Emacs and add to ~/.emacs.d/early-init.el:
+</p>
+
+<div class="org-src-container">
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">when</span> <span class="list">(<span class="keyword">string-equal</span> system-type <span class="string">"android"</span>)</span></span><br><span class="line">  <span class="comment">;; Add Termux binaries to PATH environment</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">termuxpath</span> <span class="string">"/data/data/com.termux/files/usr/bin"</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setenv</span> <span class="string">"PATH"</span> <span class="list">(<span class="keyword">concat</span> <span class="list">(<span class="keyword">getenv</span> <span class="string">"PATH"</span>)</span> <span class="string">":"</span> termuxpath)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> exec-path <span class="list">(<span class="keyword">append</span> exec-path <span class="list">(<span class="keyword">list</span> termuxpath)</span>)</span>)</span>)</span>)</span></span><br></pre></td></tr></table></figure>
+</div>
+<ul class="org-ul">
+<li>This code binds Emacs with the Termux file system, allowing Emacs to access programs installed through Termux.</li>
+<li>🤔 The official documentation also configures the <code>LD_LIBRARY_PATH</code> environment variable. However, configuring it causes problems running mpv in Emacs, and not configuring it has not shown problems so far. To be observed.</li>
+</ul></li>
+<li>Restart Emacs to apply the configuration. If you have already installed git in Termux, you can try executing <code>(executable-find "git")</code> in Emacs. If it returns the path to git, the configuration is successful.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org61a61ab" class="outline-2">
+<h2 id="org61a61ab"><span class="section-number-2">2.</span> Using doom-emacs configuration</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Because there is no Emacs executable file in Android and the shell path is different, some modifications are necessary for doom install. Please pay attention to distinguish whether the following operations are run in Termux or in Emacs Shell.
+</p>
+
+<hr>
+
+<ol class="org-ol">
+<li><p>
+Install Git in Termux
+</p>
+<pre class="example">
+pkg install git
+</pre></li>
+<li><p>
+In Termux, <code>git clone</code> doom-emacs to the Emacs main directory
+</p>
+<pre class="example">
+git clone --depth 1 https://github.com/hlissner/doom-emacs /data/data/org.gnu.emacs/files/.emacs.d.doom
+</pre></li>
+<li><p>
+In the shell environment of Android Emacs, soft link the emacs executable file:
+</p>
+<pre class="example">
+ln -s /data/data/org.gnu.emacs/lib/libandroid-emacs.so /data/data/com.termux/files/usr/bin/emacs
+</pre>
+
+<ul class="org-ul">
+<li><p>
+After successful linking, running <code>emacs --version</code> in Android Emacs should show:
+</p>
+<blockquote>
+<p>
+emacs &#x2013;version
+GNU Emacs 30.0.50
+Copyright (C) 2024 Free Software Foundation, Inc.
+GNU Emacs comes with ABSOLUTELY NO WARRANTY.
+You may redistribute copies of GNU Emacs
+under the terms of the GNU General Public License.
+For more information about these matters, see the file named COPYING.
+</p>
+</blockquote></li>
+<li><p>
+Otherwise, when executing doom, it will report an error:
+</p>
+<blockquote>
+<p>
+Error: failed to run Emacs with command 'emacs'
+</p>
+
+<p>
+Are you sure Emacs is installed and in your $PATH?
+</p>
+</blockquote></li>
+</ul></li>
+<li>Edit <code>.emacs.d.doom/bin/doom</code>, change the Shebang: <code>#!/usr/bin/env sh</code> → <code>#!/system/bin/sh</code>
+<ul class="org-ul">
+<li><a href="https://www.reddit.com/r/emacs/comments/1aif4wy/comment/kpemk2a/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button" target="_blank" rel="external">hlissner</a> suggests not to modify the doom Shebang and to specify the shell directly when executing the command, like <code>sh ~/.emacs.d/bin/doom install</code>. Unfortunately, due to the cache mechanism, this solution does not work, and it is necessary to modify the doom Shebang. To upgrade doom, use <code>doom upgrade --force</code> and then modify the Shebang again.</li>
+</ul></li>
+<li>Add the contents of <code>~/.emacs.d/early-init.el</code> to <code>~/.doom.d/init.el</code>​, to add the Termux path to the <code>PATH</code> environment variable when generating the doom env file.</li>
+<li>Execute <code>doom install</code> in Android Emacs
+<ul class="org-ul">
+<li>Running <code>doom install</code> in the shell environment of Android Emacs is very slow, consider copying the <code>repos</code> folder from another environment to <code>~/.emacs.d.doom/.local/straight/repos</code>, then execute <code>doom install</code>. This skips the <code>git clone</code> step and speeds up the process.</li>
+<li>If prompts <code>error ("Failed to run \"git\"; see buffer *straight-process*")</code>, you can try:
+<ul class="org-ul">
+<li>Checking if the Termux path is added to the <code>PATH</code> in doom's env file</li>
+<li>Execute commands in eshell, not in shell</li>
+<li>Execute (setq android-use-exec-loader nil)</li>
+</ul></li>
+</ul></li>
+<li>After installation, link <code>.emacs.d.doom</code> as <code>.emacs.d</code>. It is recommended not to rename directly, so that changing the path pointed to by <code>.emacs.d</code> in the future can switch configurations for debugging.</li>
+<li>Restart, and Emacs should be able to load the doom-emacs configuration. Since the paths and supported features on Android and desktop are not completely consistent, the doom-emacs configuration generally needs to be adjusted. Enjoy your doom-emacs on Android.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org386b83a" class="outline-2">
+<h2 id="org386b83a"><span class="section-number-2">3.</span> Update History</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li><span class="timestamp-wrapper"><span class="timestamp">[2024-03-09 六] </span></span> Edit the file from <code>.emacs.d.doom/early-init.el</code> to <code>~/.doom.d/init.el</code>, to reduce modifications to the doom-emacs repo, thanks to <a href="https://www.reddit.com/r/emacs/comments/1aif4wy/comment/kpemk2a/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button" target="_blank" rel="external">hlissner</a>.</li>
+<li><span class="timestamp-wrapper"><span class="timestamp">[2024-02-04 日] </span></span> First draft</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org509f3cc" class="outline-2">
+<h2 id="org509f3cc"><span class="section-number-2">4.</span> References</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li><a href="https://www.reddit.com/r/emacs/comments/16hwjby/how_to_get_graphical_not_termuxbased_emacs_on/" target="_blank" rel="external">How to get graphical (not Termux-based) Emacs on Android along with file-sync and shared init files across platforms. : emacs</a></li>
+<li><a href="https://marek-g.github.io/posts/tips_and_tricks/emacs_on_android/" target="_blank" rel="external">Emacs on Android | Home Page</a></li>
+</ul>
+</div>
+</div>
+
+<p class="date">Date: 2024-02-04 日 00:00</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="external">Validate</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[
+
+<p>
+In early 2023, the upcoming Emacs 30.1 release included support for Android GUI. This means that besides desktop, there will also be a]]>
+    </summary>
+    
+      <category term="Emacs" scheme="http://yuchen-lea.github.io/tags/Emacs/"/>
+    
+      <category term="Emacs" scheme="http://yuchen-lea.github.io/categories/Emacs/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[在Excel查找满足条件的最大值]]></title>
     <link href="http://yuchen-lea.github.io/2016-05-14-find-max-under-conditions-in-excel/"/>
     <id>http://yuchen-lea.github.io/2016-05-14-find-max-under-conditions-in-excel/</id>
@@ -389,8 +404,8 @@ Are you sure Emacs is installed and in your $PATH?
 最近在思考怎么用Excel分析自己的阅读情况，需要查找满足条件的最大值，例如查找当A列值=X时，B列值中的最大值，因此单纯的 <code>MAX</code> 不够。以下是实例和解决方案：
 </p>
 
-<div id="outline-container-orgb36087c" class="outline-2">
-<h2 id="orgb36087c"><span class="section-number-2">1.</span> 示例</h2>
+<div id="outline-container-org4cec0d2" class="outline-2">
+<h2 id="org4cec0d2"><span class="section-number-2">1.</span> 示例</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 找到下表中每本书已经读到多少页，即每本书的最大页码（例如『开放的智力』读到了180页，『我的一生』读到了83页）：
@@ -474,7 +489,7 @@ Are you sure Emacs is installed and in your $PATH?
 </table>
 
 
-<div class="HTML" id="org3f0c54a">
+<div class="HTML" id="org44f11bc">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -491,8 +506,8 @@ Are you sure Emacs is installed and in your $PATH?
 </div>
 </div>
 
-<div id="outline-container-orgef2d1d7" class="outline-2">
-<h2 id="orgef2d1d7"><span class="section-number-2">2.</span> 数组公式</h2>
+<div id="outline-container-org2b56d62" class="outline-2">
+<h2 id="org2b56d62"><span class="section-number-2">2.</span> 数组公式</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li>在 C2 单元格输入公式（以下3种皆可）：
@@ -532,8 +547,8 @@ Are you sure Emacs is installed and in your $PATH?
 </div>
 </div>
 
-<div id="outline-container-orgbe0d932" class="outline-2">
-<h2 id="orgbe0d932"><span class="section-number-2">3.</span> 普通公式<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup></h2>
+<div id="outline-container-org1e5e621" class="outline-2">
+<h2 id="org1e5e621"><span class="section-number-2">3.</span> 普通公式<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup></h2>
 <div class="outline-text-2" id="text-3">
 <ol class="org-ol">
 <li>输入公式 <code>=SUMPRODUCT(MAX((A$2:A$13=A2)*B$2:B$13))</code></li>
@@ -549,8 +564,8 @@ Are you sure Emacs is installed and in your $PATH?
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbf9bbeb" class="outline-2">
-<h2 id="orgbf9bbeb"><span class="section-number-2">4.</span> 更新历史</h2>
+<div id="outline-container-org127a9df" class="outline-2">
+<h2 id="org127a9df"><span class="section-number-2">4.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">[2016-05-14 六] </span></span> 拟定初稿</li>
@@ -741,7 +756,7 @@ Goodreader和PDF Expert是iOS上最受好评的PDF阅读APP，分别于特价优
 </tbody>
 </table>
 
-<div class="HTML" id="org98327d5">
+<div class="HTML" id="org0e57bbb">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -758,8 +773,8 @@ Goodreader和PDF Expert是iOS上最受好评的PDF阅读APP，分别于特价优
 <li><b>PDF Expert</b> 更适于 <b>商务</b> ，iOS平台支持填写表单、图章、修订功能的APP我目前仅知此一家。不过如果它能真正实现切白边功能，我就会卸掉Goodreader，只留下这一个啦。</li>
 </ul>
 
-<div id="outline-container-org90e8a5f" class="outline-2">
-<h2 id="org90e8a5f"><span class="section-number-2">1.</span> 更新历史</h2>
+<div id="outline-container-orgc144b5b" class="outline-2">
+<h2 id="orgc144b5b"><span class="section-number-2">1.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">[2016-05-18 三] </span></span> 完善注释</li>
@@ -768,8 +783,8 @@ Goodreader和PDF Expert是iOS上最受好评的PDF阅读APP，分别于特价优
 </ul>
 </div>
 </div>
-<div id="outline-container-org95d60c1" class="outline-2">
-<h2 id="org95d60c1"><span class="section-number-2">2.</span> 参考</h2>
+<div id="outline-container-org3621727" class="outline-2">
+<h2 id="org3621727"><span class="section-number-2">2.</span> 参考</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li><a href="http://bbs.feng.com/read-htm-tid-4920524.html" target="_blank" rel="external">对比两款当红的pdf阅读软件：goodreader和pdf expert - iPad1&amp;2 综合讨论区 - 威锋论坛 - 威锋网</a></li>
@@ -838,8 +853,8 @@ Goodreader和PDF Expert是]]>
 <div class="alert alert-info"><i class="fa fa-info"></i>  本文旨在介绍日语中促音的书写和发音规则。</div>
 </p>
 
-<div id="outline-container-orgdf411b9" class="outline-2">
-<h2 id="orgdf411b9"><span class="section-number-2">1.</span> 发音</h2>
+<div id="outline-container-org3652456" class="outline-2">
+<h2 id="org3652456"><span class="section-number-2">1.</span> 发音</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 占一拍，但是不发音。
@@ -855,8 +870,8 @@ Goodreader和PDF Expert是]]>
 </ol>
 </div>
 
-<div id="outline-container-org674b536" class="outline-3">
-<h3 id="org674b536"><span class="section-number-3">1.1.</span> 示例</h3>
+<div id="outline-container-org2804c21" class="outline-3">
+<h3 id="org2804c21"><span class="section-number-3">1.1.</span> 示例</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>ノック nokku: <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
@@ -874,7 +889,7 @@ Goodreader和PDF Expert是]]>
 </ul>
 
 
-<div class="HTML" id="org93797df">
+<div class="HTML" id="orgb6fd61c">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -884,8 +899,8 @@ Goodreader和PDF Expert是]]>
 </div>
 </div>
 
-<div id="outline-container-org9d76665" class="outline-2">
-<h2 id="org9d76665"><span class="section-number-2">2.</span> 书写规则</h2>
+<div id="outline-container-org857e567" class="outline-2">
+<h2 id="org857e567"><span class="section-number-2">2.</span> 书写规则</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 用小字体っ/ッ来表示，注意和大写的つ/ツ区分。2个假名的关系只是外型相似，在发音上是完全没有关系的。
@@ -893,8 +908,8 @@ Goodreader和PDF Expert是]]>
 </div>
 </div>
 
-<div id="outline-container-orga335372" class="outline-2">
-<h2 id="orga335372"><span class="section-number-2">3.</span> 电脑输入</h2>
+<div id="outline-container-orgd0f61d5" class="outline-2">
+<h2 id="orgd0f61d5"><span class="section-number-2">3.</span> 电脑输入</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>若要单独输入促音：可输入xtu，ltu，ltsu。</li>
@@ -903,8 +918,8 @@ Goodreader和PDF Expert是]]>
 </div>
 </div>
 
-<div id="outline-container-orgf817cfd" class="outline-2">
-<h2 id="orgf817cfd"><span class="section-number-2">4.</span> 更新历史</h2>
+<div id="outline-container-org8f7a64c" class="outline-2">
+<h2 id="org8f7a64c"><span class="section-number-2">4.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">[2016-03-18 五] </span></span> 拟定初稿</li>
@@ -912,8 +927,8 @@ Goodreader和PDF Expert是]]>
 </div>
 </div>
 
-<div id="outline-container-orgff4c22e" class="outline-2">
-<h2 id="orgff4c22e"><span class="section-number-2">5.</span> 参考</h2>
+<div id="outline-container-org8ef05a1" class="outline-2">
+<h2 id="org8ef05a1"><span class="section-number-2">5.</span> 参考</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li><a href="https://zh.wikipedia.org/wiki/%E4%BF%83%E9%9F%B3" target="_blank" rel="external">促音 - 维基百科，自由的百科全书</a></li>
@@ -932,7 +947,7 @@ Goodreader和PDF Expert是]]>
 <div class="alert alert-info"><i class="fa fa-info"></i>  本文旨在介绍日语中促音的书写和发音规则。</div>
 </p>
 
-<div id="outline-container-orgdf411b9" clas]]>
+<div id="outline-container-org3652456" clas]]>
     </summary>
     
       <category term="日语" scheme="http://yuchen-lea.github.io/tags/%E6%97%A5%E8%AF%AD/"/>
@@ -971,15 +986,15 @@ Goodreader和PDF Expert是]]>
 现在的目标是： <b>一气呵成录完文稿，然后经过简单数步，正确地套用模板</b>
 </p>
 
-<div id="outline-container-org456cc93" class="outline-2">
-<h2 id="org456cc93"><span class="section-number-2">1.</span> 解决思路</h2>
+<div id="outline-container-org147197d" class="outline-2">
+<h2 id="org147197d"><span class="section-number-2">1.</span> 解决思路</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 该Excel模板每行17格，每2行之间有一空行。因为 <b>Excel</b> 会将以 <code>Tab</code> 分割的文本自动分列，所以将文本利用 <b>正则表达式</b> 处理，使其每行17个字，字与字之间用 <code>Tab</code> 隔开，并且每2行之间有一空行即可。
 </p>
 
 
-<div class="HTML" id="org97badd3">
+<div class="HTML" id="orgb584c2a">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -988,8 +1003,8 @@ Goodreader和PDF Expert是]]>
 </div>
 </div>
 
-<div id="outline-container-org78a81bd" class="outline-2">
-<h2 id="org78a81bd"><span class="section-number-2">2.</span> 所需工具</h2>
+<div id="outline-container-org7f0db37" class="outline-2">
+<h2 id="org7f0db37"><span class="section-number-2">2.</span> 所需工具</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>支持正则表达式的软件，例如 <b>Emeditor</b></li>
@@ -998,8 +1013,8 @@ Goodreader和PDF Expert是]]>
 </div>
 </div>
 
-<div id="outline-container-org19d1415" class="outline-2">
-<h2 id="org19d1415"><span class="section-number-2">3.</span> 操作步骤</h2>
+<div id="outline-container-orgd02b102" class="outline-2">
+<h2 id="orgd02b102"><span class="section-number-2">3.</span> 操作步骤</h2>
 <div class="outline-text-2" id="text-3">
 <ol class="org-ol">
 <li><p>
@@ -1055,8 +1070,8 @@ Goodreader和PDF Expert是]]>
 </div>
 </div>
 
-<div id="outline-container-orgf3896d3" class="outline-2">
-<h2 id="orgf3896d3"><span class="section-number-2">4.</span> 更新历史</h2>
+<div id="outline-container-orgdcec862" class="outline-2">
+<h2 id="orgdcec862"><span class="section-number-2">4.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">[2016-03-17 四] </span></span> 拟定初稿</li>
@@ -1101,20 +1116,20 @@ Goodreader和PDF Expert是]]>
 <div class="alert alert-success"><i class="fa fa-lightbulb-o"></i>  已更新到第10课</div>
 </p>
 
-<div id="outline-container-orgd37872e" class="outline-2">
-<h2 id="orgd37872e"><span class="section-number-2">1.</span> 句型</h2>
+<div id="outline-container-orgbcbe6da" class="outline-2">
+<h2 id="orgbcbe6da"><span class="section-number-2">1.</span> 句型</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orga208113" class="outline-3">
-<h3 id="orga208113"><span class="section-number-3">1.1.</span> 陈述句</h3>
+<div id="outline-container-org898fd8d" class="outline-3">
+<h3 id="org898fd8d"><span class="section-number-3">1.1.</span> 陈述句</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-orgcef23d1" class="outline-4">
-<h4 id="orgcef23d1"><span class="section-number-4">1.1.1.</span> 名词陈述句</h4>
+<div id="outline-container-org6303cf9" class="outline-4">
+<h4 id="org6303cf9"><span class="section-number-4">1.1.1.</span> 名词陈述句</h4>
 <div class="outline-text-4" id="text-1-1-1">
 </div>
 <ol class="org-ol">
-<li><a id="orgaa77004"></a>肯定形式： <b>名词1+は+名词2+です</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span>&#xa0;<span class="L03">L03</span></span><br>
+<li><a id="org113cc3b"></a>肯定形式： <b>名词1+は+名词2+です</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span>&#xa0;<span class="L03">L03</span></span><br>
 <div class="outline-text-5" id="text-1-1-1-1">
 <ul class="org-ul">
 <li>名词1：句子的主题</li>
@@ -1128,16 +1143,16 @@ Goodreader和PDF Expert是]]>
 わたしは マイく·ミラ一です。(我是迈克·米勒。)<br>
 </p></li>
 <li><p>
-名词2为场所时，表示物体、人等存在的场所。也可用动词 <b>あります/います</b> 来表示，参见此处：<a href="#org43561c4">3.1.1.3.3</a>
+名词2为场所时，表示物体、人等存在的场所。也可用动词 <b>あります/います</b> 来表示，参见此处：<a href="#org6efb8f0">3.1.1.3.3</a>
 </p>
 <p class="verse">
 山田さんは 事務所です。(山田在事务所。)<br>
 </p></li>
 </ul></li>
-<li>です：名词加上「です」构成谓语。详见<a href="#orge4d6eb2">2.7</a></li>
+<li>です：名词加上「です」构成谓语。详见<a href="#orgf5cc5f0">2.7</a></li>
 </ul>
 
-<div class="HTML" id="orgf5d2655">
+<div class="HTML" id="org3b86424">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -1160,7 +1175,7 @@ A:佐藤さんの です。(是佐藤的。)<br>
 </div>
 </li>
 
-<li><a id="orga6c761e"></a>否定形式： <b>名词1+は+名词2+じゃ ありません</b> （日常语） 或 <b>名词1+は+名词2+では ありません</b> （正式语）&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span></span><br>
+<li><a id="org70996d3"></a>否定形式： <b>名词1+は+名词2+じゃ ありません</b> （日常语） 或 <b>名词1+は+名词2+では ありません</b> （正式语）&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span></span><br>
 <div class="outline-text-5" id="text-1-1-1-2">
 <p>
 「じゃ ありません」（日常语）和「では ありません」（正式语）是「です」的否定形。「では」的「は」也读作「わ」。
@@ -1189,8 +1204,8 @@ A:いいえ、わたしのじゃ ありません。(不,这不是我的。)<br>
 </li>
 </ol>
 </div>
-<div id="outline-container-orgabcaa7b" class="outline-4">
-<h4 id="orgabcaa7b"><span class="section-number-4">1.1.2.</span> 动词陈述句</h4>
+<div id="outline-container-org3850de8" class="outline-4">
+<h4 id="org3850de8"><span class="section-number-4">1.1.2.</span> 动词陈述句</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 名词+は+动词谓语 
@@ -1202,20 +1217,20 @@ A:いいえ、わたしのじゃ ありません。(不,这不是我的。)<br>
 </div>
 </div>
 
-<div id="outline-container-org4f59a27" class="outline-4">
-<h4 id="org4f59a27"><span class="section-number-4">1.1.3.</span> 形容词陈述句&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L08">L08</span></span></h4>
+<div id="outline-container-orgb3307ff" class="outline-4">
+<h4 id="orgb3307ff"><span class="section-number-4">1.1.3.</span> 形容词陈述句&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L08">L08</span></span></h4>
 </div>
 </div>
-<div id="outline-container-org2fe0740" class="outline-3">
-<h3 id="org2fe0740"><span class="section-number-3">1.2.</span> 疑问句： <b>句子+か</b></h3>
+<div id="outline-container-org4b8a9b5" class="outline-3">
+<h3 id="org4b8a9b5"><span class="section-number-3">1.2.</span> 疑问句： <b>句子+か</b></h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 助词「か」表示说话人不确切的口气或带有疑问的口气。「か」在句末构成疑问句，句末一般用升调。
 </p>
 </div>
 
-<div id="outline-container-orgaadd729" class="outline-4">
-<h4 id="orgaadd729"><span class="section-number-4">1.2.1.</span> 一般疑问句</h4>
+<div id="outline-container-org98a6b01" class="outline-4">
+<h4 id="org98a6b01"><span class="section-number-4">1.2.1.</span> 一般疑问句</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li>结构：陈述句（语序不变） + 助词「か」</li>
@@ -1223,7 +1238,7 @@ A:いいえ、わたしのじゃ ありません。(不,这不是我的。)<br>
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org510b938"></a>名词疑问句&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span>&#xa0;<span class="L02">L02</span></span><br>
+<li><a id="orgd186e39"></a>名词疑问句&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span>&#xa0;<span class="L02">L02</span></span><br>
 <div class="outline-text-5" id="text-1-2-1-1">
 <p>
 回答：
@@ -1257,7 +1272,7 @@ A3:いいえ、違います。(…不是。)<br>
 </ul>
 </div>
 </li>
-<li><a id="org88e6172"></a>动词疑问句&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L04">L04</span>&#xa0;<span class="L07">L07</span></span><br>
+<li><a id="org90f4605"></a>动词疑问句&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L04">L04</span>&#xa0;<span class="L07">L07</span></span><br>
 <div class="outline-text-5" id="text-1-2-1-2">
 <ul class="org-ul">
 <li>询问 <b>是否做了什么</b> （动词 + ました），回答时重复疑问句中的动词：
@@ -1287,7 +1302,7 @@ A2:いいえ、まだです。(…不,还没有。)<br>
 </ul>
 </div>
 </li>
-<li><a id="org34ccfaa"></a>形容疑问句&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L08">L08</span></span><br>
+<li><a id="org886cc4c"></a>形容疑问句&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L08">L08</span></span><br>
 <div class="outline-text-5" id="text-1-2-1-3">
 <p>
 回答时重复疑问句中的形容词。不能用「そうです」「そうじゃ ありません」来回答。
@@ -1307,8 +1322,8 @@ A2:いいえ、きれいじゃ ありません。(…不,不干净。)<br>
 </li>
 </ol>
 </div>
-<div id="outline-container-org940799d" class="outline-4">
-<h4 id="org940799d"><span class="section-number-4">1.2.2.</span> 选择疑问句&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L02">L02</span></span></h4>
+<div id="outline-container-org238bded" class="outline-4">
+<h4 id="org238bded"><span class="section-number-4">1.2.2.</span> 选择疑问句&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L02">L02</span></span></h4>
 <div class="outline-text-4" id="text-1-2-2">
 <ul class="org-ul">
 <li>结构： <b>句子1か、句子2か</b></li>
@@ -1322,17 +1337,17 @@ A:「9」です。(…是“9”。)<br>
 </div>
 </div>
 
-<div id="outline-container-org2b51f6a" class="outline-4">
-<h4 id="org2b51f6a"><span class="section-number-4">1.2.3.</span> 特殊疑问句&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span>&#xa0;<span class="L04">L04</span>&#xa0;<span class="L05">L05</span>&#xa0;<span class="L06">L06</span>&#xa0;<span class="L08">L08</span></span></h4>
+<div id="outline-container-org477d9f9" class="outline-4">
+<h4 id="org477d9f9"><span class="section-number-4">1.2.3.</span> 特殊疑问句&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span>&#xa0;<span class="L04">L04</span>&#xa0;<span class="L05">L05</span>&#xa0;<span class="L06">L06</span>&#xa0;<span class="L08">L08</span></span></h4>
 <div class="outline-text-4" id="text-1-2-3">
 <p>
 句子的语序不变。句末加「か」。
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="org13a02e6"></a>用疑问词替代想要询问的内容<br>
+<li><a id="org21beffe"></a>用疑问词替代想要询问的内容<br>
 <ol class="org-ol">
-<li><a id="orge0a4fb0"></a>谁(who)：だれ、どなた&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L10">L10</span></span><br>
+<li><a id="org981f2ae"></a>谁(who)：だれ、どなた&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L10">L10</span></span><br>
 <div class="outline-text-6" id="text-1-2-3-1-1">
 <p>
 どなた是だれ的礼貌形
@@ -1352,14 +1367,14 @@ A: 木村さんが います。(…木村在。)<br>
 </div>
 </li>
 
-<li><a id="org8a795bb"></a>几岁(how old)：なんさい、おいくつ<br>
+<li><a id="orga0ed1f2"></a>几岁(how old)：なんさい、おいくつ<br>
 <div class="outline-text-6" id="text-1-2-3-1-2">
 <p>
 おいくつ是なんさい的礼貌形
 </p>
 </div>
 </li>
-<li><a id="org529aa68"></a>什么(what)：「何」(なん、なに)&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L10">L10</span></span><br>
+<li><a id="org0a1a357"></a>什么(what)：「何」(なん、なに)&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L10">L10</span></span><br>
 <div class="outline-text-6" id="text-1-2-3-1-3">
 <p>
 「なん」和「なに」都写作「何」，表示(什么)。二者的适用情境见下（主要看怎么读更顺口、方便）：
@@ -1399,7 +1414,7 @@ A: レストランが あります。(…有一个餐厅。)<br>
 </p>
 </div>
 </li>
-<li><a id="orgae42a87"></a>什么样的XXX：どんな+名词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L08">L08</span>&#xa0;<span class="L09">L09</span></span><br>
+<li><a id="org320d599"></a>什么样的XXX：どんな+名词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L08">L08</span>&#xa0;<span class="L09">L09</span></span><br>
 <div class="outline-text-6" id="text-1-2-3-1-4">
 <ul class="org-ul">
 <li><p>
@@ -1419,7 +1434,7 @@ A: サッカーが 好きです。(…我喜欢足球。)<br>
 </ul>
 </div>
 </li>
-<li><a id="org158ce8d"></a>哪一个(which)：どれ<br>
+<li><a id="org502f2eb"></a>哪一个(which)：どれ<br>
 <div class="outline-text-6" id="text-1-2-3-1-5">
 <p>
 表示从具体的三件以上的物品中选出一个特定的。
@@ -1430,7 +1445,7 @@ A: あの 青い 傘です。(那把蓝色的伞。)<br>
 </p>
 </div>
 </li>
-<li><a id="org4609aa2"></a>哪里(where)：どこ、どちら（更郑重）<br>
+<li><a id="org8f18107"></a>哪里(where)：どこ、どちら（更郑重）<br>
 <div class="outline-text-6" id="text-1-2-3-1-6">
 <p class="verse">
 Q: お手洗いは どこですか。(洗手间在哪里？)<br>
@@ -1446,8 +1461,8 @@ A2:IMC の コンピューターです。(…IMC的计算机。)<br>
 </div>
 </li>
 
-<li><a id="orgcdc7cac"></a>多少钱(how much)：いくら<br></li>
-<li><a id="org582bc5c"></a>询问时间(when, what time)：<br>
+<li><a id="orgc683c13"></a>多少钱(how much)：いくら<br></li>
+<li><a id="org73ea12c"></a>询问时间(when, what time)：<br>
 <div class="outline-text-6" id="text-1-2-3-1-8">
 <ul class="org-ul">
 <li>「なん」+量词:
@@ -1481,9 +1496,9 @@ A: 3月25日に 来ました。(…3月25日来的。)<br>
 </li>
 </ol>
 </li>
-<li><a id="orgba2e46a"></a>直接加疑问词<br>
+<li><a id="orgc8f2eec"></a>直接加疑问词<br>
 <ol class="org-ol">
-<li><a id="orgbf0b8e8"></a>询问原因(why)：どうして&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L09">L09</span></span><br>
+<li><a id="orga2b3f42"></a>询问原因(why)：どうして&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L09">L09</span></span><br>
 <div class="outline-text-6" id="text-1-2-3-2-1">
 <ul class="org-ul">
 <li>结构：
@@ -1510,12 +1525,12 @@ A: 子どもの 誕生日ですから。(因为今天是孩子的生日。)<br>
 </div>
 </div>
 </div>
-<div id="outline-container-org78d8615" class="outline-2">
-<h2 id="org78d8615"><span class="section-number-2">2.</span> 搭配</h2>
+<div id="outline-container-orgc051af5" class="outline-2">
+<h2 id="orgc051af5"><span class="section-number-2">2.</span> 搭配</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org6d41390" class="outline-3">
-<h3 id="org6d41390"><span class="section-number-3">2.1.</span> <b>名词1+の+名词2</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span>&#xa0;<span class="L02">L02</span>&#xa0;<span class="L03">L03</span>&#xa0;<span class="L10">L10</span></span></h3>
+<div id="outline-container-org30f2335" class="outline-3">
+<h3 id="org30f2335"><span class="section-number-3">2.1.</span> <b>名词1+の+名词2</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span>&#xa0;<span class="L02">L02</span>&#xa0;<span class="L03">L03</span>&#xa0;<span class="L10">L10</span></span></h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 「の」即为「的」。
@@ -1574,8 +1589,8 @@ A2: IMC の コンピューターです。(…IMC的计算机。)<br>
 </div>
 </div>
 
-<div id="outline-container-org42c65a2" class="outline-3">
-<h3 id="org42c65a2"><span class="section-number-3">2.2.</span> 名词1から 名词2まで&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L04">L04</span></span></h3>
+<div id="outline-container-orgf8be5ce" class="outline-3">
+<h3 id="orgf8be5ce"><span class="section-number-3">2.2.</span> 名词1から 名词2まで&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L04">L04</span></span></h3>
 <div class="outline-text-3" id="text-2-2">
 <ol class="org-ol">
 <li><p>
@@ -1590,10 +1605,10 @@ A2: IMC の コンピューターです。(…IMC的计算机。)<br>
 </p>
 <p class="verse">
 9時から 働きます。(9点开始工作。)<br>
-木村さんは 山田さんから 花を もらいました。(木村收到了山田送的花。)【关于此句，详见助词に <a href="#org4bca091">3.1.1.3</a>】<br>
+木村さんは 山田さんから 花を もらいました。(木村收到了山田送的花。)【关于此句，详见助词に <a href="#orgf08bed2">3.1.1.3</a>】<br>
 </p></li>
 <li><p>
-可以在「～から」、「～まで」、「～から～まで」后加上「です」（关于「です」详见<a href="#orge4d6eb2">2.7</a>）。
+可以在「～から」、「～まで」、「～から～まで」后加上「です」（关于「です」详见<a href="#orgf5cc5f0">2.7</a>）。
 </p>
 <p class="verse">
 銀行は 9時から 3時までです。(银行从9点开到3点。)<br>
@@ -1603,8 +1618,8 @@ A2: IMC の コンピューターです。(…IMC的计算机。)<br>
 </div>
 </div>
 
-<div id="outline-container-orgddd89bc" class="outline-3">
-<h3 id="orgddd89bc"><span class="section-number-3">2.3.</span> <b>姓名+さん</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span></span></h3>
+<div id="outline-container-org7a2589a" class="outline-3">
+<h3 id="org7a2589a"><span class="section-number-3">2.3.</span> <b>姓名+さん</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span></span></h3>
 <div class="outline-text-3" id="text-2-3">
 <ol class="org-ol">
 <li><p>
@@ -1625,8 +1640,8 @@ A2: IMC の コンピューターです。(…IMC的计算机。)<br>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgfbe17df" class="outline-3">
-<h3 id="orgfbe17df"><span class="section-number-3">2.4.</span> <b>「こ/そ/あ/ど」(指示词)</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L02">L02</span>&#xa0;<span class="L03">L03</span></span></h3>
+<div id="outline-container-org44b02c6" class="outline-3">
+<h3 id="org44b02c6"><span class="section-number-3">2.4.</span> <b>「こ/そ/あ/ど」(指示词)</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L02">L02</span>&#xa0;<span class="L03">L03</span></span></h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 一般地：
@@ -1745,8 +1760,8 @@ A: あちらです。(…在那里。)<br>
 </div>
 </div>
 
-<div id="outline-container-orgc821226" class="outline-3">
-<h3 id="orgc821226"><span class="section-number-3">2.5.</span> 「お」+ 名词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L03">L03</span>&#xa0;<span class="L06">L06</span></span></h3>
+<div id="outline-container-org4b0c604" class="outline-3">
+<h3 id="org4b0c604"><span class="section-number-3">2.5.</span> 「お」+ 名词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L03">L03</span>&#xa0;<span class="L06">L06</span></span></h3>
 <div class="outline-text-3" id="text-2-5">
 <ol class="org-ol">
 <li><p>
@@ -1773,8 +1788,8 @@ A: あちらです。(…在那里。)<br>
 </div>
 </div>
 
-<div id="outline-container-org2684caa" class="outline-3">
-<h3 id="org2684caa"><span class="section-number-3">2.6.</span> 数字 + 時 + 数字 + 分&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L04">L04</span></span></h3>
+<div id="outline-container-org1b2899d" class="outline-3">
+<h3 id="org1b2899d"><span class="section-number-3">2.6.</span> 数字 + 時 + 数字 + 分&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L04">L04</span></span></h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 数字后面加上量词「時」「分」表示时刻。
@@ -1808,8 +1823,8 @@ A: 午前4時です。(…凌晨4点。)<br>
 </div>
 </div>
 
-<div id="outline-container-orge4d6eb2" class="outline-3">
-<h3 id="orge4d6eb2"><span class="section-number-3">2.7.</span> 名词/形容词 + 「です」&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span></span></h3>
+<div id="outline-container-orgf5cc5f0" class="outline-3">
+<h3 id="orgf5cc5f0"><span class="section-number-3">2.7.</span> 名词/形容词 + 「です」&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span></span></h3>
 <div class="outline-text-3" id="text-2-7">
 <p>
 构成谓语。
@@ -1821,8 +1836,8 @@ A: 午前4時です。(…凌晨4点。)<br>
 </ul>
 </div>
 
-<div id="outline-container-orge066f58" class="outline-4">
-<h4 id="orge066f58"><span class="section-number-4">2.7.1.</span> です的形态变化</h4>
+<div id="outline-container-org75c13e5" class="outline-4">
+<h4 id="org75c13e5"><span class="section-number-4">2.7.1.</span> です的形态变化</h4>
 <div class="outline-text-4" id="text-2-7-1">
 <ul class="org-ul">
 <li>否定句中发生形态变化。</li>
@@ -1840,16 +1855,16 @@ A: 午前4時です。(…凌晨4点。)<br>
 </div>
 </div>
 </div>
-<div id="outline-container-org7fa62f5" class="outline-3">
-<h3 id="org7fa62f5"><span class="section-number-3">2.8.</span> 动词 + 「ます」&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L04">L04</span></span></h3>
+<div id="outline-container-orgf5a8fdb" class="outline-3">
+<h3 id="orgf5a8fdb"><span class="section-number-3">2.8.</span> 动词 + 「ます」&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L04">L04</span></span></h3>
 <div class="outline-text-3" id="text-2-8">
 <p>
 1)起动词谓语的作用。
 2)ます表示对听话人礼貌的态度。
 </p>
 </div>
-<div id="outline-container-org7fabcac" class="outline-4">
-<h4 id="org7fabcac"><span class="section-number-4">2.8.1.</span> ます的形态变化</h4>
+<div id="outline-container-orga15df80" class="outline-4">
+<h4 id="orga15df80"><span class="section-number-4">2.8.1.</span> ます的形态变化</h4>
 <div class="outline-text-4" id="text-2-8-1">
 <p>
 「ます」用于叙述现在的习惯性的事情和真理,或未来将要发生的事情。否定形和过去时变化如下。
@@ -1894,11 +1909,11 @@ A: 午前4時です。(…凌晨4点。)<br>
 </p>
 
 <p>
-<b>动词+ませんか</b> 类似反问语气（否定「ません」+疑问「か」），用于邀请，参见<a href="#orgfa22334">2.9</a>
+<b>动词+ませんか</b> 类似反问语气（否定「ません」+疑问「か」），用于邀请，参见<a href="#orgfafada8">2.9</a>
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="orgd64ac88"></a>过去式&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L07">L07</span></span><br>
+<li><a id="org88da419"></a>过去式&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L07">L07</span></span><br>
 <div class="outline-text-5" id="text-2-8-1-1">
 <p>
 常用句式为 <b>もう 动词ました</b> 已经做完XXX了。
@@ -1917,8 +1932,8 @@ A2:いいえ、まだです。(…不,还没有。)<br>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgfa22334" class="outline-3">
-<h3 id="orgfa22334"><span class="section-number-3">2.9.</span> 动词+ませんか&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L06">L06</span>&#xa0;<span class="L10">L10</span></span></h3>
+<div id="outline-container-orgfafada8" class="outline-3">
+<h3 id="orgfafada8"><span class="section-number-3">2.9.</span> 动词+ませんか&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L06">L06</span>&#xa0;<span class="L10">L10</span></span></h3>
 <div class="outline-text-3" id="text-2-9">
 <ol class="org-ol">
 <li><p>
@@ -1936,8 +1951,8 @@ A: ええ、いいですね。(…好啊！)<br>
 </ol>
 </div>
 </div>
-<div id="outline-container-org4cd1fa0" class="outline-3">
-<h3 id="org4cd1fa0"><span class="section-number-3">2.10.</span> 动词+ましょう&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L06">L06</span></span></h3>
+<div id="outline-container-org1f2349f" class="outline-3">
+<h3 id="org1f2349f"><span class="section-number-3">2.10.</span> 动词+ましょう&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L06">L06</span></span></h3>
 <div class="outline-text-3" id="text-2-10">
 <ol class="org-ol">
 <li><p>
@@ -1961,19 +1976,19 @@ A: ええ、食べましょう。(…好,一起吃吧！)<br>
 </div>
 </div>
 </div>
-<div id="outline-container-orge0a401b" class="outline-2">
-<h2 id="orge0a401b"><span class="section-number-2">3.</span> 词性</h2>
+<div id="outline-container-org88fd790" class="outline-2">
+<h2 id="org88fd790"><span class="section-number-2">3.</span> 词性</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgb73b777" class="outline-3">
-<h3 id="orgb73b777"><span class="section-number-3">3.1.</span> 助词</h3>
+<div id="outline-container-org9295b85" class="outline-3">
+<h3 id="org9295b85"><span class="section-number-3">3.1.</span> 助词</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 日语助词用于连接两种语词，确立它们之间的关系，或是添加词语的意义。助词只能附加在其他词语之后，不能单独使用，而且本身不会产生变化。<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
 </p>
 </div>
-<div id="outline-container-org103d329" class="outline-4">
-<h4 id="org103d329"><span class="section-number-4">3.1.1.</span> 格助词</h4>
+<div id="outline-container-org15cabae" class="outline-4">
+<h4 id="org15cabae"><span class="section-number-4">3.1.1.</span> 格助词</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <p>
 通常接在名词之后，表示逻辑关系。名词的主格、受格、所有格都是使用相同的格助词，可使句中的名词的位格不受语序的影响，在意义上较为明确。
@@ -1981,9 +1996,9 @@ A: ええ、食べましょう。(…好,一起吃吧！)<br>
 </div>
 
 <ol class="org-ol">
-<li><a id="org47d5b55"></a>を<br>
+<li><a id="orge85c0e3"></a>を<br>
 <ol class="org-ol">
-<li><a id="orgf82c618"></a>表示宾语：名词+を+及物动词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L06">L06</span></span><br>
+<li><a id="org4eb7674"></a>表示宾语：名词+を+及物动词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L06">L06</span></span><br>
 <div class="outline-text-6" id="text-3-1-1-1-1">
 <p>
 用助词「を」（发音和「お」相同，只用作助词）表示及物动词的直接宾语：宾语+を+及物动词
@@ -2024,7 +2039,7 @@ A: ええ、食べましょう。(…好,一起吃吧！)<br>
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="org6fc0c60"></a>对宾语进行提问<br>
+<li><a id="org8717283"></a>对宾语进行提问<br>
 <div class="outline-text-7" id="text-3-1-1-1-1-1">
 <p>
 询问要做什么：何を しますか （「何」读作「なに」）
@@ -2045,9 +2060,9 @@ A: サッカーを しました。(…踢足球了。)<br>
 </li>
 </ol>
 </li>
-<li><a id="orgba5da20"></a>が<br>
+<li><a id="orgaf43c82"></a>が<br>
 <ol class="org-ol">
-<li><a id="org6ae98f0"></a>提示宾语：名词+が+谓语（嗜好、欲求、能力、所有）&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L09">L09</span></span><br>
+<li><a id="orgc8f8595"></a>提示宾语：名词+が+谓语（嗜好、欲求、能力、所有）&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L09">L09</span></span><br>
 <div class="outline-text-6" id="text-3-1-1-2-1">
 <p>
 一般地，用助词「を」标明宾语，然而在形容词、动词表示嗜好、欲求、能力、所有等时，用助词「が」来表示对象：
@@ -2065,7 +2080,7 @@ A: サッカーを しました。(…踢足球了。)<br>
 </ul>
 </div>
 </li>
-<li><a id="org53bbad2"></a>提示主语：名词が あります/います&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L10">L10</span></span><br>
+<li><a id="org9721f22"></a>提示主语：名词が あります/います&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L10">L10</span></span><br>
 <div class="outline-text-6" id="text-3-1-1-2-2">
 <p>
 表述事物或人的存在，相当于There be。主语用助词「が」表示。
@@ -2088,7 +2103,7 @@ A: サッカーを しました。(…踢足球了。)<br>
 </ul>
 
 <p>
-如果要表示名词存在的场所，用助词「に」，详见此处 <a href="#org43561c4">3.1.1.3.3</a>。
+如果要表示名词存在的场所，用助词「に」，详见此处 <a href="#org6efb8f0">3.1.1.3.3</a>。
 </p>
 <p class="verse">
 わたしの 部屋に 机が あります。(我的房间里有桌子。)<br>
@@ -2098,9 +2113,9 @@ A: サッカーを しました。(…踢足球了。)<br>
 </li>
 </ol>
 </li>
-<li><a id="org4bca091"></a>に<br>
+<li><a id="orgf08bed2"></a>に<br>
 <ol class="org-ol">
-<li><a id="org7e9ce14"></a>表时间(at/on/…)：名词(时间)+(に)+瞬间动词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L04">L04</span></span><br>
+<li><a id="org2662c71"></a>表时间(at/on/…)：名词(时间)+(に)+瞬间动词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L04">L04</span></span><br>
 <div class="outline-text-6" id="text-3-1-1-3-1">
 <p>
 表示动作发生的时间，和瞬间动词一起使用。
@@ -2133,7 +2148,7 @@ A: 来週 行きます。(…下周去。)<br>
 </p>
 </div>
 </li>
-<li><a id="org16a995f"></a>表目标、对象：名词(人)+に+动词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L07">L07</span></span><br>
+<li><a id="orgfc7c237"></a>表目标、对象：名词(人)+に+动词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L07">L07</span></span><br>
 <div class="outline-text-6" id="text-3-1-1-3-2">
 <ol class="org-ol">
 <li><p>
@@ -2190,7 +2205,7 @@ Kimura recieved flowers from Yamada.<br>
 </p>
 </div>
 </li>
-<li><a id="org43561c4"></a>表场所：名词(场所)+に+动词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L10">L10</span></span><br>
+<li><a id="org6efb8f0"></a>表场所：名词(场所)+に+动词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L10">L10</span></span><br>
 <div class="outline-text-6" id="text-3-1-1-3-3">
 <p>
 用「に」表场所，强调的是在某个场所这一 <b>状态</b> ，常用句型有：
@@ -2198,7 +2213,7 @@ Kimura recieved flowers from Yamada.<br>
 <ul class="org-ul">
 <li><p>
 XX在哪里/哪里有XX(There be)：
-表示「XX在哪里/哪里有XX」有2种说法，详见此处 <a href="#org53bbad2">3.1.1.2.2</a>：
+表示「XX在哪里/哪里有XX」有2种说法，详见此处 <a href="#org9721f22">3.1.1.2.2</a>：
 </p>
 <ul class="org-ul">
 <li>名词1(场所)に 名词2が あります/います
@@ -2247,7 +2262,7 @@ Q: ミラーさんは どこに いますか。(米勒先生在哪里？)<br>
 A: 事務所に います。(…在事务所。)<br>
 </p></li>
 <li><p>
-补充：动词句中谓语清楚的情况下可以用「です」代替动词谓语。该句型也可用 <b>名词1は 名词2(场所)です</b> 代替。参见此处解释名词2为场所的情况：<a href="#orgaa77004">1.1.1.1</a>
+补充：动词句中谓语清楚的情况下可以用「です」代替动词谓语。该句型也可用 <b>名词1は 名词2(场所)です</b> 代替。参见此处解释名词2为场所的情况：<a href="#org113cc3b">1.1.1.1</a>
 </p>
 <blockquote>
 <p>
@@ -2275,7 +2290,7 @@ A: 事務所 です。(…在事务所。)
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org3c104ba"></a>表场所时，「に」和「で」的区别<br>
+<li><a id="org8a2eb8a"></a>表场所时，「に」和「で」的区别<br>
 <div class="outline-text-7" id="text-3-1-1-3-3-1">
 <p>
 名词(场所)+で/に+动词：
@@ -2297,9 +2312,9 @@ A: 事務所 です。(…在事务所。)
 </ol>
 </li>
 
-<li><a id="org0b55968"></a>へ<br>
+<li><a id="org4647edd"></a>へ<br>
 <ol class="org-ol">
-<li><a id="orgfdb97ed"></a>表方向(to)：名词(场所)+へ+移动动词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L05">L05</span></span><br>
+<li><a id="org9610309"></a>表方向(to)：名词(场所)+へ+移动动词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L05">L05</span></span><br>
 <div class="outline-text-6" id="text-3-1-1-4-1">
 <p>
 助词「へ」(读作「え」)表示移动的方向，移动动词包括：行きます/来ます/帰ります。
@@ -2311,7 +2326,7 @@ A: 事務所 です。(…在事务所。)
 </p>
 </div>
 </li>
-<li><a id="orgbd4e381"></a>表对象(to)：名词(地点)+へ+动作动词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L07">L07</span></span><br>
+<li><a id="org4e982cd"></a>表对象(to)：名词(地点)+へ+动作动词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L07">L07</span></span><br>
 <div class="outline-text-6" id="text-3-1-1-4-2">
 <p>
 助词可用「へ」可用「に」，这样的动词有「おくります」(寄送)「でんわを かけます」(打电话)，地点名词为动作的接受者，：
@@ -2324,9 +2339,9 @@ A: 事務所 です。(…在事务所。)
 </li>
 </ol>
 </li>
-<li><a id="org78ab3ea"></a>で<br>
+<li><a id="orga43fa12"></a>で<br>
 <ol class="org-ol">
-<li><a id="org7534ff5"></a>表方式(by)：名词(工具、语言等)+で+动词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L05">L05</span>&#xa0;<span class="L07">L07</span></span><br>
+<li><a id="orge455c49"></a>表方式(by)：名词(工具、语言等)+で+动词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L05">L05</span>&#xa0;<span class="L07">L07</span></span><br>
 <div class="outline-text-6" id="text-3-1-1-5-1">
 <ol class="org-ol">
 <li><p>
@@ -2360,7 +2375,7 @@ A: 「Thank you」です。(…是“Thank you”。)<br>
 </ol>
 </div>
 </li>
-<li><a id="orgc81867e"></a>表场所(at/in/…)：名词(场所)+で+动词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L06">L06</span>&#xa0;<span class="L10">L10</span></span><br>
+<li><a id="orgcb530e0"></a>表场所(at/in/…)：名词(场所)+で+动词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L06">L06</span>&#xa0;<span class="L10">L10</span></span><br>
 <div class="outline-text-6" id="text-3-1-1-5-2">
 <p>
 用「で」表动作发生的场所，强调的做的 <b>动作</b> ：
@@ -2370,7 +2385,7 @@ A: 「Thank you」です。(…是“Thank you”。)<br>
 </p>
 
 <p>
-表场所时，助词可用で或に，区别详见此处：<a href="#org3c104ba">3.1.1.3.3.1</a>
+表场所时，助词可用で或に，区别详见此处：<a href="#org8a2eb8a">3.1.1.3.3.1</a>
 </p>
 
 <p>
@@ -2388,9 +2403,9 @@ A: 「Thank you」です。(…是“Thank you”。)<br>
 </li>
 </ol>
 </li>
-<li><a id="orgca6b81b"></a>と<br>
+<li><a id="orgb263bc0"></a>と<br>
 <ol class="org-ol">
-<li><a id="org5fec734"></a>和(and)：*名词1+と+名词2*&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L04">L04</span></span><br>
+<li><a id="org9187aa7"></a>和(and)：*名词1+と+名词2*&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L04">L04</span></span><br>
 <div class="outline-text-6" id="text-3-1-1-6-1">
 <p>
 「と」即为「和」，用于名词并列。
@@ -2400,7 +2415,7 @@ A: 「Thank you」です。(…是“Thank you”。)<br>
 </p>
 </div>
 </li>
-<li><a id="orgcd50f21"></a>表共事者，和XX一起（with）： 名词(人/动物)+と+动词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L05">L05</span></span><br>
+<li><a id="orgf761be7"></a>表共事者，和XX一起（with）： 名词(人/动物)+と+动词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L05">L05</span></span><br>
 <div class="outline-text-6" id="text-3-1-1-6-2">
 <p>
 一起做某种动作的人(动物)用助词「と」表示。
@@ -2417,19 +2432,19 @@ A: 「Thank you」です。(…是“Thank you”。)<br>
 </li>
 </ol>
 </li>
-<li><a id="org9c4a394"></a>から<br></li>
+<li><a id="orgf66553c"></a>から<br></li>
 </ol>
 </div>
 
-<div id="outline-container-orgfcbd333" class="outline-4">
-<h4 id="orgfcbd333"><span class="section-number-4">3.1.2.</span> 接续助词</h4>
+<div id="outline-container-orgfe43e90" class="outline-4">
+<h4 id="orgfe43e90"><span class="section-number-4">3.1.2.</span> 接续助词</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <p>
 表示前后语句的关系是顺接、逆接或单纯叙述的词语。
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="orgab811bd"></a>が(but)&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L08">L08</span></span><br>
+<li><a id="org1b35e70"></a>が(but)&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L08">L08</span></span><br>
 <div class="outline-text-5" id="text-3-1-2-1">
 <p>
 <b>句子1が、句子2</b> :「が」表转折：但是。两个句子由「が」连接成为一个句子。
@@ -2442,7 +2457,7 @@ A: 「Thank you」です。(…是“Thank you”。)<br>
 </p>
 </div>
 </li>
-<li><a id="org4fd86c4"></a>句子1から、句子2&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L09">L09</span></span><br>
+<li><a id="org29d3235"></a>句子1から、句子2&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L09">L09</span></span><br>
 <div class="outline-text-5" id="text-3-1-2-2">
 <p>
 由「から」(because) 将两个句子连接成一个句子。句1是句2的原因。也可以先陈述句2,再说句1から,补充陈述理由。
@@ -2461,8 +2476,8 @@ A: いいえ、読みません、時間が ありませんから。(…不看,�
 </li>
 </ol>
 </div>
-<div id="outline-container-orga2626ce" class="outline-4">
-<h4 id="orga2626ce"><span class="section-number-4">3.1.3.</span> 终助词</h4>
+<div id="outline-container-org63f417d" class="outline-4">
+<h4 id="org63f417d"><span class="section-number-4">3.1.3.</span> 终助词</h4>
 <div class="outline-text-4" id="text-3-1-3">
 <p>
 通常放在句尾，表示说话者主观的情感。
@@ -2470,7 +2485,7 @@ A: いいえ、読みません、時間が ありませんから。(…不看,�
 </div>
 
 <ol class="org-ol">
-<li><a id="org7f5a138"></a>か&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span>&#xa0;<span class="L10">L10</span></span><br>
+<li><a id="orgb346f75"></a>か&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span>&#xa0;<span class="L10">L10</span></span><br>
 <div class="outline-text-5" id="text-3-1-3-1">
 <ol class="org-ol">
 <li>表示疑问、质疑、反诘： <b>句子か</b> ,读作升调</li>
@@ -2484,7 +2499,7 @@ A: ユニューヤ·ストアですか。あの ビルの 中です。(…输入
 </ol>
 </div>
 </li>
-<li><a id="org42e0326"></a>句子+ね&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L04">L04</span></span><br>
+<li><a id="org455a7ed"></a>句子+ね&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L04">L04</span></span><br>
 <div class="outline-text-5" id="text-3-1-3-2">
 <p>
 表示确认:
@@ -2507,7 +2522,7 @@ A: 871の 6813ですね。(…是871-6813啊。)<br>
 </ol>
 </div>
 </li>
-<li><a id="org7ebf909"></a>句子+よ&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L05">L05</span></span><br>
+<li><a id="orgccc6924"></a>句子+よ&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L05">L05</span></span><br>
 <div class="outline-text-5" id="text-3-1-3-3">
 <p>
 「よ」用于句末,告诉对方不知道的事情,强调自己的判断和意见,语气较强。
@@ -2523,15 +2538,15 @@ A: いいえ、行きません。次の 普通ですよ。(…不去。下一趟
 </ol>
 </div>
 
-<div id="outline-container-org59b9eee" class="outline-4">
-<h4 id="org59b9eee"><span class="section-number-4">3.1.4.</span> は</h4>
+<div id="outline-container-org4c69331" class="outline-4">
+<h4 id="org4c69331"><span class="section-number-4">3.1.4.</span> は</h4>
 <div class="outline-text-4" id="text-3-1-4">
 <p>
 做助词时读作「わ」
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="org34d187d"></a>提示主题：名词（时间）+は&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span>&#xa0;<span class="L06">L06</span></span><br>
+<li><a id="org6881c2c"></a>提示主题：名词（时间）+は&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span>&#xa0;<span class="L06">L06</span></span><br>
 <div class="outline-text-5" id="text-3-1-4-1">
 <p class="verse">
 わたしは マイく·ミラ一です。(我是迈克·米勒。)<br>
@@ -2550,12 +2565,12 @@ A: いいえ、行きません。次の 普通ですよ。(…不去。下一趟
 </li>
 </ol>
 </div>
-<div id="outline-container-orge3aa5af" class="outline-4">
-<h4 id="orge3aa5af"><span class="section-number-4">3.1.5.</span> も</h4>
+<div id="outline-container-org032f991" class="outline-4">
+<h4 id="org032f991"><span class="section-number-4">3.1.5.</span> も</h4>
 <div class="outline-text-4" id="text-3-1-5">
 </div>
 <ol class="org-ol">
-<li><a id="orgf4ce944"></a>与前文陈述相同： <b>名词1+も</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span></span><br>
+<li><a id="org848c438"></a>与前文陈述相同： <b>名词1+も</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span></span><br>
 <div class="outline-text-5" id="text-3-1-5-1">
 <p>
 表示……也怎样的时候,用「も」代替「は」。
@@ -2571,7 +2586,7 @@ A: いいえ、行きません。次の 普通ですよ。(…不去。下一趟
 </p>
 </div>
 </li>
-<li><a id="orgd5f92c4"></a>完全否定疑问词所问的全部范畴： 疑问词+も+否定式&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L05">L05</span></span><br>
+<li><a id="org6613beb"></a>完全否定疑问词所问的全部范畴： 疑问词+も+否定式&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L05">L05</span></span><br>
 <div class="outline-text-5" id="text-3-1-5-2">
 <p class="verse">
 どこ[へ]も 行きません。(哪里也不去。)<br>
@@ -2582,12 +2597,12 @@ A: いいえ、行きません。次の 普通ですよ。(…不去。下一趟
 </li>
 </ol>
 </div>
-<div id="outline-container-org648afce" class="outline-4">
-<h4 id="org648afce"><span class="section-number-4">3.1.6.</span> や</h4>
+<div id="outline-container-org646c886" class="outline-4">
+<h4 id="org646c886"><span class="section-number-4">3.1.6.</span> や</h4>
 <div class="outline-text-4" id="text-3-1-6">
 </div>
 <ol class="org-ol">
-<li><a id="orgd2860eb"></a>名词1や 名词2[など]&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L10">L10</span></span><br>
+<li><a id="org50c99ee"></a>名词1や 名词2[など]&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L10">L10</span></span><br>
 <div class="outline-text-5" id="text-3-1-6-1">
 <p>
 助词「や」在列举名词时使用。注意与「と」进行对比：
@@ -2608,12 +2623,12 @@ A: いいえ、行きません。次の 普通ですよ。(…不去。下一趟
 </div>
 </div>
 
-<div id="outline-container-org939d591" class="outline-3">
-<h3 id="org939d591"><span class="section-number-3">3.2.</span> 形容词</h3>
+<div id="outline-container-orge23d4f9" class="outline-3">
+<h3 id="orge23d4f9"><span class="section-number-3">3.2.</span> 形容词</h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-org39d2c90" class="outline-4">
-<h4 id="org39d2c90"><span class="section-number-4">3.2.1.</span> 分类&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L08">L08</span></span></h4>
+<div id="outline-container-org7e5c46c" class="outline-4">
+<h4 id="org7e5c46c"><span class="section-number-4">3.2.1.</span> 分类&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L08">L08</span></span></h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 根据活用方式分为「い形容词」和「な形容词」。
@@ -2624,8 +2639,8 @@ A: いいえ、行きません。次の 普通ですよ。(…不去。下一趟
 </ul>
 </div>
 </div>
-<div id="outline-container-org0f54309" class="outline-4">
-<h4 id="org0f54309"><span class="section-number-4">3.2.2.</span> 用法&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L08">L08</span></span></h4>
+<div id="outline-container-org7340902" class="outline-4">
+<h4 id="org7340902"><span class="section-number-4">3.2.2.</span> 用法&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L08">L08</span></span></h4>
 <div class="outline-text-4" id="text-3-2-2">
 <p>
 可活用，有两种用法：
@@ -2636,9 +2651,9 @@ A: いいえ、行きません。次の 普通ですよ。(…不去。下一趟
 </ol>
 </div>
 <ol class="org-ol">
-<li><a id="orgb48b957"></a>做谓语<br>
+<li><a id="org1b199c7"></a>做谓语<br>
 <ol class="org-ol">
-<li><a id="orgca042b8"></a>非过去时肯定形式<br>
+<li><a id="orgeae9e33"></a>非过去时肯定形式<br>
 <div class="outline-text-6" id="text-3-2-2-1-1">
 <p>
 な形容词去掉「な」,い形容词用原形(～い)与「です」接续，即：
@@ -2656,7 +2671,7 @@ A: いいえ、行きません。次の 普通ですよ。(…不去。下一趟
 </p>
 </div>
 </li>
-<li><a id="org0f99421"></a>否定形式<br>
+<li><a id="orgc3dc0f5"></a>否定形式<br>
 <div class="outline-text-6" id="text-3-2-2-1-2">
 <ul class="org-ul">
 <li>な形容词[ <del>な</del> ]じゃ ありません（日常语）</li>
@@ -2681,7 +2696,7 @@ A: いいえ、行きません。次の 普通ですよ。(…不去。下一趟
 </ol>
 </li>
 
-<li><a id="org46ee571"></a>修饰名词：形容词+名词<br>
+<li><a id="org8b407f8"></a>修饰名词：形容词+名词<br>
 <div class="outline-text-5" id="text-3-2-2-2">
 <ul class="org-ul">
 <li>な形容词な 名词</li>
@@ -2699,8 +2714,8 @@ A: いいえ、行きません。次の 普通ですよ。(…不去。下一趟
 </ol>
 </div>
 </div>
-<div id="outline-container-orgf6264f9" class="outline-3">
-<h3 id="orgf6264f9"><span class="section-number-3">3.3.</span> 副词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L08">L08</span>&#xa0;<span class="L09">L09</span></span></h3>
+<div id="outline-container-org34052c6" class="outline-3">
+<h3 id="org34052c6"><span class="section-number-3">3.3.</span> 副词&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L08">L08</span>&#xa0;<span class="L09">L09</span></span></h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 修饰形容词或动词，放在被修饰词前面。
@@ -2902,12 +2917,12 @@ A: いいえ、行きません。次の 普通ですよ。(…不去。下一趟
 </div>
 </div>
 
-<div id="outline-container-orgb89ac52" class="outline-2">
-<h2 id="orgb89ac52"><span class="section-number-2">4.</span> 常用语</h2>
+<div id="outline-container-org13cd00b" class="outline-2">
+<h2 id="org13cd00b"><span class="section-number-2">4.</span> 常用语</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org020ecdf" class="outline-3">
-<h3 id="org020ecdf"><span class="section-number-3">4.1.</span> 初次见面&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span></span></h3>
+<div id="outline-container-org2a45430" class="outline-3">
+<h3 id="org2a45430"><span class="section-number-3">4.1.</span> 初次见面&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span></span></h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>はじめまして/初めまして（初次见面）</li>
@@ -2918,8 +2933,8 @@ A: いいえ、行きません。次の 普通ですよ。(…不去。下一趟
 </ul>
 </div>
 </div>
-<div id="outline-container-org0b5ff23" class="outline-3">
-<h3 id="org0b5ff23"><span class="section-number-3">4.2.</span> 寒暄语&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L02">L02</span></span></h3>
+<div id="outline-container-org71c4f54" class="outline-3">
+<h3 id="org71c4f54"><span class="section-number-3">4.2.</span> 寒暄语&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L02">L02</span></span></h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
 <li>これから お世話に なります/これから おせわに なります/今后请您多关照。</li>
@@ -2928,8 +2943,8 @@ A: いいえ、行きません。次の 普通ですよ。(…不去。下一趟
 </ul>
 </div>
 </div>
-<div id="outline-container-orga63cf85" class="outline-3">
-<h3 id="orga63cf85"><span class="section-number-3">4.3.</span> そうですか&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L02">L02</span></span></h3>
+<div id="outline-container-org01fea5c" class="outline-3">
+<h3 id="org01fea5c"><span class="section-number-3">4.3.</span> そうですか&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L02">L02</span></span></h3>
 <div class="outline-text-3" id="text-4-3">
 <ol class="org-ol">
 <li><p>
@@ -2945,20 +2960,20 @@ A:そうですか。(哦,是吗。)<br>
 </ol>
 </div>
 </div>
-<div id="outline-container-org475a1c5" class="outline-3">
-<h3 id="org475a1c5"><span class="section-number-3">4.4.</span> 询问XX怎么样？</h3>
+<div id="outline-container-org17025eb" class="outline-3">
+<h3 id="org17025eb"><span class="section-number-3">4.4.</span> 询问XX怎么样？</h3>
 <div class="outline-text-3" id="text-4-4">
 </div>
-<div id="outline-container-org6638436" class="outline-4">
-<h4 id="org6638436"><span class="section-number-4">4.4.1.</span> [～は]いかがですか&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L07">L07</span></span></h4>
+<div id="outline-container-org308680e" class="outline-4">
+<h4 id="org308680e"><span class="section-number-4">4.4.1.</span> [～は]いかがですか&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L07">L07</span></span></h4>
 <div class="outline-text-4" id="text-4-4-1">
 <p>
 你觉得[～]怎么样？(向人推荐某物时用)
 </p>
 </div>
 </div>
-<div id="outline-container-org0637807" class="outline-4">
-<h4 id="org0637807"><span class="section-number-4">4.4.2.</span> 名词は どうですか&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L08">L08</span></span></h4>
+<div id="outline-container-org086579f" class="outline-4">
+<h4 id="org086579f"><span class="section-number-4">4.4.2.</span> 名词は どうですか&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L08">L08</span></span></h4>
 <div class="outline-text-4" id="text-4-4-2">
 <p>
 询问对方对经历过的事情、到过的地方,见过的人有什么印象,意见和感想。
@@ -2970,8 +2985,8 @@ A: 楽しいです。(…很愉快。)<br>
 </div>
 </div>
 
-<div id="outline-container-org991b9dd" class="outline-4">
-<h4 id="org991b9dd"><span class="section-number-4">4.4.3.</span> 名词1は どんな 名词2ですか&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L08">L08</span></span></h4>
+<div id="outline-container-org3aaec7f" class="outline-4">
+<h4 id="org3aaec7f"><span class="section-number-4">4.4.3.</span> 名词1は どんな 名词2ですか&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L08">L08</span></span></h4>
 <div class="outline-text-4" id="text-4-4-3">
 <p>
 具体询问名词1是怎样的，名词2是名词1的属性。
@@ -2984,8 +2999,8 @@ A: 古い 町です。(…是古老的城市。)<br>
 </div>
 </div>
 
-<div id="outline-container-org1942eca" class="outline-3">
-<h3 id="org1942eca"><span class="section-number-3">4.5.</span> 做客用语&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L07">L07</span>&#xa0;<span class="L08">L08</span></span></h3>
+<div id="outline-container-orge4f3fd7" class="outline-3">
+<h3 id="orge4f3fd7"><span class="section-number-3">4.5.</span> 做客用语&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L07">L07</span>&#xa0;<span class="L08">L08</span></span></h3>
 <div class="outline-text-3" id="text-4-5">
 <p>
 そろそろ 失礼します/そろそろ しつれいします/我该告辞了。
@@ -3016,8 +3031,8 @@ A: 古い 町です。(…是古老的城市。)<br>
 </p>
 </div>
 </div>
-<div id="outline-container-orgf53729e" class="outline-3">
-<h3 id="orgf53729e"><span class="section-number-3">4.6.</span> 感谢&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L02">L02</span>&#xa0;<span class="L04">L04</span>&#xa0;<span class="L05">L05</span>&#xa0;<span class="L07">L07</span></span></h3>
+<div id="outline-container-org6d17e98" class="outline-3">
+<h3 id="org6d17e98"><span class="section-number-3">4.6.</span> 感谢&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L02">L02</span>&#xa0;<span class="L04">L04</span>&#xa0;<span class="L05">L05</span>&#xa0;<span class="L07">L07</span></span></h3>
 <div class="outline-text-3" id="text-4-6">
 <p>
 A: 谢谢。
@@ -3041,8 +3056,8 @@ B：不客气。/哪里哪里。
 </div>
 </div>
 
-<div id="outline-container-org2e85eef" class="outline-3">
-<h3 id="org2e85eef"><span class="section-number-3">4.7.</span> 抱歉&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span>&#xa0;<span class="L03">L03</span></span></h3>
+<div id="outline-container-orgc195eb7" class="outline-3">
+<h3 id="orgc195eb7"><span class="section-number-3">4.7.</span> 抱歉&#xa0;&#xa0;&#xa0;<span class="tag"><span class="L01">L01</span>&#xa0;<span class="L03">L03</span></span></h3>
 <div class="outline-text-3" id="text-4-7">
 <p>
 しつれいですが/失礼ですが（冒昧问一下）
@@ -3059,8 +3074,8 @@ B：不客气。/哪里哪里。
 </div>
 </div>
 
-<div id="outline-container-org8c2e054" class="outline-2">
-<h2 id="org8c2e054"><span class="section-number-2">5.</span> 更新历史</h2>
+<div id="outline-container-orgc6b9d53" class="outline-2">
+<h2 id="orgc6b9d53"><span class="section-number-2">5.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">[2016-05-03 二] </span></span> 总结《大家的日本语1》第10课 语法知识</li>
@@ -3134,12 +3149,12 @@ B：不客气。/哪里哪里。
 <li>长音：占2拍（其实还是每个假名占一拍，只不过前面的一拍拖长，覆盖后面一拍，总共是2拍）</li>
 </ul>
 
-<div id="outline-container-org310ccb9" class="outline-2">
-<h2 id="org310ccb9"><span class="section-number-2">1.</span> 书写规则</h2>
+<div id="outline-container-org550e326" class="outline-2">
+<h2 id="org550e326"><span class="section-number-2">1.</span> 书写规则</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgc4a1cc2" class="outline-3">
-<h3 id="orgc4a1cc2"><span class="section-number-3">1.1.</span> 平假名中的长音</h3>
+<div id="outline-container-orgce910a3" class="outline-3">
+<h3 id="orgce910a3"><span class="section-number-3">1.1.</span> 平假名中的长音</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 以下五种情况需要拖长读成2拍：
@@ -3153,7 +3168,7 @@ B：不客气。/哪里哪里。
 <li>お段+う/お</li>
 </ol>
 
-<div class="HTML" id="org67362ac">
+<div class="HTML" id="org705fa0c">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -3162,8 +3177,8 @@ B：不客气。/哪里哪里。
 </div>
 </div>
 
-<div id="outline-container-org84c8b08" class="outline-3">
-<h3 id="org84c8b08"><span class="section-number-3">1.2.</span> 片假名中的长音</h3>
+<div id="outline-container-org8cff8e6" class="outline-3">
+<h3 id="org8cff8e6"><span class="section-number-3">1.2.</span> 片假名中的长音</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 片假名的长音规则很简单，看到 <b>片假名 + ー</b> 就读成长音。
@@ -3176,12 +3191,12 @@ B：不客气。/哪里哪里。
 </div>
 </div>
 
-<div id="outline-container-orgabc1ab2" class="outline-2">
-<h2 id="orgabc1ab2"><span class="section-number-2">2.</span> 发音实例</h2>
+<div id="outline-container-orgb1bdf11" class="outline-2">
+<h2 id="orgb1bdf11"><span class="section-number-2">2.</span> 发音实例</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orga727fe6" class="outline-3">
-<h3 id="orga727fe6"><span class="section-number-3">2.1.</span> 长音降调</h3>
+<div id="outline-container-org0944335" class="outline-3">
+<h3 id="org0944335"><span class="section-number-3">2.1.</span> 长音降调</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 类比汉字四声
@@ -3232,8 +3247,8 @@ B：不客气。/哪里哪里。
 </div>
 </div>
 
-<div id="outline-container-org3e63a3c" class="outline-3">
-<h3 id="org3e63a3c"><span class="section-number-3">2.2.</span> 长音升调</h3>
+<div id="outline-container-orgccd51bf" class="outline-3">
+<h3 id="orgccd51bf"><span class="section-number-3">2.2.</span> 长音升调</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 类比汉字二声
@@ -3269,16 +3284,16 @@ B：不客气。/哪里哪里。
 </div>
 </div>
 </div>
-<div id="outline-container-org0d18c1f" class="outline-2">
-<h2 id="org0d18c1f"><span class="section-number-2">3.</span> 更新历史</h2>
+<div id="outline-container-org3ed1a69" class="outline-2">
+<h2 id="org3ed1a69"><span class="section-number-2">3.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">[2016-02-05 五] </span></span> 拟定初稿</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org67dcee3" class="outline-2">
-<h2 id="org67dcee3"><span class="section-number-2">4.</span> 参考</h2>
+<div id="outline-container-orgc2ac4c3" class="outline-2">
+<h2 id="orgc2ac4c3"><span class="section-number-2">4.</span> 参考</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 <a href="http://www.wanmen.org/courses/YYRYYY/topics/YYRYYY15A" target="_blank" rel="external">万门大学|视频|日语五十音图语音入门|长音|长音</a>
@@ -3414,8 +3429,8 @@ B：不客气。/哪里哪里。
 </tbody>
 </table>
 
-<div id="outline-container-org3cfa9e1" class="outline-2">
-<h2 id="org3cfa9e1"><span class="section-number-2">1.</span> 更新历史</h2>
+<div id="outline-container-org56e6ebd" class="outline-2">
+<h2 id="org56e6ebd"><span class="section-number-2">1.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-30 六] </span></span> 拟定初稿</li>
@@ -3499,8 +3514,8 @@ B：不客气。/哪里哪里。
 <li>上传完成后，访问 <code>user_name.gitcafe.io</code> 看看站点是否部署成功。</li>
 </ol>
 
-<div id="outline-container-org354e1dc" class="outline-2">
-<h2 id="org354e1dc"><span class="section-number-2">1.</span> 更新历史</h2>
+<div id="outline-container-orgdeb7a59" class="outline-2">
+<h2 id="orgdeb7a59"><span class="section-number-2">1.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-30 六] </span></span> 拟定初稿</li>
@@ -3508,8 +3523,8 @@ B：不客气。/哪里哪里。
 </div>
 </div>
 
-<div id="outline-container-orgf6a7750" class="outline-2">
-<h2 id="orgf6a7750"><span class="section-number-2">2.</span> 参考</h2>
+<div id="outline-container-org26473e3" class="outline-2">
+<h2 id="org26473e3"><span class="section-number-2">2.</span> 参考</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li><a href="http://www.zipperary.com/2013/11/23/hexo-to-gitcafe/" target="_blank" rel="external">托管博客到gitcafe | Zippera's blog</a></li>
@@ -3571,8 +3586,8 @@ B：不客气。/哪里哪里。
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/mindmap_the_truth_about_exercise.png">
 </p>
 
-<div id="outline-container-org1652417" class="outline-2">
-<h2 id="org1652417"><span class="section-number-2">1.</span> 关于跑步</h2>
+<div id="outline-container-orgde7d322" class="outline-2">
+<h2 id="orgde7d322"><span class="section-number-2">1.</span> 关于跑步</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>如何计算消耗的卡路里：通过测定吸入的氧气、呼出二氧化碳的量</li>
@@ -3580,7 +3595,7 @@ B：不客气。/哪里哪里。
 <li>要想通过跑步减肥，需要长期坚持并控制饮食的卡路里摄入量</li>
 </ul>
 
-<div class="HTML" id="orgab25f05">
+<div class="HTML" id="orge7dd260">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -3589,8 +3604,8 @@ B：不客气。/哪里哪里。
 </div>
 </div>
 
-<div id="outline-container-org497cc20" class="outline-2">
-<h2 id="org497cc20"><span class="section-number-2">2.</span> 散步可以降低血液中的脂肪含量</h2>
+<div id="outline-container-orgb1335ad" class="outline-2">
+<h2 id="orgb1335ad"><span class="section-number-2">2.</span> 散步可以降低血液中的脂肪含量</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 脂肪在体内的去向：
@@ -3614,8 +3629,8 @@ B：不客气。/哪里哪里。
 </div>
 </div>
 
-<div id="outline-container-org3e08fac" class="outline-2">
-<h2 id="org3e08fac"><span class="section-number-2">3.</span> HIIT</h2>
+<div id="outline-container-orgba09ac2" class="outline-2">
+<h2 id="orgba09ac2"><span class="section-number-2">3.</span> HIIT</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 HIIT即短时高强度训练，相比传统的跑步等锻炼项目，效率更高，因其：
@@ -3637,8 +3652,8 @@ HIIT即短时高强度训练，相比传统的跑步等锻炼项目，效率更�
 </div>
 </div>
 
-<div id="outline-container-orgc380185" class="outline-2">
-<h2 id="orgc380185"><span class="section-number-2">4.</span> NEAT</h2>
+<div id="outline-container-org299fceb" class="outline-2">
+<h2 id="org299fceb"><span class="section-number-2">4.</span> NEAT</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 NEAT=非运动生热作用=日常生活消耗的热量
@@ -3654,8 +3669,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 
-<div id="outline-container-org44a37d2" class="outline-2">
-<h2 id="org44a37d2"><span class="section-number-2">5.</span> 锻炼效果因人而异</h2>
+<div id="outline-container-orga7c293f" class="outline-2">
+<h2 id="orga7c293f"><span class="section-number-2">5.</span> 锻炼效果因人而异</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 每个人对相同类型的运动有不同的反应情况，大约20%的人是有氧适能零收益者，大约15%能从有氧运动获得很大益处。
@@ -3667,8 +3682,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 
-<div id="outline-container-orgc6d8489" class="outline-2">
-<h2 id="orgc6d8489"><span class="section-number-2">6.</span> 更新历史</h2>
+<div id="outline-container-orgdcb2271" class="outline-2">
+<h2 id="orgdcb2271"><span class="section-number-2">6.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-30 六] </span></span> 补充XRPredict+ DNA检测相关内容</li>
@@ -3718,8 +3733,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
     <content type="html"><![CDATA[
 
 
-<div id="outline-container-org039456f" class="outline-2">
-<h2 id="org039456f"><span class="section-number-2">1.</span> 浊音</h2>
+<div id="outline-container-org05e20d4" class="outline-2">
+<h2 id="org05e20d4"><span class="section-number-2">1.</span> 浊音</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 浊音一共有四行，其发音和写法都是从五十音图中的四行浊化而来：
@@ -3737,8 +3752,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </p>
 </div>
 
-<div id="outline-container-org79abe27" class="outline-3">
-<h3 id="org79abe27"><span class="section-number-3">1.1.</span> が行</h3>
+<div id="outline-container-orgd1019c8" class="outline-3">
+<h3 id="orgd1019c8"><span class="section-number-3">1.1.</span> が行</h3>
 <div class="outline-text-3" id="text-1-1">
 <p class="verse">
 がぎぐげご<br>
@@ -3775,7 +3790,7 @@ NEAT=非运动生热作用=日常生活消耗的热量
 位于词中和词尾发成鼻浊音是比较正统、老派的发音方式，现在很多日本年轻人一律将が行发成 ga、gi、gu、ge、go，而不管假名位于词汇的什么位置。
 </p>
 
-<div class="HTML" id="org360795d">
+<div class="HTML" id="org0b2728b">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -3784,8 +3799,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 
-<div id="outline-container-orgf98013d" class="outline-3">
-<h3 id="orgf98013d"><span class="section-number-3">1.2.</span> ざ行</h3>
+<div id="outline-container-orge0db3a5" class="outline-3">
+<h3 id="orge0db3a5"><span class="section-number-3">1.2.</span> ざ行</h3>
 <div class="outline-text-3" id="text-1-2">
 <p class="verse">
 ざじずぜぞ<br>
@@ -3812,8 +3827,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 
-<div id="outline-container-orge07e25c" class="outline-3">
-<h3 id="orge07e25c"><span class="section-number-3">1.3.</span> だ行</h3>
+<div id="outline-container-orgf88e5b4" class="outline-3">
+<h3 id="orgf88e5b4"><span class="section-number-3">1.3.</span> だ行</h3>
 <div class="outline-text-3" id="text-1-3">
 <p class="verse">
 だぢづでど<br>
@@ -3844,8 +3859,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 
-<div id="outline-container-org858d20b" class="outline-3">
-<h3 id="org858d20b"><span class="section-number-3">1.4.</span> ば行</h3>
+<div id="outline-container-orga5fa935" class="outline-3">
+<h3 id="orga5fa935"><span class="section-number-3">1.4.</span> ば行</h3>
 <div class="outline-text-3" id="text-1-4">
 <p class="verse">
 ばびぶべぼ<br>
@@ -3872,8 +3887,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 
-<div id="outline-container-org106ccc8" class="outline-3">
-<h3 id="org106ccc8"><span class="section-number-3">1.5.</span> 区分浊音和不送气音</h3>
+<div id="outline-container-org592efa3" class="outline-3">
+<h3 id="org592efa3"><span class="section-number-3">1.5.</span> 区分浊音和不送气音</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 在总结 <a href="\2016-01-17-sum-of-gojuon">五十音图</a>时提到，有两行清音行有送气音和不送气音两种读法，分别是か行和た行。か行不送气音的读法有些类似が行，た行不送气音的读法有些类似だ行，但是， <b>类似不等于一样</b> ，二者最大的区别在于 <b>不送气音还是清音，声带不震动，が行和だ行是浊音行，声带振动</b> 。
@@ -3972,8 +3987,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 
-<div id="outline-container-org373b711" class="outline-2">
-<h2 id="org373b711"><span class="section-number-2">2.</span> 半浊音</h2>
+<div id="outline-container-org53bc57c" class="outline-2">
+<h2 id="org53bc57c"><span class="section-number-2">2.</span> 半浊音</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 日语中有一行半浊音，来自清音行は行，在对应假名右上角加上 <b>半浊音符゜</b> ，即变成ぱ行：
@@ -4002,8 +4017,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </p>
 </div>
 </div>
-<div id="outline-container-org313b7ea" class="outline-2">
-<h2 id="org313b7ea"><span class="section-number-2">3.</span> 更新历史</h2>
+<div id="outline-container-orgdedd463" class="outline-2">
+<h2 id="orgdedd463"><span class="section-number-2">3.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">[2016-03-18 五] </span></span> 补充ぱ行送气音与不送气音的相关内容</li>
@@ -4011,8 +4026,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbd2ecab" class="outline-2">
-<h2 id="orgbd2ecab"><span class="section-number-2">4.</span> 参考</h2>
+<div id="outline-container-orgbfe25f8" class="outline-2">
+<h2 id="orgbfe25f8"><span class="section-number-2">4.</span> 参考</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><a href="http://www.wanmen.org/courses/YYRYYY/topics/YYRYYY12A" target="_blank" rel="external">万门大学|日语五十音图语音入门|浊音半浊音</a></li>
@@ -4029,8 +4044,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
     <![CDATA[
 
 
-<div id="outline-container-org039456f" class="outline-2">
-<h2 id="org039456f"><span class="section-number-2">1.</span> 浊音</h2>
+<div id="outline-container-org05e20d4" class="outline-2">
+<h2 id="org05e20d4"><span class="section-number-2">1.</span> 浊音</h2>
 <div class]]>
     </summary>
     
@@ -4076,8 +4091,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> = Habit + RPG，旨在以RPG游戏化机制，激励我们有效又不乏乐趣地改变坏习惯、养成新习惯，管理自己的生活。
 </p>
 
-<div id="outline-container-orgaf49e9b" class="outline-2">
-<h2 id="orgaf49e9b"><span class="section-number-2">1.</span> 基本术语</h2>
+<div id="outline-container-orgb491e47" class="outline-2">
+<h2 id="orgb491e47"><span class="section-number-2">1.</span> 基本术语</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 首先熟悉一下  <a href="https://habitica.com" target="_blank" rel="external">HabitRPG</a> 涉及的术语，在下文中再次出现时不予赘述（更多参见 <a href="http://habitica.wikia.com/wiki/Glossary" target="_blank" rel="external">Glossary - Habitica Wiki - Wikia</a> ）：
@@ -4097,7 +4112,7 @@ NEAT=非运动生热作用=日常生活消耗的热量
 <li>玩家属性：有力量、智力、体质、感知四项。与一些技能有关，增加可玩性。</li>
 </ul>
 
-<div class="HTML" id="org4f32457">
+<div class="HTML" id="orge90fccc">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -4106,8 +4121,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 
-<div id="outline-container-org3ecf3b8" class="outline-2">
-<h2 id="org3ecf3b8"><span class="section-number-2">2.</span> 界面</h2>
+<div id="outline-container-orga391d57" class="outline-2">
+<h2 id="orga391d57"><span class="section-number-2">2.</span> 界面</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/habitica_ui.png">
@@ -4136,8 +4151,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 
-<div id="outline-container-orgf1c381b" class="outline-2">
-<h2 id="orgf1c381b"><span class="section-number-2">3.</span> 有关GTD的游戏机制</h2>
+<div id="outline-container-orged010ad" class="outline-2">
+<h2 id="orged010ad"><span class="section-number-2">3.</span> 有关GTD的游戏机制</h2>
 <div class="outline-text-2" id="text-3">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -4330,8 +4345,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 
-<div id="outline-container-org244edc7" class="outline-2">
-<h2 id="org244edc7"><span class="section-number-2">4.</span> 部分术语详解</h2>
+<div id="outline-container-orgd6282f2" class="outline-2">
+<h2 id="orgd6282f2"><span class="section-number-2">4.</span> 部分术语详解</h2>
 <div class="outline-text-2" id="text-4">
 </div>
 <div id="outline-container-任务分值" class="outline-3">
@@ -4416,8 +4431,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </p>
 </div>
 
-<div id="outline-container-orgfa23053" class="outline-4">
-<h4 id="orgfa23053"><span class="section-number-4">4.1.1.</span> 任务分值的影响</h4>
+<div id="outline-container-org4cdcaf6" class="outline-4">
+<h4 id="org4cdcaf6"><span class="section-number-4">4.1.1.</span> 任务分值的影响</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <ul class="org-ul">
 <li>越大（颜色越蓝，表示是经常性完成的任务）：
@@ -4441,8 +4456,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 </div>
-<div id="outline-container-org1cc05a8" class="outline-3">
-<h3 id="org1cc05a8"><span class="section-number-3">4.2.</span> 连击纪录<sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup></h3>
+<div id="outline-container-orgf4df4cd" class="outline-3">
+<h3 id="orgf4df4cd"><span class="section-number-3">4.2.</span> 连击纪录<sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup></h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 连击 Streaks，记录需按时完成的每日任务连续完成的次数。
@@ -4455,12 +4470,12 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 
-<div id="outline-container-org07580a3" class="outline-2">
-<h2 id="org07580a3"><span class="section-number-2">5.</span> 游戏化你自己的生活吧！</h2>
+<div id="outline-container-orga30775a" class="outline-2">
+<h2 id="orga30775a"><span class="section-number-2">5.</span> 游戏化你自己的生活吧！</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org61ac29f" class="outline-3">
-<h3 id="org61ac29f"><span class="section-number-3">5.1.</span> 建立任务清单</h3>
+<div id="outline-container-orgbff25e7" class="outline-3">
+<h3 id="orgbff25e7"><span class="section-number-3">5.1.</span> 建立任务清单</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 任务清单有三类：习惯、每日任务、待办事项，你可以根据下面的表格决定一项任务应该归为哪一类：
@@ -4525,8 +4540,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </table>
 </div>
 
-<div id="outline-container-orgebf2881" class="outline-4">
-<h4 id="orgebf2881"><span class="section-number-4">5.1.1.</span> 习惯<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup></h4>
+<div id="outline-container-org9da5ddd" class="outline-4">
+<h4 id="org9da5ddd"><span class="section-number-4">5.1.1.</span> 习惯<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup></h4>
 <div class="outline-text-4" id="text-5-1-1">
 <p>
 通过设置习惯的 <code>方向/动作</code> ，你可以建立3种习惯：
@@ -4556,8 +4571,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 
-<div id="outline-container-org9b6e271" class="outline-4">
-<h4 id="org9b6e271"><span class="section-number-4">5.1.2.</span> 每日任务</h4>
+<div id="outline-container-org3e14a37" class="outline-4">
+<h4 id="org3e14a37"><span class="section-number-4">5.1.2.</span> 每日任务</h4>
 <div class="outline-text-4" id="text-5-1-2">
 <p>
 我的每日任务主要有2种：
@@ -4580,7 +4595,7 @@ NEAT=非运动生热作用=日常生活消耗的热量
 
 
 <ol class="org-ol">
-<li><a id="org007a295"></a>灰色 Dailies<br>
+<li><a id="org3c62d04"></a>灰色 Dailies<br>
 <div class="outline-text-5" id="text-5-1-2-1">
 <p>
 显示为灰色可能有两个原因：
@@ -4602,8 +4617,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </ol>
 </div>
 
-<div id="outline-container-org6bff439" class="outline-4">
-<h4 id="org6bff439"><span class="section-number-4">5.1.3.</span> 待办事项</h4>
+<div id="outline-container-orgf825d74" class="outline-4">
+<h4 id="orgf825d74"><span class="section-number-4">5.1.3.</span> 待办事项</h4>
 <div class="outline-text-4" id="text-5-1-3">
 <ul class="org-ul">
 <li>适用情境：一次性的重要挑战，不一定有完成时间（但可以设定时限），但是完成后就结束，并且可能成就感特别大。</li>
@@ -4618,11 +4633,11 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 
-<div id="outline-container-org4394c65" class="outline-3">
-<h3 id="org4394c65"><span class="section-number-3">5.2.</span> 奖励</h3>
+<div id="outline-container-org09ba8c6" class="outline-3">
+<h3 id="org09ba8c6"><span class="section-number-3">5.2.</span> 奖励</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
-在 <a href="#orgaf49e9b">1</a> 中提到，奖励 Rewards 分 <b>内置</b> 的装备等奖励和个人 <b>自定义</b> 奖励两种，该节主要讨论如何自己设置奖励，把真实世界的奖赏用金币来兑换。概言之，步骤就两个：
+在 <a href="#orgb491e47">1</a> 中提到，奖励 Rewards 分 <b>内置</b> 的装备等奖励和个人 <b>自定义</b> 奖励两种，该节主要讨论如何自己设置奖励，把真实世界的奖赏用金币来兑换。概言之，步骤就两个：
 </p>
 
 <ol class="org-ol">
@@ -4631,8 +4646,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </ol>
 </div>
 
-<div id="outline-container-orgf8725a2" class="outline-4">
-<h4 id="orgf8725a2"><span class="section-number-4">5.2.1.</span> 找到激励你的事物</h4>
+<div id="outline-container-org47363a2" class="outline-4">
+<h4 id="org47363a2"><span class="section-number-4">5.2.1.</span> 找到激励你的事物</h4>
 <div class="outline-text-4" id="text-5-2-1">
 <p>
 想一下，做什么事情会令你心情愉悦？如果没有思路，不妨参考以下：
@@ -4662,8 +4677,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 
-<div id="outline-container-org82bc957" class="outline-4">
-<h4 id="org82bc957"><span class="section-number-4">5.2.2.</span> 为奖励制定合适的兑换价格</h4>
+<div id="outline-container-org0c28641" class="outline-4">
+<h4 id="org0c28641"><span class="section-number-4">5.2.2.</span> 为奖励制定合适的兑换价格</h4>
 <div class="outline-text-4" id="text-5-2-2">
 <p>
 与购物时需要考虑 <b>收入</b> 和 <b>支出</b> 两方面类似，在为奖励制定兑换价格时，也需要考虑两方面：
@@ -4692,8 +4707,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 </div>
-<div id="outline-container-org3135c44" class="outline-2">
-<h2 id="org3135c44"><span class="section-number-2">6.</span> 增加可玩性的游戏机制</h2>
+<div id="outline-container-org76636ec" class="outline-2">
+<h2 id="org76636ec"><span class="section-number-2">6.</span> 增加可玩性的游戏机制</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 个人对此兴致缺缺，在此仅简单列举几点，有兴趣的朋友可自行探究：
@@ -4708,8 +4723,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb1bac0c" class="outline-2">
-<h2 id="orgb1bac0c"><span class="section-number-2">7.</span> 更新历史</h2>
+<div id="outline-container-org8458d9b" class="outline-2">
+<h2 id="org8458d9b"><span class="section-number-2">7.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-7">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">[2016-04-29 五] </span></span> 增加关于“奖励”的介绍</li>
@@ -4717,8 +4732,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </ul>
 </div>
 </div>
-<div id="outline-container-org0a32601" class="outline-2">
-<h2 id="org0a32601"><span class="section-number-2">8.</span> 参考</h2>
+<div id="outline-container-org880193d" class="outline-2">
+<h2 id="org880193d"><span class="section-number-2">8.</span> 参考</h2>
 <div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li><a href="http://www.playpcesor.com/2015/01/habitrpg.html" target="_blank" rel="external">HabitRPG 教学：把养成好习惯设计成好玩的生活游戏 - 电脑玩物</a></li>
@@ -4797,8 +4812,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 <div class="alert alert-info"><i class="fa fa-info"></i>  本文旨在介绍音读、训读的由来以及二者该如何区分。</div>
 </p>
 
-<div id="outline-container-orga749f99" class="outline-2">
-<h2 id="orga749f99"><span class="section-number-2">1.</span> 音读与训读的由来</h2>
+<div id="outline-container-org8bfb88c" class="outline-2">
+<h2 id="org8bfb88c"><span class="section-number-2">1.</span> 音读与训读的由来</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 音读与训读都是发音方式，多用于指日文所用汉字的发音方式。之所以讨论音读与训读，与<a href="\2016-01-25-japanese-origin">日语的发展</a>过程密切相关。
@@ -4825,7 +4840,7 @@ NEAT=非运动生热作用=日常生活消耗的热量
 <li>训读：只借用汉字的形和义，不采用汉语的音，发音使用日本原有的与该汉字同义字词的读音。也就是上文所说的日文写作“草”，读作“kusa”，含义是“草”。训读的“训”有“学习”之意，即以日语固有的发音套用在汉字上作为解释。</li>
 </ul>
 
-<div class="HTML" id="orgdc21f3a">
+<div class="HTML" id="org4848af8">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -4834,8 +4849,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 
-<div id="outline-container-orgbf995f2" class="outline-2">
-<h2 id="orgbf995f2"><span class="section-number-2">2.</span> 实例</h2>
+<div id="outline-container-orgc8bad32" class="outline-2">
+<h2 id="orgc8bad32"><span class="section-number-2">2.</span> 实例</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 <div class="alert alert-warning"><i class="fa fa-bell"></i>  下例引用自<a href="http://www.wanmen.org/courses/YYRYYY/topics/YYRYYY01A" target="_blank" rel="external">万门大学|日语五十音图语音入门|日本文字介绍</a> ，出自 日本最早的史书 古事記<sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup> 。本文的发音片段也截取自此。在此感谢苏曼老师清晰的讲解。</div>
@@ -4854,7 +4869,7 @@ NEAT=非运动生热作用=日常生活消耗的热量
 <p>
 没学过日语的中国人也可以看懂上文的意思，但是念不出来，因为是读日语的音。比如说第一句 “天地初發之時。於高天原成神名。” 读作：
 </p>
-<div class="HTML" id="org191a5c2">
+<div class="HTML" id="org9e3cdba">
 <p>
 &lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="<a href="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" target="_blank" rel="external">http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0</a>"&gt;
 &lt;param name="movie" /&gt;
@@ -4876,7 +4891,7 @@ NEAT=非运动生热作用=日常生活消耗的热量
 音读：注解“琉字以上十字以音”表示“久羅下那州多陀用幣琉”这十个字模拟古汉语发音，读作：クラゲナシタダヨヘロ（听写结果，如有错误欢迎指出！）
 </p>
 
-<div class="HTML" id="org69f3f68">
+<div class="HTML" id="org8aa5033">
 <p>
 &lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="<a href="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" target="_blank" rel="external">http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0</a>"&gt;
 &lt;param name="movie" /&gt;
@@ -4895,8 +4910,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 
-<div id="outline-container-org2d8ecf4" class="outline-2">
-<h2 id="org2d8ecf4"><span class="section-number-2">3.</span> 区分音读与训读</h2>
+<div id="outline-container-org4446dc2" class="outline-2">
+<h2 id="org4446dc2"><span class="section-number-2">3.</span> 区分音读与训读</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 对于中国人而言，区分音读与训读很简单，读音与汉语发音接近的是音读（严格来说是与其古音接近），否则是训读。下面的表格<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup>会帮助你更清晰地理解这点：
@@ -4942,8 +4957,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 
-<div id="outline-container-org927d5a8" class="outline-2">
-<h2 id="org927d5a8"><span class="section-number-2">4.</span> 小结</h2>
+<div id="outline-container-org6ff948f" class="outline-2">
+<h2 id="org6ff948f"><span class="section-number-2">4.</span> 小结</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 音读与训读的差别主要在于用的发音是什么：
@@ -5011,8 +5026,8 @@ NEAT=非运动生热作用=日常生活消耗的热量
 </div>
 </div>
 
-<div id="outline-container-org21f2a97" class="outline-2">
-<h2 id="org21f2a97"><span class="section-number-2">5.</span> 参考</h2>
+<div id="outline-container-orgeccceb1" class="outline-2">
+<h2 id="orgeccceb1"><span class="section-number-2">5.</span> 参考</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li><a href="http://www.wanmen.org/courses/YYRYYY/topics/YYRYYY01A" target="_blank" rel="external">万门大学|日语五十音图语音入门|日本文字介绍</a></li>
@@ -5054,7 +5069,7 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 <div class="alert alert-info"><i class="fa fa-info"></i>  本文旨在介绍音读、训读的由来以及二者该如何区分。</div>
 </p>
 
-<div id="outline-container-orga749f99" ]]>
+<div id="outline-container-org8bfb88c" ]]>
     </summary>
     
       <category term="!what" scheme="http://yuchen-lea.github.io/tags/what/"/>
@@ -5081,8 +5096,8 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 <div class="alert alert-warning"><i class="fa fa-bell"></i>  完善中</div>
 </p>
 
-<div id="outline-container-org7a5c1cf" class="outline-2">
-<h2 id="org7a5c1cf"><span class="section-number-2">1.</span> 只有口语的时代</h2>
+<div id="outline-container-orgf8c45c9" class="outline-2">
+<h2 id="orgf8c45c9"><span class="section-number-2">1.</span> 只有口语的时代</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 所有文明都会经历的阶段，只有语言，没有文字。那时的日本人认为语言里有不可思议的威力存在，也就是 <b>言灵信仰</b> 。
@@ -5090,8 +5105,8 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 </div>
 </div>
 
-<div id="outline-container-orga80a61d" class="outline-2">
-<h2 id="orga80a61d"><span class="section-number-2">2.</span> 汉字传入</h2>
+<div id="outline-container-orgfbd94bc" class="outline-2">
+<h2 id="orgfbd94bc"><span class="section-number-2">2.</span> 汉字传入</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>3世纪末，汉字日本引进中国的汉字。</li>
@@ -5124,7 +5139,7 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 没学过日语的中国人也可以看懂上文的意思，但是念不出来，因为是读日语的音。又是体现 <b>语言和文字并不等同</b> 的一个好例子。在这里出现了两种发音方式： <b>训读</b> 和 <b>音读</b> 。一个汉字如果是不同时期或不同地区传入日本，会导致一个汉字有多种音读；一个汉字如果对应多种意思，会导致一个汉字有多种训读。参见 <a href="\2016-01-25-onyomi-and-kunyomi">音读与训读</a>。
 </p>
 
-<div class="HTML" id="orgfd32ee2">
+<div class="HTML" id="org768130c">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -5133,8 +5148,8 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 </div>
 </div>
 
-<div id="outline-container-org3442ebd" class="outline-2">
-<h2 id="org3442ebd"><span class="section-number-2">3.</span> 奈良时代 710-794</h2>
+<div id="outline-container-org9ba5c69" class="outline-2">
+<h2 id="org9ba5c69"><span class="section-number-2">3.</span> 奈良时代 710-794</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 万叶假名的形成
@@ -5216,8 +5231,8 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 </div>
 </div>
 
-<div id="outline-container-org92830dd" class="outline-2">
-<h2 id="org92830dd"><span class="section-number-2">4.</span> 平安时代</h2>
+<div id="outline-container-orga1ba2ca" class="outline-2">
+<h2 id="orga1ba2ca"><span class="section-number-2">4.</span> 平安时代</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 汉式和文<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup>：用汉文样式写的日语文章，大都在大化改新（645年）后，应用于朝廷记录、男性贵族的私人铭文、日记等<sup><a id="fnr.5" class="footref" href="#fn.5" role="doc-backlink">5</a></sup>。特点为：
@@ -5242,8 +5257,8 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 </div>
 </div>
 
-<div id="outline-container-org5fc5b6a" class="outline-2">
-<h2 id="org5fc5b6a"><span class="section-number-2">5.</span> 江户时代</h2>
+<div id="outline-container-org9c49f6b" class="outline-2">
+<h2 id="org9c49f6b"><span class="section-number-2">5.</span> 江户时代</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 近代日语的形成<sup><a id="fnr.10" class="footref" href="#fn.10" role="doc-backlink">10</a></sup>
@@ -5251,8 +5266,8 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 </div>
 </div>
 
-<div id="outline-container-orgedfbaff" class="outline-2">
-<h2 id="orgedfbaff"><span class="section-number-2">6.</span> 明治时代</h2>
+<div id="outline-container-orgbb3b452" class="outline-2">
+<h2 id="orgbb3b452"><span class="section-number-2">6.</span> 明治时代</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 言文一致：口语与文章用语的统一，近代日语走向成熟<sup><a id="fnr.11" class="footref" href="#fn.11" role="doc-backlink">11</a></sup>
@@ -5320,7 +5335,7 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 <div class="alert alert-warning"><i class="fa fa-bell"></i>  完善中</div>
 </p>
 
-<div id="outline-container-org7a5c1cf" class="outline-2">]]>
+<div id="outline-container-orgf8c45c9" class="outline-2">]]>
     </summary>
     
       <category term="!what" scheme="http://yuchen-lea.github.io/tags/what/"/>
@@ -5351,12 +5366,12 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 <div class="alert alert-info"><i class="fa fa-info"></i>  本文旨在总结文章写作时的规范</div>
 </p>
 
-<div id="outline-container-orge175c28" class="outline-2">
-<h2 id="orge175c28"><span class="section-number-2">1.</span> 博文的基本模版</h2>
+<div id="outline-container-org42ed781" class="outline-2">
+<h2 id="org42ed781"><span class="section-number-2">1.</span> 博文的基本模版</h2>
 </div>
 
-<div id="outline-container-org1f6e75e" class="outline-2">
-<h2 id="org1f6e75e"><span class="section-number-2">2.</span> 文章元信息</h2>
+<div id="outline-container-org6761abf" class="outline-2">
+<h2 id="org6761abf"><span class="section-number-2">2.</span> 文章元信息</h2>
 <div class="outline-text-2" id="text-2">
 <p class="verse">
 #+TITLE:<br>
@@ -5372,8 +5387,8 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 </p>
 </div>
 
-<div id="outline-container-orgdd8722c" class="outline-3">
-<h3 id="orgdd8722c"><span class="section-number-3">2.1.</span> 标签</h3>
+<div id="outline-container-orgcab5e55" class="outline-3">
+<h3 id="orgcab5e55"><span class="section-number-3">2.1.</span> 标签</h3>
 <div class="outline-text-3" id="text-2-1">
 <ol class="org-ol">
 <li>标明文章所属知识类型：!what、!how、!why、!who</li>
@@ -5381,8 +5396,8 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 </ol>
 </div>
 </div>
-<div id="outline-container-orge78e45a" class="outline-3">
-<h3 id="orge78e45a"><span class="section-number-3">2.2.</span> 类别</h3>
+<div id="outline-container-org56c0124" class="outline-3">
+<h3 id="org56c0124"><span class="section-number-3">2.2.</span> 类别</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 一篇文章只能归到一个类别，但是可以设置子类别。
@@ -5391,8 +5406,8 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 </div>
 </div>
 
-<div id="outline-container-org50b46a0" class="outline-2">
-<h2 id="org50b46a0"><span class="section-number-2">3.</span> 参考文献格式</h2>
+<div id="outline-container-org9a06b97" class="outline-2">
+<h2 id="org9a06b97"><span class="section-number-2">3.</span> 参考文献格式</h2>
 <div class="outline-text-2" id="text-3">
 <ol class="org-ol">
 <li>书籍（实体书）
@@ -5448,8 +5463,8 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 <img src="http://7xqb0u.com1.z0.glb.clouddn.com/images/hierarchical_category_01.png">
 </p>
 
-<div id="outline-container-org10307d2" class="outline-2">
-<h2 id="org10307d2"><span class="section-number-2">1.</span> 问题描述</h2>
+<div id="outline-container-orgce192cf" class="outline-2">
+<h2 id="orgce192cf"><span class="section-number-2">1.</span> 问题描述</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 然而，其类别页面的显示并不正确。
@@ -5465,14 +5480,14 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 </div>
 </div>
 
-<div id="outline-container-org2203650" class="outline-2">
-<h2 id="org2203650"><span class="section-number-2">2.</span> 问题解决</h2>
+<div id="outline-container-org06d47ed" class="outline-2">
+<h2 id="org06d47ed"><span class="section-number-2">2.</span> 问题解决</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 查看类别部分的源代码：
 </p>
 
-<div class="HTML" id="org2ca6fc5">
+<div class="HTML" id="org3a96dae">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -5502,8 +5517,8 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 </p>
 </div>
 </div>
-<div id="outline-container-org7ba391c" class="outline-2">
-<h2 id="org7ba391c"><span class="section-number-2">3.</span> 优化显示效果</h2>
+<div id="outline-container-org6529791" class="outline-2">
+<h2 id="org6529791"><span class="section-number-2">3.</span> 优化显示效果</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 你还可以进一步优化显示效果，如果想将列表项前的 ■ 替换为 &gt; <sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>，则在相应的样式文件（ <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">Next</a> 主题下为 <code>source\css\_custom\custom.styl</code> ）中添加以下代码：
@@ -5524,8 +5539,8 @@ Jared Diamond, 枪炮、病菌与钢铁[B], Paragragh 55.11
 </div>
 
 
-<div id="outline-container-org5839b24" class="outline-2">
-<h2 id="org5839b24"><span class="section-number-2">4.</span> 更新历史</h2>
+<div id="outline-container-org3bd6399" class="outline-2">
+<h2 id="org3bd6399"><span class="section-number-2">4.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-24 日] </span></span> 增加优化显示效果部分</li>
@@ -5604,14 +5619,14 @@ categories:<br>
 <p>
 同样生成 <code>categories/类1/类2/类3/</code> 多级类别。注意类别之间用英文逗号隔开，不能用中文逗号。 
 </p>
-<div id="outline-container-org9ee7659" class="outline-2">
-<h2 id="org9ee7659"><span class="section-number-2">1.</span> 问题解决小记</h2>
+<div id="outline-container-orgebaab75" class="outline-2">
+<h2 id="orgebaab75"><span class="section-number-2">1.</span> 问题解决小记</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 一开始我并不确定org-mode是否支持多级类别，按照markdown的方式写成多行、用 <code>/</code> 分割都不生效。于是去查看 <code>hexo-renderer-org</code> 插件的设置 <code>index.js</code> ，又从中找到 <code>lib/read-info.js</code> ，其中关于类别的函数定义为：
 </p>
 
-<div class="HTML" id="org8eec145">
+<div class="HTML" id="orgbbb889d">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -5628,8 +5643,8 @@ categories:<br>
 </div>
 </div>
 
-<div id="outline-container-org8c8b3c6" class="outline-2">
-<h2 id="org8c8b3c6"><span class="section-number-2">2.</span> 更新历史</h2>
+<div id="outline-container-org225a433" class="outline-2">
+<h2 id="org225a433"><span class="section-number-2">2.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-22 五&gt; </span></span> 拟定初稿</li>
@@ -5682,8 +5697,8 @@ Markdown中设置多级类别，只需要在Front-matter<sup><a id="fnr.1" class
     <content type="html"><![CDATA[
 
 
-<div id="outline-container-orgf40693b" class="outline-2">
-<h2 id="orgf40693b"><span class="section-number-2">1.</span> 七牛是什么</h2>
+<div id="outline-container-org5a149a4" class="outline-2">
+<h2 id="org5a149a4"><span class="section-number-2">1.</span> 七牛是什么</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="http://www.qiniu.com/" target="_blank" rel="external">七牛</a> 是一个云存储服务商，注册并实名认证之后<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>后，你将免费享有 10GB 存储空间，每月 10GB 下载流量、100 万次 GET 请求、 10 万次 PUT/DELETE 请求。七牛的定位不是像百度云一样的 <b>网盘</b> ，也不是同坚果云一般的 <b>同步云</b> ，而是 <b>CDN</b> <sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup> ，让你在浏览网页的时候最快的接收到页面中的图片、音频等文件，所以非常适合个人、企业用户用来储存站点资源。对于个人博主来说，你可以把博客中的图片、音频、视频等媒体上传到七牛，在博客中引用；也可以将站点需要加载的CSS、JS等文件上传到七牛，以加速网站。
@@ -5691,8 +5706,8 @@ Markdown中设置多级类别，只需要在Front-matter<sup><a id="fnr.1" class
 </div>
 </div>
 
-<div id="outline-container-org8ffa387" class="outline-2">
-<h2 id="org8ffa387"><span class="section-number-2">2.</span> 为什么选用七牛</h2>
+<div id="outline-container-org9c49d0b" class="outline-2">
+<h2 id="org9c49d0b"><span class="section-number-2">2.</span> 为什么选用七牛</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>与直接部署到站点相比：
@@ -5733,7 +5748,7 @@ Gitcafe有 512Mb 的总空间限制，Github虽没有找到类似的说明，但
 </p>
 
 
-<div class="HTML" id="org5e20647">
+<div class="HTML" id="orgcce5aa3">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -5742,8 +5757,8 @@ Gitcafe有 512Mb 的总空间限制，Github虽没有找到类似的说明，但
 </div>
 </div>
 
-<div id="outline-container-org90e1094" class="outline-2">
-<h2 id="org90e1094"><span class="section-number-2">3.</span> 七牛空间的设置</h2>
+<div id="outline-container-orgdeb2554" class="outline-2">
+<h2 id="orgdeb2554"><span class="section-number-2">3.</span> 七牛空间的设置</h2>
 <div class="outline-text-2" id="text-3">
 <ol class="org-ol">
 <li>点击 <a href="https://portal.qiniu.com/signup?code=3lbz03l9r6c7m" target="_blank" rel="external">这里</a> 申请七牛账户</li>
@@ -5755,8 +5770,8 @@ Gitcafe有 512Mb 的总空间限制，Github虽没有找到类似的说明，但
 </div>
 </div>
 
-<div id="outline-container-orga6c4535" class="outline-2">
-<h2 id="orga6c4535"><span class="section-number-2">4.</span> 设置 <code>hexo-qiniu-sync</code> 插件</h2>
+<div id="outline-container-orgd39be42" class="outline-2">
+<h2 id="orgd39be42"><span class="section-number-2">4.</span> 设置 <code>hexo-qiniu-sync</code> 插件</h2>
 <div class="outline-text-2" id="text-4">
 <ol class="org-ol">
 <li><p>
@@ -5795,7 +5810,7 @@ qiniu:<br>
 </p>
 <ul class="org-ul">
 <li><code>bucket</code> ：修改为你刚才申请的七牛空间名称</li>
-<li><code>access_key</code> 、 <code>secret_key</code> : 上传密钥AccessKey、SecretKey。即<a href="#org90e1094">3</a> 第3步复制的AK和SK。</li>
+<li><code>access_key</code> 、 <code>secret_key</code> : 上传密钥AccessKey、SecretKey。即<a href="#orgdeb2554">3</a> 第3步复制的AK和SK。</li>
 <li><code>urlPrefix</code> : 七牛空间地址的前缀。 <b>重要！必填！</b> 因为现在七牛已经取消了二级域名，外链前缀类似设置中的 <code>http://7xqb0u.com1.z0.glb.clouddn.com</code> ，插件不能根据 <code>bucket</code> 自动生成外链前缀了。你可以进入自己创建的空间在域名设置中看到自己的七牛测试域名，也可以查看一个已上传的文件外链地址，确认前缀无误。这个参数的设置是保证解析成网页文件时，外链地址正确的关键之一！</li>
 </ul>
 
@@ -5814,8 +5829,8 @@ qiniu:<br>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgd334d71" class="outline-2">
-<h2 id="orgd334d71"><span class="section-number-2">5.</span> 配置本地目录</h2>
+<div id="outline-container-org1fdbbed" class="outline-2">
+<h2 id="org1fdbbed"><span class="section-number-2">5.</span> 配置本地目录</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 下文实例都是基于前文的设置基础，不予赘述。
@@ -5845,16 +5860,16 @@ qiniu:<br>
 </div>
 </div>
 
-<div id="outline-container-orgf5b27a7" class="outline-2">
-<h2 id="orgf5b27a7"><span class="section-number-2">6.</span> 引用七牛资源</h2>
+<div id="outline-container-org17f6622" class="outline-2">
+<h2 id="org17f6622"><span class="section-number-2">6.</span> 引用七牛资源</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 前文说过，七牛配合插件，可以比较方便地根据本地路径来引用文件，这一功能是利用Hexo的标签插件实现，我们来看看具体操作是怎样的。
 </p>
 </div>
 
-<div id="outline-container-orgf1ef436" class="outline-3">
-<h3 id="orgf1ef436"><span class="section-number-3">6.1.</span> 引用图片</h3>
+<div id="outline-container-orgca93fc7" class="outline-3">
+<h3 id="orgca93fc7"><span class="section-number-3">6.1.</span> 引用图片</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 图片的引用是最典型的情况。让我们来看最简单的情况：如果你想引用储存在 <code>cdn/images</code> 下的图片 <code>demo.jpg</code> ，只需在文章中插入：
@@ -5908,8 +5923,8 @@ qiniu:<br>
 </p>
 </div>
 
-<div id="outline-container-org62a6495" class="outline-4">
-<h4 id="org62a6495"><span class="section-number-4">6.1.1.</span> 图片引用的高阶版</h4>
+<div id="outline-container-orge2d44a8" class="outline-4">
+<h4 id="orge2d44a8"><span class="section-number-4">6.1.1.</span> 图片引用的高阶版</h4>
 <div class="outline-text-4" id="text-6-1-1">
 <p>
 高级用法的通用模版：
@@ -5949,8 +5964,8 @@ qiniu:<br>
 </div>
 </div>
 
-<div id="outline-container-org8fca0c6" class="outline-3">
-<h3 id="org8fca0c6"><span class="section-number-3">6.2.</span> 引用CSS和JS</h3>
+<div id="outline-container-orgfd6e730" class="outline-3">
+<h3 id="orgfd6e730"><span class="section-number-3">6.2.</span> 引用CSS和JS</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 只是引用的标签名不同：
@@ -5962,8 +5977,8 @@ qiniu:<br>
 </div>
 </div>
 
-<div id="outline-container-orgb4424c6" class="outline-2">
-<h2 id="orgb4424c6"><span class="section-number-2">7.</span> 同步到七牛</h2>
+<div id="outline-container-org25e5e47" class="outline-2">
+<h2 id="org25e5e47"><span class="section-number-2">7.</span> 同步到七牛</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 网站<sup><a id="fnr.4.100" class="footref" href="#fn.4" role="doc-backlink">4</a></sup>说使用 <code>hexo server</code> 命令（简写为 <code>hexo s</code> ）即可自动上传到七牛，但是我和很多网友<sup><a id="fnr.6" class="footref" href="#fn.6" role="doc-backlink">6</a></sup>都发现，此方法无效。好在提供的另一种方法也很简便，运行 <code>hexo qiniu s</code> 命令即可同步到七牛。
@@ -5971,16 +5986,16 @@ qiniu:<br>
 </div>
 </div>
 
-<div id="outline-container-org2b6aadc" class="outline-2">
-<h2 id="org2b6aadc"><span class="section-number-2">8.</span> 更新历史</h2>
+<div id="outline-container-orgeeff138" class="outline-2">
+<h2 id="orgeeff138"><span class="section-number-2">8.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-21 四&gt; </span></span> 拟定初稿</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org077c21a" class="outline-2">
-<h2 id="org077c21a"><span class="section-number-2">9.</span> 参考</h2>
+<div id="outline-container-orgfa21b98" class="outline-2">
+<h2 id="orgfa21b98"><span class="section-number-2">9.</span> 参考</h2>
 <div class="outline-text-2" id="text-9">
 <ul class="org-ul">
 <li><a href="https://github.com/gyk001/hexo-qiniu-sync" target="_blank" rel="external">gyk001/hexo-qiniu-sync - Github</a> <code>hexo-qiniu-sync</code> 的官方说明文档部分内容已过时，建议参考本文实践。</li>
@@ -6025,8 +6040,8 @@ qiniu:<br>
     <![CDATA[
 
 
-<div id="outline-container-orgf40693b" class="outline-2">
-<h2 id="orgf40693b"><span class="section-number-2">1.</span> 七牛是什么</h2>
+<div id="outline-container-org5a149a4" class="outline-2">
+<h2 id="org5a149a4"><span class="section-number-2">1.</span> 七牛是什么</h2>
 <div cl]]>
     </summary>
     
@@ -6060,14 +6075,14 @@ qiniu:<br>
 如果你想修改Hexo的布局、显示样式，或是为其增添RSS、评论等新模块却无从下手，那就先来了解一下Hexo的目录结构吧。知道各个文件、目录的作用之后，至少在看到别人写在XX中增加代码时，知道XX是个什么东西。
 </p>
 
-<div id="outline-container-org9529260" class="outline-2">
-<h2 id="org9529260"><span class="section-number-2">1.</span> Hexo目录结构</h2>
+<div id="outline-container-org4f7b14b" class="outline-2">
+<h2 id="org4f7b14b"><span class="section-number-2">1.</span> Hexo目录结构</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 我的Hexo目录结构：
 </p>
 
-<div class="HTML" id="orgce05631">
+<div class="HTML" id="org5f8b25e">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -6099,8 +6114,8 @@ qiniu:<br>
 </div>
 </div>
 
-<div id="outline-container-org8c8e66a" class="outline-2">
-<h2 id="org8c8e66a"><span class="section-number-2">2.</span> _config.yml</h2>
+<div id="outline-container-orgaaa367c" class="outline-2">
+<h2 id="orgaaa367c"><span class="section-number-2">2.</span> _config.yml</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 初始化时自动创建。
@@ -6112,8 +6127,8 @@ qiniu:<br>
 </div>
 </div>
 
-<div id="outline-container-org0b405cd" class="outline-2">
-<h2 id="org0b405cd"><span class="section-number-2">3.</span> package.json</h2>
+<div id="outline-container-orgdc81a81" class="outline-2">
+<h2 id="orgdc81a81"><span class="section-number-2">3.</span> package.json</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 初始化时自动创建。
@@ -6125,8 +6140,8 @@ qiniu:<br>
 </div>
 </div>
 
-<div id="outline-container-org91b0929" class="outline-2">
-<h2 id="org91b0929"><span class="section-number-2">4.</span> .deploy_git</h2>
+<div id="outline-container-orgd47288e" class="outline-2">
+<h2 id="orgd47288e"><span class="section-number-2">4.</span> .deploy_git</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 在部署到github后自动创建。
@@ -6142,8 +6157,8 @@ qiniu:<br>
 </div>
 </div>
 
-<div id="outline-container-org7fdffe1" class="outline-2">
-<h2 id="org7fdffe1"><span class="section-number-2">5.</span> node_modules</h2>
+<div id="outline-container-orgbd8d5af" class="outline-2">
+<h2 id="orgbd8d5af"><span class="section-number-2">5.</span> node_modules</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 存放安装的Hexo扩展。
@@ -6194,8 +6209,8 @@ Hexo 默认安装：
 </div>
 </div>
 
-<div id="outline-container-org78bc24a" class="outline-2">
-<h2 id="org78bc24a"><span class="section-number-2">6.</span> public</h2>
+<div id="outline-container-orgdaa0294" class="outline-2">
+<h2 id="orgdaa0294"><span class="section-number-2">6.</span> public</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 执行 <code>hexo g</code> 命令，Hexo程序会解析 <code>source</code> 、当前使用的theme，生成的静态网页内容目录就是 <code>piblic</code> 。执行 <code>hexo d</code> 则将该目录内容复制到 <code>.deploy_git</code> 目录。
@@ -6203,8 +6218,8 @@ Hexo 默认安装：
 </div>
 </div>
 
-<div id="outline-container-org9a6defb" class="outline-2">
-<h2 id="org9a6defb"><span class="section-number-2">7.</span> scaffolds</h2>
+<div id="outline-container-org5bc71d6" class="outline-2">
+<h2 id="org5bc71d6"><span class="section-number-2">7.</span> scaffolds</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 模版 文件夹。当新建文章时，Hexo 会根据 scaffold 来建立文件。更多参见 <a href="https://hexo.io/zh-cn/docs/templates.html" target="_blank" rel="external">模版 | Hexo</a> 。
@@ -6212,16 +6227,16 @@ Hexo 默认安装：
 </div>
 </div>
 
-<div id="outline-container-orgbb3a13d" class="outline-2">
-<h2 id="orgbb3a13d"><span class="section-number-2">8.</span> source</h2>
+<div id="outline-container-org9d80c29" class="outline-2">
+<h2 id="org9d80c29"><span class="section-number-2">8.</span> source</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 存放用户资源的地方。
 </p>
 </div>
 
-<div id="outline-container-org4a9ddcf" class="outline-3">
-<h3 id="org4a9ddcf"><span class="section-number-3">8.1.</span> _posts 文件夹</h3>
+<div id="outline-container-org313e3b1" class="outline-3">
+<h3 id="org313e3b1"><span class="section-number-3">8.1.</span> _posts 文件夹</h3>
 <div class="outline-text-3" id="text-8-1">
 <p>
 存放博客文章的地方，其中的markdown文件、html文件、org文件等会被解析并放到 public 文件夹，发布到站点。
@@ -6229,8 +6244,8 @@ Hexo 默认安装：
 </div>
 </div>
 
-<div id="outline-container-org238af78" class="outline-3">
-<h3 id="org238af78"><span class="section-number-3">8.2.</span> 其他开头命名为 _ (下划线)的文件 / 文件夹</h3>
+<div id="outline-container-org837b9d9" class="outline-3">
+<h3 id="org837b9d9"><span class="section-number-3">8.2.</span> 其他开头命名为 _ (下划线)的文件 / 文件夹</h3>
 <div class="outline-text-3" id="text-8-2">
 <p>
 将会被忽略。因此可以在source目录下创建 <code>_drafts</code> 目录用于存放未完成的草稿，其中内容不会发布到网站。
@@ -6238,8 +6253,8 @@ Hexo 默认安装：
 </div>
 </div>
 
-<div id="outline-container-org0c89621" class="outline-3">
-<h3 id="org0c89621"><span class="section-number-3">8.3.</span> 其他开头非_的文件 / 文件夹</h3>
+<div id="outline-container-orgcb3eef8" class="outline-3">
+<h3 id="orgcb3eef8"><span class="section-number-3">8.3.</span> 其他开头非_的文件 / 文件夹</h3>
 <div class="outline-text-3" id="text-8-3">
 <p>
 会被拷贝到public目录并上传到站点。
@@ -6252,8 +6267,8 @@ Hexo 默认安装：
 </div>
 </div>
 </div>
-<div id="outline-container-org2fe82b7" class="outline-2">
-<h2 id="org2fe82b7"><span class="section-number-2">9.</span> themes<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup></h2>
+<div id="outline-container-org0078b80" class="outline-2">
+<h2 id="org0078b80"><span class="section-number-2">9.</span> themes<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup></h2>
 <div class="outline-text-2" id="text-9">
 <p>
 主题 文件夹。默认安装 <code>landscape</code> 主题，你可以安装新主题到 <code>themes</code> 目录，也可以自己新建主题。一个主题的基本结构如下：
@@ -6269,16 +6284,16 @@ Hexo 默认安装：
 </p>
 </div>
 
-<div id="outline-container-org79833f9" class="outline-3">
-<h3 id="org79833f9"><span class="section-number-3">9.1.</span> _config.yml</h3>
+<div id="outline-container-org2861086" class="outline-3">
+<h3 id="org2861086"><span class="section-number-3">9.1.</span> _config.yml</h3>
 <div class="outline-text-3" id="text-9-1">
 <p>
 主题的配置文件。
 </p>
 </div>
 </div>
-<div id="outline-container-org42d15f6" class="outline-3">
-<h3 id="org42d15f6"><span class="section-number-3">9.2.</span> languages</h3>
+<div id="outline-container-org0b19493" class="outline-3">
+<h3 id="org0b19493"><span class="section-number-3">9.2.</span> languages</h3>
 <div class="outline-text-3" id="text-9-2">
 <p>
 语言文件夹。根据 Hexo 目录中 <code>_config.yml</code> 设置的语言来选择站点以哪种语言来呈现。
@@ -6286,8 +6301,8 @@ Hexo 默认安装：
 </div>
 </div>
 
-<div id="outline-container-org93d1cd5" class="outline-3">
-<h3 id="org93d1cd5"><span class="section-number-3">9.3.</span> layout</h3>
+<div id="outline-container-org742d480" class="outline-3">
+<h3 id="org742d480"><span class="section-number-3">9.3.</span> layout</h3>
 <div class="outline-text-3" id="text-9-3">
 <p>
 存放主题的模板文件，决定了网站内容的呈现方式。Hexo 根据模板文件的扩展名来决定所使用的模板引擎，例如：
@@ -6308,8 +6323,8 @@ layout.swig  - 使用 Swig<br>
 </div>
 </div>
 
-<div id="outline-container-orgf8a0758" class="outline-3">
-<h3 id="orgf8a0758"><span class="section-number-3">9.4.</span> scripts</h3>
+<div id="outline-container-org4b16192" class="outline-3">
+<h3 id="org4b16192"><span class="section-number-3">9.4.</span> scripts</h3>
 <div class="outline-text-3" id="text-9-4">
 <p>
 脚本文件夹。在启动时，Hexo 会载入此文件夹内的 JavaScript 文件。
@@ -6321,8 +6336,8 @@ layout.swig  - 使用 Swig<br>
 </div>
 </div>
 
-<div id="outline-container-org2e48da2" class="outline-3">
-<h3 id="org2e48da2"><span class="section-number-3">9.5.</span> source</h3>
+<div id="outline-container-orgb64d779" class="outline-3">
+<h3 id="orgb64d779"><span class="section-number-3">9.5.</span> source</h3>
 <div class="outline-text-3" id="text-9-5">
 <p>
 资源文件夹，除了模板以外的资源，例如 CSS、JavaScript 文件等，都应该放在这个文件夹中。
@@ -6361,8 +6376,8 @@ source<br>
 </p>
 </div>
 
-<div id="outline-container-org5659a73" class="outline-4">
-<h4 id="org5659a73"><span class="section-number-4">9.5.1.</span> css</h4>
+<div id="outline-container-org756f18d" class="outline-4">
+<h4 id="org756f18d"><span class="section-number-4">9.5.1.</span> css</h4>
 <div class="outline-text-4" id="text-9-5-1">
 <p>
 多为styl文件，next的css目录结构如下：
@@ -6393,8 +6408,8 @@ css<br>
 </div>
 </div>
 
-<div id="outline-container-orgfd1eee5" class="outline-4">
-<h4 id="orgfd1eee5"><span class="section-number-4">9.5.2.</span> vendors</h4>
+<div id="outline-container-org65151f8" class="outline-4">
+<h4 id="org65151f8"><span class="section-number-4">9.5.2.</span> vendors</h4>
 <div class="outline-text-4" id="text-9-5-2">
 <p>
 引用的一些小插件。
@@ -6404,8 +6419,8 @@ css<br>
 </div>
 </div>
 
-<div id="outline-container-orgfcd7dc7" class="outline-2">
-<h2 id="orgfcd7dc7"><span class="section-number-2">10.</span> 更新历史</h2>
+<div id="outline-container-org3e4bb6b" class="outline-2">
+<h2 id="org3e4bb6b"><span class="section-number-2">10.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-10">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-22 五&gt; </span></span> 增加 public 目录说明</li>
@@ -6413,8 +6428,8 @@ css<br>
 </ul>
 </div>
 </div>
-<div id="outline-container-org461d24c" class="outline-2">
-<h2 id="org461d24c"><span class="section-number-2">11.</span> 参考</h2>
+<div id="outline-container-orgfbcf000" class="outline-2">
+<h2 id="orgfbcf000"><span class="section-number-2">11.</span> 参考</h2>
 <div class="outline-text-2" id="text-11">
 <p>
 <a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="external">建站 | Hexo</a>
@@ -6465,14 +6480,14 @@ css<br>
     <content type="html"><![CDATA[
 
 
-<div id="outline-container-orgaf1e716" class="outline-2">
-<h2 id="orgaf1e716"><span class="section-number-2">1.</span> 安装RSS插件到本地</h2>
+<div id="outline-container-org43ce53f" class="outline-2">
+<h2 id="org43ce53f"><span class="section-number-2">1.</span> 安装RSS插件到本地</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
 </div>
 
-<div class="HTML" id="orgcc8760b">
+<div class="HTML" id="orgde03545">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -6481,8 +6496,8 @@ css<br>
 </div>
 </div>
 
-<div id="outline-container-org02640a0" class="outline-2">
-<h2 id="org02640a0"><span class="section-number-2">2.</span> 设置全站配置文件 <code>_config.yml</code></h2>
+<div id="outline-container-org1ac2131" class="outline-2">
+<h2 id="org1ac2131"><span class="section-number-2">2.</span> 设置全站配置文件 <code>_config.yml</code></h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li><p>
@@ -6523,8 +6538,8 @@ url: <a href="http://yuchen-lea.gitcafe.io/" target="_blank" rel="external">http
 </div>
 </div>
 
-<div id="outline-container-org1f912d6" class="outline-2">
-<h2 id="org1f912d6"><span class="section-number-2">3.</span> 设置主题配置文件 <code>_config.yml</code></h2>
+<div id="outline-container-org2d1b0d0" class="outline-2">
+<h2 id="org2d1b0d0"><span class="section-number-2">3.</span> 设置主题配置文件 <code>_config.yml</code></h2>
 <div class="outline-text-2" id="text-3">
 <ol class="org-ol">
 <li><p>
@@ -6546,8 +6561,8 @@ rss: /atom.xml<br>
 </div>
 </div>
 
-<div id="outline-container-org2d7be5e" class="outline-2">
-<h2 id="org2d7be5e"><span class="section-number-2">4.</span> 检查 RSS 文件的正确性</h2>
+<div id="outline-container-org225a21a" class="outline-2">
+<h2 id="org225a21a"><span class="section-number-2">4.</span> 检查 RSS 文件的正确性</h2>
 <div class="outline-text-2" id="text-4">
 <ol class="org-ol">
 <li>执行 <code>hexo g</code> ，在 <code>public</code> 目录应生成 <code>atom.xml</code></li>
@@ -6555,8 +6570,8 @@ rss: /atom.xml<br>
 </ol>
 </div>
 </div>
-<div id="outline-container-org39cb755" class="outline-2">
-<h2 id="org39cb755"><span class="section-number-2">5.</span> 更新历史</h2>
+<div id="outline-container-org6454a12" class="outline-2">
+<h2 id="org6454a12"><span class="section-number-2">5.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-22 五&gt; </span></span> 增加 检查 RSS 文件的正确性 部分</li>
@@ -6564,8 +6579,8 @@ rss: /atom.xml<br>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2f4356a" class="outline-2">
-<h2 id="org2f4356a"><span class="section-number-2">6.</span> 参考</h2>
+<div id="outline-container-orgda1d8b6" class="outline-2">
+<h2 id="orgda1d8b6"><span class="section-number-2">6.</span> 参考</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li><a href="http://www.zipperary.com/2013/06/02/hexo-guide-5/" target="_blank" rel="external">hexo系列教程：（五）hexo博客的优化技巧续 | Zippera's blog</a></li>
@@ -6581,8 +6596,8 @@ rss: /atom.xml<br>
     <![CDATA[
 
 
-<div id="outline-container-orgaf1e716" class="outline-2">
-<h2 id="orgaf1e716"><span class="section-number-2">1.</span> 安装RSS插件到本地</h2>
+<div id="outline-container-org43ce53f" class="outline-2">
+<h2 id="org43ce53f"><span class="section-number-2">1.</span> 安装RSS插件到本地</h2>
 <d]]>
     </summary>
     
@@ -6612,14 +6627,14 @@ rss: /atom.xml<br>
 五十音很重要！虽然一上午就把平假名、片假名都记下了，不过还是打算从头看一遍<a href="http://www.wanmen.org/courses/YYRYYY" target="_blank" rel="external">万门大学的日语语音入门系列</a> ，入门时放慢点速度，先把基础打好。
 </p>
 
-<div id="outline-container-org51b7268" class="outline-2 small-img">
-<h2 id="org51b7268"><span class="section-number-2">1.</span> あ行</h2>
+<div id="outline-container-org7bb144f" class="outline-2 small-img">
+<h2 id="org7bb144f"><span class="section-number-2">1.</span> あ行</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 这一行为五个单元音，罗马字表示为：a i u e o：
 </p>
 
-<div class="HTML" id="org47ece7a">
+<div class="HTML" id="orga9d99dd">
 <p>
 &lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="<a href="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" target="_blank" rel="external">http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0</a>"&gt;
 &lt;param name="movie" /&gt;
@@ -6631,7 +6646,7 @@ rss: /atom.xml<br>
 
 </div>
 
-<div class="HTML" id="orgb506fbe">
+<div class="HTML" id="orga7bd30b">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -6732,8 +6747,8 @@ rss: /atom.xml<br>
 </ol>
 </div>
 </div>
-<div id="outline-container-org989a7ed" class="outline-2 small-img">
-<h2 id="org989a7ed"><span class="section-number-2">2.</span> か行</h2>
+<div id="outline-container-org542e879" class="outline-2 small-img">
+<h2 id="org542e879"><span class="section-number-2">2.</span> か行</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 这一行为清辅音k和第一行的5个单元音拼读构成，有送气音和不送气音两种读法，先来听下范例：
@@ -6742,7 +6757,7 @@ rss: /atom.xml<br>
 <p>
 送气音：
 </p>
-<div class="HTML" id="org8d7b423">
+<div class="HTML" id="org9095990">
 <p>
 &lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="<a href="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" target="_blank" rel="external">http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0</a>"&gt;
 &lt;param name="movie" /&gt;
@@ -6757,7 +6772,7 @@ rss: /atom.xml<br>
 <p>
 不送气音：
 </p>
-<div class="HTML" id="orgf1ea654">
+<div class="HTML" id="orgf1247a3">
 <p>
 &lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="<a href="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" target="_blank" rel="external">http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0</a>"&gt;
 &lt;param name="movie" /&gt;
@@ -6772,7 +6787,7 @@ rss: /atom.xml<br>
 <p>
 二者的对比：
 </p>
-<table id="org857ad1a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org7b28327" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption class="t-above"><span class="table-number">Table 1:</span> 表1 送气音 VS 不送气音</caption>
 
 <colgroup>
@@ -6874,14 +6889,14 @@ rss: /atom.xml<br>
 </div>
 </div>
 
-<div id="outline-container-orgaab8dbd" class="outline-2 small-img">
-<h2 id="orgaab8dbd"><span class="section-number-2">3.</span> さ行</h2>
+<div id="outline-container-org4106407" class="outline-2 small-img">
+<h2 id="org4106407"><span class="section-number-2">3.</span> さ行</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 这一行除了し外，都为清辅音s-和第一行的单元音拼读，し的辅音为ɕ。都是舌齿摩擦音，先来听下范例：
 </p>
 
-<div class="HTML" id="org9e1c892">
+<div class="HTML" id="org6ad9048">
 <p>
 &lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="<a href="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" target="_blank" rel="external">http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0</a>"&gt;
 &lt;param name="movie" /&gt;
@@ -6959,18 +6974,18 @@ rss: /atom.xml<br>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgf03a62a" class="outline-2 small-img">
-<h2 id="orgf03a62a"><span class="section-number-2">4.</span> た行</h2>
+<div id="outline-container-orgc60f702" class="outline-2 small-img">
+<h2 id="orgc60f702"><span class="section-number-2">4.</span> た行</h2>
 <div class="outline-text-2" id="text-4">
 <p>
-这一行多由清辅音t-拼读，其中ち的辅音为ʨ，つ的辅音为ts。也分为送气音和不送气音，其适用情况和气流大小与か行中的总结一致，详见<a href="#org857ad1a">1</a>。
+这一行多由清辅音t-拼读，其中ち的辅音为ʨ，つ的辅音为ts。也分为送气音和不送气音，其适用情况和气流大小与か行中的总结一致，详见<a href="#org7b28327">1</a>。
 </p>
 
 <p>
 送气音：
 </p>
 
-<div class="HTML" id="org0d4b1ea">
+<div class="HTML" id="org059ed10">
 <p>
 &lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="<a href="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" target="_blank" rel="external">http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0</a>"&gt;
 &lt;param name="movie" /&gt;
@@ -6986,7 +7001,7 @@ rss: /atom.xml<br>
 不送气音：
 </p>
 
-<div class="HTML" id="org8647fa5">
+<div class="HTML" id="org3ac20ca">
 <p>
 &lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="<a href="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" target="_blank" rel="external">http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0</a>"&gt;
 &lt;param name="movie" /&gt;
@@ -7057,13 +7072,13 @@ rss: /atom.xml<br>
 </ol>
 </div>
 </div>
-<div id="outline-container-org3b7183a" class="outline-2 small-img">
-<h2 id="org3b7183a"><span class="section-number-2">5.</span> な行</h2>
+<div id="outline-container-orgb80b41e" class="outline-2 small-img">
+<h2 id="orgb80b41e"><span class="section-number-2">5.</span> な行</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 这一行由辅音n-拼读。发音时舌头抵住上齿龈，鼻音。示例：
 </p>
-<div class="HTML" id="org4e86450">
+<div class="HTML" id="org861f723">
 <p>
 &lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="<a href="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" target="_blank" rel="external">http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0</a>"&gt;
 &lt;param name="movie" /&gt;
@@ -7129,13 +7144,13 @@ rss: /atom.xml<br>
 </ol>
 </div>
 </div>
-<div id="outline-container-orge4dcea4" class="outline-2 small-img">
-<h2 id="orge4dcea4"><span class="section-number-2">6.</span> は行</h2>
+<div id="outline-container-org226ca46" class="outline-2 small-img">
+<h2 id="org226ca46"><span class="section-number-2">6.</span> は行</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 这一行多由辅音h-拼读，其中ひ的辅音是ç，ふ的辅音是ɸ。发音技巧是做出和第一行あ行一样的嘴型，轻轻哈气就好，一定要注意气流不要太强。示例（第一个音是あ行あ段，接下来是は行あ段、あ行い段、は行い段……）：
 </p>
-<div class="HTML" id="orgc11bc0a">
+<div class="HTML" id="org0a2481d">
 <p>
 &lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="<a href="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" target="_blank" rel="external">http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0</a>"&gt;
 &lt;param name="movie" /&gt;
@@ -7203,13 +7218,13 @@ rss: /atom.xml<br>
 </ol>
 </div>
 </div>
-<div id="outline-container-org6e5d73d" class="outline-2 small-img">
-<h2 id="org6e5d73d"><span class="section-number-2">7.</span> ま行</h2>
+<div id="outline-container-org62a5632" class="outline-2 small-img">
+<h2 id="org62a5632"><span class="section-number-2">7.</span> ま行</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 这一行由辅音m-与a i u e o拼读，读作：
 </p>
-<div class="HTML" id="org8c24f4c">
+<div class="HTML" id="orgff37d51">
 <p>
 &lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="<a href="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" target="_blank" rel="external">http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0</a>"&gt;
 &lt;param name="movie" /&gt;
@@ -7276,13 +7291,13 @@ rss: /atom.xml<br>
 </ol>
 </div>
 </div>
-<div id="outline-container-org8767fcc" class="outline-2 small-img">
-<h2 id="org8767fcc"><span class="section-number-2">8.</span> や行</h2>
+<div id="outline-container-org63fee78" class="outline-2 small-img">
+<h2 id="org63fee78"><span class="section-number-2">8.</span> や行</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 这一行为半元音j和a u o拼读，半元音j的发音短而轻，很快滑到后面的元音上。示例：
 </p>
-<div class="HTML" id="orgd69f12c">
+<div class="HTML" id="orgbb65800">
 <p>
 &lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="<a href="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" target="_blank" rel="external">http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0</a>"&gt;
 &lt;param name="movie" /&gt;
@@ -7330,14 +7345,14 @@ rss: /atom.xml<br>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgfd9fce1" class="outline-2 small-img">
-<h2 id="orgfd9fce1"><span class="section-number-2">9.</span> ら行</h2>
+<div id="outline-container-org0c13022" class="outline-2 small-img">
+<h2 id="org0c13022"><span class="section-number-2">9.</span> ら行</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 由r-和元音 a i u e o 拼读。虽然写作r，以ri为例，但是发音不像是“日”，更像是“力”。不过和“力”的发音不同之处在于，r-是舌尖弹音，舌尖只是轻弹上颚或上齿龈，力度更小，时间更短。示例：
 </p>
 
-<div class="HTML" id="orgae6de9e">
+<div class="HTML" id="orgbeb0310">
 <p>
 &lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="<a href="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" target="_blank" rel="external">http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0</a>"&gt;
 &lt;param name="movie" /&gt;
@@ -7404,14 +7419,14 @@ rss: /atom.xml<br>
 </ol>
 </div>
 </div>
-<div id="outline-container-org0b82af8" class="outline-2 small-img">
-<h2 id="org0b82af8"><span class="section-number-2">10.</span> わ行</h2>
+<div id="outline-container-orgc601b03" class="outline-2 small-img">
+<h2 id="orgc601b03"><span class="section-number-2">10.</span> わ行</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 现代日语中只有wa和wo两个音，示例：
 </p>
 
-<div class="HTML" id="org17ced4f">
+<div class="HTML" id="org2a48f09">
 <p>
 &lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="<a href="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" target="_blank" rel="external">http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0</a>"&gt;
 &lt;param name="movie" /&gt;
@@ -7448,12 +7463,12 @@ rss: /atom.xml<br>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgd584ad3" class="outline-2">
-<h2 id="orgd584ad3"><span class="section-number-2">11.</span> 小结</h2>
+<div id="outline-container-orgb791258" class="outline-2">
+<h2 id="orgb791258"><span class="section-number-2">11.</span> 小结</h2>
 <div class="outline-text-2" id="text-11">
 </div>
-<div id="outline-container-orgf86ca07" class="outline-3">
-<h3 id="orgf86ca07"><span class="section-number-3">11.1.</span> 手写体和印刷体不同的假名</h3>
+<div id="outline-container-org3f0624c" class="outline-3">
+<h3 id="org3f0624c"><span class="section-number-3">11.1.</span> 手写体和印刷体不同的假名</h3>
 <div class="outline-text-3" id="text-11-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -7494,8 +7509,8 @@ rss: /atom.xml<br>
 </table>
 </div>
 </div>
-<div id="outline-container-org1fac6c4" class="outline-3">
-<h3 id="org1fac6c4"><span class="section-number-3">11.2.</span> 有送气音和不送气音的假名</h3>
+<div id="outline-container-orgb76905d" class="outline-3">
+<h3 id="orgb76905d"><span class="section-number-3">11.2.</span> 有送气音和不送气音的假名</h3>
 <div class="outline-text-3" id="text-11-2">
 <p>
 か行假名、た行假名、ぱ行假名(半浊音)
@@ -7503,8 +7518,8 @@ rss: /atom.xml<br>
 </div>
 </div>
 </div>
-<div id="outline-container-org9f004b8" class="outline-2">
-<h2 id="org9f004b8"><span class="section-number-2">12.</span> 更新历史</h2>
+<div id="outline-container-org86f7fd0" class="outline-2">
+<h2 id="org86f7fd0"><span class="section-number-2">12.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-12">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">[2016-03-18 五] </span></span> 增加小结部分</li>
@@ -7516,8 +7531,8 @@ rss: /atom.xml<br>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9f9fd3b" class="outline-2">
-<h2 id="org9f9fd3b"><span class="section-number-2">13.</span> 参考</h2>
+<div id="outline-container-org91c59f3" class="outline-2">
+<h2 id="org91c59f3"><span class="section-number-2">13.</span> 参考</h2>
 <div class="outline-text-2" id="text-13">
 <ul class="org-ul">
 <li>万门大学日语语音入门系列：<a href="http://www.wanmen.org/courses/YYRYYY" target="_blank" rel="external">万门大学日语语音入门_公开课</a></li>
@@ -7587,8 +7602,8 @@ rss: /atom.xml<br>
 日语口语要想发音正确，掌握日语的声调十分重要。
 </p>
 
-<div id="outline-container-org6eb35c7" class="outline-2">
-<h2 id="org6eb35c7"><span class="section-number-2">1.</span> 关于声调的基本常识<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup></h2>
+<div id="outline-container-org7b3a43a" class="outline-2">
+<h2 id="org7b3a43a"><span class="section-number-2">1.</span> 关于声调的基本常识<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup></h2>
 <div class="outline-text-2" id="text-1">
 <p>
 在日语中声调称为 アクセント ，背过五十音图的同学可以自己拼读试试（<a href="/2016-01-17-sum-of-gojuon">点此</a>查看五十音图的总结），就是英语单词 accent 的音译。不过日语的声调其实更接近汉语的声调，而非英语的声调（强弱重音）。声调广义地可以分为2种：
@@ -7607,7 +7622,7 @@ rss: /atom.xml<br>
 <li>日语声调（2种） 高（类似阴平/一声），低（类似轻声）</li>
 </ul>
 
-<div class="HTML" id="org9f78f7c">
+<div class="HTML" id="org0733dfd">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -7673,8 +7688,8 @@ rss: /atom.xml<br>
 </div>
 </div>
 
-<div id="outline-container-orgbc31175" class="outline-2">
-<h2 id="orgbc31175"><span class="section-number-2">2.</span> 声调示例</h2>
+<div id="outline-container-org1a993c5" class="outline-2">
+<h2 id="org1a993c5"><span class="section-number-2">2.</span> 声调示例</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 <div class="alert alert-warning"><i class="fa fa-bell"></i>  以下5段示例皆截取自 <a href="http://www.wanmen.org/courses/YYRYYY/topics/YYRYYY02A" target="_blank" rel="external">万门大学|五十音图第一行</a> ,仅供学习参考。在此感谢苏曼老师清晰的讲解。</div>
@@ -7729,8 +7744,8 @@ rss: /atom.xml<br>
 </div>
 </div>
 
-<div id="outline-container-org57a5420" class="outline-2">
-<h2 id="org57a5420"><span class="section-number-2">3.</span> 规律</h2>
+<div id="outline-container-org0151c2f" class="outline-2">
+<h2 id="org0151c2f"><span class="section-number-2">3.</span> 规律</h2>
 <div class="outline-text-2" id="text-3">
 <ol class="org-ol">
 <li>前2拍（即前2个假名）的声调相反</li>
@@ -7789,8 +7804,8 @@ rss: /atom.xml<br>
 </div>
 </div>
 
-<div id="outline-container-org8405385" class="outline-2">
-<h2 id="org8405385"><span class="section-number-2">4.</span> 实际学习中遇到的问题</h2>
+<div id="outline-container-org94242a7" class="outline-2">
+<h2 id="org94242a7"><span class="section-number-2">4.</span> 实际学习中遇到的问题</h2>
 <div class="outline-text-2" id="text-4">
 <ol class="org-ol">
 <li>一个单词标明2个音调核：说明该词有2种读法，一般读前面标记，但是读后面的标记亦可。</li>
@@ -7799,8 +7814,8 @@ rss: /atom.xml<br>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgaf27370" class="outline-2">
-<h2 id="orgaf27370"><span class="section-number-2">5.</span> 更新历史</h2>
+<div id="outline-container-orga5292a0" class="outline-2">
+<h2 id="orga5292a0"><span class="section-number-2">5.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">[2016-01-28 四] </span></span> 增加实际学习中遇到的问题部分，完善规律总结</li>
@@ -7809,8 +7824,8 @@ rss: /atom.xml<br>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1f4dda2" class="outline-2">
-<h2 id="org1f4dda2"><span class="section-number-2">6.</span> 参考</h2>
+<div id="outline-container-orga0c1556" class="outline-2">
+<h2 id="orga0c1556"><span class="section-number-2">6.</span> 参考</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li><a href="http://www.wanmen.org/courses/YYRYYY/topics/YYRYYY02A" target="_blank" rel="external">万门大学|日语五十音图语音入门|五十音图第一行</a></li>
@@ -7881,7 +7896,7 @@ rss: /atom.xml<br>
 </ul></li>
 </ul></li>
 </ul>
-<div class="HTML" id="org61a70d2">
+<div class="HTML" id="org3bff302">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -7943,8 +7958,8 @@ rss: /atom.xml<br>
 <div class="alert alert-info"><i class="fa fa-info"></i>  本文旨在帮助你为自己的 hexo 博客更换主题。</div>
 </p>
 
-<div id="outline-container-org1691d2c" class="outline-2">
-<h2 id="org1691d2c"><span class="section-number-2">1.</span> 阅读需知</h2>
+<div id="outline-container-org75c1a8f" class="outline-2">
+<h2 id="org75c1a8f"><span class="section-number-2">1.</span> 阅读需知</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>运行环境： <code>Win8.1</code> + <code>Hexo3.1.1</code></li>
@@ -7952,8 +7967,8 @@ rss: /atom.xml<br>
 </ul>
 </div>
 </div>
-<div id="outline-container-org87ff6a4" class="outline-2">
-<h2 id="org87ff6a4"><span class="section-number-2">2.</span> 选择心仪的Hexo主题</h2>
+<div id="outline-container-org9aba8fa" class="outline-2">
+<h2 id="org9aba8fa"><span class="section-number-2">2.</span> 选择心仪的Hexo主题</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li>如果你无处下手，可以到下面2个网址中淘选：
@@ -7966,8 +7981,8 @@ rss: /atom.xml<br>
 </ol>
 </div>
 </div>
-<div id="outline-container-orge5a60d7" class="outline-2">
-<h2 id="orge5a60d7"><span class="section-number-2">3.</span> 下载Hexo主题到本地</h2>
+<div id="outline-container-orgdafca6f" class="outline-2">
+<h2 id="orgdafca6f"><span class="section-number-2">3.</span> 下载Hexo主题到本地</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Hexo主题大多托管在Github上，因此进入本地Hexo博客目录，运行 <code>git clone</code> 命令：
@@ -7977,7 +7992,7 @@ Hexo主题大多托管在Github上，因此进入本地Hexo博客目录，运行
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">git clone &lt;repository&gt; themes/&lt;theme-name&gt;</span><br></pre></td></tr></table></figure>
 </div>
 
-<div class="HTML" id="org2622c8d">
+<div class="HTML" id="org80f038a">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -8009,8 +8024,8 @@ theme-name即这个主题的名称，当然你可以自取，不过一般我们�
 </div>
 </div>
 </div>
-<div id="outline-container-org321f57f" class="outline-2">
-<h2 id="org321f57f"><span class="section-number-2">4.</span> 选择下载好的主题</h2>
+<div id="outline-container-org130eb58" class="outline-2">
+<h2 id="org130eb58"><span class="section-number-2">4.</span> 选择下载好的主题</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 在站点配置文件 <code>_config.yml</code> 中选择要采用的主题，默认应该是：
@@ -8032,16 +8047,16 @@ theme-name即这个主题的名称，当然你可以自取，不过一般我们�
 </div>
 </div>
 
-<div id="outline-container-orge76c3d4" class="outline-2">
-<h2 id="orge76c3d4"><span class="section-number-2">5.</span> 进一步优化</h2>
+<div id="outline-container-orgc87afe0" class="outline-2">
+<h2 id="orgc87afe0"><span class="section-number-2">5.</span> 进一步优化</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 可以根据自身的偏好，修改主题中的相关设置已达到效果。
 </p>
 </div>
 </div>
-<div id="outline-container-orgf87d312" class="outline-2">
-<h2 id="orgf87d312"><span class="section-number-2">6.</span> 更新历史</h2>
+<div id="outline-container-org97c658d" class="outline-2">
+<h2 id="org97c658d"><span class="section-number-2">6.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-18 一&gt; </span></span> 增加主题资源，教程步骤详尽化</li>
@@ -8050,8 +8065,8 @@ theme-name即这个主题的名称，当然你可以自取，不过一般我们�
 </div>
 </div>
 
-<div id="outline-container-org79a2fd4" class="outline-2">
-<h2 id="org79a2fd4"><span class="section-number-2">7.</span> 参考</h2>
+<div id="outline-container-org870d89f" class="outline-2">
+<h2 id="org870d89f"><span class="section-number-2">7.</span> 参考</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 <a href="http://zipperary.com/categories/hexo/" target="_blank" rel="external">hexo | Zippera's blog</a>
@@ -8079,7 +8094,7 @@ theme-name即这个主题的名称，当然你可以自取，不过一般我们�
 <div class="alert alert-info"><i class="fa fa-info"></i>  本文旨在帮助你为自己的 hexo 博客更换主题。</div>
 </p>
 
-<div id="outline-container-org1691d2c" ]]>
+<div id="outline-container-org75c1a8f" ]]>
     </summary>
     
       <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
@@ -8104,8 +8119,8 @@ theme-name即这个主题的名称，当然你可以自取，不过一般我们�
 <div class="alert alert-info"><i class="fa fa-info"></i>  本文旨在帮助你在Github上搭建自己的Hexo博客。</div>
 </p>
 
-<div id="outline-container-org3979199" class="outline-2">
-<h2 id="org3979199"><span class="section-number-2">1.</span> 阅读需知</h2>
+<div id="outline-container-org4b09a27" class="outline-2">
+<h2 id="org4b09a27"><span class="section-number-2">1.</span> 阅读需知</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>运行环境： <code>Win8.1</code> + <code>Hexo3.1.1</code></li>
@@ -8116,7 +8131,7 @@ theme-name即这个主题的名称，当然你可以自取，不过一般我们�
 下面就让我们一起来开始搭建 Hexo 博客吧~
 </p>
 
-<div class="HTML" id="orga920731">
+<div class="HTML" id="org5f1cdf1">
 <p>
 &lt;!&#x2013; more &#x2013;&gt;
 </p>
@@ -8125,8 +8140,8 @@ theme-name即这个主题的名称，当然你可以自取，不过一般我们�
 </div>
 </div>
 
-<div id="outline-container-orgec8363c" class="outline-2">
-<h2 id="orgec8363c"><span class="section-number-2">2.</span> 安装 Hexo 的预备工作</h2>
+<div id="outline-container-org13a2aa7" class="outline-2">
+<h2 id="org13a2aa7"><span class="section-number-2">2.</span> 安装 Hexo 的预备工作</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 在安装 Hexo 前，必须检查是否已安装下列应用程序：
@@ -8143,15 +8158,15 @@ theme-name即这个主题的名称，当然你可以自取，不过一般我们�
 </div>
 </div>
 
-<div id="outline-container-org101279a" class="outline-2">
-<h2 id="org101279a"><span class="section-number-2">3.</span> 安装 Hexo</h2>
+<div id="outline-container-org6d95a3a" class="outline-2">
+<h2 id="org6d95a3a"><span class="section-number-2">3.</span> 安装 Hexo</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 重启电脑（安装 Git 和 Node.js 时自动将程序目录添加到了 <code>PATH</code> ，为了正常运行 npm 命令，需要重启以更新 <code>PATH</code> ）
 </p>
 
 <p>
-在Git中<a href="#org59cbede">利用 npm 命令</a>安装：
+在Git中<a href="#org876dba1">利用 npm 命令</a>安装：
 </p>
 
 <div class="org-src-container">
@@ -8163,16 +8178,16 @@ theme-name即这个主题的名称，当然你可以自取，不过一般我们�
 </p>
 
 <p>
-如果在安装过程提示<a href="#orgaed7544">2</a>，点击链接查看解决方案。
+如果在安装过程提示<a href="#orgdc74d54">2</a>，点击链接查看解决方案。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgd15ea06" class="outline-2">
-<h2 id="orgd15ea06"><span class="section-number-2">4.</span> 搭建本地 Hexo 博客</h2>
+<div id="outline-container-org6b361ba" class="outline-2">
+<h2 id="org6b361ba"><span class="section-number-2">4.</span> 搭建本地 Hexo 博客</h2>
 <div class="outline-text-2" id="text-4">
 <p>
-创建新文件夹（如 <code>C:\Blog</code> ），用于储存 Hexo 站点内容。在该文件夹下<a href="#org59cbede">1</a>：
+创建新文件夹（如 <code>C:\Blog</code> ），用于储存 Hexo 站点内容。在该文件夹下<a href="#org876dba1">1</a>：
 </p>
 
 <div class="org-src-container">
@@ -8207,8 +8222,8 @@ INFO you are almost done! Don't forget to run 'npm install' before you start blo
 </div>
 </div>
 
-<div id="outline-container-org4c7e07f" class="outline-2">
-<h2 id="org4c7e07f"><span class="section-number-2">5.</span> 查看本地 Hexo 博客</h2>
+<div id="outline-container-org9c40ee7" class="outline-2">
+<h2 id="org9c40ee7"><span class="section-number-2">5.</span> 查看本地 Hexo 博客</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 在 hexo 文件夹（C:\Blog）执行以下命令：
@@ -8250,12 +8265,12 @@ INFO Hexo is running at <a href="http://0.0.0.0:4000/" target="_blank" rel="exte
 </div>
 </div>
 
-<div id="outline-container-orgce4f3cb" class="outline-2">
-<h2 id="orgce4f3cb"><span class="section-number-2">6.</span> 将 Hexo 博客交由 Github Pages 托管</h2>
+<div id="outline-container-orgf904a36" class="outline-2">
+<h2 id="orgf904a36"><span class="section-number-2">6.</span> 将 Hexo 博客交由 Github Pages 托管</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org3339231" class="outline-3">
-<h3 id="org3339231"><span class="section-number-3">6.1.</span> 创建 repository</h3>
+<div id="outline-container-orgbdb2031" class="outline-3">
+<h3 id="orgbdb2031"><span class="section-number-3">6.1.</span> 创建 repository</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 首先，需要有一个 <a href="https://github.com/" target="_blank" rel="external">Github</a> 账号。
@@ -8267,8 +8282,8 @@ INFO Hexo is running at <a href="http://0.0.0.0:4000/" target="_blank" rel="exte
 </div>
 </div>
 
-<div id="outline-container-orgaedfaca" class="outline-3">
-<h3 id="orgaedfaca"><span class="section-number-3">6.2.</span> 配置 Hexo 并上传站点</h3>
+<div id="outline-container-org4717d23" class="outline-3">
+<h3 id="org4717d23"><span class="section-number-3">6.2.</span> 配置 Hexo 并上传站点</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 <div class="alert alert-warning"><i class="fa fa-bell"></i>  Hexo 3.0 以上的版本与之前的版本设置略有差异，如果你在按照网上一般的方法执行完后报错 <code>Error: Deployer not found : github</code> ，则按照下面步骤进行操作<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup>（Hexo 3用户可直接按下面步骤进行操作）。</div>
@@ -8296,7 +8311,7 @@ INFO Hexo is running at <a href="http://0.0.0.0:4000/" target="_blank" rel="exte
 </p></li>
 
 <li><p>
-在站点文件夹（ <code>C:\Blog</code> ）下<a href="#org59cbede">1</a>：
+在站点文件夹（ <code>C:\Blog</code> ）下<a href="#org876dba1">1</a>：
 </p>
 <div class="org-src-container">
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
@@ -8322,12 +8337,12 @@ INFO Hexo is running at <a href="http://0.0.0.0:4000/" target="_blank" rel="exte
 </div>
 </div>
 
-<div id="outline-container-org2d24551" class="outline-2">
-<h2 id="org2d24551"><span class="section-number-2">7.</span> 问题与解决方法汇总</h2>
+<div id="outline-container-org7b0e585" class="outline-2">
+<h2 id="org7b0e585"><span class="section-number-2">7.</span> 问题与解决方法汇总</h2>
 <div class="outline-text-2" id="text-7">
 <ol class="org-ol">
 <li><p>
-执行 Git 指令 <a id="org59cbede"></a>
+执行 Git 指令 <a id="org876dba1"></a>
 </p>
 
 <p>
@@ -8339,7 +8354,7 @@ INFO Hexo is running at <a href="http://0.0.0.0:4000/" target="_blank" rel="exte
 </p></li>
 
 <li><p>
-npm ERR! network <a id="orgaed7544"></a>
+npm ERR! network <a id="orgdc74d54"></a>
 </p>
 
 <p>
@@ -8349,8 +8364,8 @@ npm ERR! network <a id="orgaed7544"></a>
 </div>
 </div>
 
-<div id="outline-container-orgca132b1" class="outline-2">
-<h2 id="orgca132b1"><span class="section-number-2">8.</span> 更新历史</h2>
+<div id="outline-container-org5aaacc9" class="outline-2">
+<h2 id="org5aaacc9"><span class="section-number-2">8.</span> 更新历史</h2>
 <div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">[2016-05-02 一] </span></span> 补充SSH Key</li>
@@ -8361,8 +8376,8 @@ npm ERR! network <a id="orgaed7544"></a>
 </div>
 </div>
 
-<div id="outline-container-org74dbfd9" class="outline-2">
-<h2 id="org74dbfd9"><span class="section-number-2">9.</span> 参考</h2>
+<div id="outline-container-org8d2a0d0" class="outline-2">
+<h2 id="org8d2a0d0"><span class="section-number-2">9.</span> 参考</h2>
 <div class="outline-text-2" id="text-9">
 <ul class="org-ul">
 <li><a href="http://zipperary.com/categories/hexo/" target="_blank" rel="external">hexo | Zippera's blog</a></li>
@@ -8402,7 +8417,7 @@ npm ERR! network <a id="orgaed7544"></a>
 <div class="alert alert-info"><i class="fa fa-info"></i>  本文旨在帮助你在Github上搭建自己的Hexo博客。</div>
 </p>
 
-<div id="outline-container-org397919]]>
+<div id="outline-container-org4b09a2]]>
     </summary>
     
       <category term="!how" scheme="http://yuchen-lea.github.io/tags/how/"/>
